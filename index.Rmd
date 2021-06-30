@@ -1,0 +1,36 @@
+---
+title: "Student Submissions"
+site: distill::distill_website
+listing: posts
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+####################################################
+# Keep this code chunk to keep homepage up-to-date #
+####################################################
+
+# Reads in .env file
+readRenviron(".env")
+
+# List of environment variables
+env <- Sys.getenv(c('COURSE_TITLE', 'SEMESTER'))
+
+# Header title
+header_title = paste('<section class="index-title">',
+                     '<h1>{{env[1]}}</h1>', # COURSE_TITLE Header
+                     '<h2>{{env[2]}}</h2>', # SEMESTER Header
+                     '</section>', sep = '')
+
+# Dyanmmically creates header title when knitted
+out <- NULL # Set to NULL at first to allow paste() below to work
+out <- c(out, knitr::knit_expand(text = header_title))
+
+# Below dynamically created header titles is pasted below
+```
+
+`r paste(knitr::knit(text = out), collapse = '\n')`
+
+```{r title-page-plot, echo=FALSE, fig.asp=.25, fig.width=20, message=FALSE, warning=FALSE, layout="l-screen-inset image-hide"}
+# Homepage header image
+knitr::include_graphics('./images/networks.png')
+```

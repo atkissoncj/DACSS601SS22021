@@ -1,0 +1,10 @@
+---
+title: "About the Course"
+site: distill::distill_website
+---
+
+This is some information about DACSS and the course. Can be prefilled in with something interesting.
+
+
+## Course Instructor:
+[`r Sys.getenv('INSTRUCTOR_NAME')`](instructor.html)

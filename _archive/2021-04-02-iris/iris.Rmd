@@ -1,0 +1,22 @@
+---
+title: "iris"
+description: |
+  The iris dataset
+author:
+  - name: Hans Quiogue
+date: 04-02-2021
+categories:
+  - homework 3
+  - iris
+  - hans quiogue
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Here is the iris dataset
+
+```{r echo=FALSE}
+plot(iris)
+```
+

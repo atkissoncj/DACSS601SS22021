@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/about.html</loc>
+    <lastmod>2021-06-23T08:33:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/</loc>
+    <lastmod>2021-06-23T08:31:54+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/instructor.html</loc>
+    <lastmod>2021-06-23T08:31:54+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/students.html</loc>
+    <lastmod>2021-06-23T08:31:54+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/syllabus.html</loc>
+    <lastmod>2021-06-23T08:31:54+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/posts/welcome/</loc>
+    <lastmod>2021-06-23T08:31:54+05:30</lastmod>
+  </url>
+</urlset>

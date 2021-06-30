@@ -1,0 +1,40 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About the Course",
+      "author": [],
+      "contents": "\nThis is some information about DACSS and the course. Can be prefilled in with something interesting.\nCourse Instructor:\nInstructor Name\n\n\n\n",
+      "last_modified": "2021-06-23T08:31:54+05:30"
+    },
+    {
+      "path": "index.html",
+      "title": "Student Submissions",
+      "author": [],
+      "contents": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2021-06-24T08:35:21+05:30"
+    },
+    {
+      "path": "instructor.html",
+      "title": "Instructor Name",
+      "author": [],
+      "contents": "\n\n          \n          \n          \n          \n          Data Analytics and Computational Social Science\n          \n          \n          About\n          Syllabus\n          Students\n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            Instructor Name\n          \n          \n            \n              I am some sort of person, blah blah biography.\n            \n            \n              I am some sort of person, blah blah biography.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    \n          \n          \n            \n          \n          \n          \n            \n              \n              \n              \n              \n              \n            \n          \n          \n          \n\n    \n  ",
+      "last_modified": "2021-06-23T08:31:54+05:30"
+    },
+    {
+      "path": "students.html",
+      "title": "Students",
+      "author": [],
+      "contents": "\n\n\n\nMax\n\n\n\n\n",
+      "last_modified": "2021-06-23T08:31:54+05:30"
+    },
+    {
+      "path": "syllabus.html",
+      "title": "Course Syllabus",
+      "author": [],
+      "contents": "\nEdit this page with the course syllabus and/or other information. Feel free to delete the example file below as well.\n(Note that when knitted, it might display as ‘Couldn’t load plugin’. Simply click ‘Open in Browser’ at the top left side of the screen to view your page looks like.)\nSyllabus:\n\n\n\n\n\n",
+      "last_modified": "2021-06-23T08:31:54+05:30"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

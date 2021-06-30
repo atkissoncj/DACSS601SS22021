@@ -1,0 +1,17 @@
+---
+title: "Instructor Name"
+image: "images/DACSS_Round_Network.png"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/"
+  - label: Email
+    url: "mailto:example@email.com"
+output:
+  postcards::jolla
+---
+ 
+I am some sort of person, blah blah biography.

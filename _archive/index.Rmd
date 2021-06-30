@@ -1,0 +1,61 @@
+---
+title: "Student Submissions"
+site: distill::distill_website
+listing: posts
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(quanteda)
+library(readtext)
+#download UMass fonts from google then import to use in R
+```
+
+<!-- Title -->
+<div class="index-title">
+# DACSS 601: Foundations of Data Science
+## Spring 2021
+</div>
+
+```{r title-page-plot, layout="l-screen-inset image-hide", eval=T, fig.width=20, fig.asp=.25}
+
+proposal<-readtext("Dacss proposal.txt")
+doc.corpus<-corpus(proposal)
+doc.corpus<-corpus_reshape(doc.corpus,to="sentences")
+
+doc.tokens <- tokens(doc.corpus, remove_punct = TRUE, 
+                     remove_numbers = TRUE, remove_symbols = TRUE)
+doc.tokens <-tokens_remove(doc.tokens, c("s", stopwords("english")))
+
+doc.dfm <- dfm(doc.tokens)
+
+# lemmatization
+economic.words <-grep("econom", featnames(doc.dfm), value=TRUE)
+doc.tokens <- tokens_replace(doc.tokens,
+                c("sciences", "programs", "ph.d", "analysis", 
+                  "economic", "professor", "teaching", "taught",
+                  "support", "undergraduate", "graduates", "political",
+                  economic.words), 
+                c("science", "program", "PhD", "analytics", 
+                  "economics", "faculty", "faculty", "faculty",
+                  "student", "student", "graduate", "politics",
+                  rep("economics", length(economic.words))),
+                valuetype = "fixed")
+dacss.terms <-c("data", "science", "social", "analysis","research",
+                "methods", "umass", "dacss", "graduate", "advanced",
+                "statistics", "politics", "economics", "computational",
+                "faculty", "students", "analytics")
+
+doc.dfm <- dfm(doc.tokens, select=dacss.terms)
+doc.fcm <- fcm(doc.dfm, count="boolean")
+
+textplot_network(doc.fcm,edge_color = "#881c1c",
+                 vertex_labelcolor = "#63666a", 
+                 vertex_labelfont = "Open Sans",
+                 vertex_labelsize = 7, vertex_size = 5, offset=0,
+                 vertex_color = "white", min_freq = .7)
+```
+
+
+

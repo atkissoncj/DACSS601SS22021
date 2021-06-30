@@ -1,0 +1,48 @@
+---
+title: "Homework 2"
+description: |
+  For the 2nd homework assignment, I reuse the Congressional dataset and plug my work into a markdown file.
+author:
+  - name: Alexander Hong
+date: 03-31-2021
+categories:
+  - homework 2
+  - congress
+  - alex hong
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+For the 2nd homework assignment, I reuse the Congressional dataset and plug my work into a markdown file.
+
+```{r ch, echo=TRUE, results='hide', warning=FALSE, message=F}
+library(readr)
+ch <- read_csv("../DACSS601 Data/congressional_hearings.csv")
+```
+
+## Data Display and Writeup
+
+```{r ch_data, echo=TRUE, warning=FALSE, message=F}
+#columns and rows for the dataset
+c_col <- ncol(ch)
+c_row <- nrow(ch)
+year_obs <- tail(table(ch$year))
+a <- knitr::kable(year_obs, col.names = c("Year", "Frequency"))
+
+```
+
+The Congressional Hearings dataset contains in existence, all House, Senate, and Joint committees, subcommittees, and select and special committees from 1947 to 2010.
+For this dataset, the number of variables in the Congressional dataset is `r c_col` and the number of observations in the dataset is `r c_row`. 
+
+
+The number of Congressional Hearings for the last five years can be seen below
+
+`r a`

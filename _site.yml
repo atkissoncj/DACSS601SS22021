@@ -1,0 +1,31 @@
+name: "DACSS Course Blog"
+title: "Data Analytics and Computational Social Science"
+favicon: "images/DACSS_Round_Network.png"
+theme: theme.css
+description: |
+  This is a DACSS course website for student work offered at UMass Amherst.
+output_dir: "docs"
+base_url: https://github.com/DACSS/dacss_course_website
+collections:
+  posts:
+    disqus: dacss-course-github
+    share: [twitter, linkedin]
+creative_commons: CC BY-NC
+twitter:
+  site: "@UMassDACSS"
+  creator: "@UMassDACSS"
+navbar:
+  logo:
+    image: images/UMass White Workmark Horiz.png
+    href: https://www.umass.edu
+  right:
+    - text: "About"
+      href: about.html
+    - text: "Syllabus"
+      href: syllabus.html
+    - text: "Students"
+      href: students.html
+    - icon: fab fa-github-alt fa-1x
+      href: https://github.com/dacss/dacss_course_website
+  search: false
+output: distill::distill_article

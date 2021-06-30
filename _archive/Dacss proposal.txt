@@ -1,0 +1,400 @@
+ 
+1. Context.  Describe the program’s development, including the LOI process, as well as its proposed administrative and operational organizational structure.
+
+RESPONSE:
+The associated program proposals (for the master’s program, the accelerated master’s program, and the associated courses being developed for the program), have been developed by a working group that was appointed in fall 2017 by John Hird, Dean of the College of Social and Behavioral Sciences (SBS) to develop a new master’s degree in data analytics and computational social science. The working group was chaired by Meredith Rolfe (Associate Professor, Political Science) and supported by Ray La Raja (SBS Director of Program Innovation and Professor, Political Science). Almost all members of the original working group are currently serving as official department representatives on the Data Analytics and Computational Social Science (DACSS) governance board. The working group drew on lessons learned during earlier attempts by a 2016-2017 SBS working group to develop a graduate research methods certificate and a 2014-2015 Institute for Social Science Research (ISSR) working group to develop an undergraduate research methods certificate. Delivery of degree courses, particularly core courses and technical electives, relies heavily on faculty hired across multiple departments of SBS as part of the Computational Social Science Initiative. 
+
+The proposed M.S. in Data Analytics and Computational Social Science (M.S. DACSS) is a one-year professional master’s degree, offered as part of an interdisciplinary academic program taught by existing SBS faculty and instructors, with additional courses contributed by departments in the College of Natural Sciences and College of Information and Computer Science. 
+
+As an interdisciplinary degree, the M.S. DACSS is governed by a steering committee with an ex officio membership consisting of the Department Chairs of all SBS departments (or their delegates), a delegate from the SBS Dean’s office, delegates from other UMass departments contributing courses, and the DACSS Program Director. This board will oversee the annual degree budget, departmental MOUs, and internal degree policies. The Program Director will be appointed by the Dean of SBS. 
+
+The Political Science Department has agreed to provide temporary administrative and financial support for the academic program until academic year 2022-2023 or until the M.S. degree is well-established and profitable. Once the degree is administratively and financially sound, the College of Social and Behavioral Sciences will revisit administrative arrangements.
+2. Description.  Summarize the purpose of the program as it relates to the knowledge and skills will students acquire, and the careers for which graduates will be prepared as described in the approved LOI.
+
+RESPONSE:
+Students who graduate from this program will be equipped to design research to support evidence-based decision-making, work with large datasets using a range of analysis methods, and communicate their results to general audiences—both visually and in writing. Degree students will pursue interdisciplinary coursework and learn to: 
+1.	Identify sources of evidence to use in decision-making 
+2.	Work with large datasets 
+3.	Develop reliable and ethical data management practices 
+4.	Interpret and visualize results of analysis 
+5.	Communicate about data and research to a general audience 
+
+The proposed degree program will train students to fill roles that either require cutting edge data analysis and computational social science training or involve regular interaction with trained computer scientists and other data science professionals. Possible career trajectories include analyst and consulting positions in public policy, market research, public relations, corporate communications, population studies, and survey research.
+ 
+While these goals may appear ambitious for a one-year degree program, degree students will receive more formal research methods training than most PhD students in the social sciences. Doctoral programs in the social sciences often require only a 2 or 3 course methods sequence, typically involving a research design course and a quantitative or statistical analysis course, plus either a qualitative methods or advanced statistical analysis course. While students may pursue 1 or 2 methods courses beyond this minimum, it is very unusual for doctoral students in the social sciences to take 7 research methods courses during their PhD coursework, and 7 methods courses is the minimum that M.S. DACSS students are required to take. Note that the majority of courses offered to DACSS students are at the doctoral level in their respective disciplines, while 2 of the 4 core degree courses are already used to satisfy methods requirements for research design and quantitative analysis by some doctoral students in Political Science. The degree curriculum is designed to increase availability of advanced methods training for doctoral students in the College of Social and Behavioral Sciences (SBS) as specialized courses are offered only rarely right now due to limited demand.
+ 
+We fully expect that our graduates will be well prepared for the workplace or further graduate training. While the proposed degree is new, particularly in terms of its interdisciplinary scope, both graduate and undergraduate students across SBS have gone through variants of the training offered by this program with considerable success. For the past 3 years, Political Science has offered a 15-credit undergraduate letter of specialization in Data Analysis for Politics, Policy and Legal Studies (DAPPLS) requiring students to complete a variant of 2 of the 4 core courses (Research Design and Quantitative Analysis) and 3 credits of research experience in addition to one technical and one substantive elective. Around 20 students have completed the less extensive DAPPLS requirements and those we have tracked have done exceptionally well on both the job market and in applications for further academic study. For example, 2 women from last year’s cohort have recently accepted high profile jobs as researchers at a tech start-up and prominent foundation, respectively, in San Francisco, while a female student from several years ago beat out multiple applicants with advanced degrees for a job as a researcher for an environmental NGO. Several DAPPLS alumni have been accepted and matriculated into high profile doctoral or master’s programs at universities such as Harvard, Berkeley, Princeton, University of Chicago, Columbia, and London School of Economics.
+3. Curriculum and Objectives. (Complete Form A, “Curriculum Outline,” and Form B, “Proposed Program Objectives.”)  
+Provide a narrative including a complete description of the program, its learning outcomes and objectives, and how content will be delivered (e.g. day, evening, traditional classroom, hybrid, online, etc.). Describe procedures and arrangements for independent work, paid or unpaid internships, or clinical placement arrangements, if applicable. Describe the role of any external advisory and provide a list of advisory members, including affiliation, location and contact information.
+
+RESPONSE:
+Please see forms A and B (attached).
+
+Learning Outcomes.  Students who graduate from this program will be equipped to design research to support evidence-based decision-making, work with large datasets using a range of analysis methods, and communicate their results to general audiences—both visually and in writing. Degree students will pursue interdisciplinary coursework and learn to: 
+1.	Identify sources of evidence to use in decision-making 
+2.	Work with large datasets 
+3.	Develop reliable and ethical data management practices 
+4.	Interpret and visualize results of analysis 
+5.	Communicate about data and research to a general audience 
+Course Content.  The degree requires satisfactory completion of 10 courses, or 30 credits. Coursework will consist of four required core courses, at least three advanced technical core courses, and up to three substantive social science electives.
+Degree curriculum has been carefully designed to prepare students for the workforce and reflects current industry standards for data science professionals. According to a report by EAB, a higher education consulting group, employers expect graduates to have sufficient training in programming, statistics and data communication. The four core courses will ensure students are able to meet industry standards in all three areas, while an additional three advanced technical courses will ensure graduates have cutting edge training in one or more social science research methods such as survey research, network analysis or computational text analysis.
+Core Courses (Four): The four required courses will provide students with a solid grounding in data collection, programming and data management, statistical data analysis, data visualization and communication, and effective evidence-based decision-making. The four courses are titled:
+1) Data Science Fundamentals, 2) Research Design for Social Scientists, 3) Introduction to Quantitative Analysis, and 4) Advanced Data-Driven Storytelling.
+POLISCI 601 Data Science Fundamentals will introduce students to R—a programming language that will be used in all core courses and many technical electives—and will provide students with a solid grounding in general data management and data wrangling skills. Students will be introduced to career-specific specialized software in electives or workshops.
+POLISCI 750 Research Design for Social Scientists introduces fundamentals of behavioral research, including hypothesis testing, measurement, and validity, along with an introduction to a range of data collection and analysis methods used in social research (e.g., experiments, surveys, text analysis, econometrics). Students will learn how to design research that can address specific issues encountered in real world settings, and how to effectively use data analysis to address those questions and support effective decision-making.
+POLISCI 755 Introduction to Quantitative Analysis introduces quantitative analysis in the social sciences, often referred to as econometrics or statistical analysis. There will be two tracks through this requirement, one of which requires a stronger mathematical background and is a prerequisite to take some advanced econometrics courses.
+JOURNAL 604 Advanced Data-Driven Storytelling will provide students with hands-on experience writing about and visualizing a range of data types with different communication goals.
+
+Advanced Technical Core (three or more): Students will be required to take a minimum of three courses (nine credits) of advanced technical training in specialized data analytic methods to ensure that all graduates have cutting edge skills. Students will choose at least three technical courses such as survey research, empirical text analysis, advanced quantitative methods in anthropology, geospatial analysis, modeling emergence and social simulation, experimental economics, panel data econometrics, social and political network analysis, and applied time series econometrics. We expect this list to expand over the next few years due to increased student demand for advanced training, assuming departments are able to dedicate faculty resources. Any Computer Science course included in a seat exchange agreement would be counted as a technical elective.
+Substantive Electives (Up to three): Students may take up to three courses that provide substantive background in a range of social science topics. Faculty who have already agreed to accept DACSS students into their regularly offered courses are listed as permanently approved as substantive electives. Other graduate courses available through the College of Social and Behavioral Sciences (SBS) can also be used to fulfill this requirement with the consent of the instructor and approval of the DACSS Program Director.
+Sample Timetable for Degree Completion
+
+First Summer (Aug)FallSpringSecond Summer (May-June)Core* Fund. Data Science* Research Design
+* Intro Quant* Adv. Data- Driven StorytellingTechnical Electives (at least 3)* Survey Research
+* Econometrics
+* Spatial Analysis
+* Digital Behavior
+* Various Statistics, Resource Economics and CS courses* Experiments
+* Experimental Economics
+* Network Analysis
+* Bayesian Analysis
+* Text Analysis
+* Various Statistics, Resource Economics and CS courses
+* GIS
+* Web DesignSocial Science Electives (up to 3 total)* Microeconomics
+* Econ. Development
+* Public Opinion
+* Digital Labor
+* Money and Power
+* Development Policy
+* Other SBS Graduate Courses (with approval)
+* Internship* Macroeconomics
+* Env. & Nat Resource Econ
+* Industrial Org.
+* Media and Politics
+* Social Media in Everyday Life
+* Media, Technology, and Culture
+* Intl. Journalism
+* Corporate Lobbying
+* Other SBS Graduate Courses (with approval)
+* Internship
+Delivery of Content.  At least initially, the Fall and Spring courses will be taught in the traditional face-to-face classroom mode, and offered during the day. That said, we have put three different measures in place to provide students with maximum flexibility to allow them to complete their coursework. The final course is Data Communication and Visualization, offered in May (Summer II) after the end of the traditional Spring term. The course is designed to allow the student to go straight to work and incorporate analysis done as part of their job into the final course project, with other coursework available online to allow remote course completion.  We plan to offer many (and eventually most) of the courses online as part of a related certificate, and also link our online offerings to similar courses taught by other UMass campuses. The flexibility of online courses will enable students to complete the degree remotely even if they need to relocate.
+
+Independent Work and Internships
+Data analytics is an applied science and we have designed the curriculum to integrate with both independent student research and internships or other work placements. Degree rules allow students to substitute up to two internships that involve data analytics for substantive electives. Students who have identified internship or research placements will be assigned a faculty advisor to ensure that they can make the most of the learning opportunities presented by the internship or research project. As the program grows, we expect to work with an external advisory board to develop a network of potential internships and work placements that will be available to matriculated students.
+ 
+External Advisory.  We plan to cultivate an external or industry advisory board to provide input on changing requirements for data analytics professionals, curriculum content, and client projects – although the Governance Board would retain final authority on all such decisions. Members of the External Advisory Board would be invited to attend student research presentations and meet with students for the purposes of networking and providing career advice. We plan to work with our external advisory board to develop a more extensive internship and client project program financed by client and industry sponsorships.
+
+Related to the advisory board, we also plan to create and maintain an active alumni network.  Input from the alumni network will be used in conjunction with External Advisory Board feedback to understand changing and growing market demands in terms of skills and experience. Such networking and feedback will help to ensure that the DACSS program effectively places graduates in prestigious employment opportunities, while expanding and contributing to the reputation of the University in the higher education marketplace.
+
+We will use an annual Alumni Survey to build the alumni network, and to track graduate success and employment placements following completion of the proposed program. Results of the Alumni Survey will provide valuable feedback on program curriculum, which may be used for revisions and improvements. Additionally, results and feedback will be used to better market the program in order to achieve enrollment goals.
+4. Students. (Attach Form C, “Enrollment Projections” approved in the LOI)
+Describe undergraduate program admission requirements for first year and transfer students.  Outline expected time from admission to graduation in undergraduate program, as well as projected degree completion rates, and transferability of program participants’ credits to other institutions. Describe the proposed program’s alignment to students emerging from the K-12 system.  How will the program be connected to public secondary education in the region?  Are there dual-enrollment or early college opportunities being planned for the proposed program? 
+
+Describe graduate program requirements for admission and graduation, expected time from admission to graduation, projected degree completion rates, and applicability to a higher degree or additional programs if relevant. How is the program relevant to a specific career or vocational pathway? What are the alignments to existing undergraduate programs? Describe alignments to the same or allied areas in the region or the state.
+
+RESPONSE:
+Please see form C (attached).
+
+The Data Analytics and Computational Social Science (DACSS) program will be marketed to prospective graduate students, both domestic and international, as well as prospective UMass undergraduates who will be granted preferential admission. The M.S. program will have an admissions committee of 3 rotating members appointed by the Program Director and drawn from the governance board and other faculty members teaching regularly in the program.
+Admission Requirements.  The admission requirements and procedures for our proposed degree program align with the requirements set forth by the UMass Graduate School, and are comparable to requirements of other M.S. data analytics programs at competing institutions. Prospective students will be required to submit a personal statement at the time of application, as well as a resume or C.V. This will allow the admission committee to gauge relevant work experience and background from prospective applicants. Two to three letters of recommendation will need to be submitted by applicants, at least one of which must be from a professor. The GRE, or Graduate Record Examination, will be optional but strongly recommended for students without evidence of mastery of college-level linear algebra. Students who choose not to submit a GRE score will not be penalized, although it may introduce additional uncertainty into evaluations if their record does not contain an alternative indication of college-level mathematical achievement. A writing sample is also an optional part of the application process. Students may use a writing sample to demonstrate abilities that may be inadequately captured in the formal academic record, but they will not be penalized if they choose not to submit a writing sample.
+Successful candidates will not be required to have previous programming experience or a background in college-level mathematics, however some electives may require proof of proficiency in college-level linear algebra and/or experience with a specific software package. As recommended by the external reviewers, the admissions committee will be attentive to differences in student background in order to protect a primary program objective of increasing the representation of women and minorities in STEM and data science careers.
+International students without a degree taught in English will additionally be required to submit TOEFL scores during the application process to ensure proficiency in the English language, although they may work with UMass to achieve proficiency through the additional International Student ESL program.
+Timeframe.  As described in the Sample Timetable for Degree Completion provided in response to section 3 above, this program is a 10-month program, with students beginning with a course in August prior to the traditional Fall semester and completing their coursework with a course in May-June following the traditional Spring semester.  
+Graduation Requirements.  The degree requires satisfactory completion of 10 courses, or 30 credits. As described in detail in response to section 3 above, coursework will consist of four required core courses, at least three advanced technical core courses, and up to three substantive social science electives.
+Completion Rate.  The projected M.S. degree completion rate will be comparable to that of other master’s programs in the College of Social and Behavioral Sciences (SBS); that is, we expect a graduate completion rate of 80% or higher, and average time of completion to be 10 months, i.e., the length of the program.
+Career Pathways.  Data analytics and computational social science are well documented as skills that are in high demand in the job market, particularly in jobs where data is used to make informed decisions. In 2014, UMass Amherst’s Joint Task Force on Strategic Oversight, Subcommittee on Research and Graduate Education identified Data Science, Computing and Analytics, and Computational Social Science as one of seven areas where UMass strengths are well-aligned with state, regional, or national priorities.  It is difficult to point to a single type of job or job title in an area where a range of professional and technical jobs require employees to collect data, analyze data, and provide meaningful interpretations of the results for policy and business decision-making.  
+
+Early in the process of developing the DACSS program, UMass Amherst commissioned a report by EAB (EAB. Graduate Data Analytics Programs for Social and Natural Sciences Professionals: Analysis of Program Design and Northeastern Employer Demand. The Advisory Board Company, 2016.) to assess employer demand for data analytics graduates in Massachusetts and throughout the Northeast. The report indicates that there is a substantial and growing market for master’s level programs in data analytics, particularly one such as the DACSS that trains students to communicate about data and interpret results to inform decision-making and communication in the public and private sectors.  According to EAB, over the past three years, occupations requiring education in data analytics grew by an estimated 143%.  The employment growth noted by the EAB reflects the increased demand for graduates attaining degrees focused on data analytics and computational social science. The report, commissioned through the EAB, noted that over 8,000 new job postings were listed for graduates with data analytics education and training in the Northeast region during the second half of 2016. The demand for graduates with data analytics training and skills increased by 58% from 2013 to 2016.  
+ 
+According to data from the Bureau of Labor Statistics (BLS), this demand is likely to continue to grow over the next 10 years (BLS, Employment Projections, 2016-2026), and at a faster rate, on average, than other sectors of the labor market. Graduates of the DACSS program will identify with some of the nation’s fastest growing occupations, including operations research analysts (27%), management analysts (10-19%), market research analysts and marketing specialists (10-19%), and information security analysts (28%). According to the Executive Office of Labor and Workforce Development in Massachusetts, the trend in the state is similar: the occupational areas related to data analysis (for example, operation research analysts and market research analysts), has been projected to grow by 20-25% between 2016 and 2026 (Massachusetts Labor and Workforce Development, 2016-2026). By 2024, almost 175,000 Massachusetts jobs will require data analytics skills in occupations related to the social sciences, in addition to an increasing number of managerial jobs that require a strong understanding of research and data analysis. BLS projects there will be over 4,300 new and replacement job postings each year.  
+ 
+The BLS study, however, underestimates the number of possible future job openings for which a DACSS graduate would be qualified, because traditional occupational titles do not reflect the combination of skills that are a focus of the program.  Similarly, while there is no specific mention of data analytics professionals in any of the MassHire Regional Blueprints, two of the regions’ blueprints (Central and Northeast) indicate “professional and technical services” (including STEM fields) as areas of concern in terms of projected future employee shortages, while the Pioneer Valley report includes “cross-industry occupations” (including IT-related, professional services, and logistical supports) as being amid those in highest demand.   These mixed-skill careers are exactly what the DACSS program will prepare students for.
+ 
+A more accurate picture is provided by a 2017 report by Burning Glass (Markow, Will; Braganza, Sonya; and Taska, Bledi. Quant Crunch: How the Demand for Data Science Skills is Disrupting the Job Market.  Burning Glass Technologies, 2017.).  Through a thorough text analysis of skill requirements listed in posted job advertisements over a 12-month period, the study identified almost 30,000 job postings requiring data science skills in the Boston MSA alone, with Boston appearing in the top 10 MSAs overall in terms of both total and per capita demand for data analytics professionals. Areas around Boston house firms in finance, health, and technology that rely heavily on data-driven strategies. According to the Burning Glass report, overall, Massachusetts is tied with California and Washington for the state with the highest relative demand for data analytics professionals. Despite the recent growth in data science graduate programs, companies are still finding it difficult to fill positions requiring data analytics skills, with job ads for data science positions remaining open for 5 days longer than average. According to MassHire Regional Blueprint for the Greater Boston area, professional and technical services comprise the second largest industry in terms of employment opportunities, and are near the top in terms of growth from 2001 to 2016.  More specifically, computer- and mathematics-related occupations were among the top in terms of projected employee shortages, with management and business jobs projected to be among the highest in demand.
+
+Moreover, The Occupation Network has also identified the degree-levels needed to obtain employment in sectors centered on data analytics. Operation research analyst positions are overwhelmingly held by master’s degree graduates: 70% master’s to 30% bachelor’s degrees. Additionally, more than 2/3 of statisticians (e.g., business, economic, or survey statisticians) hold at least a master’s degree. Therefore, the proposed DACSS program will ensure graduates continue to be competitive in future labor markets.
+
+Alignment with other programs in the area.  The only undergraduate academic program in computational social science at UMass is the Political Science department’s letter of specialization. This letter of specialization was adopted two years ago, and confirmed significant interest in computational social science at the undergraduate level. While we plan to develop an undergraduate DACSS program in the future, we have not seriously investigated undergraduate programs in the region. We expect the M.S. DACSS to attract students with an undergraduate major in the social sciences who wish to acquire computational skills, and, to a lesser degree, students with an undergraduate major in math, statistics, or computer science who wish to develop more experience with social scientific approaches and applications of data science. 
+
+Early in the process of developing the M.S. DACSS program, UMass Amherst commissioned a marketing report by EAB to assess competitor graduate programs (see above for details.) The EAB identified 9 potential competitor programs offering a data science master’s degree, but no direct competitor programs in Massachusetts or New England. Both Northeastern University and Bay Path University offer Applied Data Science degrees that may attract some of the same students, however:
+ 
+* Both programs have a substantive focus on business and management, while the UMass Amherst DACSS program will prepare students for roles as professional analysts and consultants in a range of industries with a multi-disciplinary curriculum grounded in the core social sciences. 
+* Neither program offers the types of courses in survey design, experimental design, geospatial analysis, social network analysis, and text analysis that will be available through the UMass Amherst DACSS program and which are most likely to attract students who are interested in cutting-edge use of social science data in decision-making.
+* Bay Path University is entirely online and not suitable for students who seek a residential experience
+
+While Data Science programs housed in Computer Science departments are more common at other universities in New England and the Northeast, including a Data Science degree at UMass Dartmouth, these programs feature different courses and cultivate different skills and approaches to data science than found in quantitative or computational social science programs. Only a handful of universities offer degrees that specifically train students to collect, analyze and interpret social scientific data that is used to inform decision-making and communication in the public and private sectors.
+
+The EAB report identified two similar programs: Johns Hopkins and Georgetown. 
+* Johns Hopkins offers a new Masters in Government Analytics with extensive substantive content in political behavior and survey research, geospatial analysis, and public management which is similar to – although less extensive than – the coursework available through the UMass Amherst DACSS program. 
+* Georgetown offers a Masters in Data Science for Public Policy that offers access to substantive courses in political science and is geared towards future policy professionals, but the degree is less rigorous than the proposed UMass Amherst DACSS degrees as it does not incorporate the types of specialized electives in data collection and analysis offered at UMass Amherst. 
+ 
+Our own review identified several additional master’s programs in computational social science and social data analytics, including prominent programs at the University of Chicago, Penn State, Ohio State, and Carnegie-Mellon. Regionally, only five universities offer a master’s degree with a social science emphasis: Brown University, NYU, Columbia University, University at Buffalo, and CUNY-Queens College.  The UMass Amherst program will stand out compared to these programs due to the significant involvement of tenure-track faculty and relatively low tuition cost.
+5. Feasibility.  (Complete Form E, “Program Faculty" and display positions to be filled with desired qualifications. Attach vitae for all current faculty for the program.) 
+Describe faculty, staffing, library and information technologies, facility (including lab and equipment), fiscal and or other resources required to implement the proposed program.  Distinguish between new resources needed and existing resources that are on-hand. 
+
+RESPONSE:
+Please see form E (attached).
+As an interdisciplinary program housed in the College of Social and Behavioral Sciences (SBS), DACSS has developed a departmental revenue-sharing model for securing access to faculty and instructional resources without increasing permanent expenditures. The revenue-sharing model will hopefully allow us to offer a professional degree at a reduced cost, while reinvesting a small portion of degree revenue in the research agendas of computational social science faculty, many of whom we struggle to retain due to outside offers at top tier universities. 
+
+Faculty.  No additional tenure-track faculty lines have been requested during the initial years of program operation. Students in the Masters in Data Analytics and Computational Social Science (M.S. DACSS) program will be incorporated into existing courses, and faculty and departments will receive a portion of program revenue that may be used to subsidize teaching support and teaching replacement costs. The departmental revenue-sharing program adopted by participating departments encourages the incorporation of students into existing graduate and advanced undergraduate courses in order to provide DACSS students with sufficient access to technical and substantive electives. The program is leveraging the relatively small size of most graduate courses to provide teaching capacity. 
+
+As the program grows, it will only add permanent program administrative staff and additional post-doctoral teaching support when the positions are financially self-sustaining within the confines of existing graduate revenue sharing arrangements. The Dean and Provost will provide some support through scholarships and a partial return of new graduate revenue for the first three years of program operation. Just over half of new program revenue will go to underwrite general costs of operation at the university and college level. Tuition revenue returned to the College of Social and Behavioral Sciences (SBS) (which will house the program) through the graduate revenue sharing program will hopefully be sufficient to fully staff the teaching and administrative needs of the program, with additional proceeds shared with departments who voluntarily provide teaching through the departmental revenue sharing program.
+
+Instructional Resources. Two of the four core course will initially be offered by incorporating degree students into existing SBS courses, while the other two courses will be taught in person through the University Without Walls during Summer term by tenure-track SBS faculty. Once the program reaches an enrollment of 25 students, teaching fellows (similar to those used in Computer Science at UMass Amherst and in similar programs at other top-ranked universities) will provide additional teaching support to allow the core courses to expand as degree enrollment grows. A multi-year combined teaching and research postdoctoral position will attract high qualify applicants that will raise the profile of UMass Amherst in general and the DACSS program in particular, while also supporting the research objectives of computational social science faculty. 
+
+All students must take at least three technical electives. CSS technical electives such as network analysis, text analysis, or survey analysis are already offered irregularly (but not annually) to UMass Amherst students, with only a few desirable electives such as machine learning that need to be added. The DACSS program will share revenue with departments to underwrite the marginal costs of including additional students in scheduled technical electives that could be expanded by 5 to 30 seats with sufficient teaching support. Core courses and advanced technical core options that exceed 20 or 25 students will generally be taught using a team-based learning format with teaching support in and out of class provided by graduate students and/or postdoctoral fellows. 
+
+Substantive electives will be provided almost exclusively by SBS faculty who agree to accept degree students into smaller graduate courses or who agree to accept 3 to 5 additional students into advanced undergraduate courses with appropriate modifications. The DACSS Revenue Sharing program provides research and professional development funding to faculty who teach substantive electives, as all faculty who accept DACSS students into their courses (whether graduate or undergraduate) are voluntarily increasing their instructional workload.
+
+Departmental revenue sharing arrangements are intended to creatively reinvest a portion of new program revenue in the growth of research and graduate course availability in computational social science. Some of this is direct reinvestment through program funding of class research, student/faculty research partnerships, and student conference travel. Additionally, compensation for off-load teaching, postdoctoral fellow salaries, and DACSS Revenue Sharing agreements that may partially underwrite the additional costs of teaching support associated with expanded class sizes will all be covered by DACSS program income. These expenditures will indirectly support retention of faculty through improving faculty access to funding, and by providing expanded faculty access to trained students and postdocs who can provide additional research support.
+
+Administrative and Overhead Resources.  The Department of Political Science has been supporting the nascent DACSS program by providing general administrative support and overhead and has agreed to continue these arrangements until the end of the 2022-2023 academic year. General administrative support includes functions such as financial management or other non-program specific activities, and overhead expenses such as office space, computing and office supplies, temporary loans, etc. 
+ 
+Up to three DACSS program staff will be hired as the program grows, to provide dedicated program administrative support for all program-specific activities. The initial hire will be for a Program Manager: a skilled administrator capable of coordinating the overall program, including coordination of student marketing, recruitment and admissions; enrollment management and strategic planning; internal coordination of faculty and governance board activity; direct support for student success, including student advising and coordination of orientation, internship, and professionalization programs; and coordination of program efforts with external audiences.
+
+As the program grows, additional administrators who specialize in one or more of the primary administrative functions will be hired to work with the Program Manager. As described above, we have identified enrollment levels where additional staff will be financially sustainable, and will update the projected contingent hiring points based on the program’s operational performance. Note that the program is not intended to be a permanent part of the Political Science Department, and that these arrangements will be reconsidered during the 2022-2023 academic year as the program grows and becomes administratively self-sufficient.
+ 
+Financial Resources.  Initially, the Dean of SBS will reinvest up to 60% of new DACSS program revenue claimed by the SBS Dean’s Office. This arrangement ensures there is no financial risk to the University. The Dean and Provost of SBS have both provided $35,000 each in one-time startup funding for administrative expenses incurred prior to program launch, as well as a multi-year sponsorship of 5 international student scholarships. The attached budget demonstrates the feasibility and sustainability of the program and its cost-contingent budgetary model as the program grows.
+6. Licensure and Accreditation.  Is the proposed program intended to prepare students for licensure or other credentialing?  If yes, name the licensure or credentialing organization and any required licensing examination(s) or other assessment(s).  Project student passing rates for the assessment(s).  What professional or specialized accreditation will be pursued for the program?  Project accreditation timelines.
+
+N/A
+
+7. Program Objectives, and Assessment. Provide a detailed discussion of the goals and objectives included in Form B. Linked to each goal should be measurable objectives such as job placement rates, faculty additions, facility or programmatic enhancements. together with timetable and strategies for achieving the goals. This section should focus on overall program effectiveness, not student learning. Describe the program assessment strategies that will be used to ensure continuing quality, relevance and effectiveness. Provide plans for program review including timetables and describe how assessment outcomes will be used.
+
+RESPONSE:
+
+Please see the table below and the narrative that follows.
+
+GoalMeasurable ObjectiveStrategy for AchievementTimetableRegular, high quality training in data analytics for all UMass Amherst studentsIncreased consistency and availability of courses in data analytics and CSS; graduate student satisfaction with methods courseworkCoordinate methods course scheduling across SBS; admit qualified M.S. students; prepare M.S. students for advanced courseworkAnnual, starting Winter 2020Become financially self-sustaining without subsidiesReach enrollment target of 15- 20 studentsMarket and recruit students domestically and through international partnersFall 2021Increase funding for DACSS research and teachingReach enrollment target of 40- 45 students; hire 2 post- doctoral teaching fellows; provide funds for teaching support, class research projects, conference travel, HPC access, etc.Effectively market program and recruit prospective students; Ensure funding of research and teaching programs through MOUs and annual program budgetFall 2024Successful career placement for program graduatesJob placement ratesTrack student placement through surveys and utilize the Office of Career and Professional DevelopmentAnnual Alumni Survey starts Fall 2022Encourage student- faculty research, faculty research productivity, and faculty retentionFaculty research productivity; funding available for faculty- student research; CSSI- affiliate faculty retentionProvide faculty with opportunity to teach advanced methods courses, encourage faculty to engage in student partnerships by offering additional research funding and well-trained research assistance* Annual Faculty Survey starts Summer 2020
+* Annual Report, first published Fall 2021
+One significant goal of this program is to help increase the consistency and availability of advanced research methods training for all UMass students, particularly doctoral students in SBS, without overly burdening the faculty who regularly teach methods courses. Annual coordination of course plans and schedules will involve all SBS faculty who regularly teach courses on specific methods, such as surveys, experiments, social networks, or text analysis, to ensure that students have access to at least one course in a general category every academic year, and to ensure that advanced courses do not regularly overlap time slots and thus bar students from fully pursuing available training. We will carefully monitor student enrollment, solicit feedback from students about available course options, and work with faculty to offer courses they are interested in to ensure that both faculty and students are satisfied with the available course offerings.
+Growth of the program to the target size of 45-50 students will contribute to the regular availability of advanced methods training by rewarding departments financially for allowing faculty to regularly offer advanced graduate courses, ensuring that there is adequate demand for graduate courses (so that they will not be threatened with cancellation), and financing the hiring of two postdoctoral fellows who will both participate in ongoing research and assist with the teaching of core courses and technical electives designed by UMass faculty.
+We will use an Annual Alumni Survey to track graduate success and employment placements following completion of the proposed program. The Alumni Survey will provide valuable feedback on program curriculum, which may be used for revisions and improvements.
+Additionally, results and feedback will be used to better market the program in order to achieve the enrollment goal of expanding education and training in data analytics and computational social science. Surveys will be administered one year and five years post-completion date.
+We also plan to create and maintain an active alumni network similar to the legal professional network maintained by Diane Curtis for SBS. Alumni networks will also be used in conjunction with external advisory board feedback to understand changing and growing market demands in terms of skills and experience. Such networking and feedback will ensure our proposed program effectively places graduates in prestige employment opportunities, while expanding and contributing to the reputation of the University in the higher education marketplace.
+This program is envisioned as part of a “virtuous circle” whereby program income is reinvested in the university as a whole and in particular into the students and faculty involved in computational social science education and research. Objectives 3 and 5 both speak to this overall goal, which will be carefully tracked in multiple ways: through ensuring the financial success of the program; by reinvesting program revenue both directly and indirectly into student success, faculty support, and CSS-related research and teaching; and by raising the profile of UMass CSSI, and offering faculty engaged in computational social science research and teaching a welcoming and productive intellectual environment. The program will actively work with faculty to ensure steady progress towards these goals, inviting regular informal and formal (e.g., the Annual Faculty Survey) faculty feedback on program operations, holding regular program teaching faculty meetings, and opening Governance Board meetings to program faculty attendance when possible. Progress towards these goals will be tracked and reported through the DACSS Annual Report which will include survey and financial results, as well as information about the impact of all research and teaching initiatives supported by program revenue either directly or through the Department Revenue Share program.
+
+
+
+
+
+
+
+FAST TRACK PROPOSAL SUBMISSIONS WILL NOT RESOND TO QUESTION 88. QUESTION FOR PROPOSALS SUBMITTED FOR STANDARD REVIEW AND BHE VOTE:
+
+Describe the facts and details of the Letter of Intent (LOI) that resulted in a referral to the Standard review process.  Provide details of how the proposed program has addressed the concerns of the BHE. Please be sure to respond directly to the commentary and feedback provided during the AAC meeting when the LOI was brought forward. 
+II. Administration of the Proposed Program
+  Program Budget. Submit a line item projected income and expense budget for the proposed program for five years using Form D, “Proposed Program Budget.” This may be the same as or a revision of the budget provided as part of the LOI submission. Reallocated funds should specify reallocations from existing campus resources to support the proposed program, including funds reallocated from discontinued or downsized programs.  Indicate one-time/start-up costs and revenues. 
+
+Budget Narrative. Explain assumptions, underlying expense and income projections on Form D, e.g., instructor status, enrollment projections, field and clinical resources, etc. Provide further details to what was included in the LOI.  Note any and all changes made as a result of the local governance and external review processes.
+
+RESPONSE: 
+Although the budget template requests an annual budget and student projections, the program has adopted an enrollment-contingent budget model, with yearly expenses depending on student enrollment. No permanent program staff or faculty will be hired until enrollment targets are met, with sustainable enrollment targets of 12 students for hiring a permanent full-time administrator, 16 students for a second administrator, and 20 or 30 students for hiring 1 or 2 postdoctoral fellows, respectively. Hiring based on enrollment thresholds ensures that the program will remain solvent without requiring funding beyond the partial revenue share returned to the program.
+Administrative Support.  Administrative support for the degree is costed out in three different line items, corresponding to three different primary functions: 1) DACSS program staff, 2) Political Science staff support, and 3) administrative overhead provided by Political Science.
+DACSS program staff will initially fulfill five primary functions: coordination of student marketing, recruitment and admissions; enrollment management and strategic planning; internal coordination of faculty and governance board activity; direct support for student success, including student advising and coordination of orientation, internship, and professionalization programs; and coordination of program efforts with external audiences. These functions will initially be met by a part or full-time administrator during startup, with an expectation that DACSS program staff will expand to 2 FTE as soon as it is financially feasible.
+Political Science will be providing additional departmental staff support and administrative overhead support for the program for the first 3 years of program operation, although these arrangements may change in the future. Existing political science staff will be providing basic financial management and other non-degree specific administrative support per the Administrative MOU. Additionally, political science will be providing administrative overhead support such as office space, basic office needs, temporary loans, and other forms of overhead support to the degree.
+Faculty Resources. While student enrollment remains below 20, all 4 core courses will be provided by existing SBS faculty. Two core courses will be provided by faculty adding up to 20 additional students to scheduled courses. The other two core courses will be provided by faculty teaching off-load during the summer and winter terms in exchange for additional compensation. Technical and substantive elective courses will also be offered by existing UMass faculty from SBS and other involved departments teaching on-load with agreement of their Department Chairs. As described in the Departmental MOUs, departments will be compensated on a per-seat basis with an expectation that this revenue will be used to provide teaching and research support to faculty members whose workload is increased by accepting DACSS students in their courses. Technical courses that see a significant increase in enrollment of more than 15 students will receive around $1000/seat while courses with fewer degree students enrolled will receive around $500/seat. This higher per seat compensation should help departments provide a TA for large technical electives. Per the departmental MOUs, the actual per-seat revenue distribution is estimated and final per seat fees will be set by the program Governance Board to ensure a balanced budget in case of any unexpected shortfalls.
+As the program grows from 20 students to a target size of 45-50 students, postdoctoral fellows will be hired to help temporarily expand teaching capacity and allow the program to expand the program to its target size of 45-50 students. A high-profile research heavy post-doctoral position with limited teaching is often seen as attractive by social science methodologists, and attracting high quality applicants will help raise the profile of the UMass program. The proposed teaching provision arrangements involving a mixture of DACSS seats provided via Departmental MOUs and additional postdoctoral fellow teaching support will remain in effect for the first three years of program operation or until the program reaches target enrollment of 45 students. No decision has been made as to the long-term plans for program teaching provision.
+Tuition Revenue & Funding. The program is exclusively funded by new graduate tuition, with just under half of new tuition raised available to the program to cover all of the program’s teaching and administrative expenses. This novel arrangement ensures that there is virtually no financial risk to the University. The Dean and Provost of SBS have provided $35,000 each in one-time startup funding for administrative expenses incurred prior to and during program launch, along with two additional years of scholarship funds for students involved with the JKLU Double Degree program.
+Income estimates are based only on projected M.S. tuition income. However, due to the limited funds available, we are working to raise revenue through additional sources. For example, all core courses included in the proposed graduate certificate are being developed for University Without Walls (UWW) and three of these courses are requirements for the linked DACSS graduate certificate that will be marketed to online students. Additionally, we are actively working with other university resources to identify potential external donors and corporate sponsors and expect these efforts to help us raise additional funds.
+Changes in response to External Review. No additional strategic investments were made in the program, although there has been a small increase of $15,000 in the portion of new tuition revenue claimed by the SBS Dean that will be returned to the program in year 2. In response to reviewer concerns about course availability, inadequate investment in program building, and external relationships with industry and government, the program has reallocated existing funds from marketing and department revenue share expenses to: 1) create a 12-month lecturer position to help provide additional teaching and also manage external relationships two years before someone was scheduled to fill the external affairs role, 2) hire 2 professional staff a year or two earlier than originally scheduled. Our hope is that external fund-raising will allow us to invest in additional faculty resources to guarantee consistent course availability without continuing to potentially overburden existing faculty and in improving course quality and high-performance computing integration into all core and technical CSS elective courses.Marketing Plan.  Describe the institution's marketing plan, including timelines for the proposed program. Expenses associated with this plan should be clearly described in the program budget.
+
+RESPONSE:
+Our marketing plan for the proposed degree relies on a combination of social media to reach a general student population and a combination of in-person contact and print media to reach our primary student markets. We expect to initially attract most students through targeted marketing to current and former UMass students, current students at other regional universities, and international students at JKLU in India and elsewhere. We will actively reach out to sophomore and junior undergraduate students at UMass, particularly those currently pursuing a major in SBS. Our plans include short visits to selected classes, advertising information at selected campus events, working with advisors in SBS and the Honors College, and posting printed fliers to encourage current students to apply. SBS Alumni surveys also indicate that almost 2/3 of SBS Alumni are interested in obtaining statistical methods and software training, and we plan to work with Alumni relations to publicize our program with alumni in person and by mail. We plan to contact selected departments at regional universities, including other UMass institutions, and circulate information about the program including providing printed brochures and posters for distribution. Additionally, we will be proactively marketing and recruiting international students, both through the JKLU Double Degree program and through international education agents identified by the UMass International Programs Office.
+As the program grows in size and reputation, we expect to attract high quality applicants from a wider range of backgrounds. Several program elements (e.g., the postdoctoral fellowships, funding for student research and conference attendance) are expected to help the program build a stellar reputation within academic communities, and we plan to look for ways to market through those academic communities in ways most likely to reach faculty likely to recommend the program to undergraduates (e.g., sponsorship and ads for academic conferences). Additionally, we plan to build and actively maintain a substantively focused social media presence, including a Twitter and Facebook presence. The program website will feature weekly “research spotlights” of student research projects prepared by an undergraduate Media Intern. 
+International agents typically charge a fee of $2500 for each international student they refer to the program who enrolls, and this cost is included in our marketing budget. We expect the degree to be very attractive to international students as it will likely qualify for the STEM OPT allowing students to live and work in the US for 3 years after degree completion. In 2018, around 40% of Master’s students at UMass were from in-state, but we expect to enroll a smaller proportion of in-state students as our program is much larger than average, will likely qualify for the STEM OPT, and will rely less on accelerated master’s students as a primary target market.
+
+
+III. External Review.  
+Guidelines for selecting reviewers: The review team should embody senior leadership experience in higher education or in the industry, expert scholarship in the discipline of study, and a terminal degree. It is not necessary for each individual member of the external review team to have all these qualifications but the whole team of 2 or 3 individuals must be comprised of these qualifications.  Candidates must be disinterested in the proposed program and have no prior relationship to the institution. Candidates working in the same sector as the proposed program (e.g. MA community college, MA state university, UMass) are not eligible as external reviewers.
+
+Obtain BHE approval of reviewers in advance by sending the candidates vitae as an email attachment to whagan@dhe.mass.edu.  
+
+Do not send url links, rather provide the full vitae. (It is not necessary to include the entire list of a candidate’s publications.) 
+ 
+After approval is obtained, provide the review questions (Form F) to members of the approved review team. External reviewer report(s) MUST be submitted by the institution for review by DHE staff, exactly as it was provided to the institution by the external review team. 
+
+Include the review team report and the institutional response to the review with the application documents.        
+
+ 
+
+APPENDICES TO BE ATTACHED
+
+A. Curriculum Outline Form – attached 
+B. Program Goals, Objectives and Assessment Form – attached 
+C. Approved LOI Enrollment Projection Form – attached 
+D. Budget Form – attached 
+E. Faculty Form – attached 
+
+Faculty Vitae - provided as separate Word document
+Course Syllabi – provided as separate Word document
+
+External Review Team Report
+must be submitted in original form as received by the institution
+
+Institutional Response to External Review
+
+
+
+
+
+Form A2: Program Proposal Graduate Program Curriculum Outline
+(Insert additional rows as necessary.)
+
+Major Required (Core) Courses (Total # of courses required = 4)Course NumberCourse TitleCredit HoursPOLISCI 601Fundamentals of Data Science (new course)3POLISCI 750Research Design3POLISCI 755Introduction to Quantitative Analysis3ORRES-ECON 701Quantitative Methods3JOURNAL 604Advanced Data-Driven Storytelling (new course)3Sub-total # Core Credits Required12Advanced Technical Course Choices (Total courses required = 3 or more)ANTHRO 681Advanced Quantitative Methods in Anthropology3COMM 621Quantitative Methods in Research3COMM 623Survey of Digital Behavioral Data (new course)3COMM 794AContent Analysis3ECON 652Econometrics (new course)3ECON 751Mathematical Methods for Economics3JOURNAL 641Web Design for Journalists (new course)3REGIONPL 625Intro to Geographic Information Systems3REGIONPL 673Spatial Analysis and Regional Development3POLISCI 652Experiments (new course)3POLISCI 753Network Analysis3POLISCI 758Text as Data (new course)3POLISCI 791EA Text Analysis3POLISCI 797BABayesian Statistics3POLISCI 797SRSurvey Design 3RES-ECON 702Econometric Methods3RES-ECON 703Econometrics III3RES-ECON 740Experimental Economics3RES-ECON 797AST - Time Series & Forecasting3RES-ECON 797DST – Panel Data Econometrics3SOCIOL 712Social Statistics II3SOCIOL 714Survey Research3SOCIOL 794NSocial Networks3SOCIOL 797NENetworks & Health3SOCIOL 795ES – Modeling Emergence3STAT 501Methods Applied Statistics3STAT 515Statistics I3STAT 516Statistics II 3STAT 526Design of Experiments3STAT 535Statistical Computing3STAT 598CStatistical Consulting Practicum3STAT 610Bayesian Statistics3STAT 625Regression Modeling3CS courseCourses TBD in seat exchange agreement3Subtotal # Concentration Credits Required9Other/Elective Course Choices (Total courses required = up to 3) (attach list as needed)COMM 626Social Media in Everyday Life (new course)3COMM 627Communications, Tech. and Work (new course) 3ECON 503Advanced Microeconomic Theory3ECON 504Advanced Macroeconomic Theory3ECON 568The Practice of Development Policy and Intl. Cooperation3JOURNAL 646Media, Technology, and Culture (new course)3JOURNAL 647International Journalism (new course)3REGIONPL 642Economic Development Issues in Planning3POLISCI 608Public Opinion3POLISCI 609Media and Politics (new course)3POLISCI 688Corporate Lobbying (new course)3POLISCI 791BAmerican Political Behavior Proseminar3POLISCI 791T American Political Institutions Proseminar3POLISCI 792MPMoney & Power3RES-ECON 711Applied Micro3RES-ECON 712Applied Macro3RES-ECON 720Env & Nat Resource Econ3RES-ECON 732Topic: Industrial Organization3SOCIOL 793DOrganizational Theory3SPP 597GPInternet Governance & Information Policy3SPP 651Social Inequalities, Technology and Public Policy3Any Advanced Technical Elective (above list)SBS Course >500with Faculty consent and Program Director ApprovalSubtotal # Elective Credits Required9Curriculum SummaryTotal number of courses required for the degree10Total credit hours required for degree                              30Prerequisite or Other Additional Requirements: N/A
+
+
+Form B: Proposed Program Goals, Objectives, Assessments1
+
+GoalMeasurable ObjectiveStrategy for AchievementTimetableAssessment Regular, high quality training in data analytics for all UMass Amherst studentsIncreased consistency and availability of courses in data analytics and CSS; graduate student satisfaction with methods coursework Coordinate methods course scheduling across SBS; admit qualified M.S. students; prepare M.S. students for advanced courseworkAnnual, starting Winter 2020Track annual data analytics course offerings.Become financially self-sustainingReach enrollment target of 15-20 studentsMarket and recruit students domestically and through international partnersFall 2021Monitor student interest via SalesForce and student applications and enrollment through Graduate School.Increase funding for DACSS research and teachingReach enrollment target of 40-45 students; hire 2 post-doctoral teaching fellows; provide funds for teaching support, class research projects, conference travel, HPC access, etc.Effectively market program and recruit prospective students; Ensure funding of research and teaching programs through MOUs and annual program budget* Fall 2024
+* Starting Fall 2021
+* (See above)
+* Annual Report submissions from department
+* Track new funding Successful career placement for program graduatesJob placement ratesTrack student placement through surveys and utilize the Office of Career and Professional DevelopmentStarting Fall 2022Annual Alumni SurveyEncourage student-faculty research, faculty research productivity, and faculty retentionFaculty research productivity; funding available for faculty-student research; CSSI-affiliate faculty retentionProvide faculty with opportunity to teach advanced methods courses, encourage faculty to engage in student partnerships by offering additional research funding and well-trained research assistanceStarting Summer 2020
+
+* Weekly “research spotlight” of student research
+* Annual Faculty Survey
+* Annual Report
+
+
+
+Form C: Approved Projected Enrollment2
+
+Year 1
+Year 2Year 3Year 4
+Year 5New Full-Time153045
+5050Continuing Full-Timen/an/a
+n/an/an/aNew Part-Time
+n/a
+n/a
+n/a
+n/a
+n/aContinuing Part-Time
+n/a
+n/a
+n/a
+n/a
+n/a
+Totals153045
+5050
+
+
+
+Form D: Budget 
+
+One Time/ Start Up CostsAnnual EnrollmentCost CategoriesYear 1Year 2Year 3Year 4Year 50Full Time Faculty
+(Salary & Fringe)$70,000$212,800$297,311$301,857$308,244Part Time/Adjunct Faculty
+(Salary & Fringe)$15,000$15,000$30,000$30,000$30,000$31,500Staff$92,650$196,186 $230,936 $262,772 $270,049$7,000General Administrative Costs$22,000$50,000$75,000$80,000$80,000Instructional Materials, Library Acquisitions$6000$55000$11000$11000$11000Facilities/Space/EquipmentField & Clinical Resources$4,800Marketing$4,896 $23,646 $36,146 $4,896 $4,896 Dept. Revenue Share$63,000$150,000$225,000$200,000$200,000JKLU Scholarships$117,121$120,635$124,25400One Time/Start-Up SupportAnnual IncomeRevenue SourcesYear 1Year 2Year 3Year 4Year 5$2,000GrantsTuition$426,056$1,097,093$1,695,009$1,854,772$1,909,107Fees$22,300Departmental Funding($22,300)$70,000Dean/Provost Funding$145,863$210,450$114,3413$83,4600Admin Revenue Share($202,376)($521,119)($805,129)($881,017)($906,825)$30,500TOTALS0 0 0 $76,844 $75,129,867 
+
+
+
+Form E: Faculty Form:
+Include with this form, complete vitae for each faculty member listed
+
+Summary of Faculty Who Will Teach in Proposed ProgramList full-time faculty first, alphabetically by last name. Add additional rows as necessary.Name of faculty member (Name, Degree and Field, Title)
+Check if   TenuredCourses Taught (C) to indicate core course. (OL) next to any course currently taught online.Number of sectionsDivision of College of EmploymentFull- or Part- time in Program
+Full- or part- time in other department or program (Please specify)Sites where individual will teach program coursesAlve, SeyramCommunication,1College of SocialPart-timeCommunicationMainPh.D. in CommunicationTechnology andand BehavioralCampusStudiesWorkSciencesAssistant ProfessorBadgett, Lee
+Ph.D. in Economics Professor* Gender, Sexuality, Work, and Pay: Empirical Perspectives1College of Social and Behavioral SciencesPart-timeEconomicsMain CampusBauner, Christoph Ph. D in Economics Assistant Professor* Econometrics Methods1College of Social and Behavioral SciencesPart-timeResource EconomicsMain CampusBautista, Martha Fuentes Ph.D. in Communication Senior Lecturer* Social Inequal., Tech., and Public Policy
+* Internet GovernanceCollege of Social and Behavioral SciencesCommunicationMain CampusName of faculty member (Name, Degree and Field, Title)
+Check if   TenuredCourses Taught (C) to indicate core course. (OL) next to any course currently taught online.Number of sectionsDivision of College of EmploymentFull- or Part- time in Program
+Full- or part- time in other department or program (Please specify)Sites where individual will teach program coursesBlinder, Scott
+Ph.D. in Political Science Assistant Professor* Survey Design
+* Public Opinion
+* Political Behavior1
+1
+1College of Social and Behavioral SciencesPart-timePolitical ScienceMain Campus* Experiments1Braun, Joshua* Web design for Journalists
+* Media, Technology, Culture1College of SocialPart-timeJournalismMainPh.D. Communicationsand BehavioralCampusAssociate ProfessorSciences1Conlon, Erin* Design of Experiments
+* Regression Modeling1College ofPart-timeMath &MainPh.D. in BiostatisticsNatural SciencesStatisticsCampusAssociate Professor1Cort, David
+Ph.D. in Sociology Associate Professor* Social Statistics II1College of Social and Behavioral SciencesPart-timeSociologyMain CampusDe Oliviera, Angela Ph.D. in Economics Associate Professor* Experimental Economics1College of Social and Behavioral SciencesPart-timeResource EconomicsMain CampusName of faculty member (Name, Degree and Field, Title)
+Check if   TenuredCourses Taught (C) to indicate core course. (OL) next to any course currently taught online.Number of sectionsDivision of College of EmploymentFull- or Part- time in Program
+Full- or part- time in other department or program (Please specify)Sites where individual will teach program coursesDube, Arindrajit Ph.D. in Economics Professor* Labor Economics1College of Social and Behavioral SciencesPart-timeEconomicsMain CampusFlaherty, Patrick Ph.D. in Electrical
+Engineering and Computer Science
+Assistant Professor* Statistical Computing1College of Natural SciencesPart-timeMath & StatisticsMain CampusGanguli, Ina
+Ph.D. in Public Policy Associate Professor* Econometrics
+* Labor Economics1
+1College of Social and Behavioral SciencesPart-timeEconomicsMain CampusGile,  Krista Ph.D. in Statistics
+Associate Professor* Regression Modeling
+* Stat. Consulting Practicum1College of Natural SciencesPart-timeMath & StatisticsMain CampusGross, Justin
+Ph.D. in Statistics and Public Policy Associate Professor* Intro to Quant. Analysis (C)
+* Text Analysis1
+
+
+1College of Social and Behavioral SciencesPart-timePolitical ScienceMain CampusJeneralczuk, Joanna Senior Lecturer* Methods Applied Statistics1College of Natural SciencesPart-timeMath & StatisticsMain Campus
+
+
+
+Name of faculty member (Name, Degree and Field, Title)
+Check if   TenuredCourses Taught (C) to indicate core course. (OL) next to any course currently taught online.Number of sectionsDivision of College of EmploymentFull- or Part- time in Program
+Full- or part- time in other department or program (Please specify)Sites where individual will teach program coursesJensen, David
+D.Sc. in Engineering and Policy
+Professor* CS courses TBD1College of Information and Computer SciencePart-timeComputer ScienceMain CampusKamilar, Jason
+Ph.D. in Anthropology Associate Professor* Advanced Quant. Analysis in Anthropology1College of Social and Behavioral SciencesPart-timeAnthropologyMain CampusKing, Lawrence Peter Ph.D. in Sociology Professor* The Political Economy of Public Health1College of Social and Behavioral SciencesPart-timeEconomicsMain CampusKitts, James
+Ph.D. in Sociology Professor* Modeling Emergence1College of Social and Behavioral SciencesPart-timeSociologyMain CampusMorzuch, Bernard Ph.D. in Agricultural Economics  
+Professor* Time Series & Forecasting1College of Social and Behavioral SciencesPart-timeResource EconomicsMain CampusNdikumana, Leonce Ph.D. in Economics Professor* Advanced Microeconomic Theory1College of Social and Behavioral SciencesPart-timeEconomicsMain CampusNteta, Tatishe
+Ph.D. in Political Science Associate Professor* Political Behavior
+* Survey Research
+* Experiments1
+
+1
+1College of Social and Behavioral SciencesPart-timePolitical ScienceMain CampusName of faculty member (Name, Degree and Field, Title)
+Check if   TenuredCourses Taught (C) to indicate core course. (OL) next to any course currently taught online.Number of sectionsDivision of College of EmploymentFull- or Part- time in Program
+Full- or part- time in other department or program (Please specify)Sites where individual will teach program coursesOng, Jonathan Corpus Ph.D. in Sociology Associate Professor* Social Media in Everyday Life1College of Social and Behavioral SciencesPart-timeCommunicationMain CampusPachucki, Mark Ph.D. in Sociology Assistant Professor* Networks & Health1College of Social and Behavioral SciencesPart-timeSociologyMain CampusPaik, Anthony* Survey Research Methods
+* Social Networks
+* Social Statistics II1College of SocialPart-timeSociologyMainPh.D. in Sociologyand BehavioralCampusProfessor1Sciences1Razmi, Arslan* Advanced Macroeconomic Theory
+* Mathematical Methods for Economics1College of SocialPart-timeEconomicsMainPh.D. in Economicsand BehavioralCampusProfessorSciences1Renski, Henry* Spatial Analysis and Regional Development
+* Intro to Geographic Information Systems
+* Economic Development Issues in Planning1Part-timeLARPMainPh.D. in Regional PlanningCampusAssociate Professor1
+1Rice, Doug* Into to Data Science (C, OL)
+* Text Analysis1College of SocialPart-timePoliticalMainPh.D. in Political Scienceand BehavioralScience/LegalCampusAssistant Professor1SciencesStudiesName of faculty member (Name, Degree and Field, Title)
+Check if   TenuredCourses Taught (C) to indicate core course. (OL) next to any course currently taught online.Number of sectionsDivision of College of EmploymentFull- or Part- time in Program
+Full- or part- time in other department or program (Please specify)Sites where individual will teach program coursesRojas, Christian Ph.D. in Economics Associate Professor* Quantitative Methods1College of Social and Behavioral SciencesPart-timeResource EconomicsMain CampusRolfe, Meredith* Research Methods (C)
+* Pol. and Social Network Analysis
+* Experiments1College of SocialPart-timePoliticalMainPh.D. in Political Scienceand BehavioralScienceCampusAssociate Professor1Sciences1Scharrer, Erica Ph.D. in Mass Communications Professor* Content Analysis1College of Social and Behavioral SciencesPart-timeCommunicationMain CampusSher, Itai
+Ph.D. in Economics 
+Associate Professor* Mathematical Methods for Economics1College of Social and Behavioral SciencesPart-timeEconomicsMain CampusSmith-Doerr, Laurel Ph.D. in Sociology Professor* Organizational Theory1College of Social and Behavioral SciencesPart-timeSociologyMain CampusStaudenmayer, John Ph.D. in Operations Research* Bayesian Statistics1College of Natural SciencesPart-timeMath & StatisticsMain CampusProfessorName of faculty member (Name, Degree and Field, Title)
+Check if   TenuredCourses Taught (C) to indicate core course. (OL) next to any course currently taught online.Number of sectionsDivision of College of EmploymentFull- or Part- time in Program
+Full- or part- time in other department or program (Please specify)Sites where individual will teach program coursesVicarelli, Marta* Ecological Economics
+* Econometrics1College of Social and Behavioral SciencesPart-timeEconomicsMainPh.D. in Sustainable Dev.CampusAssistant Professor1Wang, Emily
+Ph.D. in Economics Assistant Professor* Topics in Advanced Econometrics1College of Social and Behavioral SciencesPart-timeResource EconomicsMain CampusWiener, Noe M. Ph.D. in Economics Lecturer* Econometrics1College of Social and Behavioral SciencesPart-timeEconomicsMain CampusXu, Wayne* Quantitative Methods in Research
+* Survey of Digital Behavioral Data1College of Social
+and Behavioral
+SciencesPart-timeCommunicationMainPh.D. in CommunicationCampusAssistant Professor1Young, Kevin* Money & Power
+* Corporate Lobbying1College of Social
+and Behavioral
+SciencesPart-timePoliticalPh.D in GovernmentScienceAssociate Professor1
+
+
+Name of faculty member (Name, Degree and Field, Title)
+Check if   TenuredCourses Taught (C) to indicate core course. (OL) next to any course currently taught online.Number of sectionsDivision of College of EmploymentFull- or Part- time in Program
+Full- or part- time in other department or program (Please specify)Sites where individual will teach program coursesYoshihara, Naoki* Advanced Microeconomic Theory
+* Mathematical Methods for Economics1College of Social
+and Behavioral
+SciencesPart-timeEconomicsMainPh.D. in EconomicsCampusProfessor1Zamith, Rodrigo* Data-Driven Storytelling
+* International Journalism (C)1College of Social
+and Behavioral
+SciencesPart-timeJournalismMainPh.D. in MassCampusCommunication1Assistant Professor
+
+1 Add assessment data to Form B in approved LOI. 
+2 Paste Form C from approved LOI on this page.
+---------------
+
+------------------------------------------------------------
+
+---------------
+
+------------------------------------------------------------
+
+Institution:   UMass Amherst	                          Proposed Degree: Masters in Data Analytics and 
+Computational Social Science
+
+
+
+
+
+
+
+
+1
+
+

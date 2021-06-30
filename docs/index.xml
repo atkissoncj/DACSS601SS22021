@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Data Analytics and Computational Social Science</title>
+    <link>https://github.com/DACSS/dacss_course_website</link>
+    <atom:link href="https://github.com/DACSS/dacss_course_website/index.xml" rel="self" type="application/rss+xml"/>
+    <description>This is a DACSS course website for student work offered at UMass Amherst.
+</description>
+    <image>
+      <title>Data Analytics and Computational Social Science</title>
+      <url>https://github.com/DACSS/dacss_course_website/images/DACSS_Round_Network.png</url>
+      <link>https://github.com/DACSS/dacss_course_website</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Welcome to DACSS 601</title>
+      <dc:creator>Meredith Rolfe</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/welcome</link>
+      <description>Welcome to DACSS 601: Foundations of Data Science. We hope you enjoy 
+reading what we have to say!</description>
+      <category>welcome</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/welcome</guid>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,296 @@
+
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      2.5rem;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #881c1c;
+  --header-color:    #63666a;
+  --body-color:      #63666a;
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --title-font:      'Open Sans', sans-serif;
+  --heading-font:    'Open Sans', sans-serif;
+  --mono-font:       'Open Sans', sans-serif;
+  --body-font:       'Open Sans', sans-serif;
+  --navbar-font:     'Open Sans', sans-serif;
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+.posts-with-sidebar .posts-list {
+      width: 80%;
+}
+
+.posts-with-sidebar .posts-sidebar {
+      width: 16%;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size: 20px;
+  --text-size: 18px;
+  --hover-color:      white;
+  --bkgd-color:       #881c1c;
+}
+
+.distill-site-footer {
+  --text-color:       white;
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #881c1c;
+}
+
+.footer-center {
+  grid-column-start: middle-start /  text-end;
+  grid-row: 1 / 2;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below */
+
+/* Logo sizing */
+.logo img {
+  padding-bottom: 3px;
+  margin-bottom: 0px;
+  padding-right: 0px;
+  vertical-align: unset;
+}
+
+/* Categories / labels */
+.dt-tag {
+  color: #881c1c !important;
+}
+
+/* Navbar right links */
+.nav-right a {
+  font-size: 16px;
+}
+
+/* PDF on syllabus page */
+embed[type="application/pdf"] {
+  height: 800px;
+  width: 700px;
+}
+
+/* Index page title (coursename) */
+
+d-title h1{
+  text-align: left;
+  font-variant: small-caps;
+  margin-top: .5rem;
+  margin-bottom: .25rem;
+  font-size: 2rem;
+  color: #881c1c;
+  line-height: 1.1 !important;
+  /* font-weight: 200; */
+}
+
+.index-title h1{
+  text-align: center;
+  font-variant: small-caps;
+  margin-top: .5rem;
+  margin-bottom: .25rem;
+  font-size: 2rem;
+  color: #881c1c;
+  line-height: 1.1 !important;
+  /* font-weight: 200; */
+}
+
+/* Index page subtitle (semester) */
+d-title h2 {
+  text-align:left;
+  font-variant: small-caps;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  color: #881c1c;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+d-article h2 {
+  text-align:left;
+  font-variant: small-caps;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+.index-title h2{
+  text-align: center;
+  font-variant: small-caps;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  color: #881c1c;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+/* Size of user images */
+.rounded-circle {
+  height: unset;
+  width: unset;
+  border-radius: unset;
+}
+
+/* Footer social media icons */
+.social-media-icons .footer {
+  margin-right: 5px;
+}
+
+/* 
+  Remove weird formating with footer icons in posts
+  Note: not supported for Safari browsers.
+*/
+.fa-placeholder {
+  all: unset;
+}
+
+/* Align navbar button on top right side (only applies for mobile) */
+.nav-toggle {
+  padding-top: 10px !important;
+}
+
+/* remove image on mobile */
+
+.image-hide{}
+
+@media screen and (max-width: 520px) {
+    .image-hide {
+      display: none;
+    }
+    .title {
+      font-size: 14px !important;
+    }
+    .distill-site-header {
+      --title-size: 14px; 
+    }
+    .distill-site-header .title {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    .d-title h1{
+      font-size: 22px;
+    }
+    .d-title h2{
+      font-size: 16px;
+    }
+    .index-title {
+      margin-bottom: 30px;
+    }
+    .index-title h1{
+      font-size: 22px;
+    }
+    .index-title h2{
+      font-size: 16px;
+    }
+    .d-article div {
+      margin-top:20px;
+      margin-bottom:20px;
+    }
+    .posts-list .posts-list-caption {
+      margin: 0;
+    }
+    .posts-list {
+      margin-top: 20px;
+    }
+    .posts-list .post-preview p{
+      font-size:12;
+    }
+    /* Fix padding for posts */
+    .posts-container {
+      padding-right: 0%;
+    }
+    /* DACSS footer image */
+    #dacss-footer {
+      width: 70%;
+    }
+    /* 'Student Submissions text in index */
+    .posts-list-caption {
+      font-size: 18px;
+    }
+    .nav-right a {
+      text-align: center !important;
+    }
+    /* PDF on syllabus page */
+    embed[type="application/pdf"] {
+      height: 400px;
+      width: 500px;
+    }
+  }
+
+@media screen and (max-width: 360px) {
+  .title {
+    font-size: 12px !important;
+  }
+  .distill-site-header {
+    --title-size: 12px; 
+  }
+  .distill-site-header .title {
+      padding-left: 2px;
+      padding-right: 2px;
+  }
+  .index-title {
+      margin-bottom: 30px;
+  }
+  /* Fix padding for posts */
+  .posts-container {
+      padding-right: 0%;
+  }
+  /* DACSS footer image */
+  #dacss-footer {
+      width: 70%;
+  }
+  /* 'Student Submissions text in index */
+  .posts-list-caption {
+      font-size: 18px;
+  }
+  /* PDF on syllabus page */
+  embed[type="application/pdf"] {
+    height: 400px;
+    width: 300px;
+  }
+}
+
+

@@ -1,0 +1,23 @@
+---
+title: "Student first post"
+description: |
+  Here is a plot I made with mtcars.
+author:
+  - name: John Smith
+    url: https://example.com/norajones
+date: 03-25-2021
+categories:
+  - scatterplot
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Viola!
+
+```{r echo=FALSE}
+plot(mtcars$mpg)
+```
+
+
+

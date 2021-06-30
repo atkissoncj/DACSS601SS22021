@@ -1,0 +1,26 @@
+---
+title: "Sync"
+---
+
+Simply run the following code below to sync up with the main repository.
+
+```{r}
+# Automate syncing a fork
+# Assumes user has Git installed
+# Guide retrieved from https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork
+message('Adding new remote upstream repo...')
+system('git remote add upstream https://github.com/DACSS/dacss_course_website.git')
+
+message('Fetching latest changes from main/upstream repository.')
+system('git fetch upstream')
+
+message('Switching to main branch.')
+system('git checkout main')
+
+message('Attempting to sync forked repo with main repo..')
+system('git merge upstream/main')
+
+message('Success! Your local repo is synced. Please commit and push any necessary changes.')
+```
+
+
