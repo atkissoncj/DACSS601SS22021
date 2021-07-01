@@ -4,36 +4,36 @@
       "path": "about.html",
       "title": "About the Course",
       "author": [],
-      "contents": "\nThis is some information about DACSS and the course. Can be prefilled in with something interesting.\nCourse Instructor:\nInstructor Name\n\n\n\n",
-      "last_modified": "2021-06-23T08:31:54+05:30"
+      "contents": "\r\nThis is some information about DACSS and the course. Can be prefilled in with something interesting.\r\nCourse Instructor:\r\nCurtis Atkisson\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-06-30T18:39:58-04:00"
     },
     {
       "path": "index.html",
       "title": "Student Submissions",
       "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2021-06-24T08:35:21+05:30"
+      "contents": "\r\n\r\n\r\n\r\n\r\nDACSS 601\r\n\r\n\r\nSS2 2021\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-06-30T18:40:10-04:00"
     },
     {
       "path": "instructor.html",
-      "title": "Instructor Name",
+      "title": "Curtis Atkisson",
       "author": [],
-      "contents": "\n\n          \n          \n          \n          \n          Data Analytics and Computational Social Science\n          \n          \n          About\n          Syllabus\n          Students\n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            Instructor Name\n          \n          \n            \n              I am some sort of person, blah blah biography.\n            \n            \n              I am some sort of person, blah blah biography.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    \n          \n          \n            \n          \n          \n          \n            \n              \n              \n              \n              \n              \n            \n          \n          \n          \n\n    \n  ",
-      "last_modified": "2021-06-23T08:31:54+05:30"
+      "contents": "\r\n\r\n          \r\n          \r\n          \r\n          \r\n          Data Analytics and Computational Social Science\r\n          \r\n          \r\n          About\r\n          Syllabus\r\n          Students\r\n          \r\n          \r\n          \r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            Curtis Atkisson\r\n          \r\n          \r\n            \r\n              I am some sort of person, blah blah biography.\r\n            \r\n            \r\n              I am some sort of person, blah blah biography.\r\n            \r\n          \r\n\r\n          \r\n            \r\n              \r\n                  \r\n                    \r\n                      LinkedIn\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      Twitter\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      GitHub\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      Email\r\n                    \r\n                  \r\n                \r\n                              \r\n          \r\n\r\n          \r\n            \r\n              \r\n                                \r\n                  \r\n                    LinkedIn\r\n                  \r\n                \r\n                                \r\n                  \r\n                    Twitter\r\n                  \r\n                \r\n                                \r\n                  \r\n                    GitHub\r\n                  \r\n                \r\n                                \r\n                  \r\n                    Email\r\n                  \r\n                \r\n                              \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    \r\n          \r\n          \r\n            \r\n          \r\n          \r\n          \r\n            \r\n              \r\n              \r\n              \r\n              \r\n              \r\n            \r\n          \r\n          \r\n          \r\n\r\n    \r\n  ",
+      "last_modified": "2021-06-30T18:40:11-04:00"
     },
     {
       "path": "students.html",
       "title": "Students",
       "author": [],
-      "contents": "\n\n\n\nMax\n\n\n\n\n",
-      "last_modified": "2021-06-23T08:31:54+05:30"
+      "contents": "\r\n\r\n\r\n\r\nBecvar,Kristina\r\nChecker,Sanjana\r\nCortez,Stephanie\r\nCote,Nathan\r\nFleming,Emerson\r\nFranks,Amy\r\nGenovese,Alexander\r\nGuerrero,Vanessa\r\nJimenez,Sarah\r\nLiu,Yi-Sheng\r\nLyamuya,Alphoncina\r\nMax\r\nProscino,Michael\r\nSiakakaba,James\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-06-30T18:40:25-04:00"
     },
     {
       "path": "syllabus.html",
       "title": "Course Syllabus",
       "author": [],
-      "contents": "\nEdit this page with the course syllabus and/or other information. Feel free to delete the example file below as well.\n(Note that when knitted, it might display as ‘Couldn’t load plugin’. Simply click ‘Open in Browser’ at the top left side of the screen to view your page looks like.)\nSyllabus:\n\n\n\n\n\n",
-      "last_modified": "2021-06-23T08:31:54+05:30"
+      "contents": "\r\nEdit this page with the course syllabus and/or other information. Feel free to delete the example file below as well.\r\n(Note that when knitted, it might display as ‘Couldn’t load plugin’. Simply click ‘Open in Browser’ at the top left side of the screen to view your page looks like.)\r\nSyllabus:\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-06-30T18:40:21-04:00"
     }
   ],
   "collections": ["posts/posts.json"]

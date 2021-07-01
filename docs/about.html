@@ -1961,6 +1961,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-size: 16px;
   }
 
+  /* PDF on syllabus page */
+  embed[type="application/pdf"] {
+    height: 800px;
+    width: 700px;
+  }
+
   /* Index page title (coursename) */
 
   d-title h1{
@@ -2101,6 +2107,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       .nav-right a {
         text-align: center !important;
       }
+      /* PDF on syllabus page */
+      embed[type="application/pdf"] {
+        height: 400px;
+        width: 500px;
+      }
     }
 
   @media screen and (max-width: 360px) {
@@ -2128,6 +2139,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* 'Student Submissions text in index */
     .posts-list-caption {
         font-size: 18px;
+    }
+    /* PDF on syllabus page */
+    embed[type="application/pdf"] {
+      height: 400px;
+      width: 300px;
     }
   }
 
@@ -2287,7 +2303,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2315,7 +2331,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a class="logo" href="https://dacss.github.io/dacss_course_website/">
+<a class="logo" href="https://www.umass.edu">
 <img src="images/UMass%20White%20Workmark%20Horiz.png" alt="Logo"/>
 </a>
 <a href="index.html" class="title">Data Analytics and Computational Social Science</a>
@@ -2324,7 +2340,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="about.html">About</a>
 <a href="syllabus.html">Syllabus</a>
 <a href="students.html">Students</a>
-<a href="https://github.com/dacss/dacss_course_website">
+<a href="https://github.com/atkissoncj/DACSS601SS22021.git">
 <i class="fab fa-github-alt fa-1x" aria-hidden="true"></i>
 </a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2346,7 +2362,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-article">
 <p>This is some information about DACSS and the course. Can be prefilled in with something interesting.</p>
 <h2 id="course-instructor">Course Instructor:</h2>
-<p><a href="instructor.html">Instructor Name</a></p>
+<p><a href="instructor.html">Curtis Atkisson</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

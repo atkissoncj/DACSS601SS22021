@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-07-01-curtis-test/",
+    "title": "Curtis Test",
+    "description": "I'm testing something.",
+    "author": [
+      {
+        "name": "Curtis Atkisson",
+        "url": "http://umass.edu/sbs/dacss"
+      }
+    ],
+    "date": "2021-07-01",
+    "categories": [],
+    "contents": "\r\n\r\n[1] 2\r\n[1] 4\r\n[1] 4\r\n[1] TRUE\r\n\r\nCheck that out.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-07-01T10:10:35-04:00",
+    "input_file": "curtis-test.knit.md"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to DACSS 601",
     "description": "Welcome to DACSS 601: Foundations of Data Science. We hope you enjoy \nreading what we have to say!",
@@ -13,9 +30,9 @@
     "categories": [
       "welcome"
     ],
-    "contents": "\n\n\n\n",
+    "contents": "\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-06-23T08:31:54+05:30",
-    "input_file": {}
+    "last_modified": "2021-07-01T10:10:41-04:00",
+    "input_file": "welcome.knit.md"
   }
 ]

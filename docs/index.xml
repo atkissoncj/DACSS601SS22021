@@ -12,7 +12,15 @@
       <link>https://github.com/DACSS/dacss_course_website</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Curtis Test</title>
+      <dc:creator>Curtis Atkisson</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test</link>
+      <description>I'm testing something.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test</guid>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Welcome to DACSS 601</title>
       <dc:creator>Meredith Rolfe</dc:creator>
