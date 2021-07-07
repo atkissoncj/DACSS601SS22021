@@ -13,8 +13,8 @@
     "categories": [],
     "contents": "\r\n\r\n[1] 2\r\n[1] 4\r\n[1] 4\r\n[1] TRUE\r\n\r\nCheck that out.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-01T10:10:35-04:00",
-    "input_file": "curtis-test.knit.md"
+    "last_modified": "2021-07-01T10:10:37-04:00",
+    "input_file": {}
   },
   {
     "path": "posts/welcome/",
@@ -32,7 +32,7 @@
     ],
     "contents": "\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-01T10:10:41-04:00",
-    "input_file": "welcome.knit.md"
+    "last_modified": "2021-07-01T10:10:42-04:00",
+    "input_file": {}
   }
 ]

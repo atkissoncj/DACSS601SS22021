@@ -10,5 +10,5 @@ Edit this page with the course syllabus and/or other information. Feel free to d
 ## Syllabus:
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.align="center"}
-knitr::include_graphics('./example-syllabus.pdf')
+knitr::include_graphics('./DACSS_601ss2syl.pdf')
 ```
