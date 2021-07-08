@@ -1,11 +1,11 @@
 ---
-title: Curtis Test
+title: Here is a test post
 description: |
   I'm testing something.
 author:
 - name: Curtis Atkisson
   url: http://umass.edu/sbs/dacss
-date: 07-01-2021
+date: 07-08-2021
 output:
   distill::distill_article:
     self_contained: no

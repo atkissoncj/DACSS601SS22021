@@ -4,11 +4,11 @@ description: "Welcome to DACSS 601: Foundations of Data Science. We hope you enj
   \nreading what we have to say!\n"
 categories: welcome
 author:
-- name: Meredith Rolfe
+- name: Curtis Atkisson
   url: http://umass.edu/sbs/dacss
   affiliation: DACSS
   affiliation_url: http://umass.edu/sbs/dacss
-date: 03-25-2021
+date: 07-08-2021
 output:
   distill::distill_article:
     self_contained: no

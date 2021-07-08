@@ -3,7 +3,7 @@ title: "About the Course"
 site: distill::distill_website
 ---
 
-This is some information about DACSS and the course. Can be prefilled in with something interesting.
+This course is DACSS 601: Data Science Fundamentals. In this course, we give you exposure to the basic tools you will need to conduct data analysis in R.
 
 
 ## Course Instructor:

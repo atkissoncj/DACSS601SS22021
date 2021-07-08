@@ -1,16 +1,16 @@
 ---
 links:
 - label: LinkedIn
-  url: https://linkedin.com/
+  url: https://www.linkedin.com/in/curtis-atkisson-6730284/
 - label: Twitter
-  url: https://twitter.com/
+  url: twitter.com/curtatkisson
 - label: GitHub
-  url: https://github.com/
+  url: https://github.com/atkissoncj
 - label: Email
-  url: mailto:example@email.com
+  url: mailto:catkisson@umass.edu
 output: postcards::jolla
 title: Curtis Atkisson
 image: https://drive.google.com/uc?export=view&id=NA
 ---
  
-I am some sort of person, blah blah biography.
+I am an evolutionary anthropologist who is passionate about helping people use quantitative skills to understand the world around them.
