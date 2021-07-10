@@ -1,6 +1,6 @@
 ---
 title: "Nathan Cote"
-image: "tobi.jpg"
+image: 
 links:
   - label: GitHub
     url: "https://github.com/NathanCoyote"
@@ -10,6 +10,3 @@ output:
   postcards::trestles
 ---
  
-I am not a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I do not work on the Oculus team at Facebook. I don't know enough about baseball, 
-true crime podcasts, or causal inference.
