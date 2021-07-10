@@ -1,6 +1,6 @@
 ---
 title: "Nathan Cote"
-image: 
+image: natePic.jpeg
 links:
   - label: GitHub
     url: "https://github.com/NathanCoyote"
