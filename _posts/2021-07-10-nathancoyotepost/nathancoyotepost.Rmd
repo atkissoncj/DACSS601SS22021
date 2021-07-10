@@ -1,0 +1,24 @@
+---
+title: "NathanCoyotePost"
+description: |
+  This is a test post for posting on GitHub.
+author:
+  - name: Nathan Cote
+date: 07-10-2021
+categories:
+  - homework 6
+  - NathanCoyotePost
+  - Nathan Cote, who is me
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+# let's _see_ if this works
+## only one way to find out
+### yessir
+#this is a comment only, but if I space after the '#' symbol it becomes a header
+
+# this is a comment only, but if I space after the '#' symbol it becomes a header, like so!
