@@ -1,5 +1,5 @@
 ---
-title: "Tobi Burns"
+title: "Nathan Cote"
 image: "tobi.jpg"
 links:
   - label: LinkedIn
@@ -11,7 +11,7 @@ links:
   - label: Email
     url: "mailto:email@email.com"
 output:
-  postcards::jolla
+  postcards::trestles
 ---
  
 I am a classically trained data scientist living in the San Francisco Bay Area. 
