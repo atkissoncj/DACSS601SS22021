@@ -1,19 +1,41 @@
 ---
-title: "Tobi Burns"
-image: "tobi.jpg"
+title: "Kristina Becvar"
+image: "PhotoKBec19.jpg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
+    url: "https://linkedin.com/in/kbecvar"
   - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://twitter.com/kitka2001"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/kbec19"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:kbecvar@umass.edu"
 output:
-  postcards::jolla
+  postcards::trestles
 ---
  
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+## Bio
+
+Kristina Becvar is beginning her M.S. DACSS studies after completing her B.A. in May 2021  the UMass UWW Program. In the decades between beginning her undergraduate career and completing it, she developed a career in law firm administration in various capacities. Her work with the American Bar Association Legal Technology Committee sparked her interest in how technology can bring equity to the legal system. She hopes to incorporate her knowledge of the legal industry and the business of law into her passion for advocacy using data science.
+
+Kristina is a resident of the Chicago suburb of Oak Park, Illinois and shares her bungalow with her husband Josh, dog David, and cats Lana and Murphy. The cats were COVID adoptions in the fall of 2020 when her law student daughter and forestry student son moved in with friends when faced with the option of continuing to quarantine with mom during the pandemic.
+
+## Education
+
+**University of Massachusetts Amherst** | Amherst, MA
+
+M.S. DACSS Student | July 2021
+
+**University of Massachusetts Amherst** | Amherst, MA
+
+B.A. in Business Studies | September 2019 - May 2021
+
+**Illinois State University** | Normal, IL
+
+English Literature, History | September 1993 - May 1996
+
+## Experience
+
+**Eleven Consulting** | Principal Consultant | January 2019 - Present
+
+**Legal Administration** | Firm Administrator, COO | June 2002 - February 2020
