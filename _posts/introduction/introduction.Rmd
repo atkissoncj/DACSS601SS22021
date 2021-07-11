@@ -1,4 +1,18 @@
 ---
+output:
+  distill::distill_article: default
+  html_document: default
+---
+blogbuilder::exclude_docs()
+
+
+---
+output:
+  distill::distill_article: default
+  html_document: default
+---
+
+---
 title: "Introduction"
 description: |
   This is Homework Six
@@ -24,5 +38,6 @@ One is named Lana, and she is calm and chill.
 One is named Murphy, and he is a tornado.
 
 To have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.
+
 
 
