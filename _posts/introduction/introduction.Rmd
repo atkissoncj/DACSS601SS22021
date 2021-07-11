@@ -5,18 +5,12 @@ output:
 ---
 
 ---
-output:
-  distill::distill_article: default
-  html_document: default
----
-
----
 title: "Introduction"
 description: |
   This is Homework Six
 author: "Kristina Becvar"
 date: 07-11-2021
-categories: Homework
+categories: "Homework"
 output:
   distill::distill_article:
     self_contained: false
