@@ -4,6 +4,10 @@ description: |
   This is Homework Six
 author: "Kristina Becvar"
 date: 07-11-2021
+categories: 
+  - homework 6
+  - introduction
+  - DACSS 601
 output:
   distill::distill_article:
     self_contained: false
@@ -15,11 +19,12 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-I have two cats lying on me as I write this.
+  ## I have two cats lying on me as I write this.
 
-One is named Lana, and she is calm and chill.
-One is named Murphy, and he is a tornado.
+  # One is named Lana, and she is calm and chill.
 
-To have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.
+  # One is named Murphy, and he is a tornado.
+
+  # To have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.
 
 
