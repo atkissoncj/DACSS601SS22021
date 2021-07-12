@@ -1,0 +1,24 @@
+---
+title: "iris"
+description: |
+  This is part of HW6
+author:
+  - name: Mike Proscino
+    url: http://umass.edu/sbs/dacss
+date: 07-12-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
