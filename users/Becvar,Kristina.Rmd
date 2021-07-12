@@ -1,6 +1,6 @@
 ---
 title: "Kristina Becvar"
-image: "PhotoKBec19.jpg" #I cannot figure out how to get this photo to pull, I placed it in the images folder, and then under students, but neither worked. It tells me the photo file is not found in resource path.
+image: "C:\Users\krist\OneDrive\Documents\GitHub\DACSS601SS22021\images"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/in/kbecvar"
