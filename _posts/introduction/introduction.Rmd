@@ -8,7 +8,8 @@ output:
 title: "Introduction"
 description: |
   This is Homework Six
-author: "Kristina Becvar"
+author: 
+- name: Kristina Becvar
 date: 07-11-2021
 categories: "Homework"
 output:
