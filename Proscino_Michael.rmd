@@ -1,0 +1,18 @@
+---
+title: "Hello!"
+image: "herzl.jpg"
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/michael-proscino-mpa-4b4235bb/"
+  - label: Letterboxd
+    url: "https://letterboxd.com/inrodwetrust/"
+  - label: Email
+    url: "mailto:mproscino@umass.edu"
+output:
+  postcards::onofre
+---
+ 
+Hi! My name is Mike, I live in Connecticut with my wife & our puppy Otto. I like movies, spreadsheets, & R!

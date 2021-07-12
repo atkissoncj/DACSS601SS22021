@@ -3,6 +3,7 @@ title: "new.post"
 output: html_document
 
 distill::create_post(title = 'iris', draft = TRUE)
+postcards::create_postcard(file = 'Proscino_Michael.rmd', template = "onofre")
 ---
 
 ```{r setup, include=FALSE}
