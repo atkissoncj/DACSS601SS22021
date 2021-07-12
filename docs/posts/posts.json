@@ -13,26 +13,7 @@
     "categories": [],
     "contents": "\r\n\r\n[1] 2\r\n[1] 4\r\n[1] 4\r\n[1] TRUE\r\n\r\nCheck that out.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-08T13:49:51-04:00",
-    "input_file": "curtis-test.knit.md"
-  },
-  {
-    "path": "posts/welcome/",
-    "title": "Welcome to DACSS 601",
-    "description": "Welcome to DACSS 601: Foundations of Data Science. We hope you enjoy \nreading what we have to say!",
-    "author": [
-      {
-        "name": "Curtis Atkisson",
-        "url": "http://umass.edu/sbs/dacss"
-      }
-    ],
-    "date": "2021-07-08",
-    "categories": [
-      "welcome"
-    ],
-    "contents": "\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2021-07-08T13:50:00-04:00",
-    "input_file": "welcome.knit.md"
+    "last_modified": "2021-07-11T16:16:00-07:00",
+    "input_file": {}
   }
 ]

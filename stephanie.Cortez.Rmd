@@ -1,0 +1,19 @@
+---
+title: "Stephanie Cortez"
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130 
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/"
+  - label: Email
+    url: "mailto:email@email.com"
+output:
+  postcards::jolla_blue
+---
+ 
+Hello from Cali! My name is Stephanie Cortez. No pic. Learning R (idk what I'm doing). In DACSS program.   
