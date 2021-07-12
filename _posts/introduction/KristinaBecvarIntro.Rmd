@@ -11,7 +11,7 @@ description: |
 author: 
 - name: Kristina Becvar
 date: 07-11-2021
-categories: "Homework"
+categories: "Homework 6"
 output:
   distill::distill_article:
     self_contained: false
