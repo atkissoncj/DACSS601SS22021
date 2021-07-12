@@ -1,0 +1,40 @@
+---
+title: "introduction"
+description: |
+  An introduction and a few lines of R.
+author:
+  - name: Chris Elwood
+    url: http://umass.edu/sbs/dacss
+date: 07-12-2021
+categories:
+  - homework 6
+  - introduction
+  - chris elwood
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+Hi! My name is Chris and I'm a senior undergraduate at UMass majoring in Philosophy with a minor in Computer Science. I'm taking this course as an elective because I'm certain data analysis and data science will continue to revolutionize the way humans understand the world in the 21st century and beyond, and I'm curious to learn as much as I can. I'm originally from Concord, Massachusetts and also lived in New York City for a long period of time.
+
+
+Here's a few simple lines of R, it's thrilling stuff:
+```{r}
+2+2
+5*5
+prime_numbers <- c(2,3,5,7,11,13,17)
+prime_numbers
+double_prime_numbers <- prime_numbers * 2
+double_prime_numbers
+double_prime_numbers > prime_numbers
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

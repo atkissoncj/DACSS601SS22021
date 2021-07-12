@@ -1,6 +1,6 @@
 ---
-title: "Tobi Burns"
-image: "tobi.jpg"
+title: "Chris Elwood"
+image: "../images/profile.jpg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"
@@ -9,11 +9,9 @@ links:
   - label: GitHub
     url: "https://github.com/"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:celwood@umass.edu"
 output:
-  postcards::jolla
+  postcards::jolla_blue
 ---
  
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+I am a senior undergraduate at UMass majoring in Philosophy with a minor in Computer Science. I'm very curious to learn about the many ways data analysis is transforming how we understand the world.
