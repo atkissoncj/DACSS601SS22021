@@ -1,6 +1,6 @@
 ---
 title: "Kristina Becvar"
-image: "PhotoKBec19.jpg"
+image: "/PhotoKBec19.jpg" #I cannot figure out how to get this photo to pull, I placed it in the images folder, and then under students, but neither worked. It tells me the photo file is not found in resource path.
 links:
   - label: LinkedIn
     url: "https://linkedin.com/in/kbecvar"
@@ -12,6 +12,7 @@ links:
     url: "mailto:kbecvar@umass.edu"
 output:
   postcards::trestles
+#I also get the error message pandoc document conversion failed with error 99 Execution halted. I thought it had to do with the photo but I removed the photo and get the message again.
 ---
  
 ## Bio
