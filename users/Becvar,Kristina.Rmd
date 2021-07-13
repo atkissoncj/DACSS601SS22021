@@ -1,6 +1,6 @@
 ---
 title: "Kristina Becvar"
-image: "C:\Users\krist\OneDrive\Documents\GitHub\DACSS601SS22021\images\students\PhotoKBec19"
+image: "PhotoKBec19.jpg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/in/kbecvar"
