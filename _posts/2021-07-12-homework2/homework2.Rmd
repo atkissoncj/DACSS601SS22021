@@ -1,0 +1,27 @@
+---
+title: "Homework2"
+description: Difficult Assignment1 
+  A short description of the post.
+author:
+  - name: Vanessa G
+    url: http://umass.edu/sbs/dacss
+date: 07-12-2021
+Categories: 
+  - homework 
+  - Vanessa
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
