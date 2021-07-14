@@ -1,0 +1,73 @@
+---
+title: "Enare"
+description: |
+  Greetings from Allie
+author:
+  - name: Allie Lyamuya
+date: 07-12-2021
+categories:
+  - homework 6
+  - enare
+  - allie lyamuya
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction to Class
+Hello everyone! My name is Alphoncina (Allie) and I'm a master of public policy
+and administration student here at UMass. I'm interested in ways that data and 
+data science can be used to facilitate policy making and informing policymakers. 
+
+
+## Statistical Analysis in R
+
+```{r echo=TRUE, results='hide'}
+library(tidyverse)
+library(nycflights13)
+library(ggplot2)
+```
+
+```{r}
+# Load some data from the `nycflights13` package
+flights <- flights
+airlines <- airlines
+
+# Inspect the data
+colnames(flights)
+colnames(airlines)
+
+str(flights)
+str(airlines)
+
+dim(flights)
+dim(airlines)
+```
+
+```{r}
+# Creating a histogram for `flights$arr_delay`
+hist(flights$arr_delay, 
+     main = "Histogram of Arrival Delay",
+     xlab = "flights$arr_delay",
+     col = "light green")
+
+# select variables from the flights data
+flightsSelected <- flights %>%
+  dplyr::select(carrier, dep_time, dep_delay, arr_time, arr_delay, flight, 
+                origin, dest, air_time, distance)
+flightsSelected
+```
+
+
+***
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
