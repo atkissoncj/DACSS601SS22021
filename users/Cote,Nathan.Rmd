@@ -1,19 +1,12 @@
 ---
-title: "Tobi Burns"
-image: "tobi.jpg"
+title: "Nathan Cote"
+image: natePic.jpeg
 links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/NathanCoyote"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "nathancote@umass.edu"
 output:
-  postcards::jolla
+  postcards::trestles
 ---
  
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
