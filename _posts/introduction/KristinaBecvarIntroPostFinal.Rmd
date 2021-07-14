@@ -32,4 +32,18 @@ One is named Murphy, and he is a tornado.
 
 To have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.
 
+This mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:
+
+```{r eval=TRUE, echo=FALSE}
+
+library(cowsay)
+library(wikifacts)
+library(magrittr)
+wiki_randomfact(
+  n_facts = 1L,
+  fact = c("any", "didyouknow", "onthisday", "inthenews"),
+  bare_fact = FALSE,
+  repeats = TRUE) %>% say(by = "cow")
+
+```
 
