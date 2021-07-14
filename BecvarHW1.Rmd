@@ -59,9 +59,20 @@ colnames(scdb.data)
 
 ## Executing an operation that requires creating a new object and doing something to that object
 
++ I am creating a new object, "
 
+```{r echo=TRUE}
+
+```
 
 ## Executing a creative and fun manipulation to a portion of these data that hasn't been covered so far in the course materials
+
+```{r echo=TRUE}
+library(ggplot2)
+ggplot(scdb.data, col1, colour = ) +
+  geom_bars(mapping = aes())
+  
+```
 
 ## Citation
 
