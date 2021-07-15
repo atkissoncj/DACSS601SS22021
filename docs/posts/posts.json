@@ -1,5 +1,17 @@
 [
   {
+    "path": "posts/introduction/",
+    "title": "Untitled",
+    "description": {},
+    "author": [],
+    "date": "2021-07-12",
+    "categories": [],
+    "contents": "\r\nI have two cats lying on me as I write this.\r\nOne is named Lana, and she is calm and chill.\r\nOne is named Murphy, and he is a tornado.\r\nTo have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-07-12T15:13:11-05:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-07-01-curtis-test/",
     "title": "Here is a test post",
     "description": "I'm testing something.",
@@ -13,26 +25,7 @@
     "categories": [],
     "contents": "\r\n\r\n[1] 2\r\n[1] 4\r\n[1] 4\r\n[1] TRUE\r\n\r\nCheck that out.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-08T13:49:51-04:00",
-    "input_file": "curtis-test.knit.md"
-  },
-  {
-    "path": "posts/welcome/",
-    "title": "Welcome to DACSS 601",
-    "description": "Welcome to DACSS 601: Foundations of Data Science. We hope you enjoy \nreading what we have to say!",
-    "author": [
-      {
-        "name": "Curtis Atkisson",
-        "url": "http://umass.edu/sbs/dacss"
-      }
-    ],
-    "date": "2021-07-08",
-    "categories": [
-      "welcome"
-    ],
-    "contents": "\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2021-07-08T13:50:00-04:00",
-    "input_file": "welcome.knit.md"
+    "last_modified": "2021-07-10T23:47:55-05:00",
+    "input_file": {}
   }
 ]
