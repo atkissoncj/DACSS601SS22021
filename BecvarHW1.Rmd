@@ -86,6 +86,7 @@ scdb.1976 <- filter(scdb.tidy2, term == "1976")
 
 ## **Doing one thing to some portion of these data that hasn't been covered so far in the course materials**
 
+<<<<<<< HEAD
 + I wanted to look at graphics of the ideology trend of cases in the supreme court term of 1976. I used ggplot to create a bar chart. 
 
 ```{r echo=TRUE}
@@ -98,6 +99,20 @@ ggplot(scdb.1976, aes(x = ideology)) +
 ```
 
 + That got me wanting to try something different, and look up how to display it in a different color and with percentages instead of volume on the y axis.
+=======
++ I wanted to look at graphics of the ideology trend of cases in the supreme court term of 1976. I used ggplot to create a bar char in coneflower blue. 
+
+```{r echo=TRUE}
+ggplot(scdb.1976, aes(x = ideology)) + 
+  geom_bar(fill = "cornflowerblue", 
+           color="black") +
+  labs(x = "Ideology", 
+       y = "Frequency", 
+       title = "Ideology of Court Decisions in 1976")
+```
+
++ That got me wanting to try something different, and look up how to display it in a different color and with percentages instead of volume.
+>>>>>>> de66a6b2271956d6170104f318002513436faec5
 
 ```{r echo=TRUE}
 library(dplyr)
@@ -113,14 +128,22 @@ ggplot(plotdata,
        aes(x = reorder(ideology, -pct),
            y = pct)) + 
   geom_bar(stat = "identity", 
+<<<<<<< HEAD
            fill = "darkred", 
+=======
+           fill = "indianred3", 
+>>>>>>> de66a6b2271956d6170104f318002513436faec5
            color = "black") +
   geom_text(aes(label = pctlabel), 
             vjust = -0.25) +
   scale_y_continuous(labels = percent) +
   labs(x = "Ideology", 
        y = "Frequency", 
+<<<<<<< HEAD
        title = "Ideology of Supreme Court Decisions in 1976")
+=======
+       title = "Ideology of Court Decisions in 1976")
+>>>>>>> de66a6b2271956d6170104f318002513436faec5
 ```
 
 + I can definitely see how the process of visualizing data can be fun once I understand the language better.
