@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(blogbuilder)
 library(distill)
 library(tidyverse)
+iamstudent()
 ```
 
 ## **Reading in the data:**
@@ -122,4 +123,4 @@ ggplot(plotdata,
        title = "Ideology of Supreme Court Decisions in 1976")
 ```
 
-+ I can definitely see how the process of visualizing data can be fun once I understand the language better.
++ I can definitely see how the process of visualizing data can be fun once I understand the language better. However, given the resulting percentages adding up to 101%, I clearly have a lot left to learn!
