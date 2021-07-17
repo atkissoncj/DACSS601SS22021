@@ -1,0 +1,54 @@
+---
+title: Homework Two
+description: |
+  This assignment is cleaning a selected dataset and describing the data
+author:
+- name: Kristina Becvar
+date: 07-16-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(blogbuilder)
+library(distill)
+library(tidyverse)
+iamstudent()
+```
+
+## **Reading in the data:**
+
+```{r echo=TRUE}
+scdb.data <- read.delim("scdb.csv", sep = ",", header  = TRUE)
+```
+
+## **About the dataset:**
+
++ This data is...
+
+## **Describing the data:**
+
+```{r echo=TRUE}
+dim(scdb.data)
+```
++ There are XXX rows (observations) in this database
++ There are XXX columns (variables) in the database
+
+## **Checking the column names**
+
+```{r echo=TRUE}
+colnames(scdb.data)
+```
+
+## **Investigating the variables**
+
+```{r echo=TRUE}
+(scdb.tidy <- as_tibble(scdb.data))
+```
+
+## **Executing an operation that requires creating a new object and doing something to that object**
+
+
