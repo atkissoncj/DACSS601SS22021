@@ -5,7 +5,7 @@ description: |
 author:
   - name: Sarah Jimenez
     url: http://umass.edu/sbs/dacss
-date: 07-12-2021
+date: 07-16-2021
 categories:
   -homework 6
   -sarah jimenez
@@ -20,6 +20,14 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### A Moderate Header to Draw the Eye
 
-An unilluminating sentence fragment.
+An unilluminating sentence fragment.  
+
 *Another sentence fragment but italicized.*
+  
+**Here is a random block quote**   
+
+> Incremental improvement over time! 
+
+
