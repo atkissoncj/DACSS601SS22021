@@ -1,0 +1,243 @@
+---
+title: "hw1.Sc"
+description: | 540th attempt at submitting Hw 1
+date: 07-16-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+# HomeworkOneTemplate.r
+# This tells us what this file does
+# 
+# Stephanie Cortez 7.14.2021
+
+# Reminder: the # "comments" out a line of text; that is, if you precede a line with "#",
+# then R ignores that line
+
+# =-=-=-=-=-=-=-=-=-=-=-=-
+# front end material.
+# =-=-=-=-=-=-=-=-=-=-=-=-
+
+library(tidyverse)
+
+# =-=-=-=-=-=-=-=-=-=-=-=-
+# Some quick code reminders
+# =-=-=-=-=-=-=-=-=-=-=-=-
+
+# Here's an example of storing an object.
+hello <- paste("Hello World!")
+
+# Look over there ->
+# In the "Environment" window, you'll see that you've created an object that is
+# now stored in your workspace.
+
+# Now type hello. R "pastes" the line of text that says "Hello World!" as your output.
+hello
+# Ok, with those reminders out of the way, let's get some data into R
+
+# =-=-=-=-=-=-=-=-=-=-=-=-=-
+# Reading in Data
+# =-=-=-=-=-=-=-=-=-=-=-=-=-
+
+# What you need to do from here on out is dependent on the dataset
+# you choose to work with! Here's an example of how I'd approach this with
+# a file using "+" as a delimiter
+
+## Using a database I found in LAUSD website on SENIS (School Equity Needs Index Scores) for elementary schools. File is SENIScoresElementaryShools-20212022.xlsx.
+
+library(readxl)
+read_excel("~/R/SENIScoresElementaryShools-20212022.xlsx")
+myMainData <- read_excel("~/R/SENIScoresElementaryShools-20212022.xlsx")
+
+# let's unpack that a bit.
+# I'm creating an object called myData
+# I'm using the read.delim() function to read it in
+# I'm specifying the name of the file; it's in my working directory!
+# I'm specifying the delimiter (here, "+", but often commas (",") or tabs ("\t")
+# I'm specifying that there is a header included in the data that features the variable names
+# Don't forget to look at the data import samples code to get examples of other ways to import data.
+
+# Now, let's check the first few rows. I'll let you remember how to do that!
+as_tibble(myMainData)
+head(myMainData)
+
+# A tibble: 6 x 45
+`School Year` `School Name` `Cost Center Code` Index `School Type` `Board District` `Local District`
+<chr>         <chr>                      <dbl> <chr> <chr>                    <dbl> <chr>           
+  1 2021-2022     107th St El              1585701 ES    1-Elementary                 7 S               
+2 2021-2022     109th St El              1583601 ES    1-Elementary                 7 S               
+3 2021-2022     10th St El               1708201 ES    1-Elementary                 2 C               
+4 2021-2022     112th St El              1588401 ES    1-Elementary                 7 S               
+5 2021-2022     116th St El              1586301 ES    1-Elementary                 7 S               
+6 2021-2022     118th St El              1574001 ES    1-Elementary                 7 S      
+
+# How many rows of data are there in this dataset?
+## 509 rows in full dataset. 45 rows in tibble.
+
+# How many columns are there in the dataset?
+## 45 columns in full dataset. 6 columns in tibble
+
+# What are the column names?
+## 'School Year' 'School Name' 'Cost Center Cod~' 'School Type' 'Board District' 'Local District'
+
+# Should any of these columns have gather() or spread() applied to them to make them more
+# useful? If so, perform those operations. If you want a challenge, try to use
+# pivot_longer() or pivot_wider() instead.
+pivot_wider(myMainData, "Local District")
+# A tibble: 6 x 1
+`Local District`
+<chr>           
+  1 S               
+2 C               
+3 E               
+4 W               
+5 NW              
+6 NE  
+
+# Do one operation that requires creating a new object and doing something to that object
+tidyMainTest<- gather(myMainData, key = "Local District", value = "Homeless Rate", -c("School Name", "School Year"))
+head(tidyMainTest)
+# A tibble: 6 x 4
+`School Year` `School Name` `Local District` `Homeless Rate`
+<chr>         <chr>         <chr>            <chr>          
+  1 2021-2022     107th St El   Cost Center Code 1585701        
+2 2021-2022     109th St El   Cost Center Code 1583601        
+3 2021-2022     10th St El    Cost Center Code 1708201        
+4 2021-2022     112th St El   Cost Center Code 1588401        
+5 2021-2022     116th St El   Cost Center Code 1586301        
+6 2021-2022     118th St El   Cost Center Code 1574001 
+
+# Do one thing to some portion of these data that hasn't been covered so far in the course materials. Be creative and have fun!S
+## Pulling [x,y] value
+myMainTibble [5,5]
+# A tibble: 1 x 1
+`School Type`
+<chr>        
+  1 1-Elementary 
+## Pulling/Printing first 10 rows and all columns
+print(myMainData, n=10, width = Inf)
+# A tibble: 509 x 45
+`School Year` `School Name` `Cost Center Code` Index `School Type` `Board District`
+<chr>         <chr>                      <dbl> <chr> <chr>                    <dbl>
+  1 2021-2022     107th St El              1585701 ES    1-Elementary                 7
+2 2021-2022     109th St El              1583601 ES    1-Elementary                 7
+3 2021-2022     10th St El               1708201 ES    1-Elementary                 2
+4 2021-2022     112th St El              1588401 ES    1-Elementary                 7
+5 2021-2022     116th St El              1586301 ES    1-Elementary                 7
+6 2021-2022     118th St El              1574001 ES    1-Elementary                 7
+7 2021-2022     122nd St El              1588701 ES    1-Elementary                 7
+8 2021-2022     135th St El              1587701 ES    1-Elementary                 1
+9 2021-2022     153rd St El              1582201 ES    1-Elementary                 7
+10 2021-2022     156th St El              1580801 ES    1-Elementary                 7
+`Local District` `Locn Code` `CDS Code` `Total Enroll` `Foster Count` `Foster Rate`
+<chr>                  <dbl>      <dbl>          <dbl>          <dbl>         <dbl>
+  1 S                       5857    1.96e13            833             16         0.019
+2 S                       5836    1.96e13            354              2         0.006
+3 C                       7082    1.96e13            470              4         0.009
+4 S                       5884    1.96e13            350             11         0.031
+5 S                       5863    1.96e13            410              8         0.02 
+6 S                       5740    1.96e13            505              1         0.002
+7 S                       5887    1.96e13            637              4         0.006
+8 S                       5877    1.96e13            612              4         0.007
+9 S                       5822    1.96e13            373              4         0.011
+10 S                       5808    1.96e13            374              5         0.013
+`Foster Rank` `Homeless Count` `Homeless Rate` `Homeless Rank` `EL Count` `EL Rate`
+<dbl>            <dbl>           <dbl>           <dbl>      <dbl>     <dbl>
+  1            89               11           0.013              77        287     0.345
+2            43                5           0.014              78        118     0.333
+3            58                6           0.013              76        238     0.506
+4            99                3           0.009              65         87     0.249
+5            90                1           0.002              42         92     0.224
+6            21               14           0.028              93        100     0.198
+7            47               13           0.02               88        173     0.272
+8            49               20           0.033              95        157     0.257
+9            67                1           0.003              44         94     0.252
+10            77                5           0.013              78         32     0.086
+`EL Rank` `SEL Count` `SEL Rate` `SEL Rank` `Unduplicated Count` `Unduplicated Rate`
+<dbl>       <dbl>      <dbl>      <dbl>                <dbl>               <dbl>
+  1        78         214      0.252         91                  824               0.989
+2        74          91      0.249         90                  341               0.963
+3        99          26      0.048         10                  460               0.979
+4        48         113      0.3           96                  346               0.989
+5        44         100      0.227         85                  402               0.981
+6        40         141      0.251         90                  497               0.984
+7        52         109      0.172         63                  621               0.975
+8        50         130      0.197         75                  579               0.946
+9        48          95      0.233         86                  334               0.895
+10        20          45      0.121         35                  231               0.618
+`Unduplicated Rank` `Susp Rate` `Susp Rate Rank` `Dibels Gr1 BM BOY` `DIBELS Gr 1 Rank`
+<dbl>       <dbl>            <dbl>               <dbl>              <dbl>
+  1                  96       0.002               69               0.382                 77
+2                  72       0                    0               0.365                 80
+3                  86       0                    0               0.513                 50
+4                  96       0                    0               0.254                 95
+5                  88       0                    0               0.365                 80
+6                  92       0                    0               0.429                 69
+7                  82       0                    0               0.349                 83
+8                  58       0.001               60               0.451                 65
+9                  40       0.002               72               0.4                   75
+10                  17       0                    0               0.911                  1
+`Chronic Rate` `Chronic Abs Rank` `LI-SWD Count` `LI-SWD Rate` `LI-SWD Rank`
+<dbl>              <dbl>          <dbl>         <dbl>         <dbl>
+  1          0.334                 91             48         0.058            38
+2          0.313                 85             25         0.071            52
+3          0.17                  12             32         0.068            50
+4          0.369                 97             37         0.106            88
+5          0.261                 60             34         0.083            69
+6          0.363                 96             51         0.101            86
+7          0.237                 46             48         0.075            58
+8          0.263                 61             45         0.074            55
+9          0.232                 42             43         0.115            93
+10          0.163                 10             18         0.048            27
+`ISTAR 2016-17` `ISTAR 2017-18` `ISTAR 2018-19` `ISTAR 3Yr Avg` `ISTAR Rank`
+<dbl>           <dbl>           <dbl>           <dbl>        <dbl>
+  1              57              31              82            56.7           97
+2              35              15              13            21             71
+3              28              17              24            23             75
+4              30              22              33            28.3           84
+5              10              14              18            14             51
+6              15              18               9            14             51
+7              45              41              21            35.7           90
+8              16              21              17            18             62
+9               9              10              36            18.3           64
+10               8               4              17             9.7           31
+`Asthma Age Adjusted Rate` `Asthma Severity Rank` `Non-Fatal Gunshot Injury Count`
+<dbl>                  <dbl>                            <dbl>
+  1                       94.8                     84                              223
+2                       94.8                     84                              152
+3                       89.3                     81                               16
+4                       94.8                     84                              152
+5                       94.8                     84                              152
+6                       94.8                     84                               83
+7                       94.8                     84                               83
+8                       94.8                     84                               38
+9                       94.8                     84                               38
+10                       44.6                     12                               29
+`Non-Fatal Gunshot Injury Rank` `Seni Score 2020-21`
+<dbl>                <dbl>
+  1                              96                 82.8
+2                              94                 72.0
+3                              26                 56.6
+4                              94                 85.4
+5                              94                 72.6
+6                              82                 71.2
+7                              82                 71.8
+8                              53                 63.3
+9                              53                 63.2
+10                              43                 20.4
+`Seni Rank for the 2021-2022 Allocation`
+<dbl>
+  1                                       10
+2                                       67
+3                                      196
+4                                        6
+5                                       61
+6                                       74
+7                                       68
+8                                      139
+9                                      141
+10                                      453
+# ... with 499 more rows
