@@ -21,5 +21,5 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-A random sentence fragment.
-*Another fragment, but italicized.*
+An unilluminating sentence fragment.
+*Another sentence fragment but italicized.*
