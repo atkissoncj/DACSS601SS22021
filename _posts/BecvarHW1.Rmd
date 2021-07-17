@@ -16,7 +16,6 @@ knitr::opts_chunk$set(echo = FALSE)
 library(blogbuilder)
 library(distill)
 library(tidyverse)
-iamstudent()
 ```
 
 ## **Reading in the data:**
