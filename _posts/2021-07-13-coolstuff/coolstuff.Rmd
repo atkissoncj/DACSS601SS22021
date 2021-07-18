@@ -1,4 +1,3 @@
----
 title: "Cool_Stuff"
 description: Emerson's Introduction
 author: 
