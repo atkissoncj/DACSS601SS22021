@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://github.com/DACSS/dacss_course_website/about.html</loc>
+<<<<<<< HEAD
     <lastmod>2021-07-13T11:19:56-04:00</lastmod>
   </url>
   <url>
@@ -27,5 +28,40 @@
   <url>
     <loc>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test/</loc>
     <lastmod>2021-07-13T11:19:56-04:00</lastmod>
+=======
+    <lastmod>2021-07-10T23:47:55-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/BecvarHW1.html</loc>
+    <lastmod>2021-07-14T00:24:14-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/</loc>
+    <lastmod>2021-07-10T23:47:56-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/instructor.html</loc>
+    <lastmod>2021-07-10T23:47:56-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/students.html</loc>
+    <lastmod>2021-07-10T23:47:56-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/syllabus.html</loc>
+    <lastmod>2021-07-10T23:47:56-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/Test.html</loc>
+    <lastmod>2021-07-13T22:53:34-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/posts/introduction/</loc>
+    <lastmod>2021-07-12T15:13:11-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test/</loc>
+    <lastmod>2021-07-10T23:47:55-05:00</lastmod>
+>>>>>>> 344ec63fc41d72d2aaa8829ee0585467e4e62445
   </url>
 </urlset>
