@@ -1,0 +1,15 @@
+library(blogbuilder)
+library(distill)
+exclude_docs()
+iamstudent()
+library(tidyverse)
+create_post(title = 'Alexander Genovese Final Project Post', draft = TRUE)
+library(readxl)
+GDPdata <- read_excel("WorldBankGDPData.xlsx")
+GDPdataObsv <- nrow(GDPdata)
+GDPdataVar <- ncol(GDPdata)
+GDPdata[GDPdata == 0] <- NA
+GDPdataValue <- GDPdata$`Millions of US Dollars`
+GDPdataMean <- mean(GDPdataValue, na.rm = TRUE)
+GDPdataMedian <- median(GDPdataValue, na.rm = TRUE)
+GDPdataRange <- max(GDPdataValue, na.rm = TRUE) - min(GDPdataValue, na.rm = TRUE)

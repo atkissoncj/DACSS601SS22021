@@ -1,0 +1,23 @@
+---
+title: "Genovese HW1"
+description: |
+  For homework 1, I used the congressional hearings csv file. I first used the function read.delim to read in my file "congressional_hearings.csv that was stored in my working directory to a new data variable called myData. I then used the function head(myData) to output the first five lines of the .csv file. 
+author:
+  - name: Alex Genovese
+date: 07-12-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
