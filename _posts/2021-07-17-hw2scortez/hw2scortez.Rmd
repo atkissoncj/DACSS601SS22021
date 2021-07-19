@@ -102,7 +102,7 @@ table(select(sENI_20212022, "Local District"))
   `mean(\`EL Rate\`)`
                 <dbl>
 1               0.237
-## Average rates within variables are low, less than %25. Homeless Rate mean is %0.9 , Foster Rate mean is %0.9, and English Learner Rate mean is %24.
+## Average rates within variables are low, less than 25%. Homeless Rate mean is 0.9% , Foster Rate mean is 0.9%, and English Learner Rate mean is 24%.
 
 
 
