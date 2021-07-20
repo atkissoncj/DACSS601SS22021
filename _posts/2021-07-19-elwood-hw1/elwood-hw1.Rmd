@@ -1,0 +1,24 @@
+---
+title: "Elwood HW1"
+description: |
+  A short description of the post.
+author: Chris Elwood
+date: 07-19-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+I chose the COVID 19 response survey dataset. I used select() to focus on a particular set of questions, then used mutate() and recode() to change the responses to a particular question to numbers, and used summarize() to find their mean value.
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
