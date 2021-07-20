@@ -1,0 +1,71 @@
+---
+title: "Homework One Resubmission"
+description: |
+  My Homework One no longer shows on GitHub, so here's a resubmit.
+author: Nathan Cote
+date: 07-20-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+The data I am using was provided by The Armed Conflict Location & Event Data Project. I happened to be slacking off from practicing R, when in the middle of an article (posted on theintercept.com, if I'm not mistaken) the above mentioned project was referenced. The dataset I chose to use is entitled Disorder Involving the Media. It contains "data on political violence and demonstrations involving journalists and media workers."
+
+#First I am going to load the data, which you will not see since I used the "include=FALSE" option in my first chunk of code.
+```{r read data, include=FALSE}
+library(dplyr)
+library(readxl) 
+journalist.data <- read_excel("C:/Users/Nathan/Documents/Projects/DACSS601SS22021/_data/journalists_Jul02.xlsx")
+```
+
+#Next, I am going to preview the first few rows of the data using the "head()" function.
+
+
+```{r view head, echo=FALSE}
+head(journalist.data)
+```
+Hmm, can't seem to glean much from that... we'll come back to select specific variables in a bit. For now, let's see how many rows and columns are in this dataset. I can do this with the "ncol()" and "nrow()" functions. 
+Doing this, I see that there are `r ncol(journalist.data)` columns and `r nrow(journalist.data)` rows in the journalist.data dataset. What you don't see in the last sentence is that my row and column amounts were calculated within backstrokes (these little guys ``, not to be confused with these guys' '. See chapter 27.2 in the _R for Data Science_ textbook for this trick).
+
+#Let me give you the column names from my dataset.
+
+```{r column names, echo=FALSE}
+colnames(journalist.data)
+```
+
+#As far as my untrained eye can see, there is no need for the gather() or spread() function in the dataset. Each variable has its own column, each observation its own row, and each value has its own cell. Great job ACLED, very professional!
+
+#Take a look at the following columns of data:
+
+```{r TIME_PRECISION, echo=FALSE}
+select(journalist.data,"EVENT_DATE", "TIME_PRECISION")
+```
+
+Looking through the codebook for the data I can see that the `TIME_PRECISION` column refers to the precision of the time an event occurred in the previous column `EVENT_DATE`. A code of "1" indicates the event happened on a specific day, a code of "2" indicates the even happened sometime during a specified week, and a code of "3" sometime during a specified month. I am going to recode these numbers to correspond to text. I'll include the code as a reference to what I did.
+
+```{r recode, echo=TRUE}
+
+journalist.data <- mutate(journalist.data, certaintyOfDate= recode(TIME_PRECISION, `1`= "dayOf", `2`= "weekOf", `3`= "monthOf")) 
+head(select(journalist.data, certaintyOfDate, EVENT_DATE))
+```
+
+And there you have it! You can now see I've recoded the `TIME_PRECISION` column to `certaintyOfDate`. I've also included the `EVENT_DATE` column so you can see what the `TIME_PRECISION` column is referring to.
+
+###Now for the be creative and have fun part. I'll include the code so y'alls can see. I spent some time in the forums trying to get the barchart on the up and up. Enjoy!
+
+```{r something fun, echo=TRUE}
+
+eventType <- table(journalist.data$EVENT_TYPE)
+
+eventType
+
+par(mar=c(12,4,1,1))
+      
+barplot(eventType, main="Event Type Occurance Since January 2020", ylim=c(0, 8000), xlab= "", las= 2, cex.names=1)
+
+mtext(text="Event Type", side = 1, line=5)
+
+```
+
