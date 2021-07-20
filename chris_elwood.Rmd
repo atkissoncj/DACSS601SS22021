@@ -1,0 +1,17 @@
+---
+title: "Chris Elwood"
+image: "images/students/chrisprofile.jpg"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/"
+  - label: Email
+    url: "mailto:celwood@umass.edu"
+output:
+  postcards::jolla_blue
+---
+ 
+I'm here.
