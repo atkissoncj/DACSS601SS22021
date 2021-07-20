@@ -1,0 +1,6 @@
+library(blogbuilder)
+library(distill)
+library(postcards)
+blogbuilder::exclude_docs()
+iamstudent()
+create_post(title = 'eflemingtest_hw2', draft = TRUE)
