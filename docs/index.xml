@@ -23,21 +23,21 @@
       <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>NathanCoyotePostResubmission</title>
-      <dc:creator>Nathan Cote</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost 2</link>
-      <description>Repost of Homework 6 containing 5 lines of code.</description>
-      <category>homework 6</category>
-      <category>NathanCoyotePost</category>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost 2</guid>
-      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Alexander Genovese Final Project Post</title>
       <dc:creator>Alexander Genovese</dc:creator>
       <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-14-alexander-genovese-final-project-post</link>
       <description>For my final project, I will be analyzing data from the World Bank that covers World GDP as of July 2021. I will be looking at ranges, averages, and seeing how the distribution of GDP is in 2021.</description>
       <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-14-alexander-genovese-final-project-post</guid>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>NathanCoyotePostResubmission</title>
+      <dc:creator>Nathan Cote</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost</link>
+      <description>Repost of Homework 6 containing 5 lines of code.</description>
+      <category>homework 6</category>
+      <category>NathanCoyotePost</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost</guid>
       <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
