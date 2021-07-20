@@ -1,18 +1,17 @@
 ---
-title: "Homework2"
-description: Difficult Assignment1 
-  A short description of the post.
+title: Homework2
+description: Difficult Assignment1 A short description of the post.
 author:
-  - name: Vanessa G
-    url: http://umass.edu/sbs/dacss
+- name: Vanessa G
+  url: http://umass.edu/sbs/dacss
 date: 07-12-2021
-Categories: 
-  - homework 
-  - Vanessa
+Categories:
+- homework
+- Vanessa
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

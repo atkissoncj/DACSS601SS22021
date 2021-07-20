@@ -1,19 +1,14 @@
 ---
-title: "Tobi Burns"
-image: "tobi.jpg"
+title: "Emerson Fleming"
+image: 
 links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/emersonflemi"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "emersonflemi@umass.edu"
 output:
   postcards::jolla
 ---
  
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+
+I am an aspiring data scientist currently living in North Carolina. I have many different hobbies and interests that include music, clothing, and now coding. 

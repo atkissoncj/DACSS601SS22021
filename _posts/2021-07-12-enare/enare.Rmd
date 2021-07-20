@@ -1,18 +1,18 @@
 ---
-title: "Enare"
+title: Enare
 description: |
   Greetings from Allie
 author:
-  - name: Allie Lyamuya
+- name: Allie Lyamuya
 date: 07-12-2021
 categories:
-  - homework 6
-  - enare
-  - allie lyamuya
+- homework 6
+- enare
+- allie lyamuya
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
