@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #20794d; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,14 +77,13 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.sc { color: #20794d; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
-
 
   <!--radix_placeholder_meta_tags-->
   <title>Enare</title>
@@ -1264,10 +1263,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refs = $(this).attr('data-cites').split(" ");
-        var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
-        }).join("\n");
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -1438,7 +1434,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="enare_files/header-attrs-2.9.4/header-attrs.js"></script>
+  <script src="enare_files/header-attrs-2.9/header-attrs.js"></script>
   <script src="enare_files/jquery-1.11.3/jquery.min.js"></script>
   <script src="enare_files/popper-2.6.0/popper.min.js"></script>
   <link href="enare_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1459,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Enare","description":"Greetings from Allie","authors":[{"author":"Allie Lyamuya","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-12T00:00:00.000+05:30","citationText":"Lyamuya, 2021"}
+{"title":"Enare","description":"Greetings from Allie","authors":[{"author":"Allie Lyamuya","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-12T00:00:00.000-04:00","citationText":"Lyamuya, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1507,7 +1503,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 [16] &quot;distance&quot;       &quot;hour&quot;           &quot;minute&quot;        
 [19] &quot;time_hour&quot;     </code></pre>
 <pre><code>[1] &quot;carrier&quot; &quot;name&quot;   </code></pre>
-<pre><code>tibble [336,776 × 19] (S3: tbl_df/tbl/data.frame)
+<pre><code>tibble [336,776 x 19] (S3: tbl_df/tbl/data.frame)
  $ year          : int [1:336776] 2013 2013 2013 2013 2013 2013 2013 2013 2013 2013 ...
  $ month         : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...
  $ day           : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...
@@ -1527,7 +1523,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
  $ hour          : num [1:336776] 5 5 5 5 6 5 6 6 6 6 ...
  $ minute        : num [1:336776] 15 29 40 45 0 58 0 0 0 0 ...
  $ time_hour     : POSIXct[1:336776], format: &quot;2013-01-01 05:00:00&quot; ...</code></pre>
-<pre><code>tibble [16 × 2] (S3: tbl_df/tbl/data.frame)
+<pre><code>tibble [16 x 2] (S3: tbl_df/tbl/data.frame)
  $ carrier: chr [1:16] &quot;9E&quot; &quot;AA&quot; &quot;AS&quot; &quot;B6&quot; ...
  $ name   : chr [1:16] &quot;Endeavor Air Inc.&quot; &quot;American Airlines Inc.&quot; &quot;Alaska Airlines Inc.&quot; &quot;JetBlue Airways&quot; ...</code></pre>
 <pre><code>[1] 336776     19</code></pre>
@@ -1548,7 +1544,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
  8 EV           557        -3      709       -14   5708 LGA    IAD  
  9 B6           557        -3      838        -8     79 JFK    MCO  
 10 AA           558        -2      753         8    301 LGA    ORD  
-# … with 336,766 more rows, and 2 more variables: air_time &lt;dbl&gt;,
+# ... with 336,766 more rows, and 2 more variables: air_time &lt;dbl&gt;,
 #   distance &lt;dbl&gt;</code></pre>
 </div>
 <hr />

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #20794d; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,14 +77,13 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.sc { color: #20794d; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
-
 
   <!--radix_placeholder_meta_tags-->
 <title>Data Analytics and Computational Social Science: Jessica Intro</title>
@@ -132,7 +131,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["jessica-intro_files/anchor-4.2.2/anchor.min 3.js","jessica-intro_files/anchor-4.2.2/anchor.min.js","jessica-intro_files/bowser-1.9.3/bowser.min 3.js","jessica-intro_files/bowser-1.9.3/bowser.min.js","jessica-intro_files/distill-2.2.21/template.v2 3.js","jessica-intro_files/distill-2.2.21/template.v2.js","jessica-intro_files/header-attrs-2.9.4/header-attrs 3.js","jessica-intro_files/header-attrs-2.9.4/header-attrs.js","jessica-intro_files/jquery-1.11.3/jquery.min.js","jessica-intro_files/popper-2.6.0/popper.min 3.js","jessica-intro_files/popper-2.6.0/popper.min.js","jessica-intro_files/tippy-6.2.7/tippy 3.css","jessica-intro_files/tippy-6.2.7/tippy-bundle.umd.min 3.js","jessica-intro_files/tippy-6.2.7/tippy-bundle.umd.min.js","jessica-intro_files/tippy-6.2.7/tippy-light-border 3.css","jessica-intro_files/tippy-6.2.7/tippy-light-border.css","jessica-intro_files/tippy-6.2.7/tippy.css","jessica-intro_files/tippy-6.2.7/tippy.umd.min 3.js","jessica-intro_files/tippy-6.2.7/tippy.umd.min.js","jessica-intro_files/webcomponents-2.0.0/webcomponents 3.js","jessica-intro_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["jessica-intro_files/anchor-4.2.2/anchor.min.js","jessica-intro_files/bowser-1.9.3/bowser.min.js","jessica-intro_files/distill-2.2.21/template.v2.js","jessica-intro_files/header-attrs-2.9.4/header-attrs.js","jessica-intro_files/header-attrs-2.9/header-attrs.js","jessica-intro_files/jquery-1.11.3/jquery.min.js","jessica-intro_files/popper-2.6.0/popper.min.js","jessica-intro_files/tippy-6.2.7/tippy-bundle.umd.min.js","jessica-intro_files/tippy-6.2.7/tippy-light-border.css","jessica-intro_files/tippy-6.2.7/tippy.css","jessica-intro_files/tippy-6.2.7/tippy.umd.min.js","jessica-intro_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -1626,10 +1625,7 @@ function init_distill() {
 
     // hoverable references
     $('span.citation[data-cites]').each(function() {
-      var refs = $(this).attr('data-cites').split(" ");
-      var refHtml = refs.map(function(ref) {
-        return "<p>" + $('#ref-' + ref).html() + "</p>";
-      }).join("\n");
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
       window.tippy(this, {
         allowHTML: true,
         content: refHtml,
@@ -2328,7 +2324,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.9.4/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.9/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2349,7 +2345,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Jessica Intro","description":"Hello, my name is Jessica Fuller. I am 24 years old and am from Rochester, MA. I am a huge animal lover and have 3 cats and 2 dogs. I'm also an avid sports fan and enjoying working out and staying active. I am pursuing my master's degree in data analytics because I hope to enter the data science field, and I would like to expand my programming and analytics skills.","authors":[{"author":"Jessica Fuller","authorURL":"http://umass.edu/sbs/dacss","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-13T00:00:00.000+05:30","citationText":"Fuller, 2021"}
+{"title":"Jessica Intro","description":"Hello, my name is Jessica Fuller. I am 24 years old and am from Rochester, MA. I am a huge animal lover and have 3 cats and 2 dogs. I'm also an avid sports fan and enjoying working out and staying active. I am pursuing my master's degree in data analytics because I hope to enter the data science field, and I would like to expand my programming and analytics skills.","authors":[{"author":"Jessica Fuller","authorURL":"http://umass.edu/sbs/dacss","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-13T00:00:00.000-04:00","citationText":"Fuller, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2455,27 +2451,26 @@ var disqus_config = function () {
 }</pre>
 </div>
 <!--/radix_placeholder_appendices-->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<!--radix_placeholder_navigation_after_body--><html><body>
+<!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<!-- DACSS wordmark -->
-<div class="footer-center">
-<a href="https://www.umass.edu/sbs/dacss">
-  <img src="../../images/white-dacss-wordmark.png" alt="UMass Amherst DACSS" width="30%" id="dacss-footer"></a>
-</div>
-<!-- Social media icons -->
-<div class="container">
-  <div class="social-media-icons">
-    <a href="https://twitter.com/UMassDACSS" target="_blank" title="Twitter" class="footer fa fa-twitter"></a>
-    <a href="https://bit.ly/3cMIlIK" target="_blank" title="Facebook" class="footer fa fa-facebook"></a>
-    <a href="https://bit.ly/2PymwUp" target="_blank" title="LinkedIn" class="footer fa fa-linkedin"></a>
-    <a href="https://www.instagram.com/umassdacss/?hl=en" target="_blank" title="Instagram" class="footer fa fa-instagram"></a>
-    <a class="fa fa-placeholder"></a>
+  <!-- DACSS wordmark -->
+  <div class="footer-center">
+    <a href="https://www.umass.edu/sbs/dacss">
+      <img src="../../images/white-dacss-wordmark.png" alt="UMass Amherst DACSS" width="30%" id="dacss-footer"/>
+    </a>
+  </div>
+  <!-- Social media icons -->
+  <div class="container">
+    <div class="social-media-icons">
+      <a href="https://twitter.com/UMassDACSS" target="_blank" title="Twitter" class="footer fa fa-twitter"/>
+      <a href="https://bit.ly/3cMIlIK" target="_blank" title="Facebook" class="footer fa fa-facebook"/>
+      <a href="https://bit.ly/2PymwUp" target="_blank" title="LinkedIn" class="footer fa fa-linkedin"/>
+      <a href="https://www.instagram.com/umassdacss/?hl=en" target="_blank" title="Instagram" class="footer fa fa-instagram"/>
+      <a class="fa fa-placeholder"/>
+    </div>
   </div>
 </div>
-</div>
 <!--/radix_placeholder_navigation_after_body-->
-</body></html>
 
 
 </body>

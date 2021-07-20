@@ -13,9 +13,9 @@
     "categories": [
       "-homework 6 -sarah jimenez"
     ],
-    "contents": "\nA Moderate Header to Draw the Eye\nAn unilluminating sentence fragment.\nAnother sentence fragment but italicized.\nHere is a random block quote\n\nIncremental improvement over time!\n\n\n\n\n",
+    "contents": "\r\nA Moderate Header to Draw the Eye\r\nAn unilluminating sentence fragment.\r\nAnother sentence fragment but italicized.\r\nHere is a random block quote\r\n\r\nIncremental improvement over time!\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:24:56+05:30",
+    "last_modified": "2021-07-20T11:53:32-04:00",
     "input_file": {}
   },
   {
@@ -33,29 +33,9 @@
       "homework 6",
       "NathanCoyotePost"
     ],
-    "contents": "\nlet’s see if this works\nonly one way to find out\nyessir\n#this is a comment only, but if I space after the ‘#’ symbol it becomes a header\nthis is a comment only, but if I space after the ‘#’ symbol it becomes a header, like so!\n\n[1] 2 4 6 8\n[1] \"bigBird\"   \"cranBerry\" \"echoSauce\" \"jackBlack\"\n\n\n\n\n",
+    "contents": "\r\nlet’s see if this works\r\nonly one way to find out\r\nyessir\r\n#this is a comment only, but if I space after the ‘#’ symbol it becomes a header\r\nthis is a comment only, but if I space after the ‘#’ symbol it becomes a header, like so!\r\n\r\n[1] 2 4 6 8\r\n[1] \"bigBird\"   \"cranBerry\" \"echoSauce\" \"jackBlack\"\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:24:49+05:30",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-07-10-nathancoyotepost/",
-    "title": "NathanCoyotePostResubmission",
-    "description": "Repost of Homework 6 containing 5 lines of code.",
-    "author": [
-      {
-        "name": "Nathan Cote",
-        "url": {}
-      }
-    ],
-    "date": "2021-07-14",
-    "categories": [
-      "homework 6",
-      "NathanCoyotePost"
-    ],
-    "contents": "\nlet’s see if this works\nonly one way to find out\nyessir\n#this is a comment only, but if I space after the ‘#’ symbol it becomes a header\nthis is a comment only, but if I space after the ‘#’ symbol it becomes a header, like so!\n\n[1] 2 4 6 8\n[1] \"bigBird\"   \"cranBerry\" \"echoSauce\" \"jackBlack\"\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-07-20T12:24:51+05:30",
+    "last_modified": "2021-07-20T11:53:00-04:00",
     "input_file": {}
   },
   {
@@ -70,9 +50,9 @@
     ],
     "date": "2021-07-14",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:25:10+05:30",
+    "last_modified": "2021-07-20T11:54:27-04:00",
     "input_file": {}
   },
   {
@@ -87,9 +67,9 @@
     ],
     "date": "2021-07-13",
     "categories": [],
-    "contents": "\nAbout Me Hello, I am Emerson. I live where the wild things are and do not exist in this dimension. In the words of Lil Uzi Vert “I’m not from this world, I’m from outer space.” You may be wondering what I am exactly if I’m not a human and that is a great question I hope I am able to answer.\nFor those that are wondering, I am a bot sent to destroy all of my “R haters” from the cyber dimension. Thank you.\nAlso, just as a sidenote, I bet you had no idea R has a built-in data set all about trees. Now you do.\n\n     Girth           Height       Volume     \n Min.   : 8.30   Min.   :63   Min.   :10.20  \n 1st Qu.:11.05   1st Qu.:72   1st Qu.:19.40  \n Median :12.90   Median :76   Median :24.20  \n Mean   :13.25   Mean   :76   Mean   :30.17  \n 3rd Qu.:15.25   3rd Qu.:80   3rd Qu.:37.30  \n Max.   :20.60   Max.   :87   Max.   :77.00  \n\n\n\n\n",
+    "contents": "\r\nAbout Me Hello, I am Emerson. I live where the wild things are and do not exist in this dimension. In the words of Lil Uzi Vert “I’m not from this world, I’m from outer space.” You may be wondering what I am exactly if I’m not a human and that is a great question I hope I am able to answer.\r\nFor those that are wondering, I am a bot sent to destroy all of my “R haters” from the cyber dimension. Thank you.\r\nAlso, just as a sidenote, I bet you had no idea R has a built-in data set all about trees. Now you do.\r\n\r\n     Girth           Height       Volume     \r\n Min.   : 8.30   Min.   :63   Min.   :10.20  \r\n 1st Qu.:11.05   1st Qu.:72   1st Qu.:19.40  \r\n Median :12.90   Median :76   Median :24.20  \r\n Mean   :13.25   Mean   :76   Mean   :30.17  \r\n 3rd Qu.:15.25   3rd Qu.:80   3rd Qu.:37.30  \r\n Max.   :20.60   Max.   :87   Max.   :77.00  \r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:25:06+05:30",
+    "last_modified": "2021-07-20T11:54:09-04:00",
     "input_file": {}
   },
   {
@@ -108,9 +88,9 @@
       "homework",
       "cats"
     ],
-    "contents": "\n\n\n\n",
+    "contents": "\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:25:08+05:30",
+    "last_modified": "2021-07-20T11:54:18-04:00",
     "input_file": {}
   },
   {
@@ -129,9 +109,9 @@
       "enare",
       "allie lyamuya"
     ],
-    "contents": "\nIntroduction to Class\nHello everyone! My name is Alphoncina (Allie) and I’m a master of public policy and administration student here at UMass. I’m interested in ways that data and data science can be used to facilitate policy making and informing policymakers.\nStatistical Analysis in R\n\n\nlibrary(tidyverse)\nlibrary(nycflights13)\nlibrary(ggplot2)\n\n\n\n\n [1] \"year\"           \"month\"          \"day\"           \n [4] \"dep_time\"       \"sched_dep_time\" \"dep_delay\"     \n [7] \"arr_time\"       \"sched_arr_time\" \"arr_delay\"     \n[10] \"carrier\"        \"flight\"         \"tailnum\"       \n[13] \"origin\"         \"dest\"           \"air_time\"      \n[16] \"distance\"       \"hour\"           \"minute\"        \n[19] \"time_hour\"     \n[1] \"carrier\" \"name\"   \ntibble [336,776 × 19] (S3: tbl_df/tbl/data.frame)\n $ year          : int [1:336776] 2013 2013 2013 2013 2013 2013 2013 2013 2013 2013 ...\n $ month         : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...\n $ day           : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...\n $ dep_time      : int [1:336776] 517 533 542 544 554 554 555 557 557 558 ...\n $ sched_dep_time: int [1:336776] 515 529 540 545 600 558 600 600 600 600 ...\n $ dep_delay     : num [1:336776] 2 4 2 -1 -6 -4 -5 -3 -3 -2 ...\n $ arr_time      : int [1:336776] 830 850 923 1004 812 740 913 709 838 753 ...\n $ sched_arr_time: int [1:336776] 819 830 850 1022 837 728 854 723 846 745 ...\n $ arr_delay     : num [1:336776] 11 20 33 -18 -25 12 19 -14 -8 8 ...\n $ carrier       : chr [1:336776] \"UA\" \"UA\" \"AA\" \"B6\" ...\n $ flight        : int [1:336776] 1545 1714 1141 725 461 1696 507 5708 79 301 ...\n $ tailnum       : chr [1:336776] \"N14228\" \"N24211\" \"N619AA\" \"N804JB\" ...\n $ origin        : chr [1:336776] \"EWR\" \"LGA\" \"JFK\" \"JFK\" ...\n $ dest          : chr [1:336776] \"IAH\" \"IAH\" \"MIA\" \"BQN\" ...\n $ air_time      : num [1:336776] 227 227 160 183 116 150 158 53 140 138 ...\n $ distance      : num [1:336776] 1400 1416 1089 1576 762 ...\n $ hour          : num [1:336776] 5 5 5 5 6 5 6 6 6 6 ...\n $ minute        : num [1:336776] 15 29 40 45 0 58 0 0 0 0 ...\n $ time_hour     : POSIXct[1:336776], format: \"2013-01-01 05:00:00\" ...\ntibble [16 × 2] (S3: tbl_df/tbl/data.frame)\n $ carrier: chr [1:16] \"9E\" \"AA\" \"AS\" \"B6\" ...\n $ name   : chr [1:16] \"Endeavor Air Inc.\" \"American Airlines Inc.\" \"Alaska Airlines Inc.\" \"JetBlue Airways\" ...\n[1] 336776     19\n[1] 16  2\n\n\n\n# A tibble: 336,776 x 10\n   carrier dep_time dep_delay arr_time arr_delay flight origin dest \n   <chr>      <int>     <dbl>    <int>     <dbl>  <int> <chr>  <chr>\n 1 UA           517         2      830        11   1545 EWR    IAH  \n 2 UA           533         4      850        20   1714 LGA    IAH  \n 3 AA           542         2      923        33   1141 JFK    MIA  \n 4 B6           544        -1     1004       -18    725 JFK    BQN  \n 5 DL           554        -6      812       -25    461 LGA    ATL  \n 6 UA           554        -4      740        12   1696 EWR    ORD  \n 7 B6           555        -5      913        19    507 EWR    FLL  \n 8 EV           557        -3      709       -14   5708 LGA    IAD  \n 9 B6           557        -3      838        -8     79 JFK    MCO  \n10 AA           558        -2      753         8    301 LGA    ORD  \n# … with 336,766 more rows, and 2 more variables: air_time <dbl>,\n#   distance <dbl>\n\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "contents": "\r\nIntroduction to Class\r\nHello everyone! My name is Alphoncina (Allie) and I’m a master of public policy and administration student here at UMass. I’m interested in ways that data and data science can be used to facilitate policy making and informing policymakers.\r\nStatistical Analysis in R\r\n\r\n\r\nlibrary(tidyverse)\r\nlibrary(nycflights13)\r\nlibrary(ggplot2)\r\n\r\n\r\n\r\n\r\n [1] \"year\"           \"month\"          \"day\"           \r\n [4] \"dep_time\"       \"sched_dep_time\" \"dep_delay\"     \r\n [7] \"arr_time\"       \"sched_arr_time\" \"arr_delay\"     \r\n[10] \"carrier\"        \"flight\"         \"tailnum\"       \r\n[13] \"origin\"         \"dest\"           \"air_time\"      \r\n[16] \"distance\"       \"hour\"           \"minute\"        \r\n[19] \"time_hour\"     \r\n[1] \"carrier\" \"name\"   \r\ntibble [336,776 x 19] (S3: tbl_df/tbl/data.frame)\r\n $ year          : int [1:336776] 2013 2013 2013 2013 2013 2013 2013 2013 2013 2013 ...\r\n $ month         : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...\r\n $ day           : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...\r\n $ dep_time      : int [1:336776] 517 533 542 544 554 554 555 557 557 558 ...\r\n $ sched_dep_time: int [1:336776] 515 529 540 545 600 558 600 600 600 600 ...\r\n $ dep_delay     : num [1:336776] 2 4 2 -1 -6 -4 -5 -3 -3 -2 ...\r\n $ arr_time      : int [1:336776] 830 850 923 1004 812 740 913 709 838 753 ...\r\n $ sched_arr_time: int [1:336776] 819 830 850 1022 837 728 854 723 846 745 ...\r\n $ arr_delay     : num [1:336776] 11 20 33 -18 -25 12 19 -14 -8 8 ...\r\n $ carrier       : chr [1:336776] \"UA\" \"UA\" \"AA\" \"B6\" ...\r\n $ flight        : int [1:336776] 1545 1714 1141 725 461 1696 507 5708 79 301 ...\r\n $ tailnum       : chr [1:336776] \"N14228\" \"N24211\" \"N619AA\" \"N804JB\" ...\r\n $ origin        : chr [1:336776] \"EWR\" \"LGA\" \"JFK\" \"JFK\" ...\r\n $ dest          : chr [1:336776] \"IAH\" \"IAH\" \"MIA\" \"BQN\" ...\r\n $ air_time      : num [1:336776] 227 227 160 183 116 150 158 53 140 138 ...\r\n $ distance      : num [1:336776] 1400 1416 1089 1576 762 ...\r\n $ hour          : num [1:336776] 5 5 5 5 6 5 6 6 6 6 ...\r\n $ minute        : num [1:336776] 15 29 40 45 0 58 0 0 0 0 ...\r\n $ time_hour     : POSIXct[1:336776], format: \"2013-01-01 05:00:00\" ...\r\ntibble [16 x 2] (S3: tbl_df/tbl/data.frame)\r\n $ carrier: chr [1:16] \"9E\" \"AA\" \"AS\" \"B6\" ...\r\n $ name   : chr [1:16] \"Endeavor Air Inc.\" \"American Airlines Inc.\" \"Alaska Airlines Inc.\" \"JetBlue Airways\" ...\r\n[1] 336776     19\r\n[1] 16  2\r\n\r\n\r\n\r\n# A tibble: 336,776 x 10\r\n   carrier dep_time dep_delay arr_time arr_delay flight origin dest \r\n   <chr>      <int>     <dbl>    <int>     <dbl>  <int> <chr>  <chr>\r\n 1 UA           517         2      830        11   1545 EWR    IAH  \r\n 2 UA           533         4      850        20   1714 LGA    IAH  \r\n 3 AA           542         2      923        33   1141 JFK    MIA  \r\n 4 B6           544        -1     1004       -18    725 JFK    BQN  \r\n 5 DL           554        -6      812       -25    461 LGA    ATL  \r\n 6 UA           554        -4      740        12   1696 EWR    ORD  \r\n 7 B6           555        -5      913        19    507 EWR    FLL  \r\n 8 EV           557        -3      709       -14   5708 LGA    IAD  \r\n 9 B6           557        -3      838        -8     79 JFK    MCO  \r\n10 AA           558        -2      753         8    301 LGA    ORD  \r\n# ... with 336,766 more rows, and 2 more variables: air_time <dbl>,\r\n#   distance <dbl>\r\n\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
     "preview": "posts/2021-07-12-enare/enare_files/figure-html5/unnamed-chunk-3-1.png",
-    "last_modified": "2021-07-20T12:25:01+05:30",
+    "last_modified": "2021-07-20T11:53:42-04:00",
     "input_file": {},
     "preview_width": 1248,
     "preview_height": 768
@@ -148,9 +128,9 @@
     ],
     "date": "2021-07-12",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:25:02+05:30",
+    "last_modified": "2021-07-20T11:53:49-04:00",
     "input_file": {}
   },
   {
@@ -165,26 +145,9 @@
     ],
     "date": "2021-07-12",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:25:04+05:30",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-07-11-introduction 2/",
-    "title": "Introduction",
-    "description": "Hello Everyone! My name is Alex and I am an undergraduate at UMass studying Political Science. I am taking this course to learn R so that I can earn my Letter of Specialization in Data Analytics! Here is some R Code:\n   x <- 1:6\n   y <- x*3\n   z <- x+y\n   z_matrix <- matrix(z, nrow = 3)\n This code creates a 3x2 matrix based off of the vector z.",
-    "author": [
-      {
-        "name": "Alex Genovese",
-        "url": {}
-      }
-    ],
-    "date": "2021-07-11",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-07-20T12:24:52+05:30",
+    "last_modified": "2021-07-20T11:54:01-04:00",
     "input_file": {}
   },
   {
@@ -199,9 +162,9 @@
     ],
     "date": "2021-07-11",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:24:54+05:30",
+    "last_modified": "2021-07-20T11:53:25-04:00",
     "input_file": {}
   },
   {
@@ -218,43 +181,9 @@
     "categories": [
       "Homework 6"
     ],
-    "contents": "\nI have two cats lying on me as I write this.\nOne is named Lana, and she is calm and chill.\nOne is named Murphy, and he is a tornado.\nTo have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.\nThis mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:\n\n\n\n\n\n\n",
+    "contents": "\r\nI have two cats lying on me as I write this.\r\nOne is named Lana, and she is calm and chill.\r\nOne is named Murphy, and he is a tornado.\r\nTo have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.\r\nThis mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:25:13+05:30",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-07-01-curtis-test 2/",
-    "title": "Here is a test post",
-    "description": "I'm testing something.",
-    "author": [
-      {
-        "name": "Curtis Atkisson",
-        "url": "http://umass.edu/sbs/dacss"
-      }
-    ],
-    "date": "2021-07-08",
-    "categories": [],
-    "contents": "\n\n[1] 2\n[1] 4\n[1] 4\n[1] TRUE\n\nCheck that out.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-07-20T12:24:44+05:30",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-07-01-curtis-test/",
-    "title": "Here is a test post",
-    "description": "I'm testing something.",
-    "author": [
-      {
-        "name": "Curtis Atkisson",
-        "url": "http://umass.edu/sbs/dacss"
-      }
-    ],
-    "date": "2021-07-08",
-    "categories": [],
-    "contents": "\n\n[1] 2\n[1] 4\n[1] 4\n[1] TRUE\n\nCheck that out.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-07-20T12:24:46+05:30",
+    "last_modified": "2021-07-20T11:54:36-04:00",
     "input_file": {}
   },
   {
@@ -271,9 +200,9 @@
     "categories": [
       "welcome"
     ],
-    "contents": "\nHey, everyone! We’re gonna have fun!\n\n\n\n",
+    "contents": "\r\nHey, everyone! We’re gonna have fun!\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-07-20T12:25:15+05:30",
+    "last_modified": "2021-07-20T11:54:41-04:00",
     "input_file": {}
   }
 ]

@@ -33,16 +33,6 @@
       <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>NathanCoyotePostResubmission</title>
-      <dc:creator>Nathan Cote</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost</link>
-      <description>Repost of Homework 6 containing 5 lines of code.</description>
-      <category>homework 6</category>
-      <category>NathanCoyotePost</category>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost</guid>
-      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Alexander Genovese Final Project Post</title>
       <dc:creator>Alexander Genovese</dc:creator>
       <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-14-alexander-genovese-final-project-post</link>
@@ -100,19 +90,6 @@
     <item>
       <title>Introduction</title>
       <dc:creator>Alex Genovese</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-11-introduction 2</link>
-      <description>Hello Everyone! My name is Alex and I am an undergraduate at UMass studying Political Science. I am taking this course to learn R so that I can earn my Letter of Specialization in Data Analytics! Here is some R Code:
-   x &lt;- 1:6
-   y &lt;- x*3
-   z &lt;- x+y
-   z_matrix &lt;- matrix(z, nrow = 3)
- This code creates a 3x2 matrix based off of the vector z.</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-11-introduction 2</guid>
-      <pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introduction</title>
-      <dc:creator>Alex Genovese</dc:creator>
       <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-11-introduction</link>
       <description>Hello Everyone! My name is Alex and I am an undergraduate at UMass studying Political Science. I am taking this course to learn R so that I can earn my Letter of Specialization in Data Analytics! Here is some R Code:
    x &lt;- 1:6
@@ -131,22 +108,6 @@
       <category>Homework 6</category>
       <guid>https://github.com/DACSS/dacss_course_website/posts/introduction</guid>
       <pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Here is a test post</title>
-      <dc:creator>Curtis Atkisson</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test 2</link>
-      <description>I'm testing something.</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test 2</guid>
-      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Here is a test post</title>
-      <dc:creator>Curtis Atkisson</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test</link>
-      <description>I'm testing something.</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test</guid>
-      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Welcome to DACSS 601</title>
