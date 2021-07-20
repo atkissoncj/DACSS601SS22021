@@ -1,19 +1,22 @@
 ---
-title: "Jessica Intro"
-description: |
-  Hello, my name is Jessica Fuller. I am 24 years old and am from Rochester, MA. I am a huge animal lover and have 3 cats and 2 dogs. I'm also an avid sports fan and enjoying working out and staying active. I am pursuing my master's degree in data analytics because I hope to enter the data science field, and I would like to expand my programming and analytics skills. 
+title: Jessica Intro
+description: "Hello, my name is Jessica Fuller. I am 24 years old and am from Rochester,
+  MA. I am a huge animal lover and have 3 cats and 2 dogs. I'm also an avid sports
+  fan and enjoying working out and staying active. I am pursuing my master's degree
+  in data analytics because I hope to enter the data science field, and I would like
+  to expand my programming and analytics skills. \n"
 author:
-  - name: Jessica Fuller
-    url: http://umass.edu/sbs/dacss
+- name: Jessica Fuller
+  url: http://umass.edu/sbs/dacss
 date: 07-13-2021
 categories:
-  - jessica fuller
-  - homework
-  - cats
+- jessica fuller
+- homework
+- cats
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
