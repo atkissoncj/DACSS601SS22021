@@ -1,21 +1,15 @@
 ---
-output:
-  distill::distill_article: default
-  html_document: default
----
-
----
-title: "Introduction"
+title: Introduction
 description: |
   This is Homework Six
-author: 
+author:
 - name: Kristina Becvar
 date: 07-11-2021
-categories: "Homework 6"
+categories: Homework 6
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
@@ -35,7 +29,6 @@ To have both cats sleeping and keeping my legs warm is the motivation I needed t
 This mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:
 
 ```{r eval=TRUE, echo=FALSE}
-
 library(cowsay)
 library(wikifacts)
 library(magrittr)

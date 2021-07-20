@@ -1,19 +1,19 @@
 ---
-title: "Introduction"
+title: Introduction
 description: |
- Hello Everyone! My name is Alex and I am an undergraduate at UMass studying Political Science. I am taking this course to learn R so that I can earn my Letter of Specialization in Data Analytics! Here is some R Code:
-    x <- 1:6
-    y <- x*3
-    z <- x+y
-    z_matrix <- matrix(z, nrow = 3)
-  This code creates a 3x2 matrix based off of the vector z.
+  Hello Everyone! My name is Alex and I am an undergraduate at UMass studying Political Science. I am taking this course to learn R so that I can earn my Letter of Specialization in Data Analytics! Here is some R Code:
+     x <- 1:6
+     y <- x*3
+     z <- x+y
+     z_matrix <- matrix(z, nrow = 3)
+   This code creates a 3x2 matrix based off of the vector z.
 author:
-  - name: Alex Genovese
+- name: Alex Genovese
 date: 07-11-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
