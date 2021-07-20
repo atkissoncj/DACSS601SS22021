@@ -1,9 +1,15 @@
 ---
+<<<<<<< HEAD
 title: "Emerson Fleming"
 image: 
 
   
     links:
+=======
+title: "Sanjana Checker"
+image: "xiang.jpg"
+links:
+>>>>>>> c737ba2ca75426dd25553ce41777f3669909f1ad
   - label: LinkedIn
     url: "https://linkedin.com/"
   - label: Twitter
@@ -16,7 +22,11 @@ output:
   postcards::jolla_blue
 ---
  
+<<<<<<< HEAD
 Raised in New Jersey by two lawyers, I am now an aspiring data artist and 
 competitive rock climber. I moved to Seattle to fly floatplanes, but I got 
 caught up in the startup world. Send me a WhatsApp message if you have good 
 turnip prices.
+=======
+My name is Sanjana, 
+>>>>>>> c737ba2ca75426dd25553ce41777f3669909f1ad

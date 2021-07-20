@@ -1,0 +1,31 @@
+[
+  {
+    "path": "posts/introduction/",
+    "title": "Untitled",
+    "description": {},
+    "author": [],
+    "date": "2021-07-14",
+    "categories": [],
+    "contents": "\r\nI have two cats lying on me as I write this.\r\nOne is named Lana, and she is calm and chill.\r\nOne is named Murphy, and he is a tornado.\r\nTo have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.\r\nThis mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:\r\n\r\n\r\n ----- \r\nDid you know that peanut farmer Harris DeVane won the first race held on Atlanta Motor Speedway's present configuration by 0.023 seconds, leading only the last 100 yards (91 m) of the event? (Courtesy of Wikipedia) \r\n ------ \r\n    \\   ^__^ \r\n     \\  (oo)\\ ________ \r\n        (__)\\         )\\ /\\ \r\n             ||------w|\r\n             ||      ||\r\n\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-07-14T15:32:06-05:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-07-01-curtis-test/",
+    "title": "Here is a test post",
+    "description": "I'm testing something.",
+    "author": [
+      {
+        "name": "Curtis Atkisson",
+        "url": "http://umass.edu/sbs/dacss"
+      }
+    ],
+    "date": "2021-07-08",
+    "categories": [],
+    "contents": "\r\n\r\n[1] 2\r\n[1] 4\r\n[1] 4\r\n[1] TRUE\r\n\r\nCheck that out.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-07-14T23:20:12-05:00",
+    "input_file": {}
+  }
+]
