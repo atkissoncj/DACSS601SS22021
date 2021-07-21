@@ -11,21 +11,30 @@ output:
 draft: true
 ---
 ## I first read in the .csv file into myData
+```{r}
+library{tidyverse}
 myData <- read.delim("congressional_hearings.csv", sep = ",", header=T)
-
+```
 ## I then read the first few lines of myData through head()
+```{r}
 head(myData)
-
+```
 ## I used nrow to find how many rows there were
+```{r}
 nrow(myData)
+```
 ##100254
 
 ## And ncol to find how many columns
+```{r}
 ncol(myData)
+```
 ##36
 
 ## I found the column names and listed them
+```{r}
 colnames(myData)
+```
 ##[1] "id"               "source"
 ##[3] "CISYear"          "Unpublished"
 ##[5] "Chamber"          "filter_House"
@@ -46,21 +55,25 @@ colnames(myData)
 ##[35] "StartDate"        "AdditionalDates"
 
 ## I would use the gather() function to collect the where the bills originated into the Chamber column. I would argue that the Chambers column could be created using gather() if it was not already there. Otherwise, no. Our gather() function could look like this:
-tidymyData <- gather(myData, key = "Chamber", value = "ChamberNumber", 6:8)
 
+```{r}
+tidymyData <- gather(myData, key = "Chamber", value = "ChamberNumber", 6:8)
+```
 ## I made sure that the value I was working with was an integer and then calculated the median amount of sessions it took for a bill to be passed into law.
+```{r}
 class(myData$Sessions)
 sessionMedian <- median(myData$Sessions, na.rm = TRUE)
 print(sessionMedian)
-
+```
 ## Using stackoverflow, I found a function that can generate a mode, or the value that occurs the most. After using that on the column chamber, I found that most of these laws began in the House.
+```{r}
 class(myData$Chamber)
 Mode <- function(x) {
   ux <- unique(x)
   ux[which.max(tabulate(match(x,ux)))]
 }
 Mode(myData$Chamber)
-
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
