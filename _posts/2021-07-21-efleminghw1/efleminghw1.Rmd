@@ -14,7 +14,7 @@ draft: true
 ```{r setup, include=FALSE}
 require(tidyverse)
 library(dplyr)
-myDataPath <- read.csv("/Applications/NEW DACSS601 REPO/DACSS601SS22021/_data/covid-responses.tab - covid-responses.tab.csv", header=TRUE) 
+myDataPath <- read.csv("../../_data/covid-responses.tab - covid-responses.tab.csv", header=TRUE) 
 covid_responses <- myDataPath
 ```
 **COVID Responses Table**
@@ -28,7 +28,7 @@ This is the parent data set. Overall, we can see it is quite messy. I am sure th
 2. Variables include "reflection", "progress", "handshake", and many others.
 
 ```{r}
-myDataPath <- read.csv("/Applications/NEW DACSS601 REPO/DACSS601SS22021/_data/covid-responses.tab - covid-responses.tab.csv", header=TRUE)
+myDataPath <- read.csv("../../_data/covid-responses.tab - covid-responses.tab.csv", header=TRUE)
 covid_responses <- myDataPath
 covid_responses %>% #addressed my data set directly to begin consolidation efforts
   select(social, handshake, stores, curfew, perceivedreaction) %>%  #implemented the following variables into my set

@@ -12,7 +12,7 @@ output:
 draft: true
 ---
 ```{r setup, include=FALSE}
-myDataPath <- read.csv("/Applications/NEW DACSS601 REPO/DACSS601SS22021/_data/Car_sales.csv", header=TRUE) 
+myDataPath <- read.csv("../../_data/Car_sales.csv", header=TRUE) 
 require(tidyverse)
 require(tidyr)
 require(dplyr)

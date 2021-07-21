@@ -1790,7 +1790,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>myDataPath</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"/Applications/NEW DACSS601 REPO/DACSS601SS22021/_data/covid-responses.tab - covid-responses.tab.csv"</span>, header<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>myDataPath</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"../../_data/covid-responses.tab - covid-responses.tab.csv"</span>, header<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='va'>covid_responses</span> <span class='op'>&lt;-</span> <span class='va'>myDataPath</span>
 <span class='va'>covid_responses</span> <span class='op'>%&gt;%</span> <span class='co'>#addressed my data set directly to begin consolidation efforts</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>social</span>, <span class='va'>handshake</span>, <span class='va'>stores</span>, <span class='va'>curfew</span>, <span class='va'>perceivedreaction</span><span class='op'>)</span> <span class='op'>%&gt;%</span>  <span class='co'>#implemented the following variables into my set</span>
