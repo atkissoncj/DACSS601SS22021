@@ -1,0 +1,14 @@
+---
+title: "Stephanie Cortez"
+links:
+  - label: Email
+    url: "scortez@umass.edu"
+output:
+  postcards::jolla
+---
+ 
+Hello all. I am a Research Analyst in pursue of the DACSS Program Certificate to enhance my skills. I currently have a BA in Social Work and Society from Cal State University, Northridge. I also live in Northridge, CA with my hubs and 7 kiddos. Yes, 7 kiddos. #BlendedFam :) <3
+
+Learning R so far has been a challenge but with lots of hands-on practice it'll get easier. Fingers crossed. 
+
+Ok. Good luck. Bye.
