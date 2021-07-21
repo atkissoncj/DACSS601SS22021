@@ -1,13 +1,13 @@
 ---
-title: "Homework One Resubmission"
+title: Homework One Resubmission
 description: |
   My Homework One no longer shows on GitHub, so here's a resubmit.
 author: Nathan Cote
 date: 07-20-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
@@ -17,7 +17,11 @@ The data I am using was provided by The Armed Conflict Location & Event Data Pro
 ```{r read data, include=FALSE}
 library(dplyr)
 library(readxl) 
-journalist.data <- read_excel("C:/Users/Nathan/Documents/Projects/DACSS601SS22021/_data/journalists_Jul02.xlsx")
+# wd <- getwd()
+# setwd("..")
+# setwd("..")
+journalist.data <- read_excel("../../_data/journalists_Jul02.xlsx")
+# setwd(wd)
 ```
 
 #Next, I am going to preview the first few rows of the data using the "head()" function.

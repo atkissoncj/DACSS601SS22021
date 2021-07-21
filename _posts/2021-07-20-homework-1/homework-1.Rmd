@@ -1,15 +1,15 @@
 ---
-title: "Elwood HW 1"
+title: Elwood HW 1
 description: |
   Homework 1 using the COVID Response in Italy Survey Data.
 author:
-  - name: Chris Elwood
-    url: http://umass.edu/sbs/dacss
+- name: Chris Elwood
+  url: http://umass.edu/sbs/dacss
 date: 07-20-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ```{r}
 # HomeworkOneTemplate.r
@@ -48,8 +48,11 @@ hello <- paste("Hello World!")
 # What you need to do from here on out is dependent on the dataset
 # you choose to work with! Here's an example of how I'd approach this with
 # a file using "+" as a delimiter
-
-myData <- read_tsv("./_data/covid-responses.tab")
+wd <- getwd()
+setwd("..")
+setwd("..")
+myData <- read_tsv("_data/covid-responses.tab")
+setwd(wd)
 
 # let's unpack that a bit.
 # I'm creating an object called myData

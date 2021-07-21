@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Homework One Resubmission"]},{"type":"character","attributes":{},"value":["My Homework One no longer shows on GitHub, so here's a resubmit.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Nathan Cote"]}]}]},{"type":"character","attributes":{},"value":["07-20-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Homework One Resubmission"]},{"type":"character","attributes":{},"value":["My Homework One no longer shows on GitHub, so here's a resubmit.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Nathan Cote"]}]}]},{"type":"character","attributes":{},"value":["07-20-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["homework-one-resubmission_files/figure-html5/something fun-1.png"]}
+  {"type":"character","attributes":{},"value":["homework-one-resubmission_files/anchor-4.2.2/anchor.min.js","homework-one-resubmission_files/bowser-1.9.3/bowser.min.js","homework-one-resubmission_files/distill-2.2.21/template.v2.js","homework-one-resubmission_files/figure-html5/something fun-1.png","homework-one-resubmission_files/header-attrs-2.9/header-attrs.js","homework-one-resubmission_files/jquery-1.11.3/jquery.min.js","homework-one-resubmission_files/popper-2.6.0/popper.min.js","homework-one-resubmission_files/tippy-6.2.7/tippy-bundle.umd.min.js","homework-one-resubmission_files/tippy-6.2.7/tippy-light-border.css","homework-one-resubmission_files/tippy-6.2.7/tippy.css","homework-one-resubmission_files/tippy-6.2.7/tippy.umd.min.js","homework-one-resubmission_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1492,14 +1492,78 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 4     0 XKX86                       86 2018-09-09 00:00:00  2018
 5     0 XKX167                     167 2019-01-28 00:00:00  2019
 6     0 XKX260                     260 2019-08-23 00:00:00  2019
-# ... with 24 more variables: TIME_PRECISION &lt;dbl&gt;, EVENT_TYPE &lt;chr&gt;,
-#   SUB_EVENT_TYPE &lt;chr&gt;, ACTOR1 &lt;chr&gt;, ASSOC_ACTOR_1 &lt;chr&gt;,
-#   INTER1 &lt;dbl&gt;, ACTOR2 &lt;chr&gt;, ASSOC_ACTOR_2 &lt;chr&gt;, INTER2 &lt;dbl&gt;,
-#   INTERACTION &lt;dbl&gt;, REGION &lt;chr&gt;, COUNTRY &lt;chr&gt;, ADMIN1 &lt;chr&gt;,
-#   ADMIN2 &lt;chr&gt;, ADMIN3 &lt;chr&gt;, LOCATION &lt;chr&gt;, LATITUDE &lt;dbl&gt;,
-#   LONGITUDE &lt;dbl&gt;, GEO_PRECISION &lt;dbl&gt;, SOURCE &lt;chr&gt;,
-#   SOURCE_SCALE &lt;chr&gt;, NOTES &lt;chr&gt;, FATALITIES &lt;dbl&gt;,
-#   TIMESTAMP &lt;dbl&gt;</code></pre>
+  TIME_PRECISION EVENT_TYPE                 SUB_EVENT_TYPE  
+           &lt;dbl&gt; &lt;chr&gt;                      &lt;chr&gt;           
+1              2 Violence against civilians Attack          
+2              1 Protests                   Peaceful protest
+3              1 Violence against civilians Attack          
+4              1 Violence against civilians Attack          
+5              1 Protests                   Peaceful protest
+6              1 Violence against civilians Attack          
+  ACTOR1                            ASSOC_ACTOR_1                  
+  &lt;chr&gt;                             &lt;chr&gt;                          
+1 Unidentified Armed Group (Kosovo) Albanian Ethnic Group (Kosovo) 
+2 Protesters (Kosovo)               Journalists (Kosovo)           
+3 Unidentified Armed Group (Kosovo) &lt;NA&gt;                           
+4 Unidentified Armed Group (Kosovo) Albanian Ethnic Group (Kosovo) 
+5 Protesters (Kosovo)               Journalists (Kosovo)           
+6 Private Security Forces (Kosovo)  PDK: Democratic Party of Kosovo
+  INTER1 ACTOR2            
+   &lt;dbl&gt; &lt;chr&gt;             
+1      3 Civilians (Kosovo)
+2      6 &lt;NA&gt;              
+3      3 Civilians (Kosovo)
+4      3 Civilians (Serbia)
+5      6 &lt;NA&gt;              
+6      8 Civilians (Kosovo)
+  ASSOC_ACTOR_2                                       INTER2
+  &lt;chr&gt;                                                &lt;dbl&gt;
+1 Journalists (Kosovo); Women (Kosovo)                     7
+2 &lt;NA&gt;                                                     0
+3 Journalists (Kosovo)                                     7
+4 Journalists (Serbia); Serbian Ethnic Group (Kosovo)      7
+5 &lt;NA&gt;                                                     0
+6 Journalists (Kosovo)                                     7
+  INTERACTION REGION COUNTRY ADMIN1    ADMIN2          ADMIN3
+        &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;           &lt;chr&gt; 
+1          37 Europe Kosovo  Mitrovica North Mitrovica &lt;NA&gt;  
+2          60 Europe Kosovo  Pristina  Pristina        &lt;NA&gt;  
+3          37 Europe Kosovo  Pristina  Pristina        &lt;NA&gt;  
+4          37 Europe Kosovo  Mitrovica Skenderaj       &lt;NA&gt;  
+5          60 Europe Kosovo  Pristina  Pristina        &lt;NA&gt;  
+6          78 Europe Kosovo  Pristina  Pristina        &lt;NA&gt;  
+  LOCATION        LATITUDE LONGITUDE GEO_PRECISION SOURCE            
+  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;             
+1 North Mitrovica     42.9      20.9             1 Vecernje Novosti  
+2 Pristina            42.7      21.2             1 Zeri; Local Source
+3 Pristina            42.7      21.2             1 UNMIK             
+4 Prekaz              42.8      20.8             1 B92.net           
+5 Pristina            42.7      21.2             1 BBC News; RTK     
+6 Pristina            42.7      21.2             1 Insajderi         
+  SOURCE_SCALE        
+  &lt;chr&gt;               
+1 Regional            
+2 Subnational-Regional
+3 National            
+4 Regional            
+5 National-Regional   
+6 National            
+  NOTES                                                               
+  &lt;chr&gt;                                                               
+1 As reported on April 20, 2018, female journalists on Serbian Pink T~
+2 On May 3, 2018, on the occasion of the World Press Freedom Day, in ~
+3 On June 12, 2018 in Pristina, Kosovo, Valon Rashiti, a reporter for~
+4 On September 9, 2018 in Prekaz, Kosovo, two female reporters of Deu~
+5 On January 28, 2019 in Pristina, Kosovo, employees of public broadc~
+6 On August 23, a journalist was attacked and punched by PDK leader&#39;s~
+  FATALITIES  TIMESTAMP
+       &lt;dbl&gt;      &lt;dbl&gt;
+1          0 1572403786
+2          0 1574110420
+3          0 1553853272
+4          0 1572403700
+5          0 1572403627
+6          0 1567533545</code></pre>
 </div>
 <p>Hmm, can’t seem to glean much from that… we’ll come back to select specific variables in a bit. For now, let’s see how many rows and columns are in this dataset. I can do this with the “ncol()” and “nrow()” functions. Doing this, I see that there are 29 columns and 12460 rows in the journalist.data dataset. What you don’t see in the last sentence is that my row and column amounts were calculated within backstrokes (these little guys ``, not to be confused with these guys’ ’. See chapter 27.2 in the <em>R for Data Science</em> textbook for this trick).</p>
 <p>#Let me give you the column names from my dataset.</p>

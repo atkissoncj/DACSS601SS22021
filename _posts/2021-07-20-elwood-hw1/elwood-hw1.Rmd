@@ -1,15 +1,15 @@
 ---
-title: "Elwood HW1"
+title: Elwood HW1
 description: |
   HW1 using the COVID 19 Italy Response survey.
 author:
-  - name: Chris Elwood
-    url: http://umass.edu/sbs/dacss
+- name: Chris Elwood
+  url: http://umass.edu/sbs/dacss
 date: 07-20-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ```{r}
 # HomeworkOneTemplate.r

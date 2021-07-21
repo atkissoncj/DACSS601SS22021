@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-title: "Cool_Stuff"
-=======
 ---
 title: Cool_Stuff
->>>>>>> 251a5b6fa0c013b68d9424707090bfedcc726052
-description: Emerson's Introduction
+description: |
+  Emerson's Introduction
 author:
 - name: Emerson Fleming
   url: http://umass.edu/sbs/dacss
