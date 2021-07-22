@@ -1,6 +1,6 @@
 ---
 title: "Emerson Fleming"
-image: 
+image: "../images/students/Emerson_Zubin.jpg"
 links:
   - label: GitHub
     url: "https://github.com/emersonflemi"
