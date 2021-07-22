@@ -1,26 +1,28 @@
 ---
-title: "Homework One - or - The Homework That Never Ends"
+title: Homework One
 description: |
-  A short description of the post.
+  This assignment is writing R script to get data into R. The dataset used for this assignment is scdb.
 author:
-  - name: Kristina Becvar
-    url: http://umass.edu/sbs/dacss
-date: 07-21-2021
+- name: Kristina Becvar
+date: 07-14-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
-
-```{r setup, include=TRUE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(blogbuilder)
+library(distill)
+library(tidyverse)
+iamstudent()
 ```
 
 ## **Reading in the data:**
 
 ```{r echo=TRUE}
-scdb.data <- read.delim("../_data/scdb.csv", sep = ",", header  = TRUE)
+scdb.data <- read.delim("scdb.csv", sep = ",", header  = TRUE)
 ```
 
 ## **About the data command:**
@@ -55,16 +57,13 @@ colnames(scdb.data)
 
 ## **Determining the use of the gather() and spread() functions**
 
-+ I used as_tibble to view the data in that form and make sure I understood the database attributes and what could be done to make it tidy.
++ To determine what to do with the data next, I used the "as_tibble" function to see the data in that format.
 
 ```{r echo=TRUE}
-library(tidyverse)
-scdb.tidy <- as_tibble(scdb.data)
-
+(scdb.tidy <- as_tibble(scdb.data))
 ```
 
-+ At this point, I don't see a purpose for using those functions with this dataset.
-+ The data seems tidy in that every variable has its own column, each observation has its own row, and each value has its own cell.
++ At this point, I don't see a purpose for using those functions with this dataset. I'm almost positive I'm missing an obvious answer but I haven't quite seen it.
 
 ## **Executing an operation that requires creating a new object and doing something to that object**
 
@@ -125,6 +124,3 @@ ggplot(plotdata,
 ```
 
 + I can definitely see how the process of visualizing data can be fun once I understand the language better. However, given the resulting percentages adding up to 101%, I clearly have a lot left to learn!
-
-
-
