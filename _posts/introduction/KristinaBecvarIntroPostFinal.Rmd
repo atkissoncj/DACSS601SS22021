@@ -13,7 +13,7 @@ draft: yes
 ---
 
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -28,7 +28,7 @@ To have both cats sleeping and keeping my legs warm is the motivation I needed t
 
 This mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:
 
-```{r eval=TRUE, echo=FALSE}
+```{r eval=TRUE, echo=TRUE}
 library(cowsay)
 library(wikifacts)
 library(magrittr)
