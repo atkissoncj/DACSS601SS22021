@@ -1,20 +1,33 @@
 ---
 title: "Homework 6 - Hi, I'm Jack"
 description: |
-  A short description of the post.
+  An Introduction 
 author:
-  - name: Emerson Fleming
-    url: http://umass.edu/sbs/dacss
+  - name: John Mannion
 date: 07-22-2021
 output:
   distill::distill_article:
     self_contained: false
 draft: true
 ---
-
+Hi, my name is John but everyone calls me Jack. This is my first time learning to code. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+
+library(tidyverse)
+library(gapminder)
+
+graph <- filter(gapminder, country == 'Afghanistan' | country == 'Burundi')
+
+graph2 <- select(graph, 'country', 'year', 'pop')
+
+ggplot(data = graph2) + 
+  geom_point(mapping = aes(x = year, y = pop))
+
 ```
 
 Distill is a publication format for scientific and technical writing, native to the web.
