@@ -1,5 +1,5 @@
 ---
-title: "First Post-HW6"
+title: "First Post HW6"
 description: |
  HW 6 Post
 author:
