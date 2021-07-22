@@ -1,15 +1,15 @@
 ---
-title: "efleming_hw2"
+title: efleming_hw2
 description: |
   Describes and analyzes a 2011-2012 data set on the highest selling and re-selling car models and manufacturers.
 author:
-  - name: Emerson Fleming
-    url: http://umass.edu/sbs/dacss
+- name: Emerson Fleming
+  url: http://umass.edu/sbs/dacss
 date: 07-21-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ```{r setup, include=FALSE}
 myDataPath <- read.csv("../../_data/Car_sales.csv", header=TRUE) 

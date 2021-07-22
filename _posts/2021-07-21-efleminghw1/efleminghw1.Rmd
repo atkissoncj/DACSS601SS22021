@@ -1,15 +1,15 @@
 ---
-title: "efleming_hw1"
+title: efleming_hw1
 description: |
   Short introductory analysis on covid responses
 author:
-  - name: Emerson Fleming
-    url: http://umass.edu/sbs/dacss
+- name: Emerson Fleming
+  url: http://umass.edu/sbs/dacss
 date: 07-21-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ```{r setup, include=FALSE}
 require(tidyverse)
