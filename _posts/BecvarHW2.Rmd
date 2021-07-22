@@ -1,28 +1,27 @@
 ---
-title: Homework Two
+title: "Homework Two"
 description: |
-  This assignment is cleaning a selected dataset and describing the data
+  Analyzing part of the EPA's EJSCREEN Environmental Justice Dataset
 author:
-- name: Kristina Becvar
-date: 07-16-2021
+  - name: Kristina Becvar
+    url: http://umass.edu/sbs/dacss
+date: 07-21-2021
 output:
   distill::distill_article:
-    self_contained: no
-draft: yes
+    self_contained: false
+draft: true
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(blogbuilder)
-library(distill)
 library(tidyverse)
-iamstudent()
 ```
 
 ## **Reading in the data:**
 
 ```{r echo=TRUE}
-ejscreen <- read.delim("EJSCREEN_2020_IL.csv", sep = ",", header  = TRUE)
+ejscreen <- read.delim("../_data/EJSCREEN_2020_IL.csv", sep = ",", header  = TRUE)
 ```
 
 ## **About the dataset:**
@@ -81,9 +80,11 @@ I may need to reclassify variables to a different class, such as numeric or dbl,
 
 I suspect I may find I need to create new variables representing the correlation of the two types of variables, but am not quite there yet on how to accomplish this, but I am excited to figure this out.
 
-
 ## Reference
 
 United States Environmental Protection Agency (EPA), 2020 version, updated July 1, 2021. EJSCREEN. Retrieved: July 16, 2021 (https://gaftp.epa.gov/EJSCREEN/2020/)
+
+
+
 
 
