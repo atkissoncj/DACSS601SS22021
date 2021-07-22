@@ -12,7 +12,25 @@
       <link>https://github.com/DACSS/dacss_course_website</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>iris</title>
+      <dc:creator>Chris Elwood</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-iris</link>
+      <description>A short description of the post.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-iris</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>LyamuyaHW1</title>
+      <dc:creator>Allie Lyamuya</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-lyamuyahw1</link>
+      <description>This post is Homework1 for the course. Here I go over how to import data in R,
+how to explore the data set and trying to be a little creative with the data 
+set in R</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-lyamuyahw1</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Elwood HW1</title>
       <dc:creator>Chris Elwood</dc:creator>
