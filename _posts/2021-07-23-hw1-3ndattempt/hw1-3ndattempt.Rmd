@@ -1,0 +1,24 @@
+---
+title: "HW1 3ndAttempt"
+description: Took a look at the Covid data for assignment 1. Took a look at how participants by gender their age. Will come back to review how to group them by age and take a closer look at how their level of trust towards the govertment by age and gender. 
+  A short description of the post.
+author:
+  - name: Vanessa Guerrero
+    url: http://umass.edu/sbs/dacss
+date: 07-23-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
