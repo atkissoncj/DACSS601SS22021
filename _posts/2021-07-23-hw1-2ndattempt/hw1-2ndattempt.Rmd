@@ -1,0 +1,100 @@
+---
+title: "HW1 2ndAttempt"
+description: Took the Covid table and created a table to tell us how many participants took the survey by gender. 
+  A short description of the post.
+author:
+  - name: Vanessa Guerrero
+  
+install.packages("openxlsx")
+install.packages("readxl")
+library(openxlsx)
+
+library(tidyverse)
+
+library(readxl)
+
+CovidData<-read_excel("covid_responsesHW6sheet.xlsx")
+
+#check the first few rows by using the head() function
+
+head(CovidData)
+
+#how many rows of data are in this data set?
+dim(CovidData)
+
+# CovidData has 3460 rows & 80 columns
+
+#to find the column names we use colnames fuction
+
+colnames(CovidData)
+
+#No, pivot_ longer and pivot_wider are not necessary  in this case
+
+#Operation that requires new object
+
+rename(CovidData, 'GovtTrust' = "Q36")
+
+govtTrust<- rename (CovidData, 'GovtTrust' = "Q36")
+
+filter(govtTrust)
+gender_Table
+
+#do one thing to a portion of the data
+
+gender_Table<- table(CovidData$gender)
+
+agetable<- table(CovidData$age)
+
+gender_Table<- table(CovidData$gender)
+
+
+gender_Table
+summarise(govtTrust)
+
+library(distill)
+library(blogbuilder)
+
+
+
+select(CovidData, "gender", "age")
+filter(CovidData, "age" >= "1991")
+
+library(plyr)
+install.packages("plyr")
+
+library(plyr)
+
+count(CovidData, "age")
+
+count(CovidData, c("age", "gender"))
+
+#aggregate gender by age 
+
+aggregate(gender~ age, data =CovidData, sum)
+
+
+library(blogbuilder)
+library(distill)
+
+iamstudent
+
+create_post (title= "HW1 CovidData", draft= TRUE)
+
+    url: http://umass.edu/sbs/dacss
+date: 07-23-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
