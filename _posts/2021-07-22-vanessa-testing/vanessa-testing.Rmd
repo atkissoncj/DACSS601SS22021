@@ -1,5 +1,5 @@
 ---
-title: "HW1: About me post"
+title: "HW6: About me post"
 description: Hello, my name is Vanessa Guerrero, currently live in Los Angeles and work for a Nonprofit based in Chatworth. Been in the agency for 6 years and looking to learn new skills which is how I ended up in this class. 
 author:
   - name: Vanssa Guerrero
