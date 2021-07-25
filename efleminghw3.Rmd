@@ -1,0 +1,26 @@
+---
+title: "efleminghw3"
+author: "Emerson Fleming"
+date: "7/23/2021"
+output: html_document
+---
+```{r setup, include=FALSE}
+require(tidyverse)
+require(tidyr)
+require(dplyr)
+```
+
+```{r}
+head(myDataPath[,1:16], 10)
+```
+The first problem with the dataset that needed to be addressed was for the missing values in the dataset.
+So far, there are several key issues that have been addressed and will be included at a later juncture:
+1. I am not sure which years were used to compile this data
+2. I am not sure whether this data just includes sales in the US or worldwide sales
+3. I am not sure whether this data was compiled using multiple years or one single year (as my research on the data will indicate)
+
+As we can see, there appears to be a missing value for the resale value of the BMW 323i. The last year the BMW 323i was in year 2000 (which is about the year that I assume this data is based around according to my research). The resale price for the BMW 328i is listed at $28,675. O
+
+source
+(https://www.cars.com/research/bmw-323/)
+(https://www.cars.com/research/bmw-323/)
