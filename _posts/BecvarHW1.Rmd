@@ -1,0 +1,130 @@
+---
+title: "Homework One - or - The Homework That Never Ends"
+description: |
+  After struggling to complete this first homework, moving the data, changing repositories, and then recreating the homework to submit properly... I hope to have completed this first homework accurately!
+author:
+  - name: Kristina Becvar
+    url: http://umass.edu/sbs/dacss
+date: 07-21-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## **Reading in the data:**
+
+```{r echo=TRUE}
+scdb.data <- read.delim("../_data/scdb.csv", sep = ",", header  = TRUE)
+```
+
+## **About the data command:**
+
++ This object is named "scdb.data" because it holds data from the Supreme Court Database (scdb)
++ The data file for scdb in my working directory
++ The delimiter is "," because the file is a CSV (comma-separated value)
++ The header is "TRUE" because there is a header in the data with variable names
+
+## **Checking the first few rows**
+
++ The head() function returns the variable names & the first 6 rows of the data file by default
++ head(scdb.data) previewed so many columns that the knitted post displayed them poorly. So I did some searching after completing the next steps to adjust how it displayed on my post.
++ I looked up how to select just one column to preview, "caseName",and executed it below.
+
+```{r echo=TRUE}
+head(scdb.data$caseName)
+```
+## **Checking the number of rows of data and the number of columns in the dataset**
+
+```{r echo=TRUE}
+dim(scdb.data)
+```
++ There are 8966 rows in this database
++ There are 53 columns in the database
+
+## **Checking the column names**
+
+```{r echo=TRUE}
+colnames(scdb.data)
+```
+
+## **Determining the use of the gather() and spread() functions**
+
++ I used as_tibble to view the data in that form and make sure I understood the database attributes and what could be done to make it tidy.
+
+```{r echo=TRUE}
+library(tidyverse)
+scdb.tidy <- as_tibble(scdb.data)
+
+```
+
++ At this point, I don't see a purpose for using those functions with this dataset.
++ The data seems tidy in that every variable has its own column, each observation has its own row, and each value has its own cell.
+
+## **Executing an operation that requires creating a new object and doing something to that object**
+
++ I selected the categories "term" and "decisionDirection" 
++ Then, I filtered the term date to only include decisions from term year 1976, randomly chosen because it's the year I was born.
++ Next, I used the 'mutate' function to create a new column using the integers from 'decisionDirection'. 
++ The new column is titled 'ideology', representing either conservative, liberal decisions
++ Finally, I renamed the integers in the ideology column to represent their coded meanings (1 = conservative, 2 = liberal, 3 = unspecified)
+
+```{r echo=TRUE}
+scdb.tidy2 <- select(scdb.tidy,term, decisionDirection)
+scdb.1976 <- filter(scdb.tidy2, term == "1976") 
+(scdb.1976 <- scdb.1976 %>% 
+  mutate(ideology = case_when(
+    decisionDirection == 1 ~ "conservative",
+    decisionDirection == 2 ~ "liberal",
+    decisionDirection == 3 ~ "unspecified"
+  )))
+```
+
+## **Doing one thing to some portion of these data that hasn't been covered so far in the course materials**
+
++ I wanted to look at graphics of the ideology trend of cases in the supreme court term of 1976. I used ggplot to create a bar chart. 
+
+```{r echo=TRUE}
+ggplot(scdb.1976, aes(x = ideology)) + 
+  geom_bar(fill = "slategray3", 
+           color="black") +
+  labs(x = "Ideology", 
+       y = "Frequency", 
+       title = "Ideology of Supreme Court Decisions in 1976")
+```
+
++ That got me wanting to try something different, and look up how to display it in a different color and with percentages instead of volume on the y axis.
+
+```{r echo=TRUE}
+library(dplyr)
+library(scales)
+plotdata <- scdb.1976 %>%
+  count(ideology) %>%
+  mutate(pct = n / sum(n),
+         pctlabel = paste0(round(pct*100), "%"))
+```
+
+```{r echo=TRUE}
+ggplot(plotdata, 
+       aes(x = reorder(ideology, -pct),
+           y = pct)) + 
+  geom_bar(stat = "identity", 
+           fill = "darkred", 
+           color = "black") +
+  geom_text(aes(label = pctlabel), 
+            vjust = -0.25) +
+  scale_y_continuous(labels = percent) +
+  labs(x = "Ideology", 
+       y = "Frequency", 
+       title = "Ideology of Supreme Court Decisions in 1976")
+```
+
++ I can definitely see how the process of visualizing data can be fun once I understand the language better. However, given the resulting percentages adding up to 101%, I clearly have a lot left to learn!
+
+
+

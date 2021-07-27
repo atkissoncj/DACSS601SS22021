@@ -12,13 +12,74 @@
       <link>https://github.com/DACSS/dacss_course_website</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>efleming_hw1</title>
+      <dc:creator>Emerson Fleming</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw1</link>
+      <description>Short introductory analysis on covid responses</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw1</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>efleming_hw2</title>
+      <dc:creator>Emerson Fleming</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw2</link>
+      <description>Describes and analyzes a 2011-2012 data set on the highest selling and re-selling car models and manufacturers.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw2</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>efleming_hw6</title>
+      <dc:creator>Emerson Fleming</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw6</link>
+      <description>Emerson's Introduction</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw6</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hola</title>
+      <dc:creator>Stephanie Cortez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-hola</link>
+      <description>HW 6 Post</description>
+      <category>hw 6</category>
+      <category>hola</category>
+      <category>stephanie cortez</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-hola</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>iris</title>
+      <dc:creator>Chris Elwood</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-iris</link>
+      <description>A short description of the post.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-iris</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>LyamuyaHW1</title>
+      <dc:creator>Allie Lyamuya</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-lyamuyahw1</link>
+      <description>This post is Homework1 for the course. Here I go over how to import data in R,
+how to explore the data set and trying to be a little creative with the data 
+set in R</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-lyamuyahw1</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Elwood HW1</title>
       <dc:creator>Chris Elwood</dc:creator>
       <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-elwood-hw1</link>
       <description>HW1 using the COVID 19 Italy Response survey.</description>
       <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-elwood-hw1</guid>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Genovese HW1 Revision 7.20.21</title>
+      <dc:creator>Alex Genovese</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-genovese-hw1-revision-72021</link>
+      <description>My revision to the HW. Reposted for pull request</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-genovese-hw1-revision-72021</guid>
       <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -66,14 +127,6 @@
       <category>NathanCoyotePost</category>
       <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost</guid>
       <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Cool_Stuff</title>
-      <dc:creator>Emerson Fleming</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-13-coolstuff</link>
-      <description>Emerson's Introduction</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-13-coolstuff</guid>
-      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Jessica Intro</title>

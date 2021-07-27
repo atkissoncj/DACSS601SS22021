@@ -1,15 +1,15 @@
 ---
-title: "iris"
+title: iris
 description: |
   A short description of the post.
 author:
-  - name: Chris Elwood
-    url: http://umass.edu/sbs/dacss
+- name: Chris Elwood
+  url: http://umass.edu/sbs/dacss
 date: 07-21-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
