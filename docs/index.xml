@@ -67,6 +67,23 @@ set in R</description>
       <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Homework One - or - The Homework That Never Ends</title>
+      <dc:creator>Kristina Becvar</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/BecvarHW1</link>
+      <description>After struggling to complete this first homework, moving the data, changing repositories, and then recreating the homework to submit properly... I hope to have completed this first homework accurately!</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/BecvarHW1</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/DACSS/dacss_course_website/posts/BecvarHW1/BecvarHW1_files/figure-html5/unnamed-chunk-7-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Homework Two</title>
+      <dc:creator>Kristina Becvar</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/BecvarHW2</link>
+      <description>Analyzing part of the EPA's EJSCREEN Environmental Justice Dataset</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/BecvarHW2</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Elwood HW1</title>
       <dc:creator>Chris Elwood</dc:creator>
       <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-elwood-hw1</link>
@@ -97,6 +114,7 @@ set in R</description>
       <description>My Homework One no longer shows on GitHub, so here's a resubmit.</description>
       <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-one-resubmission</guid>
       <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-one-resubmission/homework-one-resubmission_files/figure-html5/something fun-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Homework 6 Chris Elwood</title>

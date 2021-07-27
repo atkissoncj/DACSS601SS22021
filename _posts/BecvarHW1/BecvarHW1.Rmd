@@ -1,15 +1,15 @@
 ---
-title: "Homework One - or - The Homework That Never Ends"
+title: Homework One - or - The Homework That Never Ends
 description: |
   After struggling to complete this first homework, moving the data, changing repositories, and then recreating the homework to submit properly... I hope to have completed this first homework accurately!
 author:
-  - name: Kristina Becvar
-    url: http://umass.edu/sbs/dacss
+- name: Kristina Becvar
+  url: http://umass.edu/sbs/dacss
 date: 07-21-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## **Reading in the data:**
 
 ```{r echo=TRUE}
-scdb.data <- read.delim("../_data/scdb.csv", sep = ",", header  = TRUE)
+scdb.data <- read.delim("../../_data/scdb.csv", sep = ",", header  = TRUE)
 ```
 
 ## **About the data command:**
