@@ -1,0 +1,42 @@
+---
+title: Introduction
+description: |
+  This is Homework Six
+author:
+- name: Kristina Becvar
+date: 07-11-2021
+categories: Homework 6
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+I have two cats lying on me as I write this.
+
+One is named Lana, and she is calm and chill.
+
+One is named Murphy, and he is a tornado.
+
+To have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.
+
+This mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:
+
+```{r eval=TRUE, echo=TRUE}
+library(cowsay)
+library(wikifacts)
+library(magrittr)
+wiki_randomfact(
+  n_facts = 1L,
+  fact = c("any", "didyouknow", "onthisday", "inthenews"),
+  bare_fact = FALSE,
+  repeats = TRUE) %>% say(by = "cow")
+
+```
+

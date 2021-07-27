@@ -1,0 +1,117 @@
+---
+title: Elwood HW1
+description: |
+  HW1 using the COVID 19 Italy Response survey.
+author:
+- name: Chris Elwood
+  url: http://umass.edu/sbs/dacss
+date: 07-20-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+```{r}
+# HomeworkOneTemplate.r
+# This tells us what this file does
+#
+# Curtis Atkisson 7.9.2021
+
+# Reminder: the # "comments" out a line of text; that is, if you precede a line with "#",
+# then R ignores that line
+
+# =-=-=-=-=-=-=-=-=-=-=-=-
+# front end material.
+# =-=-=-=-=-=-=-=-=-=-=-=-
+
+library(tidyverse)
+
+# =-=-=-=-=-=-=-=-=-=-=-=-
+# Some quick code reminders
+# =-=-=-=-=-=-=-=-=-=-=-=-
+
+# Here's an example of storing an object.
+hello <- paste("Hello World!")
+
+# Look over there ->
+# In the "Environment" window, you'll see that you've created an object that is
+# now stored in your workspace.
+
+# Now type hello. R "pastes" the line of text that says "Hello World!" as your output.
+
+# Ok, with those reminders out of the way, let's get some data into R
+
+# =-=-=-=-=-=-=-=-=-=-=-=-=-
+# Reading in Data
+# =-=-=-=-=-=-=-=-=-=-=-=-=-
+
+# What you need to do from here on out is dependent on the dataset
+# you choose to work with! Here's an example of how I'd approach this with
+# a file using "+" as a delimiter
+
+myData <- read_tsv("../../_data/covid-responses.tab")
+
+# let's unpack that a bit.
+# I'm creating an object called myData
+# I'm using the read.delim() function to read it in
+# I'm specifying the name of the file; it's in my working directory!
+# I'm specifying the delimiter (here, "+", but often commas (",") or tabs ("\t")
+# I'm specifying that there is a header included in the data that features the variable names
+# Don't forget to look at the data import samples code to get examples of other ways to import data.
+
+# Now, let's check the first few rows. I'll let you remember how to do that!
+head(myData)
+# How many rows of data are there in this dataset?
+dim(myData)
+print("There are 3460 rows")
+# How many columns are there in the dataset?
+print("There are 80 columns")
+# What are the column names?
+colnames(myData)
+# Should any of these columns have gather() or spread() applied to them to make them more
+# useful? If so, perform those operations. If you want a challenge, try to use
+# pivot_longer() or pivot_wider() instead.
+print("The gather function is useful when variables are spread across columns. In this dataset
+      it seems that each column represents a unique variable, and so gathering is unnecessary.
+      Similarly, the spread function is useful when observations are split across multiple rows
+      and you want to organize them under a single column. In this dataset each row represents
+      a unique observation, so spreading is unnecessary.")
+
+# I printed every column for the first 10 rows to get a better grasp of the whole dataset:
+options(tibble.width = Inf)
+# print(myData)
+
+# Do one operation that requires creating a new object and doing something to that object
+
+# There is a block of the survey called "Perception of policies, anxiety" from columns
+# "percievedreaction" to "Q26". If we wanted to focus in on this block for whatever reason, 
+# we could use select() to make a new dataset with only those columns.
+
+perPolAnx <- select(myData, perceivedreaction:Q26)
+print(perPolAnx)
+
+# Do one thing to some portion of these data that hasn't been covered so far in the course materials. Be creative and have fun!
+
+# The survey asks respondents to react on a scale of 1 to 5. In this dataset those responses
+# are stored as strings ranging from Strongly Distrust to Strongly Trust. If we want to perform
+# numeric operations on these responses (such as finding the mean) we have to convert them back
+# to numeric form using mutate() and recode(). Here this is done for Q36:
+
+perPolAnx <- mutate(perPolAnx, Q36N = recode(Q36, "Strongly distrust" = 1, "Distrust" = 2, "Neither trust nor
+                                 distrust" = 3, "Somewhat trust" = 4, "Strongly trust" = 5))
+#print(perPolAnx)
+
+# Now we can find the mean:
+summarize(perPolAnx, Q36mean = mean(Q36N, na.rm = TRUE))
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

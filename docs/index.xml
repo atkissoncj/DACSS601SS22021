@@ -12,21 +12,154 @@
       <link>https://github.com/DACSS/dacss_course_website</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 12 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Untitled</title>
-      <link>https://github.com/DACSS/dacss_course_website/posts/introduction</link>
-      <description>Untitled</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/introduction</guid>
-      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      <title>efleming_hw1</title>
+      <dc:creator>Emerson Fleming</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw1</link>
+      <description>Short introductory analysis on covid responses</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw1</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Here is a test post</title>
-      <dc:creator>Curtis Atkisson</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test</link>
-      <description>I'm testing something.</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-01-curtis-test</guid>
-      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <title>efleming_hw2</title>
+      <dc:creator>Emerson Fleming</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw2</link>
+      <description>Describes and analyzes a 2011-2012 data set on the highest selling and re-selling car models and manufacturers.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw2</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>efleming_hw6</title>
+      <dc:creator>Emerson Fleming</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw6</link>
+      <description>Emerson's Introduction</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-efleminghw6</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hola</title>
+      <dc:creator>Stephanie Cortez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-hola</link>
+      <description>HW 6 Post</description>
+      <category>hw 6</category>
+      <category>hola</category>
+      <category>stephanie cortez</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-hola</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>iris</title>
+      <dc:creator>Chris Elwood</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-iris</link>
+      <description>A short description of the post.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-iris</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>LyamuyaHW1</title>
+      <dc:creator>Allie Lyamuya</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-lyamuyahw1</link>
+      <description>This post is Homework1 for the course. Here I go over how to import data in R,
+how to explore the data set and trying to be a little creative with the data 
+set in R</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-21-lyamuyahw1</guid>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Elwood HW1</title>
+      <dc:creator>Chris Elwood</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-elwood-hw1</link>
+      <description>HW1 using the COVID 19 Italy Response survey.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-elwood-hw1</guid>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Elwood HW 1</title>
+      <dc:creator>Chris Elwood</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-1</link>
+      <description>Homework 1 using the COVID Response in Italy Survey Data.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-1</guid>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Homework One Resubmission</title>
+      <dc:creator>Nathan Cote</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-one-resubmission</link>
+      <description>My Homework One no longer shows on GitHub, so here's a resubmit.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-one-resubmission</guid>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-one-resubmission/homework-one-resubmission_files/figure-html5/something fun-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Genovese HW1 Revision 7.20.21</title>
+      <dc:creator>Alex Genovese</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-genovese-hw1-revision-72021</link>
+      <description>My revision to the HW. Reposted for pull request</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-genovese-hw1-revision-72021</guid>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Homework 6 Chris Elwood</title>
+      <dc:creator>Chris Elwood</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-6-chris-elwood</link>
+      <description>An introduction and a few lines of R.</description>
+      <category>homework 6</category>
+      <category>introduction</category>
+      <category>chris elwood</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-6-chris-elwood</guid>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Non-Titular Title</title>
+      <dc:creator>Sarah Jimenez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-12-a-titular-name</link>
+      <description>A Non-Descriptive Description</description>
+      <category>-homework 6 -sarah jimenez</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-12-a-titular-name</guid>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>NathanCoyotePostResubmission</title>
+      <dc:creator>Nathan Cote</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost</link>
+      <description>Repost of Homework 6 containing 5 lines of code.</description>
+      <category>homework 6</category>
+      <category>NathanCoyotePost</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-10-nathancoyotepost</guid>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jessica Intro</title>
+      <dc:creator>Jessica Fuller</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-13-jessica-intro</link>
+      <description>Hello, my name is Jessica Fuller. I am 24 years old and am from Rochester, MA. I am a huge animal lover and have 3 cats and 2 dogs. I'm also an avid sports fan and enjoying working out and staying active. I am pursuing my master's degree in data analytics because I hope to enter the data science field, and I would like to expand my programming and analytics skills.</description>
+      <category>jessica fuller</category>
+      <category>homework</category>
+      <category>cats</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-13-jessica-intro</guid>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Enare</title>
+      <dc:creator>Allie Lyamuya</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-12-enare</link>
+      <description>Greetings from Allie</description>
+      <category>homework 6</category>
+      <category>enare</category>
+      <category>allie lyamuya</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-12-enare</guid>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/DACSS/dacss_course_website/posts/2021-07-12-enare/enare_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Introduction</title>
+      <dc:creator>Kristina Becvar</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/introduction</link>
+      <description>This is Homework Six</description>
+      <category>Homework 6</category>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/introduction</guid>
+      <pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Welcome to DACSS 601</title>
