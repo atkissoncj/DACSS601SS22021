@@ -1,13 +1,13 @@
 ---
-title: "SCortez HW 1"
+title: SCortez HW 1
 description: |
   Homework 1
 author: Stephanie Cortez
 date: 07-26-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -21,7 +21,7 @@ knitr::opts_chunk$set(error = TRUE)
 ```{r}
 #Importing data
 library(readxl)
-SENIScoresElementaryShools_20212022 <- read_excel("~/UMASS/DACSS/601/GitHub/DACSS601SS22021/_data/SENIScoresElementaryShools-20212022.xlsx")
+SENIScoresElementaryShools_20212022 <- read_excel("../../_data/SENIScoresElementaryShools-20212022.xlsx")
 SENISData <- SENIScoresElementaryShools_20212022
 SENISData
 ```
