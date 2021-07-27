@@ -1,0 +1,90 @@
+---
+title: "HW1"
+description: |
+  This post is Homework1 for the course. Here I go over how to import data in R,
+  how to explore the data set and trying to be a little creative with the data 
+  set in R
+author:
+  - name: Allie Lyamuya
+date: 07-21-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Importing Data in R
+
+```{r}
+# Run the library
+library(tidyverse)
+
+# Import the data into R
+hearingsData <- read.csv("/Users/allielyamuya/Python, Data Viz, R/DACSS601SS22021/_data/congressional_hearings.csv")
+```
+
+<br>
+
+# Explore the Data 
+
+```{r}
+# To get the first few rows of data
+head(hearingsData)
+
+# To gain some familiarity with the data
+colnames(hearingsData)
+dim(hearingsData)
+```
+
+<br>
+
+Should any of these columns have gather() or spread() applied to them to make 
+them more useful? If so, perform those operations. If you want a challenge, 
+try to use pivot_longer() or pivot_wider() instead.
+
+* Given that each "id" and "source" are quite distinct, I don't think `gather()`
+and `spread()` or `pivot_longer()` or `pivot_wider()` could have been useful in
+this data. 
+
+<br>
+
+
+```{r}
+# creating a new object and make it to function 
+selectedHearingsData <- hearingsData %>%
+  dplyr::rename("cisyear" = "CISYear", "filterHouse" = "filter_House", 
+                "filterSenate" = "filter_Senate", "filterJoint" = "filter_Joint",
+                "cisCommittee" = "CISCommittee") %>%
+  dplyr::select(id, source, cisyear, filterHouse, filterSenate, filterJoint,
+                cisCommittee)
+
+# Arrange the selectedHearingsData
+arrangedHearingsData <- selectedHearingsData %>%
+  arrange(desc(id))
+```
+
+<br>
+
+I find this function very useful when trying to inspect data. It provides as
+outputs both the number of rows and columns, the names of the columns (variables)
+in a dataset, and the structure of the each variable. All these could be 
+achieved instead by running both `dim()`, `colnames()`, and `str()`. 
+
+```{r}
+# One thing that has not yet been covered in the course
+glimpse(hearingsData)
+```
+
+
+<br>
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
