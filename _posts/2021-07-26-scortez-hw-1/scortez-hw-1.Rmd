@@ -1,0 +1,65 @@
+---
+title: "SCortez HW 1"
+description: |
+  Homework 1
+author: Stephanie Cortez
+date: 07-26-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+```{r, echo=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+```
+
+# I am using a dataset I found in LAUSD website on SENIS (School Equity Needs Index Scores) for elementary schools. File is SENIScoresElementaryShools-20212022.xlsx.
+```{r}
+#Importing data
+library(readxl)
+SENIScoresElementaryShools_20212022 <- read_excel("~/UMASS/DACSS/601/GitHub/DACSS601SS22021/_data/SENIScoresElementaryShools-20212022.xlsx")
+SENISData <- SENIScoresElementaryShools_20212022
+SENISData
+```
+
+#Now, let's check the first few rows. I'll let you remember how to do that!
+```{r}
+head(SENISData)
+```
+#How many rows of data are there in this dataset? How many columns are there in the dataset?
+```{r}
+dim(SENISData)
+```
+#What are the column names?
+```{r}
+colnames(SENISData)
+```
+
+#Should any of these columns have gather() or spread() applied to them to make them more useful? If so, perform those operations. If you want a challenge, try to use
+p#ivot_longer() or pivot_wider() instead.
+```{r}
+pivot_wider(SENISData, "Local District")
+```
+#Do one operation that requires creating a new object and doing something to that object
+```{r}
+#Assigning new tidyset as tidySENItest that shows columns Local District, Homeless Count and Foster Count from SENISData
+tidySENItest <- select(SENISData, `Local District`, `Homeless Count`, `Foster Count`)
+head(tidySENItest)
+```
+#Do one thing to some portion of these data that hasn't been covered so far in the course materials. Be creative and have fun!
+
+``````{r}
+#Pulling [x,y] value
+SENISData[5,10]
+```
+
+``````{r}
+#Pulling/Printing first 10 rows and all columns
+print(SENISData, n=10, width = Inf)
+```
+
+
