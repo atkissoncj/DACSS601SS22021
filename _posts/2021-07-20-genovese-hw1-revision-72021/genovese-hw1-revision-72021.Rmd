@@ -1,19 +1,19 @@
 ---
-title: "Genovese HW1 Revision 7.20.21"
+title: Genovese HW1 Revision 7.20.21
 description: |
   My revision to the HW. Reposted for pull request
 author:
-  - name: Alex Genovese
+- name: Alex Genovese
 date: 07-20-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ## I first read in the .csv file into myData
-```{r}
-library{tidyverse}
-myData <- read.delim("congressional_hearings.csv", sep = ",", header=T)
+```{r, include=TRUE}
+library(tidyverse)
+myData <- read.delim("../../_data/congressional_hearings.csv", sep = ",", header=T)
 ```
 ## I then read the first few lines of myData through head()
 ```{r}
