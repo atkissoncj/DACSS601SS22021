@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Sanjana Checker" />
+
+
+<title>HW1</title>
+
+<!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content=""/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+<!--/radix_placeholder_navigation_in_header-->
+<!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+<style type="text/css">
+body {
+  padding-top: 60px;
+}
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      2.5rem;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #881c1c;
+  --header-color:    #63666a;
+  --body-color:      #63666a;
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --title-font:      'Open Sans', sans-serif;
+  --heading-font:    'Open Sans', sans-serif;
+  --mono-font:       'Open Sans', sans-serif;
+  --body-font:       'Open Sans', sans-serif;
+  --navbar-font:     'Open Sans', sans-serif;
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+.posts-with-sidebar .posts-list {
+      width: 80%;
+}
+
+.posts-with-sidebar .posts-sidebar {
+      width: 16%;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size: 20px;
+  --text-size: 18px;
+  --hover-color:      white;
+  --bkgd-color:       #881c1c;
+}
+
+.distill-site-footer {
+  --text-color:       white;
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #881c1c;
+}
+
+.footer-center {
+  grid-column-start: middle-start /  text-end;
+  grid-row: 1 / 2;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below */
+
+/* Logo sizing */
+.logo img {
+  padding-bottom: 3px;
+  margin-bottom: 0px;
+  padding-right: 0px;
+  vertical-align: unset;
+}
+
+/* Categories / labels */
+.dt-tag {
+  color: #881c1c !important;
+}
+
+/* Navbar right links */
+.nav-right a {
+  font-size: 16px;
+}
+
+/* PDF on syllabus page */
+embed[type="application/pdf"] {
+  height: 800px;
+  width: 700px;
+}
+
+/* Index page title (coursename) */
+
+d-title h1{
+  text-align: left;
+  font-variant: small-caps;
+  margin-top: .5rem;
+  margin-bottom: .25rem;
+  font-size: 2rem;
+  color: #881c1c;
+  line-height: 1.1 !important;
+  /* font-weight: 200; */
+}
+
+.index-title h1{
+  text-align: center;
+  font-variant: small-caps;
+  margin-top: .5rem;
+  margin-bottom: .25rem;
+  font-size: 2rem;
+  color: #881c1c;
+  line-height: 1.1 !important;
+  /* font-weight: 200; */
+}
+
+/* Index page subtitle (semester) */
+d-title h2 {
+  text-align:left;
+  font-variant: small-caps;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  color: #881c1c;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+d-article h2 {
+  text-align:left;
+  font-variant: small-caps;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+.index-title h2{
+  text-align: center;
+  font-variant: small-caps;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  color: #881c1c;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+/* Size of user images */
+.rounded-circle {
+  height: unset;
+  width: unset;
+  border-radius: unset;
+}
+
+/* Footer social media icons */
+.social-media-icons .footer {
+  margin-right: 5px;
+}
+
+/* 
+  Remove weird formating with footer icons in posts
+  Note: not supported for Safari browsers.
+*/
+.fa-placeholder {
+  all: unset;
+}
+
+/* Align navbar button on top right side (only applies for mobile) */
+.nav-toggle {
+  padding-top: 10px !important;
+}
+
+/* remove image on mobile */
+
+.image-hide{}
+
+@media screen and (max-width: 520px) {
+    .image-hide {
+      display: none;
+    }
+    .title {
+      font-size: 14px !important;
+    }
+    .distill-site-header {
+      --title-size: 14px; 
+    }
+    .distill-site-header .title {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    .d-title h1{
+      font-size: 22px;
+    }
+    .d-title h2{
+      font-size: 16px;
+    }
+    .index-title {
+      margin-bottom: 30px;
+    }
+    .index-title h1{
+      font-size: 22px;
+    }
+    .index-title h2{
+      font-size: 16px;
+    }
+    .d-article div {
+      margin-top:20px;
+      margin-bottom:20px;
+    }
+    .posts-list .posts-list-caption {
+      margin: 0;
+    }
+    .posts-list {
+      margin-top: 20px;
+    }
+    .posts-list .post-preview p{
+      font-size:12;
+    }
+    /* Fix padding for posts */
+    .posts-container {
+      padding-right: 0%;
+    }
+    /* DACSS footer image */
+    #dacss-footer {
+      width: 70%;
+    }
+    /* 'Student Submissions text in index */
+    .posts-list-caption {
+      font-size: 18px;
+    }
+    .nav-right a {
+      text-align: center !important;
+    }
+    /* PDF on syllabus page */
+    embed[type="application/pdf"] {
+      height: 400px;
+      width: 500px;
+    }
+  }
+
+@media screen and (max-width: 360px) {
+  .title {
+    font-size: 12px !important;
+  }
+  .distill-site-header {
+    --title-size: 12px; 
+  }
+  .distill-site-header .title {
+      padding-left: 2px;
+      padding-right: 2px;
+  }
+  .index-title {
+      margin-bottom: 30px;
+  }
+  /* Fix padding for posts */
+  .posts-container {
+      padding-right: 0%;
+  }
+  /* DACSS footer image */
+  #dacss-footer {
+      width: 70%;
+  }
+  /* 'Student Submissions text in index */
+  .posts-list-caption {
+      font-size: 18px;
+  }
+  /* PDF on syllabus page */
+  embed[type="application/pdf"] {
+    height: 400px;
+    width: 300px;
+  }
+}
+
+</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<script src="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\pandoc\HEADER~1.JS"></script>
+<script src="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\jquery\JQUERY~1.JS"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\BOOTST~1\css\BOOTST~4.CSS" rel="stylesheet" />
+<script src="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\BOOTST~1\js\BOOTST~2.JS"></script>
+<script src="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\BOOTST~1\shim\HTML5S~1.JS"></script>
+<script src="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\BOOTST~1\shim\RESPON~1.JS"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\NAVIGA~1.1\tabsets.js"></script>
+<link href="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\HIGHLI~1\default.css" rel="stylesheet" />
+<script src="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\HIGHLI~1\HIGHLI~1.JS"></script>
+<link href="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\FONTAW~1\css\all.css" rel="stylesheet" />
+<link href="C:\Users\CATKIS~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\FONTAW~1\css\v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="https://www.umass.edu">
+<img src="images/UMass White Workmark Horiz.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">Data Analytics and Computational Social Science</a>
+</div>
+<div class="nav-right">
+<a href="about.html">About</a>
+<a href="syllabus.html">Syllabus</a>
+<a href="students.html">Students</a>
+<a href="https://github.com/atkissoncj/DACSS601SS22021.git">
+<i class="fab fa-github-alt fa-1x" aria-hidden="true"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="students.html">Students</a>
+</li>
+<li>
+  <a href="https://github.com/atkissoncj/DACSS601SS22021.git">
+    <span class="fab fa-github-alt fa-1x"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">HW1</h1>
+<h4 class="author">Sanjana Checker</h4>
+<h4 class="date">7/23/2021</h4>
+
+</div>
+
+
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<div id="covid-response-survey-data" class="section level3">
+<h3>Covid Response Survey Data</h3>
+</div>
+</div>
+<div id="by-sanjana-checker" class="section level2">
+<h2>By Sanjana Checker</h2>
+<p>This data set I will be showing you is COVID responses to a survey that was given to them. This data not only includes the information from the questions they responded to, but also personal details such as the survey takers’ location, language, and time.</p>
+</div>
+<div id="diving-deeper" class="section level2">
+<h2>Diving Deeper</h2>
+<p>Let’s preview the first few rows to get an idea of what is going on. I will first load the data.</p>
+<p>I will use the head function to preview the first 5 rows of the data.</p>
+<pre><code>##              V1            V2             V3       V4                    V5
+## 1     StartDate       EndDate         Status Progress Duration..in.seconds.
+## 2 3/17/20 16:56 3/17/20 17:01 Survey Preview      100                   281
+## 3 3/17/20 20:30 3/17/20 20:38 Survey Preview      100                   442
+## 4  3/18/20 7:33  3/18/20 7:33     IP Address      100                     4
+## 5  3/18/20 7:41  3/18/20 7:58     IP Address      100                  1013
+## 6  3/18/20 7:58  3/18/20 8:00     IP Address      100                    79
+##         V6            V7                V8                V9            V10
+## 1 Finished  RecordedDate        ResponseId RecipientLastName RecipientEmail
+## 2     TRUE 3/17/20 17:01 R_2frKYIOy7KEE7un                                 
+## 3     TRUE 3/17/20 20:38 R_1oG5OkmsFriVqZM                                 
+## 4     TRUE  3/18/20 7:33 R_2QFmRaps2e9IdzG                                 
+## 5     TRUE  3/18/20 7:58 R_2B2GnzpGYTBU9oY                                 
+## 6     TRUE  3/18/20 8:00 R_25ydRn864kRFG5f                                 
+##                 V11              V12               V13                 V14
+## 1 ExternalReference LocationLatitude LocationLongitude DistributionChannel
+## 2                        53.33380127      -6.248794556             preview
+## 3                        42.34739685      -71.15820313             preview
+## 4                        52.38200378      -1.587402344           anonymous
+## 5                          42.373703      -71.12840271           anonymous
+## 6                          42.373703      -71.12840271           anonymous
+##            V15                                            V16
+## 1 UserLanguage                                             Q1
+## 2           EN Yes, I would like to participate in the survey
+## 3           EN Yes, I would like to participate in the survey
+## 4           IT            No, I would not like to participate
+## 5           IT Yes, I would like to participate in the survey
+## 6           IT Yes, I would like to participate in the survey
+##                      V17                    V18                    V19
+## 1 SelfReported_Behavio_1 SelfReported_Behavio_2 SelfReported_Behavio_3
+## 2                     73                     74                     82
+## 3                     45                     20                      8
+## 4                                                                     
+## 5                     45                     28                     28
+## 6                     53                     77                     45
+##                      V20                    V21        V22 V23    V24       V25
+## 1 SelfReported_Behavio_4 SelfReported_Behavio_5 Reflection  T2 social handshake
+## 2                     74                     55                                
+## 3                      1                      1                    No       Yes
+## 4                                                                              
+## 5                     31                     47                   Yes       Yes
+## 6                     51                     67                   Yes       Yes
+##      V26    V27   V28   V29   V30   V31                 V32            V33
+## 1 stores curfew SOB_1 SOB_2 SOB_3 SOB_4 financialpunishment Geldstrafe_1_1
+## 2                        79                                               
+## 3    Yes    Yes    75    69    67    68                 Yes            239
+## 4                                                                         
+## 5    Yes    Yes    42    41    38    49                 Yes            152
+## 6    Yes    Yes    56    53    37    58                 Yes            263
+##              V34                                   V35
+## 1 Geldstrafe_2_1                     perceivedreaction
+## 2                                                     
+## 3            336 The reaction is somewhat insufficient
+## 4                                                     
+## 5            144           The reaction is appropriate
+## 6            428           The reaction is appropriate
+##                          V36                             V37
+## 1                        Q36                             Q37
+## 2                                                           
+## 3                                                           
+## 4                                                           
+## 5 Neither trust nor distrust Neither truthful nor untruthful
+## 6                   Distrust             Somewhat untruthful
+##                           V38                               V39
+## 1                         Q23              perceivedeffectivnes
+## 2                                                              
+## 3 The reaction is appropriate                    Very effective
+## 4                                                              
+## 5 The reaction is appropriate                         Effective
+## 6 The reaction is appropriate Neither effective nor ineffective
+##                                  V40                     V41
+## 1                          anxiety_1               anxiety_2
+## 2                                                           
+## 3 Neither applies nor does not apply        Somewhat applies
+## 4                                                           
+## 5            Somewhat does not apply Somewhat does not apply
+## 6              Does not apply at all Somewhat does not apply
+##                       V42                     V43                     V44 V45
+## 1               anxiety_3               anxiety_4               anxiety_5 Q24
+## 2                                                                            
+## 3        Strongly applies        Strongly applies                            
+## 4                                                                            
+## 5 Somewhat does not apply Somewhat does not apply Somewhat does not apply Yes
+## 6 Somewhat does not apply Somewhat does not apply Somewhat does not apply Yes
+##                                                                                                                           V46
+## 1                                                                                                                         Q25
+## 2                                                                                                                            
+## 3                                                                                                                            
+## 4                                                                                                                            
+## 5                                                                                                       Exercising my freedom
+## 6 Going to work,Walking a pet,Going to the hospital / receiving medical treatments,Getting tired of being inside of the house
+##           V47
+## 1 Q25_13_TEXT
+## 2            
+## 3            
+## 4            
+## 5            
+## 6            
+##                                                                                                                  V48
+## 1                                                                                                                Q26
+## 2                                                                                                                   
+## 3                                                                                                                   
+## 4                                                                                                                   
+## 5                                                                                                 g.\\tHomeschooling
+## 6 a.\\tConflicts in the family,c.\\tLack of exercise,f.\\tLoss of job / income source,h.\\tLack of social activities
+##           V49  V50    V51           V52     V53       V54               V55
+## 1 Q26_11_TEXT  age gender gender_3_TEXT zipcode    health health_conditions
+## 2                                                                          
+## 3                  Female                 34343      Fair                 1
+## 4                                                                          
+## 5                  Female                 42141 Excellent                 0
+## 6             1987   Male                     d      Fair                 0
+##                              V56                      V57
+## 1                  personality_1            personality_2
+## 2                                                        
+## 3          Agree moderately  (4)    Agree moderately  (4)
+## 4                                                        
+## 5 Neither agree nor disagree (3)    Agree moderately  (4)
+## 6       Disagree moderately  (2) Disagree moderately  (2)
+##                              V58                      V59
+## 1                  personality_3            personality_4
+## 2                                                        
+## 3            Agree strongly  (5)      Agree strongly  (5)
+## 4                                                        
+## 5 Neither agree nor disagree (3)    Agree moderately  (4)
+## 6       Disagree moderately  (2) Disagree moderately  (2)
+##                              V60                            V61
+## 1                  personality_5                  personality_6
+## 2                                                              
+## 3            Agree strongly  (5)                              6
+## 4                                                              
+## 5 Neither agree nor disagree (3) Neither agree nor disagree (3)
+## 6       Disagree moderately  (2)       Disagree moderately  (2)
+##                              V62                            V63
+## 1                  personality_7                  personality_8
+## 2                                                              
+## 3                              6                              6
+## 4                                                              
+## 5 Neither agree nor disagree (3) Neither agree nor disagree (3)
+## 6       Disagree moderately  (2)       Disagree moderately  (2)
+##                              V64                            V65      V66 V67
+## 1                  personality_9                 personality_10    Q27_5 Q35
+## 2                                                               REDACTED    
+## 3            Agree strongly  (5)            Agree strongly  (5) REDACTED    
+## 4                                                               REDACTED    
+## 5 Neither agree nor disagree (3) Neither agree nor disagree (3) REDACTED    
+## 6       Disagree moderately  (2)       Disagree moderately  (2) REDACTED    
+##     V68   V69   V70   V71   V72    V73    V74    V75    V76    V77 V78
+## 1 Q62_5 Q62_6 Q62_7 Q62_8 Q62_9 Q62_11 Q62_12 Q62_13 Q62_14 Q62_15 rid
+## 2                                                                     
+## 3                                                                     
+## 4                                                                     
+## 5                                                                     
+## 6                                                                     
+##         V79    V80
+## 1 treatment finish
+## 2                 
+## 3                 
+## 4       two       
+## 5   control      1
+## 6   control      1</code></pre>
+<p>As you can see, the first 6 rows show the individual responses from each survey taker. The first few columns are their basic information, but the next columns are their actual responses to the questions. At the top of each question column, there is a header to the question type/number.</p>
+<p>##Summary</p>
+<p>Finally, I am going to summarize the data using the summarize function. It is interesting to see how R interprets this.</p>
+<pre><code>##       V1                 V2                 V3                 V4           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##       V5                 V6                 V7                 V8           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##       V9                V10                V11                V12           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V13                V14                V15                V16           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V17                V18                V19                V20           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V21                V22                V23                V24           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V25                V26                V27                V28           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V29                V30                V31                V32           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V33                V34                V35                V36           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V37                V38                V39                V40           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V41                V42                V43                V44           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V45                V46                V47                V48           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V49                V50                V51                V52           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V53                V54                V55                V56           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V57                V58                V59                V60           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V61                V62                V63                V64           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V65                V66                V67                V68           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V69                V70                V71                V72           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V73                V74                V75                V76           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##      V77                V78                V79                V80           
+##  Length:3461        Length:3461        Length:3461        Length:3461       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character</code></pre>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the data you just saw.</p>
+</div>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<!-- DACSS wordmark -->
+<div class="footer-center"><a href="https://www.umass.edu/sbs/dacss">
+  <img src="images/white-dacss-wordmark.png" 
+  alt="UMass Amherst DACSS" width ="30%" id="dacss-footer"/></a>
+</div>
+<!-- Social media icons -->
+<div class="container">
+  <div class="social-media-icons">
+    <a href="https://twitter.com/UMassDACSS" target="_blank" title="Twitter" class="footer fa fa-twitter"></a>
+    <a href="https://bit.ly/3cMIlIK" target="_blank" title="Facebook" class="footer fa fa-facebook"></a>
+    <a href="https://bit.ly/2PymwUp" target="_blank" title="LinkedIn" class="footer fa fa-linkedin"></a>
+    <a href="https://www.instagram.com/umassdacss/?hl=en" target="_blank" title="Instagram" class="footer fa fa-instagram"></a>
+    <a class="fa fa-placeholder"></a>
+  </div>
+</div>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

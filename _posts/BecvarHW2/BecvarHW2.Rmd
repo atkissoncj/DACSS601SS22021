@@ -1,0 +1,90 @@
+---
+title: Homework Two
+description: |
+  Analyzing part of the EPA's EJSCREEN Environmental Justice Dataset
+author:
+- name: Kristina Becvar
+  url: http://umass.edu/sbs/dacss
+date: 07-21-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+## **Reading in the data:**
+
+```{r echo=TRUE}
+ejscreen <- read.delim("../../_data/EJSCREEN_2020_IL.csv", sep = ",", header  = TRUE)
+```
+
+## **About the dataset:**
+
+This data is from the EPA mapping tool "EJSCREEN", an environmental justice screening tool that has mapping functions to see the locations of pollution and which communities are affected the most by that pollution. Many of the interactive maps are ineffective in comparing the locations of these areas to other tracked data such as the demographic makeup of those same geographic areas.
+
+The EPA site allows users to download the dataset in a national summary format as well as by state, which is the dataset I am using in this analysis. In order to make the data more manageable, I am focusing only on my state's data - Illinois.
+
+## **Describing the data:**
+
+```{r echo=TRUE}
+dim(ejscreen)
+```
++ There are 124 observations in this database
++ There are 9691 variables in the database
+
+## **Investigating the variables**
+
+First, I looked at the data using as_tibble to see more detail on the variables.
+
+```{r echo=TRUE}
+(ejscreen.tidy <- as_tibble(ejscreen))
+```
++ From reading the documentation provided with the dataset by the EPA, I know that the variables consist of both environmental data and demographic data. 
++ The data is gathered from multiple primary sources including the EPA federal and regional studies, CDC reporting, and state work. 
++ Environmental variables include proximity to tracked sites on RPA watch lists, levels of diesel particulate matter in the air, traffic proximity and volume, particulate matter <2.5, ozone level in air, and index indicators for air toxics cancer risk, air toxics respiratory hazards, and proximity to major direct dischargers to water.
++ Demographic variables include the total population and proportional data for the block for the percentage of: people of color, low-income-defined as no more than twice the federal poverty level, education below high school, in linguistic isolation, under age 5, over age 64, and in pre-1960 housing. There is also a demographic index, which is based on 2 of those factors, percentage of low-income and people of color.
++ There are multiple location variables primarily divided by a unique block with defined features by coordinate. These blocks are also categories by by EPA region, state, and census FIPS code area.
++ In addition to the primary data variables described, there are also EJ (Environmental Justice) Index levels for all of the environmental variables as well as percentile indexes for all of the demographic variables. There is also map color data and map text included in this dataset.
+
+## **Renaming Variables**
+
+I would like to look at the environmental variables that give the proximity to known environmental remediation sites and dense traffic areas, and rename them from the codes given to easily identifiable names:
+
++ PTRAF = traffic
++ PWDISP = water.area
++ PNPL = superfund
++ PRMP = rmp.area
++ PTSDF = tsdf.area
+
+I also want to look at the demographic variables that represent the census regions, population amounts, and demographic index
+
++ ID = census.region
++ ACSTOTPOP = population
++ VULEOPCT = dem.index
+
+## **Select Columns**
+
+I will want to select the columns I have renamed and arrange them in a manner that allows me to do this comparison to find how many people, of what demographic, live in the high pollution areas indicated in the environmental variables.
+
+## **Reclassifying Variables**
+
+I may need to reclassify variables to a different class, such as numeric or dbl, but I am unsure at this point what needs I have in this area.
+
+## **Creating New Variables**
+
+I suspect I may find I need to create new variables representing the correlation of the two types of variables, but am not quite there yet on how to accomplish this, but I am excited to figure this out.
+
+## Reference
+
+United States Environmental Protection Agency (EPA), 2020 version, updated July 1, 2021. EJSCREEN. Retrieved: July 16, 2021 (https://gaftp.epa.gov/EJSCREEN/2020/)
+
+
+
+
+

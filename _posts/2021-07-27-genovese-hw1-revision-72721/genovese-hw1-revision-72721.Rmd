@@ -16,7 +16,7 @@ draft: true
 library(tidyverse)
 
 #Then I read in the data from congressional_hearings.csv
-myData <- read.delim("./Users/alexgenovese/Desktop/R Work/DACSS601/_data/congressional_hearings.csv", sep = ",", header=T)
+myData <- read.delim("../../_data/congressional_hearings.csv", sep = ",", header=T)
 
 #I found the first few data values
 head(myData)
