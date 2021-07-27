@@ -1,0 +1,57 @@
+---
+title: "Genovese HW1 Revision 7.27.21"
+description: |
+  Here is my revision for HW1
+author:
+  - name: Curtis Atkisson
+    url: http://umass.edu/sbs/dacss
+date: 07-27-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r, include=TRUE}
+#First I load in the tidyverse
+library(tidyverse)
+
+#Then I read in the data from congressional_hearings.csv
+myData <- read.delim("./Users/alexgenovese/Desktop/R Work/DACSS601/_data/congressional_hearings.csv", sep = ",", header=T)
+
+#I found the first few data values
+head(myData)
+
+#Found how many rows there were
+nrow(myData)
+
+#And how many columns
+ncol(myData)
+
+#I identified the column names
+colnames(myData)
+
+#I tidyed the data to gather the chamber numbers into a chamber column
+tidymyData <- gather(myData, key = "Chamber", value = "ChamberNumber", 6:8)
+
+#I found the median number of sessions it took to pass a bill
+class(myData$Sessions)
+sessionMedian <- median(myData$Sessions, na.rm = TRUE)
+print(sessionMedian)
+
+#I then found the mode, which indicates which chamber had the most bills
+class(myData$Chamber)
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x,ux)))]
+}
+Mode(myData$Chamber)
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
