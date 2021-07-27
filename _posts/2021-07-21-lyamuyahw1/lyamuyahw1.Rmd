@@ -1,16 +1,15 @@
 ---
-title: "LyamuyaHW1"
-description: |
-  This post is Homework1 for the course. Here I go over how to import data in R,
-  how to explore the data set and trying to be a little creative with the data 
-  set in R
+title: LyamuyaHW1
+description: "This post is Homework1 for the course. Here I go over how to import
+  data in R,\nhow to explore the data set and trying to be a little creative with
+  the data \nset in R\n"
 author:
-  - name: Allie Lyamuya
+- name: Allie Lyamuya
 date: 07-21-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
@@ -25,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 
 # Import the data into R
-hearingsData <- read.csv("/Users/allielyamuya/Python, Data Viz, R/DACSS601SS22021/_data/congressional_hearings.csv")
+hearingsData <- read.csv("../../_data/congressional_hearings.csv")
 ```
 
 <br>

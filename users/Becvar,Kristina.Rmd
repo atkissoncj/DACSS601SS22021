@@ -13,7 +13,9 @@ links:
 output:
   postcards::trestles
 ---
- 
+ ```{r} 
+      getwd()
+ ```
 ## Bio
 
 Kristina Becvar is beginning her M.S. DACSS studies after completing her B.A. in May 2021 through the UMass UWW Program. In the decades between beginning her undergraduate career and completing it, she developed a career in law firm administration in various capacities. Her work with the American Bar Association Legal Technology Committee sparked her interest in how technology can bring equity to the legal system. She hopes to incorporate her knowledge of the legal industry and the business of law into her passion for advocacy using data science.

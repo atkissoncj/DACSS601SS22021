@@ -2390,13 +2390,29 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>set</span><span class='op'>(</span>echo <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
 <p>I have two cats lying on me as I write this.</p>
 <p>One is named Lana, and she is calm and chill.</p>
 <p>One is named Murphy, and he is a tornado.</p>
 <p>To have both cats sleeping and keeping my legs warm is the motivation I needed to keep pushing to understand this tonight.</p>
 <p>This mix of motivation and being goofy and tired led me to have some fun writing code that visualizes a cow quoting random Wikipedia facts:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/sckott/cowsay'>cowsay</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>wikifacts</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://magrittr.tidyverse.org'>magrittr</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/wikifacts/man/wiki_randomfact.html'>wiki_randomfact</a></span><span class='op'>(</span>
+  n_facts <span class='op'>=</span> <span class='fl'>1L</span>,
+  fact <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"any"</span>, <span class='st'>"didyouknow"</span>, <span class='st'>"onthisday"</span>, <span class='st'>"inthenews"</span><span class='op'>)</span>,
+  bare_fact <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  repeats <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/pkg/cowsay/man/say.html'>say</a></span><span class='op'>(</span>by <span class='op'>=</span> <span class='st'>"cow"</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
