@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"HW2","description":"Data exploration and research question formulation for final project","authors":[{"author":"Allie Lyamuya","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-23T00:00:00.000+00:00","citationText":"Lyamuya, 2021"}
+{"title":"HW2","description":"Data exploration and research question formulation for final project","authors":[{"author":"Allie Lyamuya","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-23T00:00:00.000-04:00","citationText":"Lyamuya, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1527,14 +1527,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <pre><code>Rows: 1,947
 Columns: 8
-$ country_name     &lt;fct&gt; &quot;Aruba&quot;, &quot;Aruba&quot;, &quot;Aruba&quot;, &quot;Aruba&quot;, &quot;Aruba&quot;…
-$ year             &lt;int&gt; 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2…
-$ internet_usage   &lt;dbl&gt; 30.900000, 52.000000, 58.000000, 62.000000,…
-$ population       &lt;int&gt; 101226, 101362, 101452, 101665, 102050, 102…
-$ gdp_percapita    &lt;dbl&gt; 25834.1118, 27083.6349, 24631.1821, 23513.5…
-$ fixed_broadbands &lt;int&gt; 15996, 18396, 18800, 19217, NA, NA, 19200, …
-$ mobile_cellular  &lt;dbl&gt; 113586, 120806, 128000, 131800, NA, 135000,…
-$ telephone        &lt;int&gt; 38609, 38461, 36700, 35040, NA, 36000, 3500…</code></pre>
+$ country_name     &lt;chr&gt; &quot;Aruba&quot;, &quot;Aruba&quot;, &quot;Aruba&quot;, &quot;Aruba&quot;, &quot;Aruba&quot;~
+$ year             &lt;int&gt; 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2~
+$ internet_usage   &lt;dbl&gt; 30.900000, 52.000000, 58.000000, 62.000000,~
+$ population       &lt;int&gt; 101226, 101362, 101452, 101665, 102050, 102~
+$ gdp_percapita    &lt;dbl&gt; 25834.1118, 27083.6349, 24631.1821, 23513.5~
+$ fixed_broadbands &lt;int&gt; 15996, 18396, 18800, 19217, NA, NA, 19200, ~
+$ mobile_cellular  &lt;dbl&gt; 113586, 120806, 128000, 131800, NA, 135000,~
+$ telephone        &lt;int&gt; 38609, 38461, 36700, 35040, NA, 36000, 3500~</code></pre>
 </div>
 <h2 id="variable-identification">Variable Identification</h2>
 <div class="layout-chunk" data-layout="l-body">
@@ -2581,7 +2581,8 @@ $ telephone        &lt;int&gt; 38609, 38461, 36700, 35040, NA, 36000, 3500…</c
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Finding the range of values in relevant variables </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span><span class='op'>(</span>scipen <span class='op'>=</span> <span class='fl'>999</span>, digits <span class='op'>=</span> <span class='fl'>4</span><span class='op'>)</span>
+<span class='co'># Finding the range of values in relevant variables </span>
 <span class='fu'><a href='https://rdrr.io/r/base/range.html'>range</a></span><span class='op'>(</span><span class='va'>myDataNew</span><span class='op'>$</span><span class='va'>internet_usage</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2590,7 +2591,7 @@ $ telephone        &lt;int&gt; 38609, 38461, 36700, 35040, NA, 36000, 3500…</c
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/range.html'>range</a></span><span class='op'>(</span><span class='va'>myDataNew</span><span class='op'>$</span><span class='va'>gdp_percapita</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>[1]      0.0 189432.4</code></pre>
+<pre><code>[1]      0 189432</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/range.html'>range</a></span><span class='op'>(</span><span class='va'>myDataNew</span><span class='op'>$</span><span class='va'>fixed_broadbands</span><span class='op'>)</span>
 </code></pre>
@@ -2608,13 +2609,40 @@ $ telephone        &lt;int&gt; 38609, 38461, 36700, 35040, NA, 36000, 3500…</c
 <pre><code>[1]         0 365637000</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Check for the distribution of values in variables </span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>myDataNew</span><span class='op'>$</span><span class='va'>internet_usage</span><span class='op'>)</span>
 </code></pre>
 </div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0    12.1    37.2    40.4    67.0    98.4 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>myDataNew</span><span class='op'>$</span><span class='va'>gdp_percapita</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0    1632    5554   16139   20331  189432 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>myDataNew</span><span class='op'>$</span><span class='va'>fixed_broadbands</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+        0     14996    168082   3667839   1667431 394190000 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>myDataNew</span><span class='op'>$</span><span class='va'>mobile_cellular</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>      Min.    1st Qu.     Median       Mean    3rd Qu.       Max. 
+         0    2021385    7210483   33352182   21749828 1469882500 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>myDataNew</span><span class='op'>$</span><span class='va'>telephone</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+        0    129207    544984   6368968   3273323 365637000 </code></pre>
 </div>
 <p><br></p>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
