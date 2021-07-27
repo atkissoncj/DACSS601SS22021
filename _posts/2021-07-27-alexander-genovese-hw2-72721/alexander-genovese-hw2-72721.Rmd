@@ -18,8 +18,7 @@ library(readxl)
 #I then read in the World Bank GDP data that I was using. Since I was on a Mac, 
 #I had to expressly state #my working directory. I made sure to put any 0s as 
 #NA so that it would not slant my data
-setwd("~/Desktop/R Work/DACSS601")
-GDPdata <- read_excel("./_data/WorldBankGDPData.xlsx")
+GDPdata <- read_excel("../../_data/WorldBankGDPData.xlsx")
 GDPdata[GDPdata == 0] <- NA
 
 #I created a vector for the GDP of each country based off Millions of US Dollars
