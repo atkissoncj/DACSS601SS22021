@@ -2737,7 +2737,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='co'># "percievedreaction" to "Q26". If we wanted to focus in on this block for whatever reason, </span>
 <span class='co'># we could use select() to make a new dataset with only those columns.</span>
 
-<span class='va'>perPolAnx</span> <span class='op'>&lt;-</span> <span class='fu'>select</span><span class='op'>(</span><span class='va'>myData</span>, <span class='va'>perceivedreaction</span><span class='op'>:</span><span class='va'>Q26</span><span class='op'>)</span>
+<span class='va'>perPolAnx</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>myData</span>, <span class='va'>perceivedreaction</span><span class='op'>:</span><span class='va'>Q26</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>perPolAnx</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2859,12 +2859,12 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='co'># numeric operations on these responses (such as finding the mean) we have to convert them back</span>
 <span class='co'># to numeric form using mutate() and recode(). Here this is done for Q36:</span>
 
-<span class='va'>perPolAnx</span> <span class='op'>&lt;-</span> <span class='fu'>mutate</span><span class='op'>(</span><span class='va'>perPolAnx</span>, Q36N <span class='op'>=</span> <span class='fu'>recode</span><span class='op'>(</span><span class='va'>Q36</span>, <span class='st'>"Strongly distrust"</span> <span class='op'>=</span> <span class='fl'>1</span>, <span class='st'>"Distrust"</span> <span class='op'>=</span> <span class='fl'>2</span>, <span class='st'>"Neither trust nor
+<span class='va'>perPolAnx</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='va'>perPolAnx</span>, Q36N <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/recode.html'>recode</a></span><span class='op'>(</span><span class='va'>Q36</span>, <span class='st'>"Strongly distrust"</span> <span class='op'>=</span> <span class='fl'>1</span>, <span class='st'>"Distrust"</span> <span class='op'>=</span> <span class='fl'>2</span>, <span class='st'>"Neither trust nor
                                  distrust"</span> <span class='op'>=</span> <span class='fl'>3</span>, <span class='st'>"Somewhat trust"</span> <span class='op'>=</span> <span class='fl'>4</span>, <span class='st'>"Strongly trust"</span> <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span>
 <span class='co'>#print(perPolAnx)</span>
 
 <span class='co'># Now we can find the mean:</span>
-<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>perPolAnx</span>, Q36mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>Q36N</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span><span class='va'>perPolAnx</span>, Q36mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>Q36N</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 1 x 1
