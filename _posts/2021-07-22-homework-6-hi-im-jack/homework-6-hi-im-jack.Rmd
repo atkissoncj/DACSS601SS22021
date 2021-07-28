@@ -1,0 +1,38 @@
+---
+title: "Homework 6 - Hi, I'm Jack"
+description: |
+  An Introduction 
+author:
+  - name: John Mannion
+date: 07-22-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+Hi, my name is John but everyone calls me Jack. This is my first time learning to code. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r,include=TRUE}
+getwd()
+
+library(tidyverse)
+library(gapminder)
+
+graph <- filter(gapminder, country == 'Afghanistan' | country == 'Burundi')
+
+graph2 <- select(graph, 'country', 'year', 'pop')
+
+ggplot(data = graph2) + 
+  geom_point(mapping = aes(x = year, y = pop))
+
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
