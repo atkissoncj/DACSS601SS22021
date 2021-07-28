@@ -1,14 +1,14 @@
 ---
-title: "HW2"
+title: HW2
 description: |
   Data exploration and research question formulation for final project
 author:
-  - name: Allie Lyamuya
+- name: Allie Lyamuya
 date: 07-23-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 

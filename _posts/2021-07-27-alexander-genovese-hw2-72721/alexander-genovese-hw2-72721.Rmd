@@ -1,14 +1,14 @@
 ---
-title: "Alexander Genovese HW2 7.27.21"
+title: Alexander Genovese HW2 7.27.21
 description: |
   Alex Genovese's HW2 Revision
 author:
-  - name: Alex Genovese
+- name: Alex Genovese
 date: 07-27-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: no
 ---
 ```{r, include=TRUE}
 #I read in the libraries necessary

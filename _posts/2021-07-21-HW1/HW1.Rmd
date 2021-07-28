@@ -9,7 +9,7 @@ date: 07-21-2021
 output:
   distill::distill_article:
     self_contained: no
-draft: no
+draft: yes
 ---
 
 
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 
 # Import the data into R
-hearingsData <- read.csv("/Users/allielyamuya/Python, Data Viz, R/DACSS601SS22021/_data/congressional_hearings.csv")
+hearingsData <- read.csv("../../_data/congressional_hearings.csv")
 ```
 
 <br>

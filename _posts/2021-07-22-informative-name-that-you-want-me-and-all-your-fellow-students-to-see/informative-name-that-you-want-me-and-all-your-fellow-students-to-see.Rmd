@@ -1,15 +1,15 @@
 ---
-title: "[Informative name that you want me and all your fellow students to see]"
+title: '[Informative name that you want me and all your fellow students to see]'
 description: |
   A short description of the post.
 author:
-  - name: Emerson Fleming
-    url: http://umass.edu/sbs/dacss
+- name: Emerson Fleming
+  url: http://umass.edu/sbs/dacss
 date: 07-22-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
