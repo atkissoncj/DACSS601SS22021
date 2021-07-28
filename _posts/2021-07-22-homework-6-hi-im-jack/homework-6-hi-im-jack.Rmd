@@ -16,7 +16,8 @@ Hi, my name is John but everyone calls me Jack. This is my first time learning t
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
+```{r,include=TRUE}
+getwd()
 
 library(tidyverse)
 library(gapminder)
