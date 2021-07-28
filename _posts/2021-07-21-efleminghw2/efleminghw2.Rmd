@@ -1,0 +1,54 @@
+---
+title: efleming_hw2
+description: |
+  Describes and analyzes a 2011-2012 data set on the highest selling and re-selling car models and manufacturers.
+author:
+- name: Emerson Fleming
+  url: http://umass.edu/sbs/dacss
+date: 07-21-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+```{r setup, include=FALSE}
+myDataPath <- read.csv("../../_data/Car_sales.csv", header=TRUE) 
+require(tidyverse)
+require(tidyr)
+require(dplyr)
+```
+**Parent Table for Car Sales**
+```{r}
+head(myDataPath[,1:16], 10)
+```
+In this data set, we are given 157 different car models across 30 manufacturers with 16 different variables (columns). Variables include the number of sales, resale value, price, fuel efficiency, and more.
+I wish to assess why certain models sell and resell for the most. I wish to also find a correlation between sale price and resale price.
+
+**Unit Sales vs. Year Resale Value (which car sold the most?)**
+```{r}
+myDataPath %>%
+  select(Manufacturer, Model, Sales_in_thousands, X__year_resale_value) %>% 
+  arrange(desc(Sales_in_thousands, X__year_resale_value)) %>%
+  slice(1:10)
+```
+At this point, we can tell the Ford F-Series is the highest selling vehicle by a considerable margin. I want to find out why that is. 
+It is important to note that the Ford F-Series refers to the F-150, F-250, F-350, and F-450 models. In other words, the single Ford F-Series Variable is an umbrella term for *4 different models*. Overall, the Ford F-150, F-250, and F-350 are vehicles that have stark physical differences all around. Contrastingly, the Ford F-450 and F-350 are relatively similar as both models utilize dual rear-wheel functionality for increased towing capability. 
+Indeed, the original creator of the data **did not** create separate cell entries for cars like the Mercedes S-Class (which includes the S350, S450, S550, S63 AMG, and S65 AMG models). However, the creator did enter **individual** cells for the Porsche Carrera Cabrio and the Porsche Carrera Coupe. Both the Porsche Carrera Cabrio and Carrera Coupe belong to the flagship 911 line offered by Porsche. Therefore, **it makes more sense to combine all of the Porsche Carrera Data**.
+
+**Year Resale Value vs. Unit Sales (which car resales for the most?)**
+```{r}
+myDataPath %>%
+  select(Manufacturer, Model, Sales_in_thousands, X__year_resale_value) %>% 
+  arrange(desc(X__year_resale_value)) %>%
+  slice(1:10)
+```
+The Porsche Carrera Cabrio has the highest resale price of any car on this list. Not surprisingly, the Porsche Carrera Cabrio has a considerably low amount of sales. The low sales likely have much to do with the impracticality of a coupe convertible and the significant cost of the car. 
+
+```{r}
+myDataPath %>%
+  select(Manufacturer, Model, Sales_in_thousands, X__year_resale_value) %>%
+  summarize(range(Sales_in_thousands), range(X__year_resale_value, na.rm = TRUE))
+```
+The range of the "sales_in_thousands" is 540.441 and the range of "X__year_resale_value" is 62.39. Therefore, we can deduce that a great deal of contrast and variability exists with regards to cars sold and resale value. Additionally, a sharper contrast exists between the range of units sold and the resale value. 
+With regards to missing data, there are resale values missing for many different observations. Also, a large majority of the data for the Chrysler Town & Country is missing in addition to several values for the Acura CL. 
+I will have to calculate which year this data set was compiled during and what "power_perf_factor" means. At the very least, I am fairly sure this data was compiled between 2011 & 2012 as the "Latest_Launch variable" seems to indicate.

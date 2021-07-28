@@ -1,6 +1,6 @@
 ---
-title: "Tobi Burns"
-image: "tobi.jpg"
+title: "Allie Lyamuya"
+image: "zuri.jpg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"
@@ -11,9 +11,9 @@ links:
   - label: Email
     url: "mailto:email@email.com"
 output:
-  postcards::jolla
+  postcards::trestles
 ---
- 
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+
+Hello, I'm Allie. I'm a student in the School of Public Policy and I'm very
+fascinated by data and data science. In the picture is my pet plant, Zuri. 
+

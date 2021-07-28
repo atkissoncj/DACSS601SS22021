@@ -1,0 +1,44 @@
+---
+title: Hola
+description: |
+  HW 6 Post
+author:
+- name: Stephanie Cortez
+  url: http://umass.edu/sbs/dacss
+date: 07-21-2021
+categories:
+- hw 6
+- hola
+- stephanie cortez
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+## Hello DACSS 601 Class
+
+# Keeping it simple on codes for this assignment:
+
+**Creating practice vector with string of random numbers**
+```{r}
+practice.vector <- c(10, 15, 9, 10, 8, 11, 13, 10)
+
+## running summary to view measures of tendency
+summary(practice.vector)
+
+## running rank
+rank(practice.vector)
+
+## creating a table to run frequencies
+table(practice.vector)
+
+## prop table for proportions
+prop.table(practice.vector)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
