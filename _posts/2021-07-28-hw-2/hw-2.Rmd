@@ -1,0 +1,62 @@
+---
+title: "HW 2"
+description: |
+  Discussing dataset I am working on
+author:
+  - name: Stephanie Cortez
+    url: http://umass.edu/sbs/dacss
+    email: scortez@umass.edu
+date: 07-17-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+## Homework 2
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(blogbuilder)
+library(distill)
+```
+**The dataset I will be analyzing is called the "2021-2022 Student Equity Needs Index (SENI) Scores for Elementary Schools," which shows scores of elementary schools (grades k-5th) in the L.A. Unified School District (LAUSD) in CA. LAUSD is the largest school district in CA and the 2nd largest school district in the U.S. in terms of number of students. "The SENI was implemented to create a more inclusive and holistic understanding of our students' needs, and to empower schools with additional funds to address those needs at the local level." I'm going to try and compare some school demographics. LAUSD consits of 6 local districts, South, East, Central, West, NW, and NE. The dataset shows percent of foster youth, homeless youth, and English learners in elementary schools. I would like to compare those groups within local districts and find which local district has the highest rates.**
+
+**Imported dataset.**
+
+```{r}
+#Importing data
+library(readxl)
+SENISData <- read_excel("../../_data/SENIScoresElementaryShools-20212022.xlsx")
+```
+
+**Checked dimension of dataset. Dataset has 509 rows/observations and 45 columns/variables**
+```{r, include=TRUE}
+dim(SENISData)
+```
+**Checking if there are any missing values**
+```{r, include=TRUE}
+sum(is.na(SENISData))
+```
+**Checking where those 15 NA's are**
+```{r, include=TRUE}
+colSums(is.na(SENISData))
+```
+**Found that there are NO missing values in the variables I will be analyzing.**
+**Checking number of schools in each Local District**
+```{r, include=TRUE}
+table(select(SENISData, "Local District"))
+```
+**Found there are more schools in West local district. Found 93 schools in Central district, 85 schools in East district, 67 in NE district, 85 in South District, and 98 in West district.**
+
+**Reviewing average rates of Foster, Homeless, and English Learner rates in all of school district.**
+```{r, include=TRUE}
+summarise(SENISData, mean(`Homeless Rate`))
+```
+```{r, include=TRUE}
+summarise(SENISData, mean(`Foster Rate`))
+```
+```{r, include=TRUE}
+summarise(SENISData, mean(`EL Rate`))
+```
+**Average rates within variables are low based on the means found, less than 25%. Homeless Rate mean is 0.9% , Foster Rate mean is 0.9%, and English Learner Rate mean is 24%.**
