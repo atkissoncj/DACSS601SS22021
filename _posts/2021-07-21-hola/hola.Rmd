@@ -15,14 +15,30 @@ output:
     self_contained: no
 draft: yes
 ---
+## Hello DACSS 601 Class
 
+# Keeping it simple on codes for this assignment:
+
+**Creating practice vector with string of random numbers**
+```{r}
+practice.vector <- c(10, 15, 9, 10, 8, 11, 13, 10)
+
+## running summary to view measures of tendency
+summary(practice.vector)
+
+## running rank
+rank(practice.vector)
+
+## creating a table to run frequencies
+table(practice.vector)
+
+## prop table for proportions
+prop.table(practice.vector)
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
 
 

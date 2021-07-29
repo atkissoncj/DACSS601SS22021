@@ -1,0 +1,116 @@
+---
+title: HW2
+description: |
+  Data exploration and research question formulation for final project
+author:
+- name: Allie Lyamuya
+date: 07-23-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: yes
+---
+
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data Overview
+
+For my final project, I have identified several data sets from the [World Bank 
+Open Data](https://data.worldbank.org) 
+Since there was no single data set that included all the variables I need to 
+analyze the research questions that I have, I decided to join several data sets 
+together. I obtained six different data sets from the World Bank, then I used 
+the data wrangling tools that we have so far learned in class to tidying the 
+data. Because all the data sets came from the same source, joining
+them was not as challenging. You can learn more about the whole [tidying process
+here](https://rpubs.com/alyamuya/793043) 
+
+
+## Research Question 
+
+Does the country's level of economic development determine the level of 
+information communications technologies (ICTs) usage? 
+
+* I will be analyzing this question based on the dataset I recreated which
+include the following variables: country name, year, individual internet use, 
+population, gdp per capita, fixed broadbands subscription, cellular mobile
+subscription, telephone subscription. The dataset include data from 2007 to 2017. 
+
+## Data Exploration 
+
+```{r}
+# Importing data
+library(readr)
+myData <- read.csv("../../_data/digitalConnectivityData.csv")
+
+head(myData)
+```
+
+```{r}
+library(tidyverse)
+library(dplyr)
+
+# Describing data
+glimpse(myData)
+```
+
+
+## Variable Identification
+
+```{r}
+# Check for missing values
+is.na(myData$internet_usage)
+is.na(myData$gdp_percapita)
+is.na(myData$fixed_broadbands)
+is.na(myData$mobile_cellular)
+is.na(myData$telephone)
+
+# Position of missing values
+which(is.na(myData$internet_usage))
+which(is.na(myData$gdp_percapita))
+which(is.na(myData$fixed_broadbands))     
+which(is.na(myData$mobile_cellular))
+which(is.na(myData$telephone)) 
+```
+
+<br>
+
+```{r}
+# recode 0 to missing values in data set
+myDataNew <- myData
+myDataNew[is.na(myDataNew)] <- 0
+
+# Double check for missing values in a new data set
+which(is.na(myDataNew))
+
+```
+
+
+```{r}
+options(scipen = 999, digits = 4)
+# Finding the range of values in relevant variables 
+range(myDataNew$internet_usage)
+range(myDataNew$gdp_percapita)
+range(myDataNew$fixed_broadbands)
+range(myDataNew$mobile_cellular)
+range(myDataNew$telephone)
+
+# Check for the distribution of values in variables 
+summary(myDataNew$internet_usage)
+summary(myDataNew$gdp_percapita)
+summary(myDataNew$fixed_broadbands)
+summary(myDataNew$mobile_cellular)
+summary(myDataNew$telephone)
+
+```
+
+<br>
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

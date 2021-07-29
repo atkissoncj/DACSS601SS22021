@@ -1,0 +1,59 @@
+---
+title: Alexander Genovese HW2 7.27.21
+description: |
+  Alex Genovese's HW2 Revision
+author:
+- name: Alex Genovese
+date: 07-27-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: no
+---
+```{r, include=TRUE}
+#I read in the libraries necessary
+library(tidyverse)
+library(readxl)
+
+#I then read in the World Bank GDP data that I was using. Since I was on a Mac, 
+#I had to expressly state #my working directory. I made sure to put any 0s as 
+#NA so that it would not slant my data
+GDPdata <- read_excel("../../_data/WorldBankGDPData.xlsx")
+GDPdata[GDPdata == 0] <- NA
+
+#I created a vector for the GDP of each country based off Millions of US Dollars
+GDPdataValue <- GDPdata$`Millions of US Dollars`
+
+#I did some observations to give me a general idea of how the data was looking
+GDPdataObsv <- nrow(GDPdata)
+print(GDPdataObsv)
+GDPdataVar <- ncol(GDPdata)
+print(GDPdataVar)
+GDPdataMean <- mean(GDPdataValue, na.rm = TRUE)
+print(GDPdataMean)
+GDPdataMedian <- median(GDPdataValue, na.rm = TRUE)
+print(GDPdataMedian)
+GDPdataRange <- max(GDPdataValue, na.rm = TRUE) - min(GDPdataValue, na.rm = TRUE)
+print(GDPdataRange)
+#I identified the vector's class to make sure that I was plotting the data well
+print(class(GDPdata$Ranking))
+print(class(GDPdataValue))
+
+#I then plotted the data based off of ranking and GDP
+ggplot(GDPdata, aes(x = 'Ranking', y = GDPdataValue)) + geom_point()
+
+#I am planning on separating these countries into how they're identified, 
+#first, second, or third world, by color and doing an analysis on how 
+#big the disparity is in 2021.
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
