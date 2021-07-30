@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["genovese-hw1-revision-72721_files/anchor-4.2.2/anchor.min.js","genovese-hw1-revision-72721_files/bowser-1.9.3/bowser.min.js","genovese-hw1-revision-72721_files/distill-2.2.21/template.v2.js","genovese-hw1-revision-72721_files/header-attrs-2.9/header-attrs.js","genovese-hw1-revision-72721_files/jquery-1.11.3/jquery.min.js","genovese-hw1-revision-72721_files/popper-2.6.0/popper.min.js","genovese-hw1-revision-72721_files/tippy-6.2.7/tippy-bundle.umd.min.js","genovese-hw1-revision-72721_files/tippy-6.2.7/tippy-light-border.css","genovese-hw1-revision-72721_files/tippy-6.2.7/tippy.css","genovese-hw1-revision-72721_files/tippy-6.2.7/tippy.umd.min.js","genovese-hw1-revision-72721_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Genovese HW1 Revision 7.27.21","description":"Here is my revision for HW1","authors":[{"author":"Curtis Atkisson","authorURL":"http://umass.edu/sbs/dacss","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-27T00:00:00.000-04:00","citationText":"Atkisson, 2021"}
+{"title":"Genovese HW1 Revision 7.27.21","description":"Here is my revision for HW1","authors":[{"author":"Curtis Atkisson","authorURL":"http://umass.edu/sbs/dacss","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-27T00:00:00.000+00:00","citationText":"Atkisson, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1478,16 +1478,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
+<strong>Loading in the Data</strong>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#First I load in the tidyverse</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-
-<span class='co'>#Then I read in the data from congressional_hearings.csv</span>
-<span class='va'>myData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.delim</a></span><span class='op'>(</span><span class='st'>"../../_data/congressional_hearings.csv"</span>, sep <span class='op'>=</span> <span class='st'>","</span>, header<span class='op'>=</span><span class='cn'>T</span><span class='op'>)</span>
-
-<span class='co'>#I found the first few data values</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>myData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.delim</a></span><span class='op'>(</span><span class='st'>"../../_data/congressional_hearings.csv"</span>, sep <span class='op'>=</span> <span class='st'>","</span>, header<span class='op'>=</span><span class='cn'>T</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+I loaded my data into the variable, myData using read.delim and finding the correct source file.<br />
+<strong>Finding basic information on data</strong>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>     id     source CISYear Unpublished Chamber filter_House
@@ -1547,20 +1549,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 5                                        
 6                                        </code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Found how many rows there were</span>
-<span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>[1] 100254</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#And how many columns</span>
-<span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>[1] 36</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#I identified the column names</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code> [1] &quot;id&quot;               &quot;source&quot;           &quot;CISYear&quot;         
@@ -1575,12 +1574,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 [28] &quot;description&quot;      &quot;pap_majortopic&quot;   &quot;pap_subtopic&quot;    
 [31] &quot;Change.&quot;          &quot;majortopic&quot;       &quot;subtopic&quot;        
 [34] &quot;ReferralBills&quot;    &quot;StartDate&quot;        &quot;AdditionalDates&quot; </code></pre>
+</div>
+I found the basic information on the data I just read in. Using head, I found the first few values for each column, while also finding how many columns and rows there were. Finally, I listed the column names. <strong>Tidying data</strong>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#I tidyed the data to gather the chamber numbers into a chamber column</span>
-<span class='va'>tidymyData</span> <span class='op'>&lt;-</span> <span class='fu'>gather</span><span class='op'>(</span><span class='va'>myData</span>, key <span class='op'>=</span> <span class='st'>"Chamber"</span>, value <span class='op'>=</span> <span class='st'>"ChamberNumber"</span>, <span class='fl'>6</span><span class='op'>:</span><span class='fl'>8</span><span class='op'>)</span>
-
-<span class='co'>#I found the median number of sessions it took to pass a bill</span>
-<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>$</span><span class='va'>Sessions</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tidymyData</span> <span class='op'>&lt;-</span> <span class='fu'>gather</span><span class='op'>(</span><span class='va'>myData</span>, key <span class='op'>=</span> <span class='st'>"Chamber"</span>, value <span class='op'>=</span> <span class='st'>"ChamberNumber"</span>, <span class='fl'>6</span><span class='op'>:</span><span class='fl'>8</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+I tidied the data to gather the chamber number columns into a column that gives me the data of where each bill originated. <strong>Finding Median</strong>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>$</span><span class='va'>Sessions</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>[1] &quot;integer&quot;</code></pre>
@@ -1590,9 +1595,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 <pre><code>[1] 2</code></pre>
+</div>
+I found the median, which tells us the average amount of sessions it took to pass a bill in Congress. <strong>Finding Mode</strong>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#I then found the mode, which indicates which chamber had the most bills</span>
-<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>$</span><span class='va'>Chamber</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>$</span><span class='va'>Chamber</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>[1] &quot;integer&quot;</code></pre>
@@ -1606,6 +1613,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <pre><code>[1] 1</code></pre>
 </div>
+<p>Using a mode function I found on stack overflow, I was able to see which chamber originated the most amount of bills. Using that function, we can see that the House of Representatives originated the most amount of bills in Congress.</p>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>

@@ -11,34 +11,41 @@ output:
     self_contained: false
 draft: true
 ---
-```{r, include=TRUE}
-#First I load in the tidyverse
+```{r, include=FALSE}
 library(tidyverse)
-
-#Then I read in the data from congressional_hearings.csv
+```
+**Loading in the Data**
+```{r}
 myData <- read.delim("../../_data/congressional_hearings.csv", sep = ",", header=T)
-
-#I found the first few data values
+```
+I loaded my data into the variable, myData using read.delim and finding the 
+correct source file.  
+**Finding basic information on data**
+```{r}
 head(myData)
-
-#Found how many rows there were
 nrow(myData)
-
-#And how many columns
 ncol(myData)
-
-#I identified the column names
 colnames(myData)
-
-#I tidyed the data to gather the chamber numbers into a chamber column
+```
+I found the basic information on the data I just read in. Using head, I found 
+the first few values for each column, while also finding how many columns and 
+rows there were. Finally, I listed the column names.
+**Tidying data**
+```{r}
 tidymyData <- gather(myData, key = "Chamber", value = "ChamberNumber", 6:8)
-
-#I found the median number of sessions it took to pass a bill
+```
+I tidied the data to gather the chamber number columns into a column that 
+gives me the data of where each bill originated.
+**Finding Median**
+```{r}
 class(myData$Sessions)
 sessionMedian <- median(myData$Sessions, na.rm = TRUE)
 print(sessionMedian)
-
-#I then found the mode, which indicates which chamber had the most bills
+```
+I found the median, which tells us the average amount of sessions it took to 
+pass a bill in Congress.
+**Finding Mode**
+```{r}
 class(myData$Chamber)
 Mode <- function(x) {
   ux <- unique(x)
@@ -46,6 +53,10 @@ Mode <- function(x) {
 }
 Mode(myData$Chamber)
 ```
+Using a mode function I found on stack overflow, I was able to see which 
+chamber originated the most amount of bills. Using that function, we can see 
+that the House of Representatives originated the most amount of bills in 
+Congress.
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
