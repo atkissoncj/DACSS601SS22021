@@ -11,7 +11,7 @@ draft: yes
 ---
 # Homework 1
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, error = TRUE)
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 ```
 
 ### I am using a dataset I found in LAUSD website on SENIS (School Equity Needs Index Scores) for elementary schools. File is SENIScoresElementaryShools-20212022.xlsx.  
