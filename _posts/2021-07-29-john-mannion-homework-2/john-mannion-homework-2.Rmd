@@ -1,0 +1,29 @@
+---
+title: "John Mannion Homework 2 - USArrests"
+description: |
+  Examining the USArrests dataset
+author:
+  - name: John Mannion
+date: 07-29-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, include=TRUE}
+dim(USArrests)
+```
+I will be using the USArrests dataset, which comes preloaded in R.
+
+The dataset has 50 rows, one for each state, and 4 columns listing the rater of murder, assault, and rape per 100,000 residents, as well as the percent of the state that lives in an urban environment (UrbanPop) in 1973. 
+
+I will attempt to answer the question, "does the percentage of urban residents in a state increase crime?"
+
+```{r, include=TRUE}
+library(knitr)
+knitr::kable(head(USArrests))
+```
