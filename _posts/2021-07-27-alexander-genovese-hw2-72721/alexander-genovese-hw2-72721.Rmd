@@ -1,10 +1,10 @@
 ---
-title: "Alexander Genovese HW2 7.27.21"
+title: "Alexander Genovese HW2 7.30.21"
 description: |
-  Alex Genovese's HW2 Revision
+  Alex Genovese's HW2 Revision 7.30.21
 author:
   - name: Alex Genovese
-date: 07-27-2021
+date: 07-30-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -21,44 +21,33 @@ library to do so.
 
 **Reading in the data and cleaning it**
 ```{r}
-GDPdata <- read_excel("../../_data/WorldBankGDPData.xlsx")
-GDPdata[GDPdata == 0] <- NA
-GDPdataValue <- GDPdata$`Millions of US Dollars`
+GDPvsUnidata <- read_excel("../../_data/WorldBankGDPData.xlsx")
+GDPvsUnidata[GDPvsUnidata == 0] <- NA
+GDPdata <- GDPvsUnidata$`Millions of US Dollars`
+Unidata <- GDPvsUnidata$`Number of Universities Worldwide in 2020 by Country`
 ```
-I then read in the data into GDPdata. In order to have correct data into my 
+I then read in the data into GDPvsUnidata. In order to have correct data into my 
 analysis, I turned the 0 values into NA because it meant that the World Bank 
 did not have data to support the GDP amount. I also created a vector for the 
-GDP of each country based off Millions of US Dollars.
+GDP of each country based off Millions of US Dollars and another vector for the 
+amount of Universities in each country.
 
 **Looking at the data to see basic statistics**
 ```{r}
-GDPdataMean <- mean(GDPdataValue, na.rm = TRUE)
-print(GDPdataMean)
-GDPdataMedian <- median(GDPdataValue, na.rm = TRUE)
-print(GDPdataMedian)
-GDPdataRange <- max(GDPdataValue, na.rm = TRUE) - min(GDPdataValue, na.rm = TRUE)
-print(GDPdataRange)
+GDPdataMean <- mean(GDPdata, na.rm = TRUE)
+GDPdataMedian <- median(GDPdata, na.rm = TRUE)
+GDPdataRange <- max(GDPdata, na.rm = TRUE) - min(GDPdata, na.rm = TRUE)
+UnidataMean <- mean(Unidata, na.rm = TRUE)
+UnidataMedian <- median(Unidata, na.rm = TRUE)
+UnidataRange <- max(Unidata, na.rm = TRUE) - min(GDPdata, na.rm = TRUE)
 ```
-The data I want to analyze is the large disparity in GDP from each country 
-based off of whether they were first world, second world, or third world 
-countries. The mean was pretty slanted, so I went with the median as a good 
-idea of what the average is. I also found the range to show just how big the 
-disparity in GDP is from the lowest GDP country to the highest. 
+The data I wanted to analyze is does the amount of Universities impact GDP? I found the basic statistics of both the GDP data and the amount of Universities in each country. 
 
 **Graphing the Data**
 ```{r}
-class(GDPdata$Ranking)
-class(GDPdataValue)
-ggplot(GDPdata, aes(x = 'Ranking', y = GDPdataValue)) + geom_point()
+ggplot(GDPvsUnidata, aes(x = Unidata, y = GDPdata)) + geom_point()
 ```
-I wanted to make sure that the data I was using was numerical to do a 
-scatterplot. From there, I generated the scatterplot based off of ranking, 
-with each number corresponding to the country (ie. 1 = US, 2 = China, 3 = 
-Japan, etc.). With that graph, we can see just how slanted the data is towards 
-the left (or lower GDP).
-I am planning on separating these countries into how they're identified, 
-first, second, or third world, by color and doing an analysis on how 
-big the disparity is in 2021.
+I graphed the data in a scatterplot to see how the amount of Universities impacts the GDP of a country. The data looks fairly linear, with the GDP rising with the amount of Universities in the country. There are two outliers in terms of the amount of Universities and how it impacts GDP, so I need to make sure that there is a causal relationship.
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
