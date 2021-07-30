@@ -1,14 +1,14 @@
 ---
-title: "Alexander Genovese HW2 7.27.21"
+title: Alexander Genovese HW2 7.27.21
 description: |
   Alex Genovese's HW 2
 author:
-  - name: Alexander Genovese
+- name: Alexander Genovese
 date: 07-27-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ```{r, include=TRUE}
 #I read in the libraries necessary
@@ -18,8 +18,7 @@ library(readxl)
 #I then read in the World Bank GDP data that I was using. Since I was on a Mac, 
 #I had to expressly state #my working directory. I made sure to put any 0s as 
 #NA so that it would not slant my data
-setwd("~/Desktop/R Work/DACSS601")
-GDPdata <- read_excel("./_data/WorldBankGDPData.xlsx")
+GDPdata <- read_excel("../../_data/WorldBankGDPData.xlsx")
 GDPdata[GDPdata == 0] <- NA
 
 #I created a vector for the GDP of each country based off Millions of US Dollars

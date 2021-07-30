@@ -1,15 +1,15 @@
 ---
-title: "Genovese HW1 Revision 7.27.21"
+title: Genovese HW1 Revision 7.27.21
 description: |
   Here is my revision for HW1
 author:
-  - name: Curtis Atkisson
-    url: http://umass.edu/sbs/dacss
+- name: Curtis Atkisson
+  url: http://umass.edu/sbs/dacss
 date: 07-27-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ```{r, include=TRUE}
 #First I load in the tidyverse

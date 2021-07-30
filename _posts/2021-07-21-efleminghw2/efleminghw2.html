@@ -1485,16 +1485,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 <pre><code>   Manufacturer   Model Sales_in_thousands X__year_resale_value
-1         Acura Integra             16.919               16.360
-2         Acura      TL             39.384               19.875
-3         Acura      CL             14.114               18.225
-4         Acura      RL              8.588               29.725
-5          Audi      A4             20.397               22.255
-6          Audi      A6             18.780               23.555
-7          Audi      A8              1.380               39.000
+1         Acura Integra             16.919                16.36
+2         Acura      TL             39.384                19.88
+3         Acura      CL             14.114                18.23
+4         Acura      RL              8.588                29.73
+5          Audi      A4             20.397                22.25
+6          Audi      A6             18.780                23.55
+7          Audi      A8              1.380                39.00
 8           BMW    323i             19.747                   NA
-9           BMW    328i              9.231               28.675
-10          BMW    528i             17.527               36.125
+9           BMW    328i              9.231                28.68
+10          BMW    528i             17.527                36.12
    Vehicle_type Price_in_thousands Engine_size Horsepower Wheelbase
 1     Passenger              21.50         1.8        140     101.2
 2     Passenger              28.40         3.2        225     108.1
@@ -1518,16 +1518,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 9   68.5  176.0       3.197          16.6              24
 10  70.9  188.0       3.472          18.5              25
    Latest_Launch Power_perf_factor
-1       2/2/2012          58.28015
-2       6/3/2011          91.37078
+1       2/2/2012             58.28
+2       6/3/2011             91.37
 3       1/4/2012                NA
-4      3/10/2011          91.38978
-5      10/8/2011          62.77764
-6       8/9/2011          84.56511
-7      2/27/2012         134.65686
-8      6/28/2011          71.19121
-9      1/29/2012          81.87707
-10      4/4/2011          83.99872</code></pre>
+4      3/10/2011             91.39
+5      10/8/2011             62.78
+6       8/9/2011             84.57
+7      2/27/2012            134.66
+8      6/28/2011             71.19
+9      1/29/2012             81.88
+10      4/4/2011             84.00</code></pre>
 </div>
 <p>In this data set, we are given 157 different car models across 30 manufacturers with 16 different variables (columns). Variables include the number of sales, resale value, price, fuel efficiency, and more. I wish to assess why certain models sell and resell for the most. I wish to also find a correlation between sale price and resale price.</p>
 <strong>Unit Sales vs. Year Resale Value (which car sold the most?)</strong>
@@ -1540,16 +1540,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 <pre><code>   Manufacturer      Model Sales_in_thousands X__year_resale_value
-1          Ford   F-Series            540.561               15.075
-2          Ford   Explorer            276.747               16.640
-3        Toyota      Camry            247.994               13.245
-4          Ford     Taurus            245.815               10.055
-5         Honda     Accord            230.902               13.210
-6         Dodge Ram Pickup            227.061               15.060
-7          Ford     Ranger            220.650                7.850
-8         Honda      Civic            199.685                9.850
-9         Dodge    Caravan            181.749               12.025
-10         Ford      Focus            175.670                   NA</code></pre>
+1          Ford   F-Series              540.6                15.07
+2          Ford   Explorer              276.7                16.64
+3        Toyota      Camry              248.0                13.24
+4          Ford     Taurus              245.8                10.05
+5         Honda     Accord              230.9                13.21
+6         Dodge Ram Pickup              227.1                15.06
+7          Ford     Ranger              220.7                 7.85
+8         Honda      Civic              199.7                 9.85
+9         Dodge    Caravan              181.7                12.03
+10         Ford      Focus              175.7                   NA</code></pre>
 </div>
 <p>At this point, we can tell the Ford F-Series is the highest selling vehicle by a considerable margin. I want to find out why that is. It is important to note that the Ford F-Series refers to the F-150, F-250, F-350, and F-450 models. In other words, the single Ford F-Series Variable is an umbrella term for <em>4 different models</em>. Overall, the Ford F-150, F-250, and F-350 are vehicles that have stark physical differences all around. Contrastingly, the Ford F-450 and F-350 are relatively similar as both models utilize dual rear-wheel functionality for increased towing capability. Indeed, the original creator of the data <strong>did not</strong> create separate cell entries for cars like the Mercedes S-Class (which includes the S350, S450, S550, S63 AMG, and S65 AMG models). However, the creator did enter <strong>individual</strong> cells for the Porsche Carrera Cabrio and the Porsche Carrera Coupe. Both the Porsche Carrera Cabrio and Carrera Coupe belong to the flagship 911 line offered by Porsche. Therefore, <strong>it makes more sense to combine all of the Porsche Carrera Data</strong>.</p>
 <strong>Year Resale Value vs. Unit Sales (which car resales for the most?)</strong>
@@ -1573,16 +1573,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 9          Audi             A8              1.380
 10    Chevrolet       Corvette             17.947
    X__year_resale_value
-1                67.550
-2                60.625
-3                58.600
-4                58.470
-5                50.375
-6                41.450
-7                41.250
-8                40.375
-9                39.000
-10               36.225</code></pre>
+1                 67.55
+2                 60.62
+3                 58.60
+4                 58.47
+5                 50.38
+6                 41.45
+7                 41.25
+8                 40.38
+9                 39.00
+10                36.23</code></pre>
 </div>
 <p>The Porsche Carrera Cabrio has the highest resale price of any car on this list. Not surprisingly, the Porsche Carrera Cabrio has a considerably low amount of sales. The low sales likely have much to do with the impracticality of a coupe convertible and the significant cost of the car.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1593,8 +1593,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 <pre><code>  range(Sales_in_thousands) range(X__year_resale_value, na.rm = TRUE)
-1                     0.110                                      5.16
-2                   540.561                                     67.55</code></pre>
+1                      0.11                                      5.16
+2                    540.56                                     67.55</code></pre>
 </div>
 <p>The range of the “sales_in_thousands” is 540.441 and the range of "X__year_resale_value" is 62.39. Therefore, we can deduce that a great deal of contrast and variability exists with regards to cars sold and resale value. Additionally, a sharper contrast exists between the range of units sold and the resale value. With regards to missing data, there are resale values missing for many different observations. Also, a large majority of the data for the Chrysler Town &amp; Country is missing in addition to several values for the Acura CL. I will have to calculate which year this data set was compiled during and what “power_perf_factor” means. At the very least, I am fairly sure this data was compiled between 2011 &amp; 2012 as the “Latest_Launch variable” seems to indicate.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
