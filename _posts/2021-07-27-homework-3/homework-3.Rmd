@@ -1,0 +1,86 @@
+---
+title: "Homework 3"
+author:
+  - name: Nathan Cote
+date: 07-27-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r LOAD DATA, include=FALSE}
+library(tidyverse)
+library(readxl)
+  journalists <- read_excel("../../_data/journalists_Jul02.xlsx")
+```
+
+```{r Variable Reduction, echo=FALSE}
+select(journalists, 5, 7,8, 15, 17)
+```
+# Introduction to Variables of Concern
+The first variable I am interested in is `INTERACTION`. It is a combinatory 
+variable in that it is made up of two single digit numbers, each one representing
+an actor. These actors are referenced in the `INTER1` AND `INTER2` COLUMNS. 
+The combination of `INTER1` and `INTER2` give the `INTERACTION` column. 
+
+I would like to recode the `INTERACTION` variable with descriptive text, rather 
+than the current numerical representation. However, I am unsure how many types of
+interactions are in this column. I would like a list so that I could see the
+occurrence per `INTERACTION` type so that I can more easily recode them.
+
+# Counting and Recoding Interaction Variable
+```{r Count 1, echo=FALSE}
+journalists%>%
+  group_by(INTERACTION) %>%
+  select(INTERACTION)%>%
+  count(INTERACTION)
+```
+I now have a row featuring the total occurrences per `INTERACTION` type. Before
+recoding, I would like to drop some of the lowest occurring types. This is not to indicate that an `INTERACTION` with 
+low occurrence correlates to an `EVENT_TYPE` of reduced significance. The aim of my analysis is simply to find the 
+`INTERACTION` types which occur most often globally. Below, I will remove interactions with an occurrence below 25. The choosing of 25 as a threshold was arbitrary. Upon short examination of the counts of occurrences, it was clear that anything in the single digits, or the double digits to some extent, was insignificant in terms of most often to occur.
+
+```{r Count 2, echo=FALSE}
+interaction_count <- journalists%>%
+  group_by(INTERACTION) %>%
+  filter(n() >=25)%>%
+  select(INTERACTION)%>%
+  count(INTERACTION)
+interaction_count
+```
+Now I must view the codebook on ACLED and recode `INTERACTION` from numeric representation to textual representation. For instance, 
+a code of 1 stands for Military, and a code of 5 stands for Rioters, which 
+together becomes 15, or "Military versus rioters".
+
+```{r recode, echo=FALSE}
+interaction_count <- mutate(interaction_count, Interaction = recode(INTERACTION, `15` = "Military vs Rioters", `16` = "Military vs Protesters", `17` = "Military vs Civilians", `27` = "Rebels vs Civilians", `37` = "Political Militia vs Civilians", `47` = "Communal Militia vs Civilians", `50` = "Sole Rioter Action", `55` = "Rioters vs Rioters", `56` = "Rioters vs Protesters", `57` = "Rioters vs Civilians", `58` = "Rioters vs Others", `60` = "Sole Protester Action", `68` = "Protesters vs Other", `78` = "Other Actor vs Civilians"))
+interaction_count
+```
+# Interaction Type In Table Format
+I will now use my recoded data to recode the original dataset. After recoding, I will view the occurrences of each interaction type in table format, as well as proportional table.
+
+```{r recode original, echo=FALSE}
+journalists_interaction <- journalists%>%
+  group_by(INTERACTION) %>%
+  filter(n() >=25)%>%
+   mutate(Interplay = recode(INTERACTION, `15` = "Military vs Rioters", `16` = "Military vs Protesters", `17` = "Military vs Civilians", `27` = "Rebels vs Civilians", `37` = "Political Militia vs Civilians", `47` = "Communal Militia vs Civilians", `50` = "Sole Rioter Action", `55` = "Rioters vs Rioters", `56` = "Rioters vs Protesters", `57` = "Rioters vs Civilians", `58` = "Rioters vs Others", `60` = "Sole Protester Action", `68` = "Protesters vs Other", `78` = "Other Actor vs Civilians"))%>%
+  ungroup()
+
+interplay_table <- table(select(journalists_interaction, Interplay))
+interplay_table
+prop.table(interplay_table)*100
+```
+# Event Type Occurrence Per Interaction Type
+Now that the interactions have been counted and presented in tables based on prominence of occurrence, I would like to join the recoded interaction types from `journalists_interaction` to the original dataframe `journalists`. After this, I will group the data by the newly coded `Interplay` column, and count the occurrence of `EVENT_TYPE` within those `Interplay` variables. Again, I will arbitrarily choose a number of occurrences threshold for `EVENT_TYPE` as I am concerned with the occurrences most prevalent.
+
+
+``` {r Event Type with Interaction, echo=FALSE}
+journalists_joined <- (left_join(journalists, journalists_interaction))
+```
+```{r Event Count per Interaction, echo=FALSE}
+event_count_per_interplay <- select(journalists_joined, EVENT_TYPE, Interplay)%>%
+  group_by(Interplay)%>%
+  count(EVENT_TYPE)%>%
+  filter(n>=50)
+event_count_per_interplay
+```
