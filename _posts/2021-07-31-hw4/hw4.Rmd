@@ -1,0 +1,191 @@
+---
+title: "HW4"
+description: |
+  Data Visualization for the variables of interest in the dataset I have chose
+  for the final project. 
+author:
+  - name: Allie Lyamuya
+date: 07-31-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Run the Libraries and Import the data
+
+```{r}
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+```
+
+
+```{r}
+# Load the data
+dataSmall <- read.csv("../../_data/dataMini1.csv")
+head(dataSmall)
+
+# Explore the data
+glimpse(dataSmall)
+```
+
+***
+### Visualization: Tables and Crosstabs
+
+```{r}
+# Cross table for gdpc_group and internet_grp
+dataSmall %>%
+  select(gdpc_group, internet_grp) %>%
+  table()
+
+
+# Proportional table for gdpc_group and internet_grp
+dataSmall %>%
+  select(gdpc_group, internet_grp) %>%
+  table() %>%
+  prop.table() *100
+```
+
+* The cross table and proportional table above demostrate the distribution of 
+different levels of countries' gdp per capita across different levels of 
+internet usage by different countries across years. For example, in upper income 
+countries, majority of the population are using the internet, that is there is
+high internet usage across these countries population compared to a very small
+percentage of low internet usage. 
+
+* I chose this visualization approach because it is more straight forward and 
+easy to grasp the relationship between the two variables in use. I will also 
+explore other visualization approaches to get more nuances of the relationship 
+between the internet usage and countries' income level. 
+
+
+***
+### Visualization: GGPlot - Univariate and Bivariate 
+
+```{r}
+# Univarariate: Histograms
+ggplot(data = dataSmall) +
+  geom_histogram(mapping = aes(x = internet), fill = "chocolate1") +
+  labs(title = "Histogram of the Percentage of Internet Usage in Countries") +
+  theme_grey()
+
+ggplot(data = dataSmall) +
+  geom_histogram(mapping = aes(x = gdpc), fill = "aquamarine4") +
+  ggtitle("Histogram of Countries' GDP per Capita")
+
+# Univariate: Bar graphs
+ggplot(data = dataSmall) +
+  geom_bar(mapping = aes(x = internet_grp), fill = "darkgoldenrod1") +
+  labs(title = "Bar Graph of the Level of Internet Usage in Countries")
+
+ggplot(data = dataSmall) + 
+  geom_bar(mapping = aes(x = gdpc_group), fill = "blueviolet") +
+  labs(title = "Bar Graph of the Levels of Countries' GDP per Capita")
+
+```
+
+i. The above two histograms represent the distribution of the numerical 
+variables, `internet` and `gdpc`. Based on the histogram of `internet`, lower
+percentage of internet usage has a large count compared to high percentage of
+internet usage. Besides, the `gdpc` histogram reveals a high number of countries
+with low level of income compared to numbers of high income countries. 
+
+ii. The two bar graphs represent the distribution of the categorical variables
+`internet_grp` and `gdpc_group`. Based on the `internet_grp` bar graph, majority
+of countries seem to have low level of internet usage across their population.
+Moreover, the `gdpc_grp` bar graph reveals that the distribution of income level
+by different groups of countries seem to have the same proportion in the dataset.
+This can be attributed to the creation of the variable `gdpc_grp` based on the
+four levels of the percentiles (0 - 25%, 25% - 50%, 50% - 75%, and 75% - 100%). 
+
+iii. I chose histograms and bar graphs because they are good visualization
+method for visualizing the distribution of univariate numeric variable and 
+categorical variables across time. 
+
+***
+
+```{r}
+# Bivariate: Scatterplot for `internet` and `gdpc`
+ggplot(data = dataSmall) +
+  geom_point(mapping = aes(x = gdpc, y = internet, color = population)) +
+  labs(title = "Scatterplot of GDP per Capita and Internet Usage by Countries")
+  
+# Bivariate: Boxplot for internet and groups of gdpc
+ggplot(data = dataSmall, mapping = aes(x = gdpc_group, y = internet)) +
+  geom_boxplot(color = "mediumorchid4") +
+  labs(title = "Boxplot for Levels of GDP per Capita and Internet Usage")
+
+# Bivariate: Bar Graph for levels of internet usage and levels of gdp/capita 
+ggplot(data = dataSmall) +
+  geom_bar(mapping = aes(x = gdpc_group, fill = internet_grp), 
+           position = "dodge") +
+  labs(title = "Bar Graph of GDP per Capita by Levels of Internet Usage")
+
+```
+
+
+i. The scatterplot above shows the positive relationship between countries'
+gdp per capita (numeric variable) and the percentage of internet usage (numeric
+variable). That is, as `gdpc` increase there seem to be an increase in 
+countries' internet usage. I chose scatterplot because this form of 
+visualization is best to represent the relationship between two numeric 
+variables. 
+
+- I tried to use `geom_bar` here and it didn't seem to work with two continuous 
+variables. 
+
+
+ii. The boxplot above shows the relationship between different levels of
+countries' gdp per capita (categorical variable) and the percentage of internet
+usage by countries (numeric variable). In the Upper Income group, the boxplot
+display the presence of many outliers--portion of countries' populations with
+lower percentage of internet usage. Also, the Low Income group have some 
+outliers--portion of countries' population with a high internet usage. Besides, 
+the distribution of the maximum values, 1st and 3rd quartiles across the four 
+groups reveals the positive relationship between the internet usage and levels 
+of income different countries belong to. 
+
+- I choose boxplot because it is great at visualizing the distribution of data
+when examining the relationship between a numeric variable and categorical
+variable. I could also use `geom_violin` but I decided not to use it here. 
+
+
+iii. The bar graph above displays the distribution of levels of gdp per capita 
+of varied groups of countries (categorical variable) while also showing the 
+distribution of internet usage based on varied levels across countries 
+(categorical variable). In each group, from Low to Upper Income, there are 3 
+groups of internet usage from Low to Moderate to High. 
+
+- I chose this visualization form because it allows for the representation of 
+distribution of categorical variable while also allow the option to embed 
+another categorical variable in the same graph to display the distribution of
+both variables across time. I could have used line graph here but that would 
+likely limit the ability to display another variable at the same time. 
+
+
+iv. **Limitation**
+
+The correlated relationship between variables that both scatterplot, boxplot, 
+and bar graph have revealed above (based on the visualizations) don't 
+necessarily say anything about causality. That is, while there seem to be a 
+revealed relationship between the internet usage and the countries levels of 
+income, it is not that clear from the visualization above how these two 
+variables affect one another. I would like to perform other, perhaps more 
+advanced visualization techniques that can explain how the two variable of 
+interest from my dataset affect one another. 
+
+
+***
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

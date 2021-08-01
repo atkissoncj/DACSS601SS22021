@@ -1,0 +1,226 @@
+---
+title: "HW3"
+description: |
+ In this assignment I will be performing a univariate statistical analysis 
+author:
+  - name: Allie lyamuya
+date: 07-28-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Import Data and Run Appropriate Librraries
+
+```{r}
+library(readr)
+library(tidyverse)
+library(tidyr)
+library(ggplot2)
+
+```
+
+
+```{r}
+# Import data
+data <- read.csv("../../_data/digitalConnectivityData.csv")
+
+# Description of the data
+glimpse(data)
+
+```
+
+***
+
+
+### Variable Description 
+
+For this assignment, I'm interested in exploring two numeric variables from my
+data, these are `internet_usage`, `gdp_percapita`. I will also use the variable
+`population` for data transformation purposes, this is because both my variables
+of interests have some relationship with the `population` variable. All three 
+variables come from three different datasets obtained from the World Bank Open 
+Data. Each variable include data from 2007 to 2017 (10 year period)
+
+The variable `internet_usage` represent the percentage of people in a country
+that are using the internet in a given year. The variable `gdp_percapita` 
+represent the gross domestic product per population of a country in a 
+given year. And the variable `population` represent the total population of a 
+country in a given year. 
+
+
+```{r}
+# Describing the variable 
+str(data$internet_usage)
+str(data$population)
+str(data$gdp_percapita)
+
+summary(data$internet_usage)
+summary(data$population)
+summary(data$gdp_percapita)
+
+```
+
+***
+
+### Data Cleaning
+
+```{r}
+# Creating a small dataset with my variable of interest
+dataMini <- data %>%
+  select(country_name, year, internet_usage, population, gdp_percapita)
+head(dataMini)
+
+# Check for missing values 
+table(is.na(dataMini))
+
+# Examine the variables with missing values
+dataMini[rowSums(is.na(dataMini)) > 0, ]
+
+```
+
+<br>
+
+There are **18** missing values in the small dataset `dataMini`. These missing 
+values are found in the two variable, `gdp_percapita` and `internet_usage`. 
+Because the dataset has a good number of observations (1947) and since I'm 
+particularly interested to examine the relationship between the two variable 
+with missing values, I will drop all observations with missing values to be able
+to run statistical analyses more efficiently. 
+
+```{r}
+# Removing missing values 
+dataMini1 <- na.omit(dataMini) 
+table(is.na(dataMini1))
+
+```
+
+***
+
+### Data Transformation
+
+`internet_usage` is a percentage of a country population that was using the
+the internet in a given year. I want to transform this percentage into an actual
+portion of a country's population that was using the internet in a given year,
+for the period between 2007 to 2017. To do that, I will use the variable 
+`population` in computing `internet` (total internet usage in a country for a
+given year)
+
+
+```{r}
+# Transforming variables
+dataMini1 <- dataMini1 %>%
+  rename("country" = "country_name", 
+         "gdpc" = "gdp_percapita",
+         "internet" = "internet_usage") %>%
+  mutate(totalnet = (internet * population)/100) %>%
+  arrange(country)
+
+# Change the structure of `internet` to integer 
+dataMini1$totalnet <- as.integer(dataMini1$totalnet)
+```
+
+### More on Data Tranformation
+
+The World Bank categories countries' level of income into four groups, these are
+low income, lower-middle income, upper-middle income, and high income. I will 
+then categorized the `gdpc` variable into 4 categories based on the groups of 
+percentiles in the dataset. Low income will be countries with `gdpc` less than 
+the 25th percentile, between 25th and 50th percentile will be the low-middle 
+income,between 50th and 75th will be the upper-middle income, and above 75th 
+percentile will be the upper income. 
+
+Moreover, for `internet`, I will group the level of internet usage across 
+countries into three categories: Low, Moderate, and High. This grouping will be 
+based on the groups of percentile and the median value of the variable `internet`.
+Every level of usage below the median value will be grouped as Low, between 50th
+and 75th percentile of use will be grouped as Moderate, and above the 75th perce
+-ntile will be High. 
+
+```{r}
+# Calculate quantiles and summary of the gdpc variable
+quantile(dataMini1$gdpc, na.rm = TRUE)
+
+# Calculate quantiles and summary of the internet
+summary(dataMini1$internet)
+quantile(dataMini1$internet, na.rm = TRUE)
+
+# Recode the data 
+dataMini1 <- dataMini1 %>%
+  mutate(gdpc_group = case_when(
+    gdpc < 1673 ~ "Low Income",
+    gdpc >= 1673 & gdpc <= 5586 ~ "Low-Middle Income",
+    gdpc > 5586 & gdpc <= 20564 ~ "Upper-Middle Income",
+    gdpc > 20564 ~ "Upper Income")) %>%
+  mutate(internet_grp = case_when(
+    internet < 37.3 ~ "Low",
+    internet >= 37.3 & internet <= 67.09 ~ "Moderate",
+    internet > 67.09 ~ "High"))
+  
+```
+
+***
+
+### Summary Description 
+
+```{r}
+str(dataMini1)
+summary(dataMini1)
+
+table(dataMini1$gdpc_group)
+table(dataMini1$internet_grp)
+```
+
+
+***
+
+### Visualization
+
+```{r}
+# Histograms 
+ggplot(data = dataMini1) +
+  geom_histogram(mapping = aes(x = internet), fill = "lightblue") +
+  labs(title = "Histogram of Total Internet Usage") +
+  theme_grey()
+
+ggplot(data = dataMini1) +
+  geom_histogram(mapping = aes(x = gdpc), fill = "lightpink") +
+  ggtitle("Histogram of Countries' GDP per Capita")
+
+```
+
+
+***
+
+### Exporting dataset
+
+I export this subsetted data set so that I can be able to build on it in the 
+next class assignment that focuses on visualization. After exporting the dataset
+I renamed it and moved it to the right folder (_data). 
+
+```{r}
+#write.csv(dataMini1, 
+         # "\\DACSS601SS22021\\_data\\dataMini1.csv", 
+          #row.names = FALSE) 
+```
+
+
+
+
+
+
+***
+ 
+Distill is a publication format for scientific and technical writing, native to 
+the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
