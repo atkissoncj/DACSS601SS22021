@@ -1,0 +1,108 @@
+---
+title: "Homework 4"
+description: |
+  For this assignment, you will be creating and explaining a data visualization.
+    Your goal is to build on the previous assignments, and create a data visualization using the dataset you have been working with in R. Then, use R Markdown to draft a document that tracks the creation of the data visualization. In particular, comment on and discuss:
+    1. What the visualization demonstrates.
+    2. Why you chose the visualization approach you selected, and what alternative approaches you considered but decided not to pursue.
+    3. What you wished, if anything, you could have executed but found limited capability to do.
+author:
+  - name: Stephanie Cortez
+    url: http://umass.edu/sbs/dacss
+    email: scortez@umass.edu
+date: 08-01-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Packages needed
+library(tidyverse)
+library(distill)
+library(blogbuilder)
+library(knitr)
+knitr::kable 
+```
+
+```{r}
+#Importing dataset
+library(readxl)
+SENISData <- read_excel("../../_data/SENIScoresElementaryShools-20212022.xlsx")
+```
+
+```{r, knitr::kable}
+#Creating tidySENI to only show variables of interest.
+tidySENI <- select(SENISData, c('Local District', 
+                                'Homeless Count', 
+                                'Foster Count', 
+                                'EL Count', 
+                                'Total Enroll'))
+tidySENI
+```
+
+```{r}
+#Re-coded Local District values to make them easier to read
+tidySENI[,1] <- ifelse(tidySENI[,1]== "S", "SOUTH", 
+                       ifelse(tidySENI[,1]== "C", "CENTRAL", 
+                              ifelse(tidySENI[,1]=="W", "WEST", 
+                                     ifelse(tidySENI[,1]=="E", "EAST", 
+                                            ifelse(tidySENI[,1]=="NE", "NORTHEAST", 
+                                                   ifelse(tidySENI[,1]=="NW", "NORTHWEST", 
+                                                          99 ))))))
+tidySENI
+```
+
+*Playing with pivot_longer, didn't help*
+```{r}
+pivlongSENI <-  tidySENI %>%
+  pivot_longer(c(`Homeless Count`, `Foster Count`, `EL Count`), 
+               names_to = "Counts", values_to = "Cases")
+pivlongSENI
+```
+*Playing with pivot wider but didn't help much either.*
+```{r}
+pivwideSENI <-  tidySENI %>% 
+  pivot_wider(names_from = `Local District`, values_from = `Homeless Count`)
+pivwideSENI
+```
+```{r}
+tidySENI %>% 
+  filter(`Local District` == 'S')
+```
+**I'm excited I finally got to figure out how to create a pivot table that is grouped by Local District and I can see the sums of each count!**
+*I can see now that the Local District with the most Homeless and foster children is the South, which has the highest enrollment. I would now like to check for percentages by total enrollment. After that I will *
+```{r}
+#Grouping by Local District and showing sums of each Count within Local Districts 
+  #and arranging by Total Enroll in descending order. Like a pivot table ! Yay!  
+seni_total <- tidySENI %>% 
+  group_by(`Local District`) %>% 
+  summarise(
+    Total_Homeless=sum(`Homeless Count`), 
+    Total_Foster=sum(`Foster Count`), 
+    Total_EL=sum(`EL Count`),
+    Total_Enroll=sum(`Total Enroll`)) %>% 
+  arrange(desc(`Total_Enroll`))
+seni_total
+```
+**I want to focus on variable seperately now. To look at only the homeless count I created a tibble called seni_homeless by selecting local districts, total homeless and total enroll and also added a new variable to calculate percentage of total homeless of total enroll titles "homeless percentage".**
+```{r}
+#Checking percentage of total homeless in each local district based on the total enrolled
+#Added new variable showing homeless percentage
+seni_homeless <- seni_total %>% select('Local District','Total_Homeless', 'Total_Enroll') %>% 
+  mutate("Homeless_Percentage"=Total_Homeless/Total_Enroll)
+seni_homeless
+```
+**By using a bar chart, with Local District and sums of Total homeless, we can clearly see which local district has the highest count. I want to try and arrange totals by descending order to see largest to least. I think a bar chart for each Count can be a good way to go to show numbers.**
+```{r}
+#Creating a bar graph to show homeless count in each local district. 
+#Note to self: Remember to use back ticks `` on variable names for it to work!
+library(ggplot2)
+gg_homeless <- ggplot(data=seni_homeless, aes(x=`Local District`, y=`Total_Homeless`)) +
+         geom_bar(stat="identity")
+gg_homeless
+```
+**Other visuals to consider using is a different column graph showing all the variables of interest and setting them as different colors and leaving local districts on the y axis. But I still think separating them to small multiples would be better. Stacked bars can get confusing. It would be cool if I can create the map of the local districts and show density of populations with colors, for example, the south local district will have the darkest shade and the east will have the lightest shade. That sounds like it could be a lot to figure out to do in R but I can look into it.** 
+
