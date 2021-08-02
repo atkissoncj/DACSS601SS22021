@@ -1,0 +1,77 @@
+---
+title: "AG HW3"
+description: |
+  Here is my Homework Three where I analyze the variables that I am using including, how they were gathered, cleaned, and then a summarization.
+author:
+  - name: Alexander Genovese
+date: 08-02-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r, include=FALSE}
+library(tidyverse)
+library(readxl)
+```
+
+## Question 1 and Loading in the Data
+```{r}
+GDPvsUnidata <- read_excel("../../_data/WorldBankGDPData.xlsx")
+```
+I used the function **read_excel** via the library **readxl** to read in my data.   
+The data includes two different statistics gathered, one from the World Bank which details the GDP of every country in the World Bank and the estimated number of Universities worldwide as of July 2020 gathered by statista.  
+https://www.statista.com/statistics/918403/number-of-universities-worldwide-by-country/  
+I combined these two into a data table on excel because I do not know how to use two different data sets and comb through them to get the exact data for each country in both spreadsheets.  
+There were missing variables in both vectors, which I will clean through in the next session.
+
+## Question 2 and cleaning the data
+```{r}
+GDPdata <- GDPvsUnidata$`Millions of US Dollars`
+Unidata <- GDPvsUnidata$`Number of Universities Worldwide in 2020 by Country`
+GDPvsUnidata[GDPvsUnidata == 0] <- NA
+```
+In order to process the data in each vector easier, I created new variables that give me the vectors, **GDPdata** and **Unidata**.  
+As noted in the previous section, there were missing values in the GDP data from the World Bank. This is because not all countries report that data, as such, they were inputted as 0 to the vector. In order to do basic statistical analysis, including visualizing the data, I had to remove the 0s and turn them into the NA to make sure that they do not interfere. The statista data for the number of Universities only covered the top 25 countries as opposed to the World Bank's 140+ countries. So there will be missing university values for most countries in the GDP list. Luckily, R removes rows that have missing values when using **geom_point**.
+
+## Question 3 and Summary Descriptives
+```{r}
+ggplot(GDPvsUnidata, aes(x = GDPdata)) + geom_histogram(bins=10) 
+GDPmean <- mean(GDPdata, na.rm = TRUE)
+print(GDPmean)
+GDPmedian <- median(GDPdata, na.rm = TRUE)
+print(GDPmedian)
+GDPrange <- max(GDPdata, na.rm = TRUE) - 
+min(GDPdata, na.rm = TRUE)
+print(GDPrange)
+GDPsd <- sd(GDPdata, na.rm = TRUE)
+print(GDPsd)
+```
+Here I looked at the statistical summary of the GDP vector. This included the distribution (historgram), the central tendency (mean, median) and the variance (standard deviation). Obviously, the data is extremely skewed to the right, with the histogram showing a large right tail and the mean is larger than the median. 
+```{r}
+ggplot(GDPvsUnidata, aes(x=Unidata)) + geom_histogram(bins=5)
+Unimean <- mean(Unidata, na.rm = TRUE)
+print(Unimean)
+Unimedian <- median(Unidata, na.rm = TRUE)
+print(Unimedian)
+Unirange <- max(Unidata, na.rm = TRUE) - min(Unidata, na.rm = TRUE)
+print(Unirange)
+Unisd <- sd(Unidata, na.rm = TRUE)
+print(Unisd)
+```
+Here I looked at the statistical summary of the University vector. This included the distribution (historgram), the central tendency (mean, median) and the variance (standard deviation). Obviously, the data is extremely skewed to the right, with the histogram showing a large right tail and the mean is larger than the median. 
+
+## Question 4 and Visualization
+```{r}
+ggplot(GDPvsUnidata, aes(x = Unidata, y = GDPdata)) + geom_point()
+```
+Here is where I visualized the number of Universities versus the GDP of the respective country, with the University being the x variable and the GDP being the y variable.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
