@@ -1,0 +1,87 @@
+---
+title: "efleming_hw4"
+description: |
+  The following document demonstrates cars do not resell for high prices due to only high initial cost.
+author:
+  - name: Emerson Fleming
+    url: http://umass.edu/sbs/dacss
+date: 08-02-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+myDataPath <- read.csv("../../_data/Car_sales.csv", header=TRUE, stringsAsFactors = FALSE) 
+require(tidyverse)
+require(tidyr)
+require(dplyr)
+```
+                                                                
+```{r, include=FALSE}
+myDataPath <- rename(myDataPath, resale__value = X__year_resale_value)
+myDataPath$Vehicle_type <- NULL #deleted the vehicle_type column, was redundant. Only had the option of being a "car" or a "passenger" vehicle--both are synonymous.
+myDataPath <- myDataPath[-9,] #deleted the 328i row in order to combine in places and create a 3-Series row.
+myDataPath[myDataPath$Sales_in_thousands==19.747,3] <- 28.978 #added the sales from the 328i to the new row
+myDataPath[myDataPath$Sales_in_thousands==28.978,4] <- 25.744 #used the mean of the resell value of the 328i and 323i to generate a new resell value
+myDataPath[myDataPath$Sales_in_thousands==28.978,2] <- "3-Series" #replaced the model from 328i to 3-Series
+myDataPath[myDataPath$Sales_in_thousands==28.978,5] <- 30.195 #used the mean of the price of the 328i and 323i to generate a new price
+
+myDataPath <- myDataPath[-97,] #deleted the SLK230 row in order to combine in places and create an SLK-Series row.
+myDataPath[myDataPath$Sales_in_thousands==7.998,3] <- 9.524 #added sales from SLK230 to SLK-Series
+myDataPath[myDataPath$Sales_in_thousands==9.524,4] <- 25.581 #used the mean of the resell value of the SLK and the SLK230 to create a resell value for the new SLK Series row
+myDataPath[myDataPath$Sales_in_thousands==9.524,2] <- "SLK-Series" #created a new SLK Series row
+myDataPath[myDataPath$Sales_in_thousands==9.524,5] <- 39.950 #used the mean of the price of the SLK and the SLK230 to create a new price for the new SLK Series row
+
+myDataPath <- myDataPath[-125,] #deleted the Porsche Carrera Cabriolet row to combine in places and create a 911-Series Row
+myDataPath[myDataPath$Sales_in_thousands==1.280,3] <- 3.146 #added sales from the Porsche former Cabriolet row
+myDataPath[myDataPath$Sales_in_thousands==3.146,4] <- 64.088 #used the mean of the resell value of the Porsche Carrera and Porsche Carrera Cabriolet to create a new resell price
+myDataPath[myDataPath$Sales_in_thousands==3.146,2] <- "911 Series" #created a new 911 series row
+myDataPath[myDataPath$Sales_in_thousands==3.146,5] <- 72.995 #used the mean of the price of the Porsche Carrera and Porsche Carrera Cabriolet to create a new price
+```
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics("hero-imageC5.jpg")
+```
+                                                                2000 Chevrolet Corvette
+
+
+```{r}
+ggplot(myDataPath,
+  aes(x = Price_in_thousands, y = resale__value)) +
+  geom_point(size = 0.5) +
+  geom_line(colour = "purple") +
+  geom_smooth() +
+  labs(title = "Original Market Price vs. Resale Value") +
+  theme_classic()
+```
+
+After tidying my data in the previous assignment, I searched for correlation between initial cost and resell value.
+As we can already deduce, the more expensive a car is to begin with, the more it will resell for as a result. However, I wanted to see if cars with higher initial cost hold their value more than cars with lower initial cost. 
+To investigate this phenomenon, I created visualizations comprised of sale versus resale value for cars over and under 35,000 dollars.
+
+```{r}
+  expensive_cars <- filter(myDataPath, `Price_in_thousands` >= 35) #created a data set that only shows expensive cars that cost at least 35,000.
+  affordable_cars <- filter(myDataPath, `Price_in_thousands` < 35) #created a data set that only shows inexpensive cars that cost less than 35,000.
+ggplot(expensive_cars,
+  aes(x = Price_in_thousands, y = resale__value)) +
+  geom_point(size = 0.5) +
+  geom_line(colour = "red") +
+  geom_smooth(colour = "black") +
+  labs(title = "Original Market Price vs. Resale Value[Expensive Cars]") +
+  theme_classic()
+```
+
+
+```{r}
+ggplot(affordable_cars,
+  aes(x = Price_in_thousands, y = resale__value)) +
+  geom_point(size = 0.5) +
+  geom_line(colour = "blue") +
+  geom_smooth(colour = "black") +
+  labs(title = "Original Market Price vs. Resale Value[Affordable Cars]") +
+  theme_classic()
+```
+
+Surprisingly, the data demonstrates cars do not retain value based on cost alone. The graphs demonstrate affordable cars have a higher tendency to hold their value than expensive cars. This is exactly the opposite of what I initially hypothesized.

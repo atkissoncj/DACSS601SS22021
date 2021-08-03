@@ -1,0 +1,122 @@
+---
+title: "efleming_hw3"
+description: |
+  The following document begins to interpret and tidy the Car Sales data set.
+author:
+  - name: Emerson Fleming
+    url: http://umass.edu/sbs/dacss
+date: 07-26-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r setup, include=FALSE}
+getwd()
+myDataPath <- read.csv("../../_data/Car_sales.csv", header=TRUE, stringsAsFactors = FALSE) 
+require(tidyverse)
+require(tidyr)
+require(dplyr)
+```
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics("911_GT3.jpg")
+```
+                                                                2000 Porsche 911 GT3
+
+# Variables:
+**Manufacturers**:
+Indicates the make of each car in the data set
+
+**Model**:
+Indicates the model of the vehicle listed
+
+**8Sales_in_thousands**:
+Lists the amount of cars sold for a specific model for a given year. In the future, I will research which year this is exactly(as the data does not specify).
+
+**__year_resale_value**:
+Tells us the resale value for the car based on a given year; I am not sure yet which year this is.
+
+**Vehicle_type**:
+Indicates the type of vehicle the car is
+
+**Price_in_thousands**:
+Indicates how much the vehicle costs for the year the data was collected during
+
+**Engine_size**:
+Indicates the size of the engine (in liters)
+
+**Horsepower**:
+Indicates the power output of the vehicle
+
+**Wheelbase**:
+Indicates the length from the front set of wheels to the back
+
+**Width**:
+Indicates the width of the vehicle
+
+**Length**:
+Indicates the length of the car from bumper to bumper
+
+**Curb_weight**:
+Indicates the weight of vehicle
+
+**Fuel_capacity**:
+Indicates how much fuel the vehicle holds
+
+**Fuel_efficiency**:
+Indicates how efficient the vehicle is based on miles per gallon.
+
+**Latest_Launch**: 
+Gives the latest date a new model was launched based on the year the data was collected (which has to be no later than 2012 indicated by the column itself). 
+
+**Power_perf_factor**:
+I am not sure what exactly this means. However, if I am unable to eventually define this variable, I will consider it negligible. 
+
+# NA Values:
+*   The most pressing issue of all is the large amount of NA values for "resell value" all throughout the data set. I will have to create a way to fill this portion of the data at a later juncture.
+*   Several vehicles are missing values other than the resell value which include the Chrysler Town & Country, the Cadillac Seville, the Dodge Intrepid, and the Oldsmobile Intrigue.
+
+```{r}
+myDataPath %>%
+  filter(!complete.cases(.)) 
+```
+
+## How I cleaned the data:
+1. I **renamed** "X__year_resale_value" to something less lengthy and more appropriate.
+
+2. I **deleted** the "vehicle_type" row because it was redundant. For this column, vehicles could only be a "passenger" or a "car" vehicle. Therefore, it was nonsensical to keep.
+
+3. I **created** an entirely new row for several models of cars that really belonged together in a "series" column. I observed that for several models of cars--such as the Ford F-Series for instance--an observation would be dedicated to a whole line or *series* of cars. Therefore, I combined observations that belong to the same series into the same row. Naturally, combining rows entirely and wholeheartedly can lead to complication. Especially in data sets with variables like vehicle length and engine size that cannot be combined (it would just be wrong). As a result, I decided to delete the higher models of the vehicles in question and change the name of the lowest model to become the new *series row.* Additionally, I decided to calculate the mean of the *resale value* and the mean of the price *price* and add the *sales in thousands* variables together. 
+    +   **First**, I combined the BMW 323i and BMW 328i rows together into a new *BMW 3-Series* row
+    
+    +   **Second**, I combined the Mercedes SLK and Mercedes SLK230 rows together into a new *Mercedes SLK Series* row.
+    
+    +   **Third**, I combined the Porsche Carrera Coupe and Porsche Carrera Cabriolet into a new *Porsche 911 Series* row (as both models are part of the Porsche 911 Series).
+    
+```{r}
+myDataPath <- rename(myDataPath, resale__value = X__year_resale_value)
+myDataPath$Vehicle_type <- NULL #deleted the vehicle_type column, was redundant. Only had the option of being a "car" or a "passenger" vehicle--both are synonymous.
+myDataPath <- myDataPath[-9,] #deleted the 328i row in order to combine in places and create a 3-Series row.
+myDataPath[myDataPath$Sales_in_thousands==19.747,3] <- 28.978 #added the sales from the 328i to the new row
+myDataPath[myDataPath$Sales_in_thousands==28.978,4] <- 25.744 #used the mean of the resell value of the 328i and 323i to generate a new resell value
+myDataPath[myDataPath$Sales_in_thousands==28.978,2] <- "3-Series" #replaced the model from 328i to 3-Series
+myDataPath[myDataPath$Sales_in_thousands==28.978,5] <- 30.195 #used the mean of the price of the 328i and 323i to generate a new price
+
+myDataPath <- myDataPath[-97,] #deleted the SLK230 row in order to combine in places and create an SLK-Series row.
+myDataPath[myDataPath$Sales_in_thousands==7.998,3] <- 9.524 #added sales from SLK230 to SLK-Series
+myDataPath[myDataPath$Sales_in_thousands==9.524,4] <- 25.581 #used the mean of the resell value of the SLK and the SLK230 to create a resell value for the new SLK Series row
+myDataPath[myDataPath$Sales_in_thousands==9.524,2] <- "SLK-Series" #created a new SLK Series row
+myDataPath[myDataPath$Sales_in_thousands==9.524,5] <- 39.950 #used the mean of the price of the SLK and the SLK230 to create a new price for the new SLK Series row
+
+myDataPath <- myDataPath[-125,] #deleted the Porsche Carrera Cabriolet row to combine in places and create a 911-Series Row
+myDataPath[myDataPath$Sales_in_thousands==1.280,3] <- 3.146 #added sales from the Porsche former Cabriolet row
+myDataPath[myDataPath$Sales_in_thousands==3.146,4] <- 64.088 #used the mean of the resell value of the Porsche Carrera and Porsche Carrera Cabriolet to create a new resell price
+myDataPath[myDataPath$Sales_in_thousands==3.146,2] <- "911 Series" #created a new 911 series row
+myDataPath[myDataPath$Sales_in_thousands==3.146,5] <- 72.995 #used the mean of the price of the Porsche Carrera and Porsche Carrera Cabriolet to create a new price
+```
+## Now to see if it worked:
+```{r}
+myDataPath[myDataPath$Model=="3-Series" | myDataPath$Model=="911 Series" | myDataPath$Model== "SLK-Series",]
+```
+## It worked! Until next time.

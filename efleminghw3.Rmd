@@ -5,22 +5,138 @@ date: "7/23/2021"
 output: html_document
 ---
 ```{r setup, include=FALSE}
+getwd()
+#myDataPath <- read.csv("../../_data/Car_sales.csv", header=TRUE) 
 require(tidyverse)
 require(tidyr)
 require(dplyr)
 ```
-
-```{r}
-head(myDataPath[,1:16], 10)
-```
 The first problem with the dataset that needed to be addressed was for the missing values in the dataset.
-So far, there are several key issues that have been addressed and will be included at a later juncture:
+So far, there are several key issues that needed to be addressed:
+
 1. I am not sure which years were used to compile this data
 2. I am not sure whether this data just includes sales in the US or worldwide sales
 3. I am not sure whether this data was compiled using multiple years or one single year (as my research on the data will indicate)
 
-As we can see, there appears to be a missing value for the resale value of the BMW 323i. The last year the BMW 323i was in year 2000 (which is about the year that I assume this data is based around according to my research). The resale price for the BMW 328i is listed at $28,675. O
+```{r}
+"../images/students/Porsche_993.jpg"
+```
+
+```{r}
+"../images/students/hero-imageC5.jpg"
+```
+I chose to figure out which year this data was compiled during using carsalesbase.com. This website includes the exact amount of sales for the US, Europe, and China for virtually every year after 1990. I knew the data would have been conducted no later than 2012, as the initial data frame included the “latest_launch” column. In order to try and investigate which year was targeted to report total sales, I first tried investigating American cars where the worldwide sales would be fairly negligible (as American cars do not sell well worldwide, the vast majority are bought in America).
+
+```{r}
+"../images/students/dodge_viper.jpg"
+```
+For 2008 in US, the Dodge Viper sales were 1.172 (in thousands)
+For 2007 (the latest data available for Dodge Viper sales), the sales were 103
+——>The closest number based on the data entered on the initial data set with relation to car sales were in 2008
+
+However, it can’t be 2008 because the data frame includes the Chevrolet Camera which was not produced between 2005-2008. It was only put back on the market in 2009. I also found that the number for the Chevrolet Camaro sales was considerably lower than virtually any sales for the model in recent history (which did not make much sense).
+
+I also noticed that the Chrysler Cirrus is included on this data set which was only produced from June 1994-2000. The “latest_launch” variable claims the latest launch of this model was 10/6/2011, which is clearly not true.
+—>The closest year for the Chrysler Cirrus entry was in 1999.
+
+Audi A8 sales in 1999 were higher in the US sales recorded in the dataset by over 1,000 units (which is considerable given that not many units of the Audi A8 are sold in general). Therefore, this leads me to believe the data entered for this set was not conducted based on one particular year alone.
+
+The closest amount in sales for the Chevrolet Corvette was in 1996. Therefore, it is clear that the sales figure was entered across a range of years as opposed to one particular year. This does not mean the data is unable to be useful. However, this is a very important factor to recognize early on.
+
+```{r}
+"../images/students/Audi_A8_D2.jpg"
+```
+The next thing to try and investigate is the year(s) in which the resale value was conducted. Overall, it is fairly difficult to find resale price over the years for specific models. This is not data that is readily available. It is very difficult to find the resale price for any other year than the current year (or the most recent year the data was updated). 
+
+However, it is not incredibly important to find which year the resale value is based on. We can still discern a great deal from the data. Of all auto manufacturers, Porsches are well known to have exceptional residual value. 
+
+In fact, the Porsche 911 Coupe has the highest resale value of any other car for the 2019 year. The only difference between the 2019 results and the findings for this data is the fact that this data reports the 911 Cabriolet (convertible) as having the highest resale value. Business Insider findings demonstrate that the 911 Coupe had a higher resale value for the 2019 year. Therefore, are unable to know the exact resell year the data is using, this data set can still be helpful overall.
+
+
+Regarding the data itself, the first problem to be addressed will be the missing values. The function I will be using to easily implement missing values will be **fix()** function.
+```{r}
+fix(myDataPath)  #used the fix function to change the 323i resale price from "NA" to "25.725"
+```
+Initially, there was an NA for the resale value of the BMW 323i. The last year the BMW 323i was in year 2000 (which is about the year that I assume this data is based around according to my research). Additionally, the last year of production for the Chrysler Cirrus was also in year 2000. Lastly, I found that the "Price_in_thousands" was generated using the lower end estimate from cars.com website using year 2000 for each entry. At this point, I was certain that **the price for each car was calculated using data for year 2000**.
 
 source
 (https://www.cars.com/research/bmw-323/)
-(https://www.cars.com/research/bmw-323/)
+(https://www.cars.com/research/bmw-328/)
+
+```{r, include=FALSE}
+myDataPath$resale_value <- NULL #Deleted extra "resale_value" row
+```
+
+```{r}
+myDataPath %>%
+  filter(!complete.cases(.))  #Filtered results to only entries with missing data
+```
+
+```{r}
+fix(myDataPath)
+#added price for the Acura CL, used year 1999 because the Acura Cl was not made in year 2000 (hence why it was missing in the first place)
+#tried my number experiment on the BMW 323i resell price which was missing orginally, appears too look fine in relation to the other values.
+```
+
+Though I had found that the year used for the sale price was 2000, I still needed to find the year used for the resale price. Unfortunately, I was unable to find the exact year for resell price. Therefore, I decided to approximate each of the missing values myself using an equation. 
+
+NA (for resale value) = 
+Sales_in_thousands - Mean (price_in_thousands for each individual model - resale__value for each individual model)
+
+```{r}
+myDataPath %>%
+  mutate(resale__value = replace_na(resale__value, mean(resale__value
+                                                        
+
+```
+
+```{r}
+ggplot(myDataPath,
+  aes(x = Price_in_thousands, y = resale__value)) +
+  geom_point(size = 0.5) +
+  geom_line(colour = "purple") +
+  geom_smooth() +
+  labs(title = "Original Market Price vs. Resale Value") +
+  theme_classic()
+```
+After tidying my data a bit, I wanted to try and see if a correlation exists between how expensive a car is to begin with and how well it retains it's resell value as a result.
+As we can probably already gather, the more expensive a car is to begin with, the more it will resell for. However, I did want to see if cars that are more expensive tend to retain their value better and therefore resale for more.
+
+```{r}
+  expensive_cars <- filter(myDataPath, `Price_in_thousands` >= 35) #created a data set that only shows expensive cars that cost at least 35,000.
+  affordable_cars <- filter(myDataPath, `Price_in_thousands` < 35) #created a data set that only shows inexpensive cars that cost less than 35,000.
+ggplot(expensive_cars,
+  aes(x = Price_in_thousands, y = resale__value)) +
+  geom_point(size = 0.5) +
+  geom_line(colour = "red") +
+  geom_smooth(colour = "black") +
+  labs(title = "Original Market Price vs. Resale Value[Expensive Cars]") +
+  theme_classic()
+```
+
+
+```{r}
+ggplot(affordable_cars,
+  aes(x = Price_in_thousands, y = resale__value)) +
+  geom_point(size = 0.5) +
+  geom_line(colour = "blue") +
+  geom_smooth(colour = "black") +
+  labs(title = "Original Market Price vs. Resale Value[Affordable Cars]") +
+  theme_classic()
+```
+
+Suprisingly, our data shows us that generally speaking, the car does not retain it's value based on how much it costs to begin with. Therefore, this must mean that the car retains it's value based on the brand-recognition and status of the manufacturer. Therefore, we will investigate price in thousands vs. resalue value while also taking manufacturer into consideration
+
+```{r}
+ggplot(myDataPath,
+  aes(x = Manufacturer, y = resale__value/Price_in_thousands)) +
+  geom_point(size = 0.5) +
+  geom_line(colour = "green") +
+  geom_smooth() +
+  facet_wrap(~Manufacturer) +
+  labs(title = "Price Retention Across Manufacturers") +
+  theme_dark()
+```
+For this chart, I wanted to illustrate brand loyalty and the relationship this has with how much a car retains its resell value. Overall, I am still unsure which year was used to calculate the resell price but due to how close the orginal msrp prices are to the resell prices, I would guess very approximate to the year 2000 (when the msrp prices were calculated).
+
+First, I needed a way to compare what I will call the "price retention" across all manufacturers. Price retention refers to how much the car maintains its original market price as a used car and is given by (resale price/price) which produces a factor we can use for comparison.
