@@ -19,8 +19,7 @@ covid_responses <- myDataPath
 ```
 **COVID Responses Table**
 ```{r}
-view(myDataPath) %>%
-  slice(1:10) 
+head(myDataPath[,1:16], 10)
 ```
 This is the parent data set. Overall, we can see it is quite messy. I am sure the gather and spread functions could be used to tidy the data but this will not be necessary for the portion of data I will examine.
 
