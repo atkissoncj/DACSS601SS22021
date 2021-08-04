@@ -1,0 +1,139 @@
+---
+title: "Homework 4: Visualizing Data"
+description: |
+  Visualizing relationships between environmental and demographic data
+author:
+  - name: Kristina Becvar
+    url: http://umass.edu/sbs/dacss
+date: 08-03-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+
+library(tidyverse)
+library(blogbuilder)
+library(distill)
+library(dplyr)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## **Reading in the data:**
+
+```{r echo=TRUE}
+ejscreen <- read.delim("../../_data/EJSCREEN_2020_IL.csv", sep = ",", header  = TRUE)
+```
+
+## **For this assignment, I will be creating and explaining a data visualization.**
+
+```{r echo=TRUE}
+ejscreen.tidy <- as_tibble(ejscreen)
+```
+
+## **Cleaning & Renaming Variables - From HW2**
+
+Including some interim steps, the result is a new tibble named "ejscreen.clean" containing only the 6 variables I'm working with.
+
+```{r echo=TRUE}
+options(scipen = 999)
+(ejscreen.clean <- ejscreen.tidy %>% 
+   rename(superfund.area = PNPL,
+          rmp.area = PRMP,
+          tsdf.area = PTSDF,
+          census.region = ID,
+          population = ACSTOTPOP, 
+          dem.index = VULEOPCT) %>% 
+   select(superfund.area, rmp.area, tsdf.area,  census.region, population, dem.index))
+```
+
+## **Summarizing Variables**
+
++ I summarized and found the mean of the environmental variables- The mean value for superfund.area is 0.09851763, for rmp.area is 1.196261, and for tsdf.area is 4.087846, which helps me to determine where the values begin to indicate levels of risk that are higher or lower than the mean.
+
++ I then summarized and found the mean of the demographic variable "dem.index". The mean value for this variable is 0.3469023, which helps me to determine where the values begin to indicate levels of higher-risk populations within census regions. 
+
+## **Combining Census Region Values**
+
+I checked how many occurrences there are of the census region codes in this dataset, and can see that the values of the individual data blocks contained in a given census block could potentially be combined into fewer values and summarized.
+
+```{r echo=TRUE}
+ejscreen.mean <- ejscreen.clean %>%
+  group_by(census.region) %>%
+  summarise(mean.rmp = mean(rmp.area), 
+            mean.superfund = mean(superfund.area),
+            mean.tsdf = mean(tsdf.area),
+            mean.demindex = mean(dem.index),
+            mean.population = mean(population))
+ejscreen.mean
+```
+
+## **Creating a Visualization**
+
+Now that I have been able to make the data more manageable, I want to visualize meaningful relationships between the demographic and environmental variables. The point density plot was an interesting one to try to visualize the relationship between population in a census region and the relative demographic index. This was the only relationship that was helped my this type of visualization.
+
+```{r echo=TRUE}
+sf <- ggplot(ejscreen.mean, aes(mean.demindex, mean.population)) +
+   geom_point(color = "lightgray")
+sf + geom_density_2d() +
+   stat_density_2d(aes(fill = ..level..), geom = "polygon") +
+  scale_fill_gradientn(colors = c("#FFEDA0", "#FEB24C", "#F03B20"))
+```
+
+## **Creating More Visualizations**
+
+When trying to visualize the relationships between the demographic index variable and the three environmental variables, the most effective to check for a distinct pattern.
+
+```{r echo=TRUE}
+ggplot(ejscreen.mean, aes(x = mean.demindex, y = mean.superfund)) + 
+  geom_point() +
+  geom_smooth(color = "#F03B20") +
+  theme_bw()
+```
+
+```{r echo=TRUE}
+ggplot(ejscreen.mean, aes(x = mean.demindex, y = mean.rmp)) + 
+  geom_point() +
+  geom_smooth(color = "#F03B20") +
+  theme_bw()
+```
+
+```{r echo=TRUE}
+ggplot(ejscreen.mean, aes(x = mean.demindex, y = mean.tsdf)) + 
+  geom_point() +
+  geom_smooth(color = "#F03B20") +                 
+  theme_bw()
+```
+
+## **Experimenting with Histograms**
+
+In order to visualize meaningful relationships between the demographic and environmental variables with a histogram, I wanted to create the histogram of the single variable and then overlay the mean values of each of the environmental variables with different color lines. I have been unable to accomplish this so far, though I was able to figure out how to add a line indicating the mean line of the histogram.
+
+```{r echo=FALSE}
+(di <- ggplot(ejscreen.mean, aes(x = mean.demindex)) + 
+  geom_histogram(fill = "#FFEDA0", 
+           color="black") +
+  labs(x = "Demographic Index", 
+       y = "Frequency", 
+       title = "Demographic Index"))
+```
+
+```{r echo=TRUE}
+di + geom_vline(aes(xintercept=mean(mean.demindex)),
+                color="#F03B20", linetype="dashed", size=2)
+```
+
+## **Alternative Options**
+
+I considered using bar graphs or pie charts, but having two continuous variables limited what I could demonstrate using them. In order to use a bar graph, I would need to do something like making them categorial values to reflect quartiles. I don't know if that would be as accurate of a representation as a scatterplot, which captures more points of data. 
+
+I felt like the scatterplot gave me the best visualization of the relationships between the two types of continuous variables I have. Admittedly, I may be missing some knowledge on how to use the data I have effectively.
+
+## **Reference**
+
+United States Environmental Protection Agency (EPA), 2020 version, updated July 1, 2021. EJSCREEN. Retrieved: July 16, 2021 (https://gaftp.epa.gov/EJSCREEN/2020/)
+
+
