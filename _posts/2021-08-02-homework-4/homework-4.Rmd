@@ -1,0 +1,120 @@
+---
+title: "Homework 4"
+description: |
+  Homework Four: Data Visualization
+author:
+  - name: Nathan Cote
+date: 08-02-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r data setup, include=FALSE}
+library(tidyverse)
+library(readxl)
+journalists <- read_excel("../../_data/journalists_Jul02.xlsx")
+```
+```{r recoded data, include=FALSE}
+journalists_interaction <- journalists%>%
+  group_by(INTERACTION) %>%
+  filter(n() >=25)%>%
+   mutate(Interplay = recode(INTERACTION, `15` = "Military vs Rioters", `16` = "Military vs Protesters", `17` = "Military vs Civilians", `27` = "Rebels vs Civilians", `37` = "Political Militia vs Civilians", `47` = "Communal Militia vs Civilians", `50` = "Sole Rioter Action", `55` = "Rioters vs Rioters", `56` = "Rioters vs Protesters", `57` = "Rioters vs Civilians", `58` = "Rioters vs Others", `60` = "Sole Protester Action", `68` = "Protesters vs Other", `78` = "Other Actor vs Civilians"))%>%
+  ungroup()
+
+journalists_joined <- (left_join(journalists, journalists_interaction))
+
+event_count_per_interplay <- select(journalists_joined, EVENT_TYPE, Interplay)%>%
+  group_by(Interplay)%>%
+  count(EVENT_TYPE)%>%
+  filter(n>=50)
+event_count_per_interplay
+```
+# Introducing the Variables
+
+The first visualization demonstrates the number of occurrences of interaction
+types between various actors. It is essentially a count of my first variable.
+
+```{r Interaction Count, echo=FALSE}
+ggplot(data = na.omit(journalists_joined)) +
+  geom_bar(mapping = aes(x = Interplay))+
+  coord_flip()+
+  labs(title = "Occurrences of Interaction Types Between Actors")
+```
+The second visualization demonstrates the number of occurrences of event types
+among various actors. It is essentially a count of my second variable.
+
+```{r Event Type Count, echo=FALSE}
+ggplot(data = na.omit(journalists_joined)) +
+  geom_bar(mapping = aes(x = EVENT_TYPE))+
+  coord_flip()+
+  labs(title = "Occurrences of Event Types Involving Actors")
+```
+# Putting Variables Together
+
+The following visualizations demonstrate the occurrence of the variable 
+Event Type among the variable, Interaction Type. First, I included every 
+interaction type.
+
+```{r Event Type and Interplay facet 1, echo=FALSE}
+ggplot(data = na.omit(journalists_joined))+
+  geom_bar(mapping = aes(x = EVENT_TYPE))+
+  facet_wrap(~ Interplay)+
+  coord_flip()+
+  labs(title = "Occurrences of Event Types Among Interaction Types")
+```
+
+Because `Rioters vs Civilians` occurs so much more than the other interaction types,
+it makes it difficult to visually interpret the lesser occurring interaction types.
+I have decided to exclude `Rioters vs Civilians` in the visualization below to reduce that effect.
+
+```{r Event Type and Interplay facet 2, echo=FALSE}
+ggplot(data = na.omit(journalists_joined%>%filter(Interplay != "Rioters vs Civilians")))+
+  geom_bar(mapping = aes(x = EVENT_TYPE))+
+  facet_wrap(~ Interplay)+
+  coord_flip()+
+  labs(title = "Occurrences of Event Types Among Interaction Types",
+       subtitle = "(Excludes Rioters vs Civilians interaction type)"
+  )
+```
+
+The same difficulty to interpret the visualization is still present because `Military vs Rioters` has a similar, though to a lesser extent, effect as `Rioters vs Civilians`. I have decided to remove it in the visualization below.
+
+```{r Event Type and Interplay facet 3, echo=FALSE}
+ggplot(data = na.omit(journalists_joined%>%filter(Interplay != "Rioters vs Civilians" & Interplay != "Military vs Rioters")))+
+  geom_bar(mapping = aes(x = EVENT_TYPE))+
+  facet_wrap(~ Interplay)+
+  coord_flip()+
+  labs(title = "Occurrences of Event Types Among Interaction Types",
+       subtitle = "(Excludes Rioters vs Civilians and Military vs Rioters interaction types)"
+  )
+```
+
+# A Cleaner Visualization
+
+After using facet wraps with my variables, I came accross an alternative approach
+to data visualization which I find much cleaner and easier way to visually interpret. This alternative approach eliminates the "business" of the facet wrap visualization. 
+
+```{r Event Type and Interplay fill 1, echo=FALSE}
+ggplot(data = na.omit(journalists_joined))+
+  geom_bar(mapping = aes(x = Interplay, fill = EVENT_TYPE),position = "dodge")+
+  coord_flip()
+```
+
+```{r Event Type and Interplay fill 2, echo=FALSE}
+ggplot(data = na.omit(journalists_joined%>%filter(Interplay != "Rioters vs Civilians")))+
+  geom_bar(mapping = aes(x = Interplay, fill = EVENT_TYPE),position = "dodge")+
+  coord_flip()+
+  labs(title = "Occurrences of Event Types Among Interaction Types",
+       subtitle = "(Excludes Rioters vs Civilians interaction type)"
+  )
+```
+
+```{r Event Type and Interplay fill 3, echo= FALSE}
+ggplot(data = na.omit(journalists_joined%>%filter(Interplay != "Rioters vs Civilians" & Interplay != "Military vs Rioters")))+
+  geom_bar(mapping = aes(x = Interplay, fill = EVENT_TYPE),position = "dodge")+
+  coord_flip()+
+  labs(title = "Occurrences of Event Types Among Interaction Types",
+       subtitle = "(Excludes Rioters vs Civilians and Military vs Rioters interaction types)"
+  )
+```
