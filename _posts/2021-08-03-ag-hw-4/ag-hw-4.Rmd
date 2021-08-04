@@ -1,0 +1,69 @@
+---
+title: "AG HW 4"
+description: |
+  This is Alex Genovese's HW 4: Data Visualization
+author:
+  - name: Alexander Genovese
+date: 08-03-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r, include = FALSE}
+library(tidyverse)
+library(readxl)
+```
+
+# Loading in the Data and Creating the Visualization
+## Loading in the Excel Sheets
+```{r}
+UniPerCountry <- read_excel("../../_data/UniPerCountry.xlsx")
+GDPPerCountry <- read_excel("../../_data/WorldBankGDPData.xlsx")
+```  
+
+## Cleaning the Individual Sheets
+```{r}
+  names(UniPerCountry)[1] <- 'Country'
+  names(UniPerCountry)[2] <- 'Number of Universities'
+  GDPPerCountry[1] <- NULL
+```  
+
+## Merging the two sheets and cleaning new sheet
+```{r}
+UnivsGDP <- merge(GDPPerCountry, UniPerCountry,by=c("Country"))
+NumberOfUniversities <- UnivsGDP$`Number of Universities`
+GDPData <- UnivsGDP$`Millions of US Dollars`/1000000
+NumberOfUniversities<- as.numeric(NumberOfUniversities)
+```  
+For some reason, the vector **NumberofUniversities** was a character class, so I had to change it to numeric using the function, **as.numeric**. 
+
+## Generating Visualization
+```{r}
+ggplot(UnivsGDP, aes(x = NumberOfUniversities, y = GDPData)) + 
+  geom_point() + 
+  labs(x = "Number of Universities", y = "GDP (in Millions of US Dollars)", title = "Number of Universities vs. GDP (in Millions of US Dollars)") + 
+  geom_label(aes(label=Country),hjust=0, vjust=0) +
+  geom_smooth(method = "lm", se = FALSE, color='red')
+```  
+
+# Question 1: What the Visualization Demonstrates
+I wanted to look at how the number of Universities in a country correlates with the country's GDP. It may seem common sense, but I wanted to have concrete data to see a relationship between education (specifically secondary education) and the country's economy measured in GDP. As such, the independent variable, or the x-axis, is the vector **NumberofUniversities** and the dependent variable, or the y-axis, is the vector **GDPData**. 
+
+# Question 2: Why you chose the visualization approach you selected, and what alternative approaches you considered but decided not to pursue
+
+I chose to use a scatterplot or **geom_point()** because it allows me to look at the large range of data that I am analyzing. It gives both focus to the closer ranged variables as well as the outliers. I could have used other plots such as a quantile plot or a jitterplot, but I believe that the scatterplot would be more appropriate as the outliers would significantly impact the quantile plot, rendering inaccurate data and there are only 25 observations, making a jitterplot essentially the same as a scatterplot.
+
+# Question 3: What you wished, if anything, you could have executed but found limited capability to do.
+
+I would want to adjust the scaling of the visualization to make sure that all the labels could be read, or adjust the positioning of the labels. I would also be interested in adding the linear regression information in the form of a legend. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
