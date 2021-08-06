@@ -1,0 +1,109 @@
+---
+title: "AG HW 5"
+description: |
+  For this homework assignment, we are tasked with identifying and showing a relationship between two variables from our data set that we are using for our final project.
+author:
+  - name: Alexander Genovese
+date: 08-06-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r, include = FALSE}
+library(tidyverse)
+library(readxl)
+```
+
+# Question 1: Descriptions of the Variables
+```{r}
+UniPerCountry <- read_excel("../../_data/UniPerCountry.xlsx")
+GDPPerCountry <- read_excel("../../_data/WorldBankGDPData.xlsx")
+```
+Using the **read_excel** function from the library, **readxl**. The two data sets that I am using are describing the amount of Universities in each country and the GDP of each country. The University data was gathered from statista.com and the GDP data was gathered from the World Bank from July 2021. Although there are missing values from the World Bank (ie. the GDP is 0), they do not correspond with any of the countries in the University data, so while it is possible to clean it and turn the 0s into NAs, it is not necessary.
+
+# Question 2: Cleaning and coding the data
+## Cleaing individual data sets
+```{r}
+  names(UniPerCountry)[1] <- 'Country'
+  names(UniPerCountry)[2] <- 'Number of Universities'
+  GDPPerCountry[1] <- NULL
+```
+I first cleaned the individual data sets. I renamed the vectors of the data set, **UniPerCountry**    , to make it easier to understand the values as well as make it easier to code individual vectors. I also turned the ranking column in the data set, **GDPPerCountry**, into **NULL** as we have no use for it.
+
+## Merging the two data sets into one
+```{r}
+UnivsGDP <- merge(GDPPerCountry, UniPerCountry,by=c("Country"))
+```
+I then merged the two data sets into **UnivsGDP** using the merge function. I based the merge off of the vector, **Country** for each data set. This also shows the reason why I had to rename the columns in **UniPerCountry** to allow for a proper merge.
+
+## Cleaning new data set
+```{r}
+NumberOfUniversities <- UnivsGDP$`Number of Universities`
+GDPdata <- UnivsGDP$`Millions of US Dollars`/1000000
+NumberOfUniversities<- as.numeric(NumberOfUniversities)
+CountryVector <- UnivsGDP$`Country`
+```
+I finally cleaned the new data set, **UnivsGDP**. I began by renaming the vector **Number of Universities** to allow me to code it easier. I then formayyed the GDP data to give Units and make it less bulky (ie. dividing the values by 1,000,000). For some reason, the **NumberofUniversities** vector was a character class, so I had to recode it as a numeric class in order to manipulate it.
+
+# Question 3: Summary Statistics
+## GDP Summary Statistics
+```{r}
+ggplot(UnivsGDP, aes(x = GDPdata)) + geom_histogram(bins=10) 
+GDPmean <- mean(GDPdata, na.rm = TRUE)
+print(GDPmean)
+GDPmedian <- median(GDPdata, na.rm = TRUE)
+print(GDPmedian)
+GDPrange <- max(GDPdata, na.rm = TRUE) - 
+min(GDPdata, na.rm = TRUE)
+print(GDPrange)
+GDPsd <- sd(GDPdata, na.rm = TRUE)
+print(GDPsd)
+```
+Here I looked at the statistical summary of the GDP vector. This included the distribution (historgram), the central tendency (mean, median) and the variance (standard deviation). Obviously, the data is extremely skewed to the right, with the histogram showing a large right tail and the mean is larger than the median. 
+
+## University Summary Statistics
+```{r}
+ggplot(UnivsGDP, aes(x=NumberOfUniversities)) + geom_histogram(bins=5)
+Unimean <- mean(NumberOfUniversities)
+print(Unimean)
+Unimedian <- median(NumberOfUniversities)
+print(Unimedian)
+Unirange <- max(NumberOfUniversities) - min(NumberOfUniversities)
+print(Unirange)
+Unisd <- sd(NumberOfUniversities)
+print(Unisd)
+```
+Here I looked at the statistical summary of the University vector. This included the distribution (historgram), the central tendency (mean, median) and the variance (standard deviation). Obviously, the data is extremely skewed to the right, with the histogram showing a large right tail and the mean is larger than the median. 
+
+# Question 4: Description of the relationship
+When looking at the relationship between the two variables, my hypothesis would be that as the amount of Universities goes up, the GDP also rises. This is because a more educated population would theoretically be efficient and as such, would raise the GDP of their respective country. 
+
+# Question 5: Demonstration of the Relationship
+```{r}
+ggplot(UnivsGDP, aes(x = NumberOfUniversities, y = GDPdata)) +
+  geom_point() +
+  labs(x = "Number of Universities", y = "GDP (in Millions of US Dollars)", title = "Number of Universities vs. GDP (in Millions of US Dollars)") +
+  geom_label(aes(label=Country),hjust=0, vjust=0) +
+  geom_smooth(method = "lm", se = FALSE, color='red')
+```  
+In this visualization, I used a scatterplot to display the relationship between the Number of Universities in a country versus its GDP. I added a linear regression line to show that generally, as the number of Universities rises, the GDP of its respective country also rises. 
+```{r}
+res <- cor.test(NumberOfUniversities, GDPdata, 
+                method = "pearson")
+res
+```
+Using the pearson correlation test, we can run a correlation test between the Number of Universities and the GDP (in Millions of USD). Since the p-value is less than the significance level used (0.05), we can conclude that the Number of Universities and the GDP of a respective country have a signficant correlation with a correlation coefficient of 0.58 and and a p-value of 0.002298. 
+
+# Question 6: Appropriate Visualizations
+
+See above questions 3 and 5 to see visualizations of the distribution of each variable and the scatterplot showing the relationship between the two variables. 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
