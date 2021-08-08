@@ -198,7 +198,9 @@ ggplot(myDataPath,
   geom_line(colour = "green") +
   geom_smooth() +
   facet_wrap(~Manufacturer) +
-  labs(title = "Price Retention Across Manufacturers vs. Sales")+
+  labs(title = "Price Retention Across Manufacturers vs. Sales",
+       x = "Sales(in thousands)",
+       y = "Price Retention")+
   theme_dark()
 ```
 Ultimately, I wish to compare how much value cars hold across all manufacturers. To do this, I created a visualization that compares the sales to what I will call the "price retention" given by (resale price/price). The "price retention" outputs a ration that can be used to compare how much value each car maintains in relation to one another.
@@ -207,4 +209,40 @@ I hypothesized Porsche would have the highest resale value of any manufacturer i
 
 As the visualization indicates, though Porsche does not sell anywhere near as many units as the likes of Ford or Toyota, the price retention of Porsches is the very best. Other German contemporaries like BMW and Mercedes-Benz also have high price retention ratios. Contrastingly, the price retention for American manufacturers like Oldsmobile, Pontiac, Mercury, and Lincoln are among the very worst. I hope to find in my research why this is.
 
+```{r}
+myDataPath <- mutate(myDataPath, "Price_Retention" = resale__value/Price_in_thousands)
+```
 
+```{r}
+ggplot(myDataPath,
+  aes(x = Horsepower, y = Price_Retention)) +
+  geom_line(color = "black") +
+  geom_smooth(color = "blue") +
+  geom_vline(aes(xintercept = mean(Horsepower/Price_Retention, na.rm = TRUE), color = 'mean'), show.legend = TRUE, size = 2) +
+  geom_vline(aes(xintercept = median(Horsepower/Price_Retention, na.rm = TRUE), color = 'median'), show.legend = TRUE, size = 2) +
+  labs(title = "Price Retention vs. Horsepower",
+       x = "Horsepower",
+       y = "Price Retention") +
+  theme_classic()
+```
+
+Overall, the following data tells us several things. For one, **a correlation does exist between price retention and horsepower.** There is essentially an ideal band where price retention is particularly high for cars under around 165 horsepower. Similarly, another band exists before the mean and median where the price retention increases as the horsepower increases (at around 265 horsepower). Cars that fall in between these two "hot spots" suffer from having the lowest Price Retention overall. 
+
+As we can already deduce, Horsepower is obviously strongly correlated to price. Typically, the more expensive a car is, the more horsepower it tends to have. Next, we will look at the price retention versus the initial price of the car. The correlation between horsepower and price retention indicates that there must also be "hot spot" in initial cost versus price retention.
+
+```{r}
+ggplot(myDataPath,
+  aes(x = Price_in_thousands, y = Price_Retention)) +
+  geom_line(color = "black") +
+  geom_smooth(color = "dark red") +
+  geom_vline(aes(xintercept = mean(Price_in_thousands/Price_Retention, na.rm = TRUE), color = 'mean'), show.legend = TRUE, size = 2) +
+  geom_vline(aes(xintercept = median(Price_in_thousands/Price_Retention, na.rm = TRUE), color = 'median'), show.legend = TRUE, size = 2) +
+  labs(title = "Price Retention vs. Initial Cost",
+       x = "Initial Cost(in thousands)",
+       y = "Price Retention") +
+  theme_classic()
+```
+
+Indeed! There is a certain sweet spot regarding Price Retention versus the initial price of the car. Essentially, cars that are less that about 20k exist in the "hot spot" regarding price retention for the inexpensive car market. Cars over around 37k exist in a "hot spot" where the higher the initial cost of the car is, the more it will resell for.
+
+At this point, we now have to try and investigate the cars with the lowest price retention to see if their low price retention occurs due to failing to exist in the sweet spots of the Price and Horsepower variables.
