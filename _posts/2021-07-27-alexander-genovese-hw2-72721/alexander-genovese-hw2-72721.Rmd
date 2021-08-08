@@ -8,46 +8,57 @@ date: 07-27-2021
 output:
   distill::distill_article:
     self_contained: no
-draft: no
+draft: yes
 ---
-```{r, include=TRUE}
-#I read in the libraries necessary
+**Reading in the libraries**
+```{r, include=FALSE}
 library(tidyverse)
 library(readxl)
+```
+I first read in the two libraries that I would need to read in the data and 
+analyze it. Since the data I downloaded was an Excel doc, I used readxl 
+library to do so.
 
-#I then read in the World Bank GDP data that I was using. Since I was on a Mac, 
-#I had to expressly state #my working directory. I made sure to put any 0s as 
-#NA so that it would not slant my data
+**Reading in the data and cleaning it**
+```{r}
 GDPdata <- read_excel("../../_data/WorldBankGDPData.xlsx")
 GDPdata[GDPdata == 0] <- NA
-
-#I created a vector for the GDP of each country based off Millions of US Dollars
 GDPdataValue <- GDPdata$`Millions of US Dollars`
+```
+I then read in the data into GDPdata. In order to have correct data into my 
+analysis, I turned the 0 values into NA because it meant that the World Bank 
+did not have data to support the GDP amount. I also created a vector for the 
+GDP of each country based off Millions of US Dollars.
 
-#I did some observations to give me a general idea of how the data was looking
-GDPdataObsv <- nrow(GDPdata)
-print(GDPdataObsv)
-GDPdataVar <- ncol(GDPdata)
-print(GDPdataVar)
+**Looking at the data to see basic statistics**
+```{r}
 GDPdataMean <- mean(GDPdataValue, na.rm = TRUE)
 print(GDPdataMean)
 GDPdataMedian <- median(GDPdataValue, na.rm = TRUE)
 print(GDPdataMedian)
 GDPdataRange <- max(GDPdataValue, na.rm = TRUE) - min(GDPdataValue, na.rm = TRUE)
 print(GDPdataRange)
-#I identified the vector's class to make sure that I was plotting the data well
-print(class(GDPdata$Ranking))
-print(class(GDPdataValue))
-
-#I then plotted the data based off of ranking and GDP
-ggplot(GDPdata, aes(x = 'Ranking', y = GDPdataValue)) + geom_point()
-
-#I am planning on separating these countries into how they're identified, 
-#first, second, or third world, by color and doing an analysis on how 
-#big the disparity is in 2021.
 ```
+The data I want to analyze is the large disparity in GDP from each country 
+based off of whether they were first world, second world, or third world 
+countries. The mean was pretty slanted, so I went with the median as a good 
+idea of what the average is. I also found the range to show just how big the 
+disparity in GDP is from the lowest GDP country to the highest. 
 
-
+**Graphing the Data**
+```{r}
+class(GDPdata$Ranking)
+class(GDPdataValue)
+ggplot(GDPdata, aes(x = 'Ranking', y = GDPdataValue)) + geom_point()
+```
+I wanted to make sure that the data I was using was numerical to do a 
+scatterplot. From there, I generated the scatterplot based off of ranking, 
+with each number corresponding to the country (ie. 1 = US, 2 = China, 3 = 
+Japan, etc.). With that graph, we can see just how slanted the data is towards 
+the left (or lower GDP).
+I am planning on separating these countries into how they're identified, 
+first, second, or third world, by color and doing an analysis on how 
+big the disparity is in 2021.
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
