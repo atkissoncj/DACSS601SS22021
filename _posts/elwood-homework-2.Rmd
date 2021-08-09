@@ -1,0 +1,38 @@
+---
+title: "Elwood Homework 2"
+description: |
+  China World Bank data.
+author:
+  - name: Christopher Elwood
+    url: {}
+date: 08-02-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+I have chosen to analyze the World Bank's China dataset. I was greatly intrigued by this dataset because of its sheer scale. It contains data on all kinds of metrics, everything from population to fertility rate to school enrollment to kilometers of railroad, some dating as far back as 1960. China has quite possibly changed more than any other country in the world in the past 50 years, so its very interesting to explore all the different metrics of change during that time period.
+
+```{r}
+# Loading in tidyverse and the data
+library(tidyverse)
+chinaData <- read_csv("../../_data/chinaWorldBank.csv")
+chinaData
+```
+
+
+```{r echo=TRUE}
+dim(chinaData)
+```
+
+The dataset has 65 columns, most of which are years 1960 - 2020. It has 1443 rows, which all represent different variables ex. Labor force participation rate.
+
+There are so many interesting variables that it's difficult for me to choose a single research question. One consideration is that some variables have many missing values (especially going far back in time) so it may be better to analyze variables with the most complete data. I might focus on comparing the rise of greenhouse gas emissions and use of fossil fuels (and other energy metrics) to economic indicators. I suspect that China's rapid economic growth came with a heavy environmental cost and it would be interesting to explore that in data.
+
+Some other notes about this dataset are that it seems to be not well formatted for tidyverse analysis for three reasons.
+1) When I first downloaded the csv, tidyverse could not even read it correctly because the first four rows of the csv were headers and blank space with the actual table beginning on the fifth line. I had to manually delete the first four lines to make it work.
+2) The first two columns are pointless. The first is Country Name which is of course China for every single row. The second is Country Code which is again just CHN for every row. So I will just remove them.
+3) The rows (not the columns) are the variables. I will probably flip the table so the columns are variables and the rows are the years depending on what I need for the analysis.
