@@ -48,6 +48,14 @@
       <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Homework 3</title>
+      <dc:creator>Nathan Cote</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-27-homework-3</link>
+      <description>Homework 3</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-27-homework-3</guid>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>SCortez HW 1</title>
       <dc:creator>Stephanie Cortez</dc:creator>
       <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-26-scortez-hw-1</link>
@@ -190,6 +198,14 @@ set in R</description>
       <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-one-resubmission</guid>
       <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
       <media:content url="https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-one-resubmission/homework-one-resubmission_files/figure-html5/something fun-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Homework Two</title>
+      <dc:creator>Nathan Cote</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-two</link>
+      <description>Armed Conflict Location &amp; Event Data (ACLED) on Disorder Involving Journalists and Media Workers</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-20-homework-two</guid>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Homework 6 Chris Elwood</title>

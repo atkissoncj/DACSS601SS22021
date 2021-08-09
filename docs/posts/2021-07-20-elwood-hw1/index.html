@@ -2426,7 +2426,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='co'># you choose to work with! Here's an example of how I'd approach this with</span>
 <span class='co'># a file using "+" as a delimiter</span>
 
-<span class='va'>myData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_tsv</a></span><span class='op'>(</span><span class='st'>"../../_data/covid-responses.tab"</span><span class='op'>)</span>
+<span class='va'>myData</span> <span class='op'>&lt;-</span> <span class='fu'>read_tsv</span><span class='op'>(</span><span class='st'>"../../_data/covid-responses.tab"</span><span class='op'>)</span>
 
 <span class='co'># let's unpack that a bit.</span>
 <span class='co'># I'm creating an object called myData</span>
@@ -2441,214 +2441,38 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 <pre><code># A tibble: 6 x 80
-  StartDate     EndDate       Status         Progress
-  &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;             &lt;dbl&gt;
-1 3/17/20 16:56 3/17/20 17:01 Survey Preview      100
-2 3/17/20 20:30 3/17/20 20:38 Survey Preview      100
-3 3/18/20 7:33  3/18/20 7:33  IP Address          100
-4 3/18/20 7:41  3/18/20 7:58  IP Address          100
-5 3/18/20 7:58  3/18/20 8:00  IP Address          100
-6 3/18/20 7:04  3/18/20 8:00  IP Address          100
-  Duration..in.seconds. Finished RecordedDate  ResponseId       
-                  &lt;dbl&gt; &lt;lgl&gt;    &lt;chr&gt;         &lt;chr&gt;            
-1                   281 TRUE     3/17/20 17:01 R_2frKYIOy7KEE7un
-2                   442 TRUE     3/17/20 20:38 R_1oG5OkmsFriVqZM
-3                     4 TRUE     3/18/20 7:33  R_2QFmRaps2e9IdzG
-4                  1013 TRUE     3/18/20 7:58  R_2B2GnzpGYTBU9oY
-5                    79 TRUE     3/18/20 8:00  R_25ydRn864kRFG5f
-6                  3327 TRUE     3/18/20 8:00  R_ekt2tVMMwcpaciB
-  RecipientLastName RecipientEmail ExternalReference LocationLatitude
-  &lt;lgl&gt;             &lt;lgl&gt;          &lt;lgl&gt;                        &lt;dbl&gt;
-1 NA                NA             NA                            53.3
-2 NA                NA             NA                            42.3
-3 NA                NA             NA                            52.4
-4 NA                NA             NA                            42.4
-5 NA                NA             NA                            42.4
-6 NA                NA             NA                            51.5
-  LocationLongitude DistributionChannel UserLanguage
-              &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt;       
-1             -6.25 preview             EN          
-2            -71.2  preview             EN          
-3             -1.59 anonymous           IT          
-4            -71.1  anonymous           IT          
-5            -71.1  anonymous           IT          
-6             -2.55 anonymous           IT          
-  Q1                                            
-  &lt;chr&gt;                                         
-1 Yes, I would like to participate in the survey
-2 Yes, I would like to participate in the survey
-3 No, I would not like to participate           
-4 Yes, I would like to participate in the survey
-5 Yes, I would like to participate in the survey
-6 Yes, I would like to participate in the survey
-  SelfReported_Behavio_1 SelfReported_Behavio_2 SelfReported_Behavio_3
-                   &lt;dbl&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;
-1                     73                     74                     82
-2                     45                     20                      8
-3                     NA                     NA                     NA
-4                     45                     28                     28
-5                     53                     77                     45
-6                     18                      1                      1
-  SelfReported_Behavio_4 SelfReported_Behavio_5 Reflection T2   
-                   &lt;dbl&gt;                  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;
-1                     74                     55 &lt;NA&gt;       &lt;NA&gt; 
-2                      1                      1 &lt;NA&gt;       &lt;NA&gt; 
-3                     NA                     NA &lt;NA&gt;       &lt;NA&gt; 
-4                     31                     47 &lt;NA&gt;       &lt;NA&gt; 
-5                     51                     67 &lt;NA&gt;       &lt;NA&gt; 
-6                      1                      1 &lt;NA&gt;       &lt;NA&gt; 
-  social handshake stores curfew SOB_1 SOB_2 SOB_3 SOB_4
-  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 &lt;NA&gt;   &lt;NA&gt;      &lt;NA&gt;   &lt;NA&gt;      NA    79    NA    NA
-2 No     Yes       Yes    Yes       75    69    67    68
-3 &lt;NA&gt;   &lt;NA&gt;      &lt;NA&gt;   &lt;NA&gt;      NA    NA    NA    NA
-4 Yes    Yes       Yes    Yes       42    41    38    49
-5 Yes    Yes       Yes    Yes       56    53    37    58
-6 Yes    Yes       Yes    Yes        1     1     1     1
-  financialpunishment Geldstrafe_1_1 Geldstrafe_2_1
-  &lt;chr&gt;                        &lt;dbl&gt;          &lt;dbl&gt;
-1 &lt;NA&gt;                            NA             NA
-2 Yes                            239            336
-3 &lt;NA&gt;                            NA             NA
-4 Yes                            152            144
-5 Yes                            263            428
-6 Yes                              5              5
-  perceivedreaction                     Q36                       
-  &lt;chr&gt;                                 &lt;chr&gt;                     
-1 &lt;NA&gt;                                  &lt;NA&gt;                      
-2 The reaction is somewhat insufficient &lt;NA&gt;                      
-3 &lt;NA&gt;                                  &lt;NA&gt;                      
-4 The reaction is appropriate           Neither trust nor distrust
-5 The reaction is appropriate           Distrust                  
-6 The reaction is much too extreme      &lt;NA&gt;                      
-  Q37                             Q23                        
-  &lt;chr&gt;                           &lt;chr&gt;                      
-1 &lt;NA&gt;                            &lt;NA&gt;                       
-2 &lt;NA&gt;                            The reaction is appropriate
-3 &lt;NA&gt;                            &lt;NA&gt;                       
-4 Neither truthful nor untruthful The reaction is appropriate
-5 Somewhat untruthful             The reaction is appropriate
-6 &lt;NA&gt;                            The reaction is appropriate
-  perceivedeffectivnes              anxiety_1                         
-  &lt;chr&gt;                             &lt;chr&gt;                             
-1 &lt;NA&gt;                              &lt;NA&gt;                              
-2 Very effective                    Neither applies nor does not apply
-3 &lt;NA&gt;                              &lt;NA&gt;                              
-4 Effective                         Somewhat does not apply           
-5 Neither effective nor ineffective Does not apply at all             
-6 Neither effective nor ineffective Somewhat does not apply           
-  anxiety_2               anxiety_3              
-  &lt;chr&gt;                   &lt;chr&gt;                  
-1 &lt;NA&gt;                    &lt;NA&gt;                   
-2 Somewhat applies        Strongly applies       
-3 &lt;NA&gt;                    &lt;NA&gt;                   
-4 Somewhat does not apply Somewhat does not apply
-5 Somewhat does not apply Somewhat does not apply
-6 Somewhat does not apply Somewhat does not apply
-  anxiety_4               anxiety_5               Q24  
-  &lt;chr&gt;                   &lt;chr&gt;                   &lt;chr&gt;
-1 &lt;NA&gt;                    &lt;NA&gt;                    &lt;NA&gt; 
-2 Strongly applies        &lt;NA&gt;                    &lt;NA&gt; 
-3 &lt;NA&gt;                    &lt;NA&gt;                    &lt;NA&gt; 
-4 Somewhat does not apply Somewhat does not apply Yes  
-5 Somewhat does not apply Somewhat does not apply Yes  
-6 Somewhat does not apply Somewhat does not apply Yes  
-  Q25                                                                 
-  &lt;chr&gt;                                                               
-1 &lt;NA&gt;                                                                
-2 &lt;NA&gt;                                                                
-3 &lt;NA&gt;                                                                
-4 Exercising my freedom                                               
-5 Going to work,Walking a pet,Going to the hospital / receiving medic~
-6 Doing physical activity (e.g. exercising, jogging)                  
-  Q25_13_TEXT
-  &lt;chr&gt;      
-1 &lt;NA&gt;       
-2 &lt;NA&gt;       
-3 &lt;NA&gt;       
-4 &lt;NA&gt;       
-5 &lt;NA&gt;       
-6 &lt;NA&gt;       
-  Q26                                                                 
-  &lt;chr&gt;                                                               
-1  &lt;NA&gt;                                                               
-2  &lt;NA&gt;                                                               
-3  &lt;NA&gt;                                                               
-4 &quot;g.\\tHomeschooling&quot;                                                
-5 &quot;a.\\tConflicts in the family,c.\\tLack of exercise,f.\\tLoss of jo~
-6 &quot;h.\\tLack of social activities&quot;                                    
-  Q26_11_TEXT   age gender gender_3_TEXT zipcode health   
-  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;    
-1 &lt;NA&gt;           NA &lt;NA&gt;   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;     
-2 &lt;NA&gt;           NA Female &lt;NA&gt;          34343   Fair     
-3 &lt;NA&gt;           NA &lt;NA&gt;   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;     
-4 &lt;NA&gt;           NA Female &lt;NA&gt;          42141   Excellent
-5 &lt;NA&gt;         1987 Male   &lt;NA&gt;          d       Fair     
-6 &lt;NA&gt;         1985 Male   &lt;NA&gt;          7100    Fair     
-  health_conditions personality_1                 
-  &lt;chr&gt;             &lt;chr&gt;                         
-1 &lt;NA&gt;              &lt;NA&gt;                          
-2 1                 Agree moderately  (4)         
-3 &lt;NA&gt;              &lt;NA&gt;                          
-4 0                 Neither agree nor disagree (3)
-5 0                 Disagree moderately  (2)      
-6 2                 Neither agree nor disagree (3)
-  personality_2                  personality_3                 
-  &lt;chr&gt;                          &lt;chr&gt;                         
-1 &lt;NA&gt;                           &lt;NA&gt;                          
-2 Agree moderately  (4)          Agree strongly  (5)           
-3 &lt;NA&gt;                           &lt;NA&gt;                          
-4 Agree moderately  (4)          Neither agree nor disagree (3)
-5 Disagree moderately  (2)       Disagree moderately  (2)      
-6 Neither agree nor disagree (3) Neither agree nor disagree (3)
-  personality_4                  personality_5                 
-  &lt;chr&gt;                          &lt;chr&gt;                         
-1 &lt;NA&gt;                           &lt;NA&gt;                          
-2 Agree strongly  (5)            Agree strongly  (5)           
-3 &lt;NA&gt;                           &lt;NA&gt;                          
-4 Agree moderately  (4)          Neither agree nor disagree (3)
-5 Disagree moderately  (2)       Disagree moderately  (2)      
-6 Neither agree nor disagree (3) Neither agree nor disagree (3)
-  personality_6                  personality_7                 
-  &lt;chr&gt;                          &lt;chr&gt;                         
-1 &lt;NA&gt;                           &lt;NA&gt;                          
-2 6                              6                             
-3 &lt;NA&gt;                           &lt;NA&gt;                          
-4 Neither agree nor disagree (3) Neither agree nor disagree (3)
-5 Disagree moderately  (2)       Disagree moderately  (2)      
-6 Neither agree nor disagree (3) Neither agree nor disagree (3)
-  personality_8                  personality_9                 
-  &lt;chr&gt;                          &lt;chr&gt;                         
-1 &lt;NA&gt;                           &lt;NA&gt;                          
-2 6                              Agree strongly  (5)           
-3 &lt;NA&gt;                           &lt;NA&gt;                          
-4 Neither agree nor disagree (3) Neither agree nor disagree (3)
-5 Disagree moderately  (2)       Disagree moderately  (2)      
-6 Neither agree nor disagree (3) Neither agree nor disagree (3)
-  personality_10                 Q27_5    Q35   Q62_5 Q62_6 Q62_7
-  &lt;chr&gt;                          &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
-1 &lt;NA&gt;                           REDACTED &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
-2 Agree strongly  (5)            REDACTED &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
-3 &lt;NA&gt;                           REDACTED &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
-4 Neither agree nor disagree (3) REDACTED &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
-5 Disagree moderately  (2)       REDACTED &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
-6 Neither agree nor disagree (3) REDACTED &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
-  Q62_8 Q62_9 Q62_11 Q62_12 Q62_13 Q62_14 Q62_15 rid   treatment
-  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;    
-1 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     
-2 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     
-3 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;  two      
-4 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;  control  
-5 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;  control  
-6 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     
-  finish
-   &lt;dbl&gt;
-1     NA
-2     NA
-3     NA
-4      1
-5      1
-6     NA</code></pre>
+  StartDate   EndDate    Status    Progress Duration..in.sec~ Finished
+  &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;             &lt;dbl&gt; &lt;lgl&gt;   
+1 3/17/20 16~ 3/17/20 1~ Survey P~      100               281 TRUE    
+2 3/17/20 20~ 3/17/20 2~ Survey P~      100               442 TRUE    
+3 3/18/20 7:~ 3/18/20 7~ IP Addre~      100                 4 TRUE    
+4 3/18/20 7:~ 3/18/20 7~ IP Addre~      100              1013 TRUE    
+5 3/18/20 7:~ 3/18/20 8~ IP Addre~      100                79 TRUE    
+6 3/18/20 7:~ 3/18/20 8~ IP Addre~      100              3327 TRUE    
+# ... with 74 more variables: RecordedDate &lt;chr&gt;, ResponseId &lt;chr&gt;,
+#   RecipientLastName &lt;lgl&gt;, RecipientEmail &lt;lgl&gt;,
+#   ExternalReference &lt;lgl&gt;, LocationLatitude &lt;dbl&gt;,
+#   LocationLongitude &lt;dbl&gt;, DistributionChannel &lt;chr&gt;,
+#   UserLanguage &lt;chr&gt;, Q1 &lt;chr&gt;, SelfReported_Behavio_1 &lt;dbl&gt;,
+#   SelfReported_Behavio_2 &lt;dbl&gt;, SelfReported_Behavio_3 &lt;dbl&gt;,
+#   SelfReported_Behavio_4 &lt;dbl&gt;, SelfReported_Behavio_5 &lt;dbl&gt;,
+#   Reflection &lt;chr&gt;, T2 &lt;chr&gt;, social &lt;chr&gt;, handshake &lt;chr&gt;,
+#   stores &lt;chr&gt;, curfew &lt;chr&gt;, SOB_1 &lt;dbl&gt;, SOB_2 &lt;dbl&gt;,
+#   SOB_3 &lt;dbl&gt;, SOB_4 &lt;dbl&gt;, financialpunishment &lt;chr&gt;,
+#   Geldstrafe_1_1 &lt;dbl&gt;, Geldstrafe_2_1 &lt;dbl&gt;,
+#   perceivedreaction &lt;chr&gt;, Q36 &lt;chr&gt;, Q37 &lt;chr&gt;, Q23 &lt;chr&gt;,
+#   perceivedeffectivnes &lt;chr&gt;, anxiety_1 &lt;chr&gt;, anxiety_2 &lt;chr&gt;,
+#   anxiety_3 &lt;chr&gt;, anxiety_4 &lt;chr&gt;, anxiety_5 &lt;chr&gt;, Q24 &lt;chr&gt;,
+#   Q25 &lt;chr&gt;, Q25_13_TEXT &lt;chr&gt;, Q26 &lt;chr&gt;, Q26_11_TEXT &lt;chr&gt;,
+#   age &lt;dbl&gt;, gender &lt;chr&gt;, gender_3_TEXT &lt;chr&gt;, zipcode &lt;chr&gt;,
+#   health &lt;chr&gt;, health_conditions &lt;chr&gt;, personality_1 &lt;chr&gt;,
+#   personality_2 &lt;chr&gt;, personality_3 &lt;chr&gt;, personality_4 &lt;chr&gt;,
+#   personality_5 &lt;chr&gt;, personality_6 &lt;chr&gt;, personality_7 &lt;chr&gt;,
+#   personality_8 &lt;chr&gt;, personality_9 &lt;chr&gt;, personality_10 &lt;chr&gt;,
+#   Q27_5 &lt;chr&gt;, Q35 &lt;chr&gt;, Q62_5 &lt;chr&gt;, Q62_6 &lt;chr&gt;, Q62_7 &lt;chr&gt;,
+#   Q62_8 &lt;chr&gt;, Q62_9 &lt;chr&gt;, Q62_11 &lt;chr&gt;, Q62_12 &lt;chr&gt;,
+#   Q62_13 &lt;chr&gt;, Q62_14 &lt;chr&gt;, Q62_15 &lt;chr&gt;, rid &lt;chr&gt;,
+#   treatment &lt;chr&gt;, finish &lt;dbl&gt;</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># How many rows of data are there in this dataset?</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>myData</span><span class='op'>)</span>
@@ -2734,7 +2558,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='co'># "percievedreaction" to "Q26". If we wanted to focus in on this block for whatever reason, </span>
 <span class='co'># we could use select() to make a new dataset with only those columns.</span>
 
-<span class='va'>perPolAnx</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>myData</span>, <span class='va'>perceivedreaction</span><span class='op'>:</span><span class='va'>Q26</span><span class='op'>)</span>
+<span class='va'>perPolAnx</span> <span class='op'>&lt;-</span> <span class='fu'>select</span><span class='op'>(</span><span class='va'>myData</span>, <span class='va'>perceivedreaction</span><span class='op'>:</span><span class='va'>Q26</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>perPolAnx</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2856,12 +2680,12 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='co'># numeric operations on these responses (such as finding the mean) we have to convert them back</span>
 <span class='co'># to numeric form using mutate() and recode(). Here this is done for Q36:</span>
 
-<span class='va'>perPolAnx</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='va'>perPolAnx</span>, Q36N <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/recode.html'>recode</a></span><span class='op'>(</span><span class='va'>Q36</span>, <span class='st'>"Strongly distrust"</span> <span class='op'>=</span> <span class='fl'>1</span>, <span class='st'>"Distrust"</span> <span class='op'>=</span> <span class='fl'>2</span>, <span class='st'>"Neither trust nor
+<span class='va'>perPolAnx</span> <span class='op'>&lt;-</span> <span class='fu'>mutate</span><span class='op'>(</span><span class='va'>perPolAnx</span>, Q36N <span class='op'>=</span> <span class='fu'>recode</span><span class='op'>(</span><span class='va'>Q36</span>, <span class='st'>"Strongly distrust"</span> <span class='op'>=</span> <span class='fl'>1</span>, <span class='st'>"Distrust"</span> <span class='op'>=</span> <span class='fl'>2</span>, <span class='st'>"Neither trust nor
                                  distrust"</span> <span class='op'>=</span> <span class='fl'>3</span>, <span class='st'>"Somewhat trust"</span> <span class='op'>=</span> <span class='fl'>4</span>, <span class='st'>"Strongly trust"</span> <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span>
 <span class='co'>#print(perPolAnx)</span>
 
 <span class='co'># Now we can find the mean:</span>
-<span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span><span class='va'>perPolAnx</span>, Q36mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>Q36N</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>summarize</span><span class='op'>(</span><span class='va'>perPolAnx</span>, Q36mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>Q36N</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 1 x 1

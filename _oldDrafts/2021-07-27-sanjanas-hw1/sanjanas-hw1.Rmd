@@ -1,0 +1,51 @@
+---
+title: Sanjana's HW1
+description: |
+  A short description of the post.
+author:
+- name: Stephanie Cortez
+  url: {}
+date: 07-27-2021
+output:
+  distill::distill_article:
+    self_contained: no
+draft: no
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+### Covid Response Survey Data
+## By Sanjana Checker
+
+
+This data set I will be showing you is COVID responses to a survey that was given to them. This data not only includes the information from the questions they responded to, but also personal details such as the survey takers' location, language, and time.
+
+## Diving Deeper
+
+Let's preview the first few rows to get an idea of what is going on. 
+I will first load the data.
+
+```{r read data, include=FALSE}
+covid.responses <- read.delim("../../_data/covid-responses.tab", header=FALSE)
+View(covid.responses)
+```
+
+I will use the head function to preview the first 5 rows of the data.
+
+```{r view head, echo=FALSE}
+head(covid.responses)
+```
+As you can see, the first 6 rows show the individual responses from each survey taker. The first few columns are their basic information, but the next columns are their actual responses to the questions. At the top of each question column, there is a header to the question type/number. 
+
+##Summary
+
+Finally, I am going to summarize the data using the summarize function. It is interesting to see how R interprets this.
+
+```{r view summary, echo=FALSE}
+summary(covid.responses)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the data you just saw.
