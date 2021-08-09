@@ -1,14 +1,14 @@
 ---
-title: "John Mannion Homework 2 - USArrests"
+title: John Mannion Homework 2 - USArrests
 description: |
   Examining the USArrests dataset
 author:
-  - name: John Mannion
+- name: John Mannion
 date: 07-29-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
