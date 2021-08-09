@@ -1,0 +1,141 @@
+---
+title: "Jimenez HW1"
+description: |
+  First steps with a dataset in R
+author:
+  - name: Sarah Jimenez
+    url: http://umass.edu/sbs/dacss
+date: 08-02-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Importing the data
+I downloaded the .xlsx file and saved the "line percentages" sheet as a new document. I exported the "line percentages" document as a .csv file. Then I used **read_csv()** to import the data, including arguments to set a default column data type and define the data type for columns that differ.  
+
+``` {r data import, message=FALSE}
+all.rider <- read_csv("MBTA Systemwide Survey 2015-2017 Line Percentages.csv",
+          na = c("", "NA"),
+          col_types = cols(.default = "d", Mode = "c", Line = "c")
+          )
+```
+
+There are a bunch of parsing failures because of missing data but I'll leave it for now, and I used the "message=FALSE" argument in the chunk declaration to prevent the warning message from showing. 
+
+## Checking out the data
+
+I turn my data into a tibble and print out the first few observations. 
+
+```{r tibble}
+all.rider <- as_tibble(all.rider)
+head(all.rider)
+```
+
+There are 159 rows and 114 columns. By mode of transit and by specific bus line, the data show the percentage of Massachusetts Bay Transit Authority riders who provided certain responses on a ridership survey. 
+
+## Tidying the data
+
+At first the column names suggested using **pivot_longer()**--for example to create a single "household income" variable--but for my analysis I want to maintain each "Line" as a single observation. From there it is clear the columns make sense as different variables.
+
+For my research questions I only need a selection of the variables. Here I modify the dataset to include only the columns I want. 
+
+```{r select columns}
+rider <- select(all.rider,
+  `Mode`,
+  `Line`,
+  `Household income: Less than $14,500`:`Count: Minority classification`,
+  `Gender: Man`:`Count: Ability to understand English`
+  )
+```
+
+The column names are long and it will be annoying to type them. I'll rename the column names now before doing anything further. 
+
+```{r rename columns}
+rider <- rename(rider,
+                mode = 'Mode',
+                line = 'Line'
+                )
+
+rider <- rename(rider,
+                hi.under14500 = 'Household income: Less than $14,500',
+                hi.14500.28999 = 'Household income: $14,500 to $28,999',
+                hi.29000.43499 = 'Household income: $29,000 to $43,499',
+                hi.43500.57999 = 'Household income: $43,500 to $57,999',
+                hi.58000.75999 = 'Household income: $58,000 to $75,999',
+                hi.76000.108499 = 'Household income: $76,000 to $108,499',
+                hi.108500.151999 = 'Household income: $108,500 to $151,999',
+                hi.over1520000 = 'Household income: $152,000 or more',
+                hi.pnts = 'Household income: Prefer not to say',
+                hi.count = 'Count: Household income'
+                )
+
+rider <- rename(rider,
+                       li.yes = 'Low-income classification: Yes',
+                       li.no = 'Low-income classification: No',
+                       li.count = 'Count: Low-income classification'
+                       )
+
+rider <- rename(rider,
+                       race.AIAN = 'Race: American Indian or Alaska Native',
+                       race.asian = 'Race: Asian',
+                       race.black = 'Race: Black or African American',
+                       race.NHPI = 'Race: Native Hawaiian or other Pacific Islander',
+                       race.white = 'Race: White',
+                       race.other = 'Race: Other',
+                       race.pnts = 'Race: Prefer not to say',
+                       race.count = 'Count: Race'
+                       )
+
+rider <- rename(rider,
+                       lx.yes = 'Hispanic or Latino/Latina: Yes',
+                       lx.no = 'Hispanic or Latino/Latina: No',
+                       lx.pnts = 'Hispanic or Latino/Latina: Prefer not to say',
+                       lx.count = 'Count: Hispanic or Latino/Latina'
+                       )
+
+rider <- rename(rider,
+                       min.yes = 'Minority classification: Yes',
+                       min.no = 'Minority classification: No',
+                       min.count = 'Count: Minority classification'
+                       )
+
+rider <- rename(rider,
+                       gen.m = 'Gender: Man',
+                       gen.f = 'Gender: Woman',
+                       gen.o = 'Gender: Other',
+                       gen.pnts = 'Gender: Prefer not to say',
+                       gen.count = 'Count: Gender'
+                       )
+
+rider <- rename(rider,
+                       eng.always = 'Ability to understand English: Always',
+                       eng.often = 'Ability to understand English: Often',
+                       eng.some = 'Ability to understand English: Sometimes',
+                       eng.never = 'Ability to understand English: Never',
+                       eng.pnts = 'Ability to understand English: Prefer not to say',
+                       eng.count = 'Count: Ability to understand English',
+                       )
+```
+
+Now I'll check the column names again:
+
+```{r }
+head(rider)
+```
+Finally, given my choice of "line" as the unit of observation, I want to change the position of the "line" column to first instead of second. Then I used **head()** to check and make sure. 
+
+```{r relocate}
+rider <- relocate(rider, line)
+head(rider)
+```
+
+
+
+

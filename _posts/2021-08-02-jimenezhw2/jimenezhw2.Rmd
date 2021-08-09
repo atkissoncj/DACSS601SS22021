@@ -1,0 +1,149 @@
+---
+title: "Jimenez HW2"
+description: |
+  Continuing with the MBTA ridership survey analysis
+author:
+  - name: Sarah Jimenez
+    url: http://umass.edu/sbs/dacss
+date: 08-02-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Picking up from HW1
+
+I follow the same steps as in my previous post to import and start tidying my data. 
+
+``` {r recap, message=FALSE}
+all.rider <- read_csv("MBTA Systemwide Survey 2015-2017 Line Percentages.csv",
+          na = c("", "NA"),
+          col_types = cols(.default = "d", Mode = "c", Line = "c")
+          )
+
+rider <- select(all.rider,
+  `Mode`,
+  `Line`,
+  `Household income: Less than $14,500`:`Count: Minority classification`,
+  `Gender: Man`:`Count: Ability to understand English`)
+  
+rider <- rename(rider,
+                mode = 'Mode',
+                line = 'Line'
+                )
+
+rider <- rename(rider,
+                hi.under14500 = 'Household income: Less than $14,500',
+                hi.14500.28999 = 'Household income: $14,500 to $28,999',
+                hi.29000.43499 = 'Household income: $29,000 to $43,499',
+                hi.43500.57999 = 'Household income: $43,500 to $57,999',
+                hi.58000.75999 = 'Household income: $58,000 to $75,999',
+                hi.76000.108499 = 'Household income: $76,000 to $108,499',
+                hi.108500.151999 = 'Household income: $108,500 to $151,999',
+                hi.over1520000 = 'Household income: $152,000 or more',
+                hi.pnts = 'Household income: Prefer not to say',
+                hi.count = 'Count: Household income'
+                )
+
+rider <- rename(rider,
+                       li.yes = 'Low-income classification: Yes',
+                       li.no = 'Low-income classification: No',
+                       li.count = 'Count: Low-income classification'
+                       )
+
+rider <- rename(rider,
+                       race.AIAN = 'Race: American Indian or Alaska Native',
+                       race.asian = 'Race: Asian',
+                       race.black = 'Race: Black or African American',
+                       race.NHPI = 'Race: Native Hawaiian or other Pacific Islander',
+                       race.white = 'Race: White',
+                       race.other = 'Race: Other',
+                       race.pnts = 'Race: Prefer not to say',
+                       race.count = 'Count: Race'
+                       )
+
+rider <- rename(rider,
+                       lx.yes = 'Hispanic or Latino/Latina: Yes',
+                       lx.no = 'Hispanic or Latino/Latina: No',
+                       lx.pnts = 'Hispanic or Latino/Latina: Prefer not to say',
+                       lx.count = 'Count: Hispanic or Latino/Latina'
+                       )
+
+rider <- rename(rider,
+                       min.yes = 'Minority classification: Yes',
+                       min.no = 'Minority classification: No',
+                       min.count = 'Count: Minority classification'
+                       )
+
+rider <- rename(rider,
+                       gen.m = 'Gender: Man',
+                       gen.f = 'Gender: Woman',
+                       gen.o = 'Gender: Other',
+                       gen.pnts = 'Gender: Prefer not to say',
+                       gen.count = 'Count: Gender'
+                       )
+
+rider <- rename(rider,
+                       eng.always = 'Ability to understand English: Always',
+                       eng.often = 'Ability to understand English: Often',
+                       eng.some = 'Ability to understand English: Sometimes',
+                       eng.never = 'Ability to understand English: Never',
+                       eng.pnts = 'Ability to understand English: Prefer not to say',
+                       eng.count = 'Count: Ability to understand English',
+                       )
+
+rider <- relocate(rider, line)
+
+```
+
+The result so far is this tibble:
+
+```{r print}
+print(rider)
+```
+There are 159 observations. The original dataset had 114 variables but I selected 41 of them and renamed them. 
+
+## Further review and transformation
+
+One research question for this data is: What is the proportion, by line and by mode, of riders that indicated on the survey that they are low-income, BIPO, women, and non-English fluent? 
+
+Below I combine variables to create new variables that address the research question. (*Note there was no need to create a new variable for women as the **gen.f** variable already captures their responses). 
+
+```{r mutate}
+
+rider <- mutate(rider,
+                hi.low = hi.under14500 + hi.14500.28999 + hi.29000.43499 + 
+                hi.43500.57999,
+                race.bipoc = race.AIAN + race.asian + race.black + race.NHPI + 
+                race.other, 
+                eng.nonfluent = eng.some + eng.never
+                )
+
+head(rider)
+```
+
+Now I can select for those new variables and trim the extra ones out. 
+
+```{r}
+rider <- select(rider,
+  `line`,
+  `mode`,
+  `gen.f`,
+  `hi.low`,
+  `race.bipoc`,
+  `eng.nonfluent`)
+
+head(rider)
+view(rider)
+
+```
+
+A number of lines do not have enough data to report and have missing values. 
+
