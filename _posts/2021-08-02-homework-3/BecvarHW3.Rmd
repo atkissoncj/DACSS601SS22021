@@ -1,0 +1,164 @@
+---
+title: "Homework 3"
+description: |
+  Analysis of environmental and demographic variables in the EPA Environmental Justice Screening Tool data set
+author:
+  - name: Kristina Becvar
+    url: http://umass.edu/sbs/dacss
+date: 08-02-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+
+library(tidyverse)
+library(blogbuilder)
+library(distill)
+library(dplyr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## **Reading in the data:**
+
+```{r echo=TRUE}
+ejscreen <- read.delim("../../_data/EJSCREEN_2020_IL.csv", sep = ",", header  = TRUE)
+```
+
+## **Investigating the variables**
+
+First, I looked at the data using as_tibble to see more detail on the variables and make them more print friendly.
+
+```{r echo=TRUE}
+ejscreen.tidy <- as_tibble(ejscreen)
+```
+
+## **Cleaning Variables**
+
++ I am renaming the variables I want to examine further to make their definitions more clear. 
+
++ I will want to select the columns I want to work with and arrange them in a manner that allows me to do this comparison to find how many people, of what demographic, live in the high pollution areas.
+
++ The census.region variable showed up in scientific notation, and I need to change that so that it represents that actual census region code. I was able to change this by using "options(scipen = 999).
+
++ Finally, I took the population of each census region and converted it to the 
+
+## **Renaming the New Tibble**
+
+Combining the steps to cleaning the variables above, I ran all of these commands together into a new tibble named "ejscreen.clean" containing only the 6 variables I'm working with.
+
+```{r echo=TRUE}
+options(scipen = 999)
+(ejscreen.clean <- ejscreen.tidy %>% 
+   rename(superfund.area = PNPL,
+          rmp.area = PRMP,
+          tsdf.area = PTSDF,
+          census.region = ID,
+          population = ACSTOTPOP, 
+          dem.index = VULEOPCT) %>% 
+   select(superfund.area, rmp.area, tsdf.area,  census.region, population, dem.index))
+```
+## **Descriptions of the variables**
+
+The 6 variables I am analyzing are 3 environmental variables and 3 demographic variables.
+
+The environmental variables are "superfund.area", "rmp.area", and "tsdf.area".
+
++ "superfund.area" indicates the count of proposed and listed "Superfund", or National Priorities List, sites within 5 km, divided by distance in kilometers.
+
++ "rmp.area" indicates the count of facilities that are RMP (Risk Management Plan) facilities within 5 km, divided by distance in kilometers
+
++ "tsdf.area" indicates the count of facilities that are TSDF (Hazardous waste Treatment, Storage and Disposal Facilities) within 5 km, divided by distance in kilometers.
+
+The demographic variables are "census.region", "population", and "dem.index".
+
++ "census.region" is the geographical census block being measured
+
++ "population" is the count of persons living in the correlating census region
+
++ "dem.index" represents a particular census region's % minority population + % low-income population/2. 
+
+## **Using "is.na" and "complete.cases**
+
+In order to check for missing variables, I use "is.na" and make sure that all values are "FALSE". This omitted too many rows due to print max limitations, so I used "complete.cases" to return an affirmative answer that there were no missing variables.
+
+```{r eval=FALSE, echo=FALSE}
+is.na(ejscreen.clean)
+```
+
+```{r echo=TRUE}
+ejscreen.clean[!complete.cases(ejscreen.clean),]
+```
+
+## **Preliminary Data Graphing**
+
+By rendering a basic scatterplot, I can see that the data will require me to change some of these variables to categorical data so that I can analyze it more effectively.
+
+```{r echo=TRUE}
+ggplot(data = ejscreen.clean) +
+  geom_point(mapping = aes(x = census.region, y = dem.index))
+```
+
+## **Summarizing Variables**
+
++ I summarized and found the mean of the environmental variables- The mean value for superfund.area is 0.09851763, for rmp.area is 1.196261, and for tsdf.area is 4.087846, which helps me to determine where the values begin to indicate levels of risk that are higher or lower than the mean.
+
++ I then summarized and found the mean of the demographic variable "dem.index". The mean value for this variable is 0.3469023, which helps me to determine where the values begin to indicate levels of higher-risk populations within census regions. 
+
+```{r echo=TRUE}
+summarize(ejscreen.clean, tsdf.mean = mean(`tsdf.area`, na.rm = TRUE)) 
+summarize(ejscreen.clean, rmp.mean = mean(`rmp.area`, na.rm = TRUE))
+summarize(ejscreen.clean, superfund.mean = mean(`superfund.area`, na.rm = TRUE))
+summarize(ejscreen.clean, dem.index.mean = mean(`dem.index`, na.rm = TRUE))
+```
+## **Census Region Values**
+
+I checked how many occurrences there are of the census region codes in this dataset, and can see that the values of the individual data blocks contained in a given census block could potentially be combined into fewer values, but at this point I'm not sure how to do that without interfering with the rest of the data for each observation.
+
+```{r echo=TRUE}
+table(ejscreen.clean$census.region)
+```
+## **Reclassifying Variable Values**
+
+I will mutate the values for variable dem.index to create a way to easily view patterns of environmental risks in susceptible areas as indicated by the demographic index value. 
+
+```{r echo=TRUE}
+(ejscreen.categorical <- ejscreen.clean %>% 
+   mutate(dem.index = case_when(
+     dem.index < 0.347 ~ "below.mean",
+     dem.index > 0.347 ~ "above.mean",
+     dem.index == 0.347 ~ "at.mean"
+   )))
+```
+
+## **New Data Graphing**
+
+By rendering new plots with the new categorical traffic, I can begin to see patterns.
+
+```{r echo=TRUE}
+ggplot(data = ejscreen.categorical) + 
+  geom_smooth(mapping = aes(x = superfund.area, y = population, linetype = dem.index))
+```
+
+```{r echo=TRUE}
+ggplot(data = ejscreen.categorical) + 
+  geom_smooth(mapping = aes(x = rmp.area, y = population, linetype = dem.index))
+```
+
+```{r echo=TRUE}
+ggplot(data = ejscreen.categorical) + 
+  geom_smooth(mapping = aes(x = tsdf.area, y = population, linetype = dem.index))
+```
+
+## **Reference**
+
+United States Environmental Protection Agency (EPA), 2020 version, updated July 1, 2021. EJSCREEN. Retrieved: July 16, 2021 (https://gaftp.epa.gov/EJSCREEN/2020/)
+
+
+
+
+
+
+

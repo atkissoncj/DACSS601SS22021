@@ -1,0 +1,231 @@
+---
+title: "Homework 5"
+description: |
+  Bivariate Relationships, Modeling, and Functions
+author:
+  - name: Kristina Becvar
+    url: http://umass.edu/sbs/dacss
+date: 08-08-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(blogbuilder)
+library(distill)
+library(dplyr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## *For this assignment, I will be describing variables from the EPA Environmental Justice Screening Tool data set (EJScreen)*
+
+## **Reading in the data and turning it into a tibble**
+
+```{r echo=TRUE}
+ejscreen <- read.delim("../../_data/EJSCREEN_2020_IL.csv", sep = ",", header  = TRUE)
+```
+
+```{r echo=TRUE}
+ejscreen.tidy <- as_tibble(ejscreen)
+```
+
+## **Cleaning & Renaming Variables - From HW2**
+
+Including some interim steps, the result is a new tibble named "ejscreen.clean" containing only the 6 variables I'm working with.
+
+```{r echo=TRUE}
+options(scipen = 999)
+(ejscreen.clean <- ejscreen.tidy %>% 
+   rename(superfund.area = PNPL,
+          rmp.area = PRMP,
+          tsdf.area = PTSDF,
+          census.region = ID,
+          population = ACSTOTPOP, 
+          dem.index = VULEOPCT) %>% 
+   select(superfund.area, rmp.area, tsdf.area,  census.region, population, dem.index))
+```
+
+## **Summarizing Variables**
+
++ I summarized and found the mean of the environmental variables- The mean value for superfund.area is 0.09851763, for rmp.area is 1.196261, and for tsdf.area is 4.087846, which helps me to determine where the values begin to indicate levels of risk that are higher or lower than the mean.
+
++ I then summarized and found the mean of the demographic variable "dem.index". The mean value for this variable is 0.3469023, which helps me to determine where the values begin to indicate levels of higher-risk populations within census regions. 
+
+## **Combining Census Region Values**
+
+I checked how many occurrences there are of the census region codes in this dataset, and can see that the values of the individual census blocks contained in a given census region could potentially be combined into fewer values and summarized.
+
+```{r echo=TRUE}
+ejscreen.mean <- ejscreen.clean %>%
+  group_by(census.region) %>%
+  summarise(mean.rmp = mean(rmp.area), 
+            mean.superfund = mean(superfund.area),
+            mean.tsdf = mean(tsdf.area),
+            mean.demindex = mean(dem.index),
+            mean.population = mean(population))
+ejscreen.mean
+```
+
+
+## **Making a Hypothesis About the Relationship Between Variables**
+
+I have made a hypothesis that in census regions that have a higher demographic index (a higher proportion of low-income and minority persons) have a corresponding higher frequency of environmental risk areas in proximity compared to the general population. 
+
+## **Checking the Pearson Correlation Coefficient of Each Relationship**
+
+This correlation matrix gives an overview of the correlations for all combinations of two variables, rounded to 2 decimals.
+
+```{r echo=TRUE}
+round(cor(ejscreen.mean),
+  digits = 2 
+)
+```
+## **Analyzing Pearson Correlation Coefficients**
+
+After analyzing the Pearson correlations, there are some relationships with stronger positive linear relationships than others. Those moderately strong positive correlations (0.51 to 0.7) are: 
+
++ Mean Demographic Index to Mean RMP Area Frequency
++ Mean Demographic Index to Mean TSDF Area Frequency
+
+The weak positive correlations (0.3 to 0.5) are:
+
++ Mean Demographic Index to Mean Superfund Area Frequency
++ Mean TSDF Area Frequency to Mean RMP Area Frequency
+
+## **The Null and Alternative Hypotheses for the Correlation Test are as Follows:**
+
+H0: ρ=0 (meaning that there is no linear relationship between the two variables)
+
+H1: ρ≠0 (meaning that there is a linear relationship between the two variables)
+
+I used cor.test to determine the p-value to examine the relationships between the ejscreen mean demographic index score for a given census region and the mean number of environmental threats in those areas as measured by the mean count of these sites in the mean.rmp, mean.superfund and mean.tsdf variables.
+
+```{r echo=TRUE}
+cor.test(x=ejscreen.mean$mean.demindex, y=ejscreen.mean$mean.tsdf,
+         alternative = c("two.sided", "less", "greater"),
+         method = c("pearson"),
+         exact = NULL, conf.level = 0.95)
+```
+
+```{r echo=TRUE}
+cor.test(x=ejscreen.mean$mean.demindex, y=ejscreen.mean$mean.rmp,
+         alternative = c("two.sided", "less", "greater"),
+         method = c("pearson"),
+         exact = NULL, conf.level = 0.95)
+```
+
+```{r echo=TRUE}
+cor.test(x=ejscreen.mean$mean.demindex, y=ejscreen.mean$mean.superfund,
+         alternative = c("two.sided", "less", "greater"),
+         method = c("pearson"),
+         exact = NULL, conf.level = 0.95)
+```
+
+## **Looking at the P-Values of all Variable Correlations**
+
+I found another way to look at the p-values of each relationship in my data set without having to run the cor.test for each one using the Hmisc package. This shows each p-value rounded to three decimals.
+ 
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(Hmisc)
+res <- rcorr(as.matrix(ejscreen.mean))
+round(res$P, 3)
+```
+
+## **Analyzing Correlations With P-Values Smaller Than the Significance Level of α=0.05**
+
+After analyzing the matrix, it is clear that we do have some correlations with statistically significant correlations. 
+
+P-value ≤ α: The correlation is statistically significant
+
++ P-values for mean.rmp and mean.tsdf
++ P-values for mean.population and mean.tsdf
++ P-values for mean.demindex and mean.rmp, mean.superfund, and mean.tsdf
+
+P-value > α: All other non-categorical relationships
+
+## **Exploring the Statistically Significant Relationships Visually**
+
+At first review of my initial statistical analysis of my hypothesis, it does seem that there are statistically significant, positive correlations between increasing demographic index ratings and the frequency of all three environmental risk variables I have examined. 
+
+Looking further, the strongest relationships are between the demographic index ratings and the frequency of TSDF sites and RMP sites within 5 km of the census region. There is a significant but weaker relationship between the demographic index ratings and the frequency of the Superfund sites within 5 km of the census region. 
+
+This could be explained logically by the nature of the environmental risk; Superfund sites are those that have been identified as former polluting sites that have urgent for remediation, which is more likely to be in areas where there are fewer vulnerable and low-income populations and more vocal and high-influence populations demanding urgency to the remediation.
+
+On the other hand, the TSDF sites (toxic storage and disposal facilities) and RMP sites (facilities that emit toxic pollutants that require RMP (risk management plans) on file with the EPA) are those that are actively operating in vulnerable populations.
+
+```{r echo=TRUE}
+Demindex.Percentile_00 <- min(ejscreen.mean$mean.demindex)
+Demindex.Percentile_25 <- quantile(ejscreen.mean$mean.demindex, 0.25)
+Demindex.Percentile_50 <- quantile(ejscreen.mean$mean.demindex, 0.50)
+Demindex.Percentile_75 <- quantile(ejscreen.mean$mean.demindex, 0.75)
+Demindex.Percentile_100 <- max(ejscreen.mean$mean.demindex)
+
+RB = rbind(Demindex.Percentile_00, Demindex.Percentile_25, Demindex.Percentile_50, Demindex.Percentile_75, Demindex.Percentile_100)
+
+dimnames(RB)[[2]] = "Value"
+
+RB
+```
+
+```{r echo=TRUE}
+ejscreen.mean$Demindex.Quartile[ejscreen.mean$mean.demindex >= Demindex.Percentile_00 & ejscreen.mean$mean.demindex <  Demindex.Percentile_25]  = "1st Quartile"
+ejscreen.mean$Demindex.Quartile[ejscreen.mean$mean.demindex > Demindex.Percentile_25 & ejscreen.mean$mean.demindex <  Demindex.Percentile_50]  = "2nd Quartile"
+ejscreen.mean$Demindex.Quartile[ejscreen.mean$mean.demindex > Demindex.Percentile_50 & ejscreen.mean$mean.demindex < Demindex.Percentile_75] = "3rd Quartile"
+ejscreen.mean$Demindex.Quartile[ejscreen.mean$mean.demindex > Demindex.Percentile_75 & ejscreen.mean$mean.demindex <=  Demindex.Percentile_100]  = "4th Quartile"
+
+ejscreen.mean
+```
+
+## **Looking at Patterns Within Demographic Index Quartiles**
+
+I created a faceted scatterplot showing the mean population of each census area on the x axis and the mean frequency of each census area for each environmental risk on the y axis. Each quartile of the demographic index rating is illustrated independently, showing a visual acknowledgement of what the statistical analysis showed.
+
+```{r echo=TRUE}
+(ggplot(data = ejscreen.mean) + 
+  geom_point(mapping = aes(x = mean.population, y = mean.tsdf)) + 
+  facet_wrap(~ Demindex.Quartile, nrow = 2))
+(ggplot(data = ejscreen.mean) + 
+  geom_point(mapping = aes(x = mean.population, y = mean.superfund)) + 
+  facet_wrap(~ Demindex.Quartile, nrow = 2))
+(ggplot(data = ejscreen.mean) + 
+  geom_point(mapping = aes(x = mean.population, y = mean.rmp)) + 
+  facet_wrap(~ Demindex.Quartile, nrow = 2))
+```
+
+## **Alternative Visualization of Density**
+
+I then loaded the package "cowplot" and visualized the Demographic Index Quartiles against each of the environmental riskf actor frequencies.
+
+
+```{r echo=TRUE}
+library(cowplot)
+ggplot(ejscreen.mean, aes(mean.tsdf, fill = Demindex.Quartile)) + 
+  geom_density(alpha = 0.5) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
+  theme_minimal_hgrid(12)
+```
+
+```{r echo=TRUE}
+library(cowplot)
+ggplot(ejscreen.mean, aes(mean.rmp, fill = Demindex.Quartile)) + 
+  geom_density(alpha = 0.5) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
+  theme_minimal_hgrid(12)
+```
+
+```{r echo=TRUE}
+library(cowplot)
+ggplot(ejscreen.mean, aes(mean.superfund, fill = Demindex.Quartile)) + 
+  geom_density(alpha = 0.5) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
+  theme_minimal_hgrid(12)
+```
+
+## **Reference**
+
+United States Environmental Protection Agency (EPA), 2020 version, updated July 1, 2021. EJSCREEN. Retrieved: July 16, 2021 (https://gaftp.epa.gov/EJSCREEN/2020/)
+
+
