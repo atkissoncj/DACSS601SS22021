@@ -1,15 +1,15 @@
 ---
-title: "Jimenez HW1"
+title: Jimenez HW1
 description: |
   First steps with a dataset in R
 author:
-  - name: Sarah Jimenez
-    url: http://umass.edu/sbs/dacss
+- name: Sarah Jimenez
+  url: http://umass.edu/sbs/dacss
 date: 08-02-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 ```{r setup, include=FALSE}

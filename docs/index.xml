@@ -12,32 +12,22 @@
       <link>https://github.com/DACSS/dacss_course_website</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 08 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Aug 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Homework 5</title>
-      <dc:creator>Kristina Becvar</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-08-08-becvarhw5</link>
-      <description>Bivariate Relationships, Modeling, and Functions</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-08-08-becvarhw5</guid>
-      <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Homework 4: Visualizing Data</title>
-      <dc:creator>Kristina Becvar</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-08-03-homework-4-visualizing-data</link>
-      <description>Visualizing relationships between environmental and demographic data</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-08-03-homework-4-visualizing-data</guid>
-      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://github.com/DACSS/dacss_course_website/posts/2021-08-03-homework-4-visualizing-data/BecvarHW4_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Homework 3</title>
-      <dc:creator>Kristina Becvar</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-08-02-homework-3</link>
-      <description>Analysis of environmental and demographic variables in the EPA Environmental Justice Screening Tool data set</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-08-02-homework-3</guid>
+      <title>Jimenez HW1</title>
+      <dc:creator>Sarah Jimenez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-08-02-jimenezhw1</link>
+      <description>First steps with a dataset in R</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-08-02-jimenezhw1</guid>
       <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://github.com/DACSS/dacss_course_website/posts/2021-08-02-homework-3/BecvarHW3_files/figure-html5/unnamed-chunk-26-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Jimenez HW2</title>
+      <dc:creator>Sarah Jimenez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-08-02-jimenezhw2</link>
+      <description>Continuing with the MBTA ridership survey analysis</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-08-02-jimenezhw2</guid>
+      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

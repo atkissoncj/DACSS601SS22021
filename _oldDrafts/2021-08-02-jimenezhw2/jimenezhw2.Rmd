@@ -1,15 +1,15 @@
 ---
-title: "Jimenez HW2"
+title: Jimenez HW2
 description: |
   Continuing with the MBTA ridership survey analysis
 author:
-  - name: Sarah Jimenez
-    url: http://umass.edu/sbs/dacss
+- name: Sarah Jimenez
+  url: http://umass.edu/sbs/dacss
 date: 08-02-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 
