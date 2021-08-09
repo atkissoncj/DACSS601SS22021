@@ -1,0 +1,45 @@
+---
+title: "Homework Two"
+description: Armed Conflict Location & Event Data (ACLED) on Disorder Involving Journalists and Media Workers
+author: Nathan Cote
+date: 07-20-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r LOAD DATA, include=FALSE}
+library(tidyverse)
+library(readxl)
+  journalists <- read_excel("../../_data/journalists_Jul02.xlsx")
+```
+
+# An Introduction to ACLED
+
+ACLED is a dataset for use in conflict analysis and crisis mapping. Each individual event in the dataset in an observation. The particular dataset that I have chosen for analysis pertains to events associated with disorder involving journalists and media workers. 
+
+The question I will be answering is twofold. Firstly, what interaction between actors (for instance, events between rioters and civilians) is most prominent among all countries? Secondly, of those interactions, what event types are most prominent within those interactions? For instance, out of all countries where interactions between Civilians and Political Militias are the most prominent Interaction variable, within that what is the most prominent Event Type?
+
+First I will show you the variables in the dataset prior to tidying.
+
+# Column Names
+
+```{r Describe Data, echo=FALSE}
+ colnames(journalists)
+```
+
+The above variables provide varying levels of specificity. For my analysis, I do not need all of them on display. For instance, I am not interested in `Latitude`, `Longitude`, or `Geo_Precision` when `Country` will suffice for my purposes. 
+
+Prior to tidying the data, there are `r nrow(journalists)` rows, which may still be the case after tidying. On the other hand, there are `r ncol(journalists)`, which will be reduced.
+
+I will now reduce the data to the variables I may need.
+
+```{r Variable Reduction, echo=FALSE}
+select(journalists, 5, 7,8, 9, 12, 15, 17)
+```
+There are two variables which I will take out, but have left in for clarity at the moment. `ACTOR1` AND `ACTOR2` are both included in the `INTERACTION` column. In the codebook for the ACLED dataset, the actors are given a single digit number for representation. For instance, Political Militias are given the code "4", while Civilians are given the code "7". In the `INTERACTION` column, this would be represented as "67". Therefore, for my purposes, I can take out the `ACTOR1` and `ACTOR2` columns. During my analysis, I may recode the numerical representations in `INTERACTION` to more descriptive language where one does not need to reference the codebook for base understanding. I may remove `SUB_EVENT_TYPE` as well. I have included it for potential further insight. If there are not too many variations of `SUB_EVENT_TYPE` I may combine it with `EVENT_TYPE`. 
+
+# Pending Further Analysis, Homework 3
+
+My immediate task entering Homework 3 will be finding out the summations of event combinations in `INTERACTION`, and then putting them into a proportion table. I will also do the same, but will group them by country and then using the proportion table afterward. I will do the same with `EVENT_TYPE`.
