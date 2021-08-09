@@ -12,14 +12,44 @@
       <link>https://github.com/DACSS/dacss_course_website</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 29 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>John Mannion Homework 2 - USArrests</title>
-      <dc:creator>John Mannion</dc:creator>
-      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-29-john-mannion-homework-2</link>
-      <description>Examining the USArrests dataset</description>
-      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-29-john-mannion-homework-2</guid>
-      <pubDate>Thu, 29 Jul 2021 00:00:00 +0000</pubDate>
+      <title>Homework 5</title>
+      <dc:creator>Stephanie Cortez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-08-05-homework-5</link>
+      <description>For this assignment, you must select at least two variables of interest from your dataset, provide a basic description of the variables, clean and recode as needed, and present descriptive statistics and any visualizations.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-08-05-homework-5</guid>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/DACSS/dacss_course_website/posts/2021-08-05-homework-5/homework-5_files/figure-html5/unnamed-chunk-9-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Homework 4</title>
+      <dc:creator>Stephanie Cortez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-08-01-homework-4</link>
+      <description>For this assignment, you will be creating and explaining a data visualization.
+  Your goal is to build on the previous assignments, and create a data visualization using the dataset you have been working with in R. Then, use R Markdown to draft a document that tracks the creation of the data visualization. In particular, comment on and discuss:
+  1. What the visualization demonstrates.
+  2. Why you chose the visualization approach you selected, and what alternative approaches you considered but decided not to pursue.
+  3. What you wished, if anything, you could have executed but found limited capability to do.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-08-01-homework-4</guid>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/DACSS/dacss_course_website/posts/2021-08-01-homework-4/homework-4_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Homework 3</title>
+      <dc:creator>Stephanie Cortez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-28-hw-3</link>
+      <description>For this assignment, you must select at least two variables of interest from your dataset, provide a basic description of the variables, clean and recode as needed, and present descriptive statistics and any visualizations.</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-28-hw-3</guid>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HW 2</title>
+      <dc:creator>Stephanie Cortez</dc:creator>
+      <link>https://github.com/DACSS/dacss_course_website/posts/2021-07-28-hw-2</link>
+      <description>Discussing dataset I am working on</description>
+      <guid>https://github.com/DACSS/dacss_course_website/posts/2021-07-28-hw-2</guid>
+      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

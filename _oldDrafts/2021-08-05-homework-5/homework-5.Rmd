@@ -1,17 +1,17 @@
 ---
-title: "Homework 5"
-description: |
-  For this assignment, you must select at least two variables of interest from your dataset, provide a basic description of the variables, clean and recode as needed, and present descriptive statistics and any visualizations. 
-  
+title: Homework 5
+description: "For this assignment, you must select at least two variables of interest
+  from your dataset, provide a basic description of the variables, clean and recode
+  as needed, and present descriptive statistics and any visualizations. \n"
 author:
-  - name: Stephanie Cortez
-    url: http://umass.edu/sbs/dacss
-    email: scortez@umass.edu
+- name: Stephanie Cortez
+  url: http://umass.edu/sbs/dacss
+  email: scortez@umass.edu
 date: 08-03-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 **The dataset I will be analyzing is called the "2021-2022 Student Equity Needs Index (SENI) Scores for Elementary Schools," which shows scores of elementary schools (grades k-5th) in the L.A. Unified School District (LAUSD) in CA. LAUSD is the largest school district in CA and the 2nd largest school district in the U.S. in terms of number of students. "The SENI was implemented to create a more inclusive and holistic understanding of our students' needs, and to empower schools with additional funds to address those needs at the local level"** (*Advancement Project, California, 2021*) **I would like to compare some school demographics. LAUSD consists of 6 local districts, South, East, Central, West, NW, and NE. The dataset shows counts of foster youth, homeless youth, and English learners in each elementary schools. I would like to compare those groups within local districts and find which local district has the highest rates.In the SENI dataset I would like to take a look at 4 variables, the Homeless, Foster, and English Learning Counts. The counts are reported by each elementary school in LAUSD. I would like to compare those numbers by local districts that are within LAUSD.** 
 

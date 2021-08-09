@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["HW 2"]},{"type":"character","attributes":{},"value":["Discussing dataset I am working on\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","email"]}},"value":[{"type":"character","attributes":{},"value":["Stephanie Cortez"]},{"type":"character","attributes":{},"value":["http://umass.edu/sbs/dacss"]},{"type":"character","attributes":{},"value":["scortez@umass.edu"]}]}]},{"type":"character","attributes":{},"value":["07-17-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["HW 2"]},{"type":"character","attributes":{},"value":["Discussing dataset I am working on\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","email"]}},"value":[{"type":"character","attributes":{},"value":["Stephanie Cortez"]},{"type":"character","attributes":{},"value":["http://umass.edu/sbs/dacss"]},{"type":"character","attributes":{},"value":["scortez@umass.edu"]}]}]},{"type":"character","attributes":{},"value":["07-17-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"HW 2","description":"Discussing dataset I am working on","authors":[{"author":"Stephanie Cortez","authorURL":"http://umass.edu/sbs/dacss","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-17T00:00:00.000-07:00","citationText":"Cortez, 2021"}
+{"title":"HW 2","description":"Discussing dataset I am working on","authors":[{"author":"Stephanie Cortez","authorURL":"http://umass.edu/sbs/dacss","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-17T00:00:00.000-04:00","citationText":"Cortez, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1605,7 +1605,7 @@ Seni Rank for the 2021-2022 Allocation
 <strong>Found that there are NO missing values in the variables I will be analyzing.</strong> <strong>Checking number of schools in each Local District</strong>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'>select</span><span class='op'>(</span><span class='va'>SENISData</span>, <span class='st'>"Local District"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>SENISData</span>, <span class='st'>"Local District"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>
@@ -1616,7 +1616,7 @@ Seni Rank for the 2021-2022 Allocation
 <strong>Reviewing average rates of Foster, Homeless, and English Learner rates in all of school district.</strong>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>summarise</span><span class='op'>(</span><span class='va'>SENISData</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Homeless Rate`</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>SENISData</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Homeless Rate`</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 1 x 1
@@ -1626,7 +1626,7 @@ Seni Rank for the 2021-2022 Allocation
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>summarise</span><span class='op'>(</span><span class='va'>SENISData</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Foster Rate`</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>SENISData</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Foster Rate`</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 1 x 1
@@ -1636,7 +1636,7 @@ Seni Rank for the 2021-2022 Allocation
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>summarise</span><span class='op'>(</span><span class='va'>SENISData</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`EL Rate`</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>SENISData</span>, <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`EL Rate`</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 1 x 1

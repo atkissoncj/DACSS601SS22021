@@ -1,16 +1,16 @@
 ---
-title: "HW 2"
+title: HW 2
 description: |
   Discussing dataset I am working on
 author:
-  - name: Stephanie Cortez
-    url: http://umass.edu/sbs/dacss
-    email: scortez@umass.edu
+- name: Stephanie Cortez
+  url: http://umass.edu/sbs/dacss
+  email: scortez@umass.edu
 date: 07-17-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ## Homework 2
 

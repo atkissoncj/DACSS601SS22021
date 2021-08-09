@@ -1,5 +1,5 @@
 ---
-title: "Homework 4"
+title: Homework 4
 description: |
   For this assignment, you will be creating and explaining a data visualization.
     Your goal is to build on the previous assignments, and create a data visualization using the dataset you have been working with in R. Then, use R Markdown to draft a document that tracks the creation of the data visualization. In particular, comment on and discuss:
@@ -7,14 +7,14 @@ description: |
     2. Why you chose the visualization approach you selected, and what alternative approaches you considered but decided not to pursue.
     3. What you wished, if anything, you could have executed but found limited capability to do.
 author:
-  - name: Stephanie Cortez
-    url: http://umass.edu/sbs/dacss
-    email: scortez@umass.edu
+- name: Stephanie Cortez
+  url: http://umass.edu/sbs/dacss
+  email: scortez@umass.edu
 date: 08-01-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 ```{r setup, include=FALSE}

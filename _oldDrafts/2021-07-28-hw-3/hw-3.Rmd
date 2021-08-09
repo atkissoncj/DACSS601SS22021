@@ -1,16 +1,16 @@
 ---
-title: "Homework 3"
+title: Homework 3
 description: |
   For this assignment, you must select at least two variables of interest from your dataset, provide a basic description of the variables, clean and recode as needed, and present descriptive statistics and any visualizations.
 author:
-  - name: Stephanie Cortez
-    url: http://umass.edu/sbs/dacss
-    email: scortez@umass.edu
+- name: Stephanie Cortez
+  url: http://umass.edu/sbs/dacss
+  email: scortez@umass.edu
 date: 07-28-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 ## Homework 3
 
