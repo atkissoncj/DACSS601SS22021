@@ -1,15 +1,15 @@
 ---
-title: "Homework 4: Visualizing Data"
+title: 'Homework 4: Visualizing Data'
 description: |
   Visualizing relationships between environmental and demographic data
 author:
-  - name: Kristina Becvar
-    url: http://umass.edu/sbs/dacss
+- name: Kristina Becvar
+  url: http://umass.edu/sbs/dacss
 date: 08-03-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 ```{r setup, include=FALSE}

@@ -1,15 +1,15 @@
 ---
-title: "Homework 5"
+title: Homework 5
 description: |
   Bivariate Relationships, Modeling, and Functions
 author:
-  - name: Kristina Becvar
-    url: http://umass.edu/sbs/dacss
+- name: Kristina Becvar
+  url: http://umass.edu/sbs/dacss
 date: 08-08-2021
 output:
   distill::distill_article:
-    self_contained: false
-draft: true
+    self_contained: no
+draft: yes
 ---
 
 ```{r setup, include=FALSE}
