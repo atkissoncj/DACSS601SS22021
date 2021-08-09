@@ -1,0 +1,140 @@
+---
+title: "Homework 5"
+description: |
+  For this assignment, you must select at least two variables of interest from your dataset, provide a basic description of the variables, clean and recode as needed, and present descriptive statistics and any visualizations. 
+  
+author:
+  - name: Stephanie Cortez
+    url: http://umass.edu/sbs/dacss
+    email: scortez@umass.edu
+date: 08-03-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+**The dataset I will be analyzing is called the "2021-2022 Student Equity Needs Index (SENI) Scores for Elementary Schools," which shows scores of elementary schools (grades k-5th) in the L.A. Unified School District (LAUSD) in CA. LAUSD is the largest school district in CA and the 2nd largest school district in the U.S. in terms of number of students. "The SENI was implemented to create a more inclusive and holistic understanding of our students' needs, and to empower schools with additional funds to address those needs at the local level"** (*Advancement Project, California, 2021*) **I would like to compare some school demographics. LAUSD consists of 6 local districts, South, East, Central, West, NW, and NE. The dataset shows counts of foster youth, homeless youth, and English learners in each elementary schools. I would like to compare those groups within local districts and find which local district has the highest rates.In the SENI dataset I would like to take a look at 4 variables, the Homeless, Foster, and English Learning Counts. The counts are reported by each elementary school in LAUSD. I would like to compare those numbers by local districts that are within LAUSD.** 
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(distill)
+library(blogbuilder)
+library(knitr)
+library(ggplot2)
+```
+
+```{r}
+#Importing data
+library(readxl)
+SENIData <- read_excel("../../_data/SENIScoresElementaryShools-20212022.xlsx")
+```
+
+**1. Descriptions of the variables - how they were collected, any missing values, etc.**
+The homeless, foster, and English Learner counts are reported by each elementary school in the LAUSD and is recorded in the SENI index. I will take a look at those 3 variables only in each local district and check for missing values.
+
+```{r}
+#Creating tidySENI to only show variables of interest.
+tidySENI <- select(SENIData, c('Local District', 
+                                'Homeless Count', 
+                                'Foster Count', 
+                                'EL Count',
+                               'Total Enroll'))
+#Viewing first 6 rows of new tidy dataset
+head(tidySENI)
+```
+```{r}
+#Checking for missing values in new tidySENI dataset
+tidySENI[!complete.cases(tidySENI),]
+```
+**2. How you cleaned and coded the data, including a before/after comparison as needed.**
+I will recode Local District codes to show full names to make them more distinguishable.
+
+```{r}
+#Re-code Local District values
+tidySENI[,1] <- ifelse(tidySENI[,1]== "S", "SOUTH", 
+                       ifelse(tidySENI[,1]== "C", "CENTRAL", 
+                              ifelse(tidySENI[,1]=="W", "WEST", 
+                                     ifelse(tidySENI[,1]=="E", "EAST", 
+                                            ifelse(tidySENI[,1]=="NE", "NORTHEAST", 
+                                                   ifelse(tidySENI[,1]=="NW", "NORTHWEST", 
+                                                          99 ))))))
+tidySENI
+```
+
+**3. Summary descriptives of the recoded variables Creating a pivot table to show summary descriptives.**      
+This grouped it by Local District and gave me a summary of the sums of each count I am interested in.
+
+```{r}
+#Grouping by Local District and showing sums of each Count within Local Districts 
+seni_total <- tidySENI %>% 
+  group_by(`Local District`) %>% 
+  summarise(
+    Total_Homeless=sum(`Homeless Count`), 
+    Total_Foster=sum(`Foster Count`), 
+    Total_EL=sum(`EL Count`),
+    Total_Enroll=sum(`Total Enroll`)) %>% 
+  arrange(desc(`Total_Enroll`))
+seni_total
+```
+Taking a look at percentages by total students enrolled. If we look at percentages, ranking changes. Central local district has the highest rate of homeless students. 
+
+```{r}
+#Adding a column/variable showing percentage of homeless by dividing total homeless by total enroll
+seni_homeless <- seni_total %>% select('Local District','Total_Homeless', 'Total_Enroll') %>% 
+  mutate("Homeless_Rate"=Total_Homeless/Total_Enroll) %>% 
+  arrange(desc(`Homeless_Rate`))
+seni_homeless
+```
+Based on total students enrolled, the South local district still has the highest rate of foster children.
+
+```{r}
+seni_foster <- seni_total %>% select('Local District','Total_Foster', 'Total_Enroll') %>% 
+  mutate("Foster_Rate"=Total_Foster/Total_Enroll) %>% 
+  arrange(desc(`Foster_Rate`))
+seni_foster
+```
+Based on total students enrolled, the Central local district has the highest rate of English learning students.
+
+```{r}
+seni_EL <- seni_total %>% select('Local District','Total_EL', 'Total_Enroll') %>% 
+  mutate("EL_Rate"=Total_EL/Total_Enroll) %>% 
+  arrange(desc(`EL_Rate`))
+seni_EL
+```
+
+**4. Description of the relationship between the variables, including a hypothesis (or hypotheses) about the relationship.**      
+With the pivot table above I can see that the South local district has the most homeless and foster students and Central local district has the most English Learning students. Based on total students enrolled in each local district, the Central local district has the highest rates of homeless and English learning students and the South local district has the highest rate of foster children. We can take a look at the relationship between these rates and their location. According to the Los Angeles Area Chamber of Commerce, neighborhoods of concentrated poverty are clustered throughout South Los Angeles and Downtown adjacent areas, which is where the South and Central local districts are located. A hypothesis here can be that the highest level of homeless students are most likely to attend schools in the South Local District, making a correlation between location and homeless students and maybe English learning students.**
+
+
+**5. Initial demonstration of the relationship, which could include correlation, visualization, or statistical model. Appropriate visualizations.**
+
+A bar/column chart clearly shows which of the local districts have the highest rates of each group of interest. Highlighting the value or observation you want to draw focus on helps get the message across. This could help if maybe I am trying to get a key stakeholder to allocate funding or provide certain resources to a local district in need. 
+
+
+```{r}
+#Creating a bar graph to show homeless rate in each local district and highlighting the one with the highest rate. 
+library(ggplot2)
+library(gghighlight)
+gg_homeless <- ggplot(data=seni_homeless, aes(x=`Local District`, y=`Homeless_Rate`)) +
+         geom_bar(stat="identity") + gghighlight(`Local District` == "CENTRAL")
+gg_homeless +
+  labs(title = 
+         "Schools in the Central Local District of LAUSD have the highest rate
+of homeless children enrolled.")
+```
+
+```{r}
+gg_foster <- ggplot(data=seni_foster, aes(x=`Local District`, y=`Foster_Rate`)) +
+         geom_bar(stat="identity") + gghighlight(`Local District` == "SOUTH")
+gg_foster + labs(title = "Schools in the South Local District in LAUSD have the 
+highest rate of foster children enrolled.")
+```
+
+```{r}
+gg_EL <- ggplot(data=seni_EL, aes(x=`Local District`, y=`EL_Rate`)) +
+         geom_bar(stat="identity") + gghighlight(`Local District` == "CENTRAL")
+gg_EL + labs(title = "Schools in the Central Local District in LAUSD have the 
+highest rate of English Learning students enrolled.")
+```
+
